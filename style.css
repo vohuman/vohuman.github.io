@@ -185,10 +185,6 @@ main header .container {
         transition: 0.7s;
     }
 
-.col-lg-7 {
-    margin:0px;
-}
-
 .about {
     padding: 10px;
     text-align: justify;
