@@ -170,8 +170,10 @@ main header .container {
 }
 
 .content h3 {
-    font-size: 36px;
+    line-height: 160%;
     padding:1%;
+    text-align: justify;
+    font-size: 36px;
 }
 
 .contactinfo {
