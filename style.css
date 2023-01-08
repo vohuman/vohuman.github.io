@@ -176,6 +176,10 @@ main header .container {
     font-size: 36px;
 }
 
+h5  {
+    font-weight: none;
+}
+
 .contactinfo {
     font-size: 160%;
     font-style: italic;
