@@ -70,7 +70,7 @@ header {
         border: 0;
         top: 0;
         margin: 0px;
-        margin-left: 700px;
+        margin-left: 500px;
         text-transform: capitalize;
     }
 
@@ -82,7 +82,7 @@ header {
     position: fixed;
     top: 0;
     margin-top: 3px;
-    margin-left: 530px !important;
+    margin-left: 630px !important;
 }
 
 .navbar-toggle {
