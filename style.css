@@ -184,9 +184,9 @@ h5  {
     font-weight: none;
 }
 
-.tech ul li
+.tech ul li h5
 {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .contactinfo {
