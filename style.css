@@ -176,11 +176,11 @@ main header .container {
     font-size: 36px;
 }
 
-h4 {
+.content h4 {
     font-weight: bold;
 }
 
-h5  {
+.content h5  {
     font-weight: none;
 }
 
