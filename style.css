@@ -158,12 +158,12 @@ main header .container {
 }
 
 .content h1 {
-    font-size: 72px;
+    font-size: 54px;
     font-weight: bold;
 }
 
 .content h2 {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
     text-transform: capitalize;
