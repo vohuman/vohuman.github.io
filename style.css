@@ -176,8 +176,17 @@ main header .container {
     font-size: 36px;
 }
 
+h4 {
+    font-weight: bold;
+}
+
 h5  {
     font-weight: none;
+}
+
+.tech ul li
+{
+    padding-left: 10px;
 }
 
 .contactinfo {
