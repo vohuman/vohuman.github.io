@@ -158,12 +158,12 @@ main header .container {
 }
 
 .content h1 {
-    font-size: 480%;
+    font-size: 240%;
     font-weight: bold;
 }
 
 .content h2 {
-    font-size: 360%;
+    font-size: 180%;
     font-weight: bold;
     text-transform: uppercase;
     text-transform: capitalize;
@@ -171,6 +171,8 @@ main header .container {
 
 .content h3 {
     line-height: 180%;
+    padding:1%;
+    text-align: justify;
 }
 
 .contactinfo {
