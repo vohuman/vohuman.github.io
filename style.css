@@ -383,6 +383,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     text-transform: capitalize;
+    overflow-y: scroll;
 }
 
     .navoverlay-content hr {
