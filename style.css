@@ -181,7 +181,7 @@ main header .container {
 }
 
 .content h5  {
-    font-weight: none;
+    font-weight: normal;
 }
 
 .tech ul li h5
