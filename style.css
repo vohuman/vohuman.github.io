@@ -227,6 +227,11 @@ main header .container {
         line-height: 160%;
     }
 
+    .about ul {
+        padding:0;
+        margin:0;
+    }
+
     .about a {
         color:#111;
         text-decoration: underline;
