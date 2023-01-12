@@ -212,7 +212,7 @@ main header .container {
 
     .about .btn {
         background-color: #336;
-        margin-top: 0px;
+        margin-top: 5px;
     }
 
         .about .btn:hover, .btn:active, .btn:focus {
@@ -231,7 +231,7 @@ main header .container {
     }
 
         .about a:hover {
-            color:#139;
+            color:#36b;
         }
 
 img.about {
