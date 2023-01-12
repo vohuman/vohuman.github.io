@@ -221,9 +221,13 @@ main header .container {
         }
 
     .about section {
-        padding: 10px;
+        padding: 0px;
         text-align: justify;
         line-height: 160%;
+    }
+
+    .about a {
+        color:#222;
     }
 
 img.about {
