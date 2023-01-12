@@ -207,7 +207,7 @@ main header .container {
     text-align: justify;
     line-height: 160%;
     margin:0px;
-    padding-left:0px;
+
 }
 
     .about .btn {
@@ -229,6 +229,10 @@ main header .container {
     .about a {
         color:#222;
     }
+
+        .about a:hover {
+            color:#139;
+        }
 
 img.about {
     width: 350px;
