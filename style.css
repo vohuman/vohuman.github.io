@@ -229,6 +229,7 @@ main header .container {
 
     .about a {
         color:#111;
+        text-decoration: underline;
     }
 
         .about a:hover {
@@ -373,6 +374,7 @@ footer {
 
         footer .copyright a {
             color: #48c;
+            text-decoration: underline;
         }
 
             footer .copyright a:hover {
