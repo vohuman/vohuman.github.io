@@ -213,6 +213,7 @@ main header .container {
     .about .btn {
         background-color: #336;
         margin-top: 5px;
+        text-align: justify;
     }
 
         .about .btn:hover, .btn:active, .btn:focus {
