@@ -47,42 +47,29 @@ function checkCookie() {
 
 hideshow = function(l) {
     if(l == "DE") {
-        $("#langDe").show();
-        $("#langEn").hide();
-        $("#langDe .content").show();
-        $("#langEn .content").hide();
-        $(".navoverlay .En").hide();
-        $(".navoverlay .De").show();
+        $(".langDe").show();
+        $(".langEn").hide();
+
     }
     else if(l == "EN") {
-        $("#langEn").show();
-        $("#langDe").hide();
-        $("#langEn .content").show();
-        $("#langDe .content").hide();
-        $(".navoverlay .En").show();
-        $(".navoverlay .De").hide();
-        setCookie('lang', 'DE', 1);
+        $(".langEn").show();
+        $(".langDe").hide();
+
     }
 }
 
 showhide = function(l) {
 
     if(l == "DE") {
-        $("#langDe").hide();
-        $("#langEn").show();
-        $("#langDe .content").hide();
-        $("#langEn .content").show();
-        $(".navoverlay .En").show();
-        $(".navoverlay .De").hide();
+        $(".langDe").hide();
+        $(".langEn").show();
+
         setCookie('lang', 'EN', 1);
     }
     else if(l == "EN") {
-        $("#langEn").hide();
-        $("#langDe").show();
-        $("#langEn .content").hide();
-        $("#langDe .content").show();
-        $(".navoverlay .En").hide();
-        $(".navoverlay .De").show();
+        $(".langEn").hide();
+        $(".langDe").show();
+
         setCookie('lang', 'DE', 1);
     }
 }
