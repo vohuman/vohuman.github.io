@@ -469,6 +469,10 @@ footer {
         top: 15px;
         right: 35px;
     }
+    
+    .col-lg-8 .about {
+        padding-right: 15px;
+    }
 }
 
 @keyframes zoomout {
