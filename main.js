@@ -42,11 +42,11 @@ showhide = function() {
 
     if(language) {
         $(".langDe").fadeOut(1500);
-        $(".langEn").fadeIn(0);
+        $(".langEn").fadeIn(500);
     }
     else {
         $(".langEn").fadeOut(1500);
-        $(".langDe").fadeIn(0);
+        $(".langDe").fadeIn(500);
     }
 }
 
