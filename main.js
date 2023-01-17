@@ -45,18 +45,6 @@ function checkCookie() {
         return false;
 }
 
-var lang = checkCookie();
-if(!lang) {
-    setCookie('lang', 'EN', 1);
-    $("#langDe").hide();
-    $("#langEn").show();
-}
-else {
-    $("#langDe").hide();
-    $("#langEn").show();
-}
-
-
 changelange = function () {
     let l = getCookie('lang');
 
