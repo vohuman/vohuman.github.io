@@ -34,40 +34,28 @@ menuclicked = function (s) {
      showhide(l);
 
      if (s) {
-
          if(l == "EN") {
              $(".navoverlayen").css("width", "100%");
-             $(".navoverlayen").show();
              $("main").addClass("is-menu-visible");
          }
          else if(l == "DE") {
              $(".navoverlayde").css("width", "100%");
-             $(".navoverlayde").show();
              $("main").addClass("is-menu-visible");
          }
      }
      else {
          if(l == "EN") {
              $(".navoverlayen").css("width", "0%");
-             $(".navoverlayen").hide();
              $("main").removeClass("is-menu-visible");
          }
          else if(l == "DE"){
               $(".navoverlayde").css("width", "0%");
-              $(".navoverlayde").hide();
               $("main").removeClass("is-menu-visible");
          }
      }
 
-
-
   }
 
-
-//$(".contactitem").hover(function (e) {
-//    if (!e.hasClass("typing"))
-//        e.addClass("typing");
-//})
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
@@ -170,7 +158,4 @@ contactmousemouve = function (i) {
     }());
 
 }
-
-
-
 
