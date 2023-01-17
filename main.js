@@ -20,19 +20,7 @@ showhide();
 
 language = true;
 menuclicked(0);
-/*      if (s) {
-//             $(".navoverlayen").show();
-//             $(".navoverlayde").hide();
-//             $(".navoverlayen").css("width", "0%");
-            $(".navoverlayen").css("width", "100%");
-            $("main").addClass("is-menu-visible");
-      }
-      else {
-            language = false;
-            showhide("EN");
-            $(".navoverlayen").css("width", "0%");
-            $("main").removeClass("is-menu-visible");
-      }*/
+
 }
 
 demenuclicked = function () {
@@ -40,54 +28,14 @@ demenuclicked = function () {
 language = false;
 menuclicked(0);
 
-/*      if (s) {
-//             $(".navoverlayen").show();
-//             $(".navoverlayde").hide();
-//             $(".navoverlayen").css("width", "0%");
-            $(".navoverlayde").css("width", "100%");
-            $("main").addClass("is-menu-visible");
-      }
-      else {
-            language = true;
-            showhide();
-            $(".navoverlayde").css("width", "0%");
-            $("main").removeClass("is-menu-visible");
-      }*/
 }
 
 
- langmenuclicked = function (s) {
+langmenuclicked = function () {
 
-     showhide();
-
-     if (s) {
-         if(language) {
-            $(".navoverlay ").css("width", "0%");
-            $(".navoverlayen").css("width", "100%");
-            $("main").addClass("is-menu-visible");
-         }
-         else if(l == "DE") {
-            $(".navoverlayde").show();
-            $(".navoverlayen").hide();
-            $(".navoverlayde").css("width", "0%");
-            $(".navoverlayde").css("width", "100%");
-            $("main").addClass("is-menu-visible");
-         }
-     }
-     else {
-         if(l == "EN") {
-             $(".navoverlayen").css("width", "0%");
-             $("main").removeClass("is-menu-visible");
-         }
-         else if(l == "DE"){
-              $(".navoverlayde").css("width", "0%");
-              $("main").removeClass("is-menu-visible");
-         }
-         $(".navoverlayen").hide();
-         $(".navoverlayde").hide();
-     }
-
-  }
+    language = !language;
+    menuclicked(0);
+}
 
 
 showhide = function() {
