@@ -41,8 +41,7 @@ function checkCookie() {
   let l = getCookie("lang");
     if (l != "" && l != null && l != undefined) {
       return true;
-    else
-      return false;
+    return false;
 }
 
 if(checkCookie){
