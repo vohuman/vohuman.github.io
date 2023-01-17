@@ -1,17 +1,17 @@
 menuclicked = function (s) {
 
     let l = getCookie("lang");
-    showhide(l);
+
     if (s) {
 
-        if(l == "EN") {
-            $(".navoverlayen").css("width", "100%");
-            $("main").addClass("is-menu-visible");
-        }
-        else if(l == "DE") {
-            $(".navoverlayde").css("width", "100%");
-            $("main").addClass("is-menu-visible");
-        }
+//        if(l == "EN") {
+//            $(".navoverlayen").css("width", "100%");
+//            $("main").addClass("is-menu-visible");
+//        }
+//        else if(l == "DE") {
+//            $(".navoverlayde").css("width", "100%");
+//            $("main").addClass("is-menu-visible");
+//        }
     }
     else {
         if(l == "EN") {
