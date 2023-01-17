@@ -147,14 +147,14 @@ hideshow = function(l) {
 showhide = function(l) {
 
     if(l == "DE") {
-        $(".langDe").hide();
-        $(".langEn").show();
+        $(".langDe").hide(9);
+        $(".langEn").show(9);
 
         setCookie('lang', 'EN', 1);
     }
     else if(l == "EN") {
-        $(".langEn").hide();
-        $(".langDe").show();
+        $(".langEn").hide(9);
+        $(".langDe").show(9);
 
         setCookie('lang', 'DE', 1);
     }
