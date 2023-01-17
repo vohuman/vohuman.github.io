@@ -45,23 +45,27 @@ function checkCookie() {
         return false;
 }
 
+showhide = function(l) {
+
+    if(l == "DE") {
+        $("#langDe").hide();
+        $("#langEn").show();
+        $("#langDe .content").hide();
+        $("#langEn .content").show();
+        setCookie('lang', 'EN', 1);
+    }
+    else if(l == "EN") {
+        $("#langEn").hide();
+        $("#langDe").show();
+        $("#langEn .content").hide();
+        $("#langDe .content").show();
+        setCookie('lang', 'DE', 1);
+    }
+}
+
 changelange = function () {
     let l = getCookie('lang');
-
-        if(l == "DE") {
-            $("#langDe").hide();
-            $("#langEn").show();
-            $("#langDe .content").hide();
-             $("#langEn .content").show();
-            setCookie('lang', 'EN', 1);
-        }
-        else if(l == "EN") {
-            $("#langEn").hide();
-            $("#langDe").show();
-            $("#langEn .content").hide();
-            $("#langDe .content").show();
-            setCookie('lang', 'DE', 1);
-        }
+    showhide(l);
 }
 
 contactmousemouve = function (i) {
