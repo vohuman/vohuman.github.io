@@ -54,6 +54,14 @@ if(!lang) {
 else {
     let l = getCookie('lang');
     setCookie('lang', l, 1);
+    if(l == "DE") {
+        $("#langDe").hide();
+        $("#langEn").show();
+    }
+    else if(l == "EN") {
+        $("#langEn").hide();
+        $("#langDe").show();
+     }
 }
 
 
@@ -65,7 +73,7 @@ changelange = function () {
             $("#langEn").show();
             setCookie('lang', 'EN', 1);
         }
-        if(l == "EN") {
+        else if(l == "EN") {
             $("#langEn").hide();
             $("#langDe").show();
             setCookie('lang', 'DE', 1);
