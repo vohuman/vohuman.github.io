@@ -27,6 +27,43 @@ menuclicked = function (s) {
 
  }
 
+ enmenuclicked = function (s) {
+
+      showhide("EN");
+
+      if (s) {
+//             $(".navoverlayen").show();
+//             $(".navoverlayde").hide();
+//             $(".navoverlayen").css("width", "0%");
+         $(".navoverlayen").css("width", "100%");
+         $("main").addClass("is-menu-visible");
+      }
+      else {
+
+          $(".navoverlayen").css("width", "0%");
+          $("main").removeClass("is-menu-visible");
+      }
+}
+
+demenuclicked = function (s) {
+
+      showhide("DE");
+
+      if (s) {
+//             $(".navoverlayen").show();
+//             $(".navoverlayde").hide();
+//             $(".navoverlayen").css("width", "0%");
+         $(".navoverlayde").css("width", "100%");
+         $("main").addClass("is-menu-visible");
+      }
+      else {
+
+          $(".navoverlayde").css("width", "0%");
+          $("main").removeClass("is-menu-visible");
+      }
+}
+
+
  langmenuclicked = function (s) {
 
      let l = getCookie("lang");
