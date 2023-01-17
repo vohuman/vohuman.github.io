@@ -54,19 +54,18 @@ if(!lang) {
 
 
 changelange = function () {
-    if(!$.cookie('lang')) {
-        var lang = $.cookie('lang');
-        if(lang == "DE") {
+    let l = getCookie('lang');
+
+        if(l == "DE") {
             $("#langDe").hide();
             $("#langEn").show();
-            $.cookie('lang', 'EN');
+            setCookie('lang', 'EN', 1);
         }
-        if(lang == "EN") {
+        if(l == "EN") {
             $("#langEn").hide();
             $("#langDe").show();
-            $.cookie('lang', 'DE');
+            setCookie('lang', 'DE', 1);
         }
-    }
 }
 
 contactmousemouve = function (i) {
