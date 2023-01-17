@@ -148,7 +148,7 @@ hideshow = function(l) {
     }
 }
 
-showhide = function(l) {
+showhide = function() {
 
     language = !language;
     if(language) {
@@ -167,7 +167,7 @@ showhide = function(l) {
 
 changelange = function () {
 
-    showhide(l);
+    showhide();
 }
 
 contactmousemouve = function (i) {
