@@ -35,12 +35,18 @@ menuclicked = function (s) {
 
      if (s) {
          if(l == "EN") {
-             $(".navoverlayen").css("width", "100%");
-             $("main").addClass("is-menu-visible");
+            $(".navoverlayen").show();
+            $(".navoverlayde").hide();
+            $(".navoverlayen").css("width", "0%");
+            $(".navoverlayen").css("width", "100%");
+            $("main").addClass("is-menu-visible");
          }
          else if(l == "DE") {
-             $(".navoverlayde").css("width", "100%");
-             $("main").addClass("is-menu-visible");
+            $(".navoverlayde").show();
+            $(".navoverlayen").hide();
+            $(".navoverlayde").css("width", "0%");
+            $(".navoverlayde").css("width", "100%");
+            $("main").addClass("is-menu-visible");
          }
      }
      else {
@@ -52,6 +58,8 @@ menuclicked = function (s) {
               $(".navoverlayde").css("width", "0%");
               $("main").removeClass("is-menu-visible");
          }
+         $(".navoverlayen").hide();
+         $(".navoverlayde").hide();
      }
 
   }
