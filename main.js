@@ -52,11 +52,8 @@ if(!lang) {
     $("#langEn").show();
 }
 else {
-    let l = getCookie('lang');
-    if(l == "DE") {
-        $("#langEn").hide();
-        $("#langDe").show();
-     }
+    $("#langDe").hide();
+    $("#langEn").show();
 }
 
 
