@@ -38,11 +38,13 @@ function getCookie(cname) {
 
 
 function checkCookie() {
-  let l = getCookie("lang");
-    if (l != "" && l != null && l != undefined) {
-      return true;
-    return false;
+    let l = getCookie("lang");
+    if (l != "" && l != null && l != undefined)
+        return true;
+    else
+        return false;
 }
+
 
 if(checkCookie){
     $("#langDe").hide();
