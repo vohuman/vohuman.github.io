@@ -1,45 +1,26 @@
-var language;
-
-if(language == null || language == undefined){
-    language=true;
-}
+var language=true;
 
 menuclicked = function (s) {
 
-            $(".navoverlayen").css("width", "0%");
-            $(".navoverlayde").css("width", "0%");
-            $("main").removeClass("is-menu-visible");
+showhide();
 
-//    let l = getCookie("lang");
-//
-//    if (s) {
-//
-////        if(l == "EN") {
-////            $(".navoverlayen").css("width", "100%");
-////            $("main").addClass("is-menu-visible");
-////        }
-////        else if(l == "DE") {
-////            $(".navoverlayde").css("width", "100%");
-////            $("main").addClass("is-menu-visible");
-////        }
-//    }
-//    else {
-//        if(l == "EN") {
-//            $(".navoverlayen").css("width", "0%");
-//            $("main").removeClass("is-menu-visible");
-//        }
-//        else if(l == "DE"){
-//             $(".navoverlayde").css("width", "0%");
-//             $("main").removeClass("is-menu-visible");
-//        }
-//    }
+    if (s) {
+        $(".navoverlay").css("width", "100%");
+        $("main").addClass("is-menu-visible");
+    }
+    else {
+        $(".navoverlay").css("width", "0%");
+        $("main").removeClass("is-menu-visible");
+    }
 
 
  }
 
- enmenuclicked = function (s) {
+ enmenuclicked = function () {
 
-      if (s) {
+language = true;
+menuclicked(0);
+/*      if (s) {
 //             $(".navoverlayen").show();
 //             $(".navoverlayde").hide();
 //             $(".navoverlayen").css("width", "0%");
@@ -51,12 +32,15 @@ menuclicked = function (s) {
             showhide("EN");
             $(".navoverlayen").css("width", "0%");
             $("main").removeClass("is-menu-visible");
-      }
+      }*/
 }
 
-demenuclicked = function (s) {
+demenuclicked = function () {
 
-      if (s) {
+language = false;
+menuclicked(0);
+
+/*      if (s) {
 //             $(".navoverlayen").show();
 //             $(".navoverlayde").hide();
 //             $(".navoverlayen").css("width", "0%");
@@ -65,24 +49,20 @@ demenuclicked = function (s) {
       }
       else {
             language = true;
-            showhide("DE");
+            showhide();
             $(".navoverlayde").css("width", "0%");
             $("main").removeClass("is-menu-visible");
-      }
+      }*/
 }
 
 
  langmenuclicked = function (s) {
 
-     let l = getCookie("lang");
-
-     showhide(l);
+     showhide();
 
      if (s) {
-         if(l == "EN") {
-            $(".navoverlayen").show();
-            $(".navoverlayde").hide();
-            $(".navoverlayen").css("width", "0%");
+         if(language) {
+            $(".navoverlay ").css("width", "0%");
             $(".navoverlayen").css("width", "100%");
             $("main").addClass("is-menu-visible");
          }
@@ -110,77 +90,22 @@ demenuclicked = function (s) {
   }
 
 
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + "; path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-
-function checkCookie() {
-    let l = getCookie("lang");
-    if (l != "" && l != null && l != undefined)
-        return true;
-    else
-        return false;
-}
-
-hideshow = function(l) {
-    if(language) {
-        $(".langDe").hide();
-        $(".langEn").show();
-
-    }
-    else {
-        $(".langEn").hide();
-        $(".langDe").show();
-
-    }
-}
-
 showhide = function() {
 
     if(language) {
         $(".langDe").hide();
         $(".langEn").show();
-
     }
     else {
         $(".langEn").hide();
         $(".langDe").show();
-
     }
 }
 
 changelange = function () {
 
     language = !language;
-    if(language) {
-        $(".langDe").hide();
-        $(".langEn").show();
-
-    }
-    else {
-        $(".langEn").hide();
-        $(".langDe").show();
-
-    }
+    showhide();
 }
 
 contactmousemouve = function (i) {
