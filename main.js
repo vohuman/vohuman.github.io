@@ -69,12 +69,10 @@ hideshow = function(l) {
     if(l == "DE") {
         $(".langDe").show();
         $(".langEn").hide();
-
     }
     else if(l == "EN") {
         $(".langEn").show();
         $(".langDe").hide();
-
     }
 }
 
