@@ -1,32 +1,33 @@
 menuclicked = function (s) {
 
-    let l = getCookie("lang");
-
-    if(l == "EN") {
-        if (s) {
+    if (s) {
+        let l = getCookie("lang");
+        if(l == "EN") {
             $(".navoverlay .en").css("width", "100%");
             $(".navoverlay .de").hide();
             $("main").addClass("is-menu-visible");
         }
-        else {
+        else if(l == "DE") {
+            $(".navoverlay .de").css("width", "100%");
+            $(".navoverlay .en").hide();
+            $("main").addClass("is-menu-visible");
+        }
+    }
+    else {
+        let l = getCookie("lang");
+        if(l == "EN") {
             $(".navoverlay .en").css("width", "0%");
             $(".navoverlay .de").hide();
             $("main").removeClass("is-menu-visible");
         }
-    }
-    else if(l == "DE") {
-         if (s) {
-             $(".navoverlay .de").css("width", "100%");
-             $(".navoverlay .en").hide();
-             $("main").addClass("is-menu-visible");
-         }
-         else {
+        else if(l == "DE"){
              $(".navoverlay .de").css("width", "0%");
              $(".navoverlay .en").hide();
              $("main").removeClass("is-menu-visible");
-         }
-     }
-}
+        }
+    }
+ }
+
 
 //$(".contactitem").hover(function (e) {
 //    if (!e.hasClass("typing"))
