@@ -138,13 +138,15 @@ function checkCookie() {
 }
 
 hideshow = function(l) {
-    if(l == "DE") {
-        $(".langDe").show();
-        $(".langEn").hide();
-    }
-    else if(l == "EN") {
-        $(".langEn").show();
+    if(language) {
         $(".langDe").hide();
+        $(".langEn").show();
+
+    }
+    else {
+        $(".langEn").hide();
+        $(".langDe").show();
+
     }
 }
 
@@ -155,19 +157,27 @@ showhide = function() {
         $(".langDe").hide();
         $(".langEn").show();
 
-        //setCookie('lang', 'EN', 1);
     }
     else {
         $(".langEn").hide();
         $(".langDe").show();
 
-        //setCookie('lang', 'DE', 1);
     }
 }
 
 changelange = function () {
 
-    showhide();
+    language = !language;
+    if(language) {
+        $(".langDe").hide();
+        $(".langEn").show();
+
+    }
+    else {
+        $(".langEn").hide();
+        $(".langDe").show();
+
+    }
 }
 
 contactmousemouve = function (i) {
