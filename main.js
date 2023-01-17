@@ -4,25 +4,25 @@ menuclicked = function (s) {
 
     if(l == "EN") {
         if (s) {
-            $(".navoverlay.en").css("width", "100%");
-            $(".navoverlay.de").hide();
+            $(".navoverlay .en").css("width", "100%");
+            $(".navoverlay .de").hide();
             $("main").addClass("is-menu-visible");
         }
         else {
-            $(".navoverlay.en").css("width", "0%");
-            $(".navoverlay.de").hide();
+            $(".navoverlay .en").css("width", "0%");
+            $(".navoverlay .de").hide();
             $("main").removeClass("is-menu-visible");
         }
     }
     else if(l == "DE") {
          if (s) {
-             $(".navoverlay.de").css("width", "100%");
-             $(".navoverlay.en").hide();
+             $(".navoverlay .de").css("width", "100%");
+             $(".navoverlay .en").hide();
              $("main").addClass("is-menu-visible");
          }
          else {
-             $(".navoverlay.de").css("width", "0%");
-             $(".navoverlay.en").hide();
+             $(".navoverlay .de").css("width", "0%");
+             $(".navoverlay .en").hide();
              $("main").removeClass("is-menu-visible");
          }
      }
