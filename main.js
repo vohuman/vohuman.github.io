@@ -14,8 +14,11 @@ menuclicked = function (s) {
 //        e.addClass("typing");
 //})
 
-function setCookie(cname, cvalue) {
-  document.cookie = cname + "=" + cvalue + ";";
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires;
 }
 
 function getCookie(cname) {
@@ -44,7 +47,7 @@ function checkCookie() {
 
 var lang = checkCookie();
 if(!lang) {
-    setCookie('lang', 'EN');
+    setCookie('lang', 'EN', 1);
     $("#langDe").hide();
     $("#langEn").show();
 }
