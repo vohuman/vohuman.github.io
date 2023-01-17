@@ -41,12 +41,12 @@ langmenuclicked = function () {
 showhide = function() {
 
     if(language) {
-        $(".langDe").fadeOut(1500);
-        $(".langEn").fadeIn(500);
+        $(".langDe").fadeOut(500);
+        $(".langEn").hide();
     }
     else {
-        $(".langEn").fadeOut(1500);
-        $(".langDe").fadeIn(500);
+        $(".langEn").fadeOut(500);
+        $(".langDe").hide();
     }
 }
 
