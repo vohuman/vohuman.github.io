@@ -51,6 +51,9 @@ if(!lang) {
     $("#langDe").hide();
     $("#langEn").show();
 }
+else {
+    setCookie('lang', lang, 1);
+}
 
 
 changelange = function () {
