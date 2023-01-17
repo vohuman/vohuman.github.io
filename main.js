@@ -14,7 +14,26 @@ menuclicked = function (s) {
 //        e.addClass("typing");
 //})
 
+if(!$.cookies('lang')) {
+    $("#langDe").hide();
+    $("#langEn").show();
+}
 
+changelange = function () {
+    if(!$.cookies('lang')) {
+        var lang = $.cookies('lang');
+        if(lang == "DE") {
+            $("#langDe").hide();
+            $("#langEn").show();
+            $.cookies('lang', 'EN');
+        }
+        if(lang == "EN") {
+            $("#langEn").hide();
+            $("#langDe").show();
+            $.cookies('lang', 'DE');
+        }
+    }
+}
 
 contactmousemouve = function (i) {
 
