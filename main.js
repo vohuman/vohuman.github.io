@@ -41,12 +41,20 @@ langmenuclicked = function () {
 showhide = function() {
 
     if(language) {
-        $(".langDe").fadeOut(500);
-        $(".langEn").hide();
+        //$(".langDe").fadeOut(500);
+        //$(".langEn").hide();
+
+        $('.langDe').fadeOut('slow', function(){
+            $('.langEn').fadeIn('slow');
+        });
     }
     else {
-        $(".langEn").fadeOut(500);
-        $(".langDe").hide();
+        //$(".langEn").fadeOut(500);
+        //$(".langDe").hide();
+
+        $('.langEn').fadeOut('slow', function(){
+            $('.langDe').fadeIn('slow');
+        });
     }
 }
 
