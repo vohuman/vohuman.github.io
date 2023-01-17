@@ -18,7 +18,7 @@ function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" + cvalue + ";" + expires;
 }
 
 function getCookie(cname) {
@@ -36,11 +36,6 @@ function getCookie(cname) {
   return "";
 }
 
-if(checkCookie){
-    $("#langDe").hide();
-    $("#langEn").show();
-    setCookie('lang', 'EN', 1);
-}
 
 function checkCookie() {
   let l = getCookie("lang");
@@ -49,6 +44,13 @@ function checkCookie() {
     else
       return false;
 }
+
+if(checkCookie){
+    $("#langDe").hide();
+    $("#langEn").show();
+    setCookie('lang', 'EN', 1);
+}
+
 
 changelange = function () {
     if(!$.cookie('lang')) {
