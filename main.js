@@ -51,12 +51,16 @@ hideshow = function(l) {
         $("#langEn").hide();
         $("#langDe .content").show();
         $("#langEn .content").hide();
+        $(".navoverlay .En").hide();
+        $(".navoverlay .De").show();
     }
     else if(l == "EN") {
         $("#langEn").show();
         $("#langDe").hide();
         $("#langEn .content").show();
         $("#langDe .content").hide();
+        $(".navoverlay .En").show();
+        $(".navoverlay .De").hide();
         setCookie('lang', 'DE', 1);
     }
 }
@@ -68,6 +72,8 @@ showhide = function(l) {
         $("#langEn").show();
         $("#langDe .content").hide();
         $("#langEn .content").show();
+        $(".navoverlay .En").show();
+        $(".navoverlay .De").hide();
         setCookie('lang', 'EN', 1);
     }
     else if(l == "EN") {
@@ -75,6 +81,8 @@ showhide = function(l) {
         $("#langDe").show();
         $("#langEn .content").hide();
         $("#langDe .content").show();
+        $(".navoverlay .En").hide();
+        $(".navoverlay .De").show();
         setCookie('lang', 'DE', 1);
     }
 }
