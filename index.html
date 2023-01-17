@@ -202,8 +202,8 @@ function checkCookie() {
         return false;
 }
 
-
-if(!checkCookie){
+var lang = checkCookie();
+if(!lang){
     setCookie('lang', 'EN', 1);
     $("#langDe").hide();
     $("#langEn").show();
