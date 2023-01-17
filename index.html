@@ -62,7 +62,7 @@
 
                 </nav>
                 <button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse"
-                        onclick="enmenuclicked(1)" style="margin:0px;">
+                        onclick="menuclicked(1)" style="margin:0px;">
                     &#9776;
                 </button>
             </div>
@@ -135,7 +135,7 @@
 
                 </nav>
                 <button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse"
-                        onclick="demenuclicked(1)" style="margin:0px;">
+                        onclick="menuclicked(1)" style="margin:0px;">
                     &#9776;
                 </button>
             </div>
@@ -206,12 +206,12 @@
 </main>
 
 
-<div class="navoverlayen">
+<div class="navoverlay">
 
     <a href="javascript:void(0)" class="closebtn" onclick="menuclicked(0)">&times;</a>
 
-    <div class="navoverlayen-content">
-        <a href="javascript:void(0)" onclick="enmenuclicked(0)">EN | DE</a>
+    <div class="navoverlay-content langEn">
+        <a href="javascript:void(0)" onclick="enmenuclicked()">EN | DE</a>
         <hr/>
         <a href="../">Home</a>
         <hr/>
@@ -224,14 +224,8 @@
         <a href="../contact/">Contact</a>
     </div>
 
-</div>
-
-<div class="navoverlayde">
-
-    <a href="javascript:void(0)" class="closebtn" onclick="menuclicked(0)">&times;</a>
-
-    <div class="navoverlayde-content">
-        <a href="javascript:void(0)" onclick="demenuclicked(0)">EN | DE</a>
+    <div class="navoverlay-content langDe">
+        <a href="javascript:void(0)" onclick="demenuclicked()">EN | DE</a>
         <hr/>
         <a href="../">Startseite</a>
         <hr/>
