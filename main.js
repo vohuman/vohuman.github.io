@@ -1,3 +1,5 @@
+var language=true;
+
 menuclicked = function (s) {
 
             $(".navoverlayen").css("width", "0%");
@@ -41,6 +43,7 @@ menuclicked = function (s) {
             $("main").addClass("is-menu-visible");
       }
       else {
+            language = false;
             showhide("EN");
             $(".navoverlayen").css("width", "0%");
             $("main").removeClass("is-menu-visible");
@@ -57,6 +60,7 @@ demenuclicked = function (s) {
             $("main").addClass("is-menu-visible");
       }
       else {
+            language = true;
             showhide("DE");
             $(".navoverlayde").css("width", "0%");
             $("main").removeClass("is-menu-visible");
@@ -146,22 +150,23 @@ hideshow = function(l) {
 
 showhide = function(l) {
 
-    if(l == "DE") {
+    language = !language;
+    if(language) {
         $(".langDe").hide(9000);
         $(".langEn").show(9000);
 
-        setCookie('lang', 'EN', 1);
+        //setCookie('lang', 'EN', 1);
     }
-    else if(l == "EN") {
+    else {
         $(".langEn").hide(9000);
         $(".langDe").show(9000);
 
-        setCookie('lang', 'DE', 1);
+        //setCookie('lang', 'DE', 1);
     }
 }
 
 changelange = function () {
-    let l = getCookie('lang');
+
     showhide(l);
 }
 
