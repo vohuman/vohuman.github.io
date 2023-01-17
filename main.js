@@ -44,16 +44,16 @@ showhide = function() {
         //$(".langDe").fadeOut(500);
         //$(".langEn").hide();
 
-        $('.langDe').fadeOut(1500, function(){
-            $('.langEn').fadeIn(1500);
+        $('.langEn').fadeOut(900, function(){
+            $('.langDe').fadeIn(900);
         });
     }
     else {
         //$(".langEn").fadeOut(500);
         //$(".langDe").hide();
 
-        $('.langEn').fadeOut(1500, function(){
-            $('.langDe').fadeIn(1500);
+        $('.langDe').fadeOut(900, function(){
+            $('.langEn').fadeIn(900);
         });
     }
 }
