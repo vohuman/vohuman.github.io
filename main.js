@@ -3,26 +3,26 @@ menuclicked = function (s) {
     if (s) {
         let l = getCookie("lang");
         if(l == "EN") {
-            $(".navoverlay.en").css("width", "100%");
-            $(".navoverlay.de").hide();
+            $(".navoverlayen").css("width", "100%");
+            $(".navoverlayde").hide();
             $("main").addClass("is-menu-visible");
         }
         else if(l == "DE") {
-            $(".navoverlay.de").css("width", "100%");
-            $(".navoverlay.en").hide();
+            $(".navoverlayde").css("width", "100%");
+            $(".navoverlayen").hide();
             $("main").addClass("is-menu-visible");
         }
     }
     else {
         let l = getCookie("lang");
         if(l == "EN") {
-            $(".navoverlay.en").css("width", "0%");
-            $(".navoverlay.de").hide();
+            $(".navoverlayen").css("width", "0%");
+            $(".navoverlayde").hide();
             $("main").removeClass("is-menu-visible");
         }
         else if(l == "DE"){
-             $(".navoverlay.de").css("width", "0%");
-             $(".navoverlay.en").hide();
+             $(".navoverlayde").css("width", "0%");
+             $(".navoverlayen").hide();
              $("main").removeClass("is-menu-visible");
         }
     }
