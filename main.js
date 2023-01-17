@@ -135,26 +135,26 @@ function checkCookie() {
 
 hideshow = function(l) {
     if(l == "DE") {
-        $(".langDe").show();
-        $(".langEn").hide();
+        $(".langDe").show(100);
+        $(".langEn").hide(100);
     }
     else if(l == "EN") {
-        $(".langEn").show();
-        $(".langDe").hide();
+        $(".langEn").show(100);
+        $(".langDe").hide(100);
     }
 }
 
 showhide = function(l) {
 
     if(l == "DE") {
-        $(".langDe").hide(9);
-        $(".langEn").show(9);
+        $(".langDe").hide(90);
+        $(".langEn").show(90);
 
         $.cookie('lang', 'EN', { expires: 7, path: '/' });
     }
     else if(l == "EN") {
-        $(".langEn").hide(9);
-        $(".langDe").show(9);
+        $(".langEn").hide(90);
+        $(".langDe").show(90);
 
         $.cookie('lang', 'DE', { expires: 7, path: '/' });
     }
