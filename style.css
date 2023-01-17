@@ -394,7 +394,7 @@ footer {
             text-decoration: none;
         }
 
-.navoverlay {
+.navoverlayen {
     height: 100%;
     width: 0;
     position: fixed;
@@ -408,7 +408,7 @@ footer {
     transition: 0.7s;
 }
 
-.navoverlay-content {
+.navoverlayen-content {
     position: relative;
     top: 15%;
     width: 100%;
@@ -418,12 +418,12 @@ footer {
     overflow-y: scroll;
 }
 
-    .navoverlay-content hr {
+    .navoverlayen-content hr {
         width: 30%;
         opacity: 0.3;
     }
 
-.navoverlay a {
+.navoverlayen a {
     padding: 8px;
     margin:0;
     text-decoration: none;
@@ -435,12 +435,66 @@ footer {
     text-transform: uppercase;
 }
 
-    .navoverlay a:hover, .navoverlay a:focus {
+    .navoverlayen a:hover, .navoverlayen a:focus {
         color: #b2e5ff;
         text-decoration: none;
     }
 
-.navoverlay .closebtn {
+.navoverlayen .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 50px;
+}
+
+
+.navoverlayde {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    text-transform: uppercase;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.8);
+    overflow: hidden;
+    transition: 0.7s;
+}
+
+.navoverlayde-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: capitalize;
+    overflow-y: scroll;
+}
+
+    .navoverlayde-content hr {
+        width: 30%;
+        opacity: 0.3;
+    }
+
+.navoverlayde a {
+    padding: 8px;
+    margin:0;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    font-size: 120%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+    .navoverlayde a:hover, .navoverlayde a:focus {
+        color: #b2e5ff;
+        text-decoration: none;
+    }
+
+.navoverlayde .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
@@ -460,15 +514,25 @@ footer {
 }
 
 @media screen and (max-height: 850px) {
-    .navoverlay a {
+    .navoverlayen a {
         /*font-size: 20px*/
     }
 
-    .navoverlay .closebtn {
+    .navoverlayen .closebtn {
         font-size: 40px;
         top: 15px;
         right: 35px;
     }
+
+    .navoverlayde a {
+            /*font-size: 20px*/
+        }
+
+        .navoverlayde .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
     
     .col-lg-8 .about {
         padding-right: 15px;
@@ -496,9 +560,9 @@ footer {
 }
 
 .is-menu-visible {
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
-    -moz-filter: blur(6px);
-    -o-filter: blur(6px);
-    -ms-filter: blur(6px);
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
 }
