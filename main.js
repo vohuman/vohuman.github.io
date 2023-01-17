@@ -53,7 +53,6 @@ if(!lang) {
 }
 else {
     let l = getCookie('lang');
-    setCookie('lang', l, 1);
     if(l == "DE") {
         $("#langDe").hide();
         $("#langEn").show();
