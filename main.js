@@ -18,6 +18,7 @@ var l = $.cookie('lang');
 if(l == undefined || l == null) {
     $("#langDe").hide();
     $("#langEn").show();
+    $.cookie('lang', 'EN', { expires: 1 });
 }
 
 changelange = function () {
