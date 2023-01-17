@@ -31,6 +31,8 @@ menuclicked = function (s) {
 
      let l = getCookie("lang");
 
+     showhide(l);
+
      if (s) {
 
          if(l == "EN") {
@@ -57,7 +59,7 @@ menuclicked = function (s) {
          }
      }
 
-     showhide(l);
+
 
   }
 
