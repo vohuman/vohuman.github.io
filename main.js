@@ -45,6 +45,22 @@ function checkCookie() {
         return false;
 }
 
+hideshow = function(l) {
+    if(l == "DE") {
+        $("#langDe").show();
+        $("#langEn").hide();
+        $("#langDe .content").show();
+        $("#langEn .content").hide();
+    }
+    else if(l == "EN") {
+        $("#langEn").show();
+        $("#langDe").hide();
+        $("#langEn .content").show();
+        $("#langDe .content").hide();
+        setCookie('lang', 'DE', 1);
+    }
+}
+
 showhide = function(l) {
 
     if(l == "DE") {
