@@ -14,7 +14,8 @@ menuclicked = function (s) {
 //        e.addClass("typing");
 //})
 
-if(!$.cookie('lang')) {
+var l = $.cookie('lang');
+if(l == undefined || l == null) {
     $("#langDe").hide();
     $("#langEn").show();
 }
