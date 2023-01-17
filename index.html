@@ -202,6 +202,10 @@ if(!lang) {
     $("#langDe").hide();
     $("#langEn").show();
 }
+else {
+    let l = getCookie('lang');
+    showhide(l);
+}
 
 </script>
 
