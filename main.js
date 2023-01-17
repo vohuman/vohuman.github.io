@@ -1,28 +1,32 @@
 menuclicked = function (s) {
 
-    let l = getCookie("lang");
-
-    if (s) {
-
-//        if(l == "EN") {
-//            $(".navoverlayen").css("width", "100%");
-//            $("main").addClass("is-menu-visible");
-//        }
-//        else if(l == "DE") {
-//            $(".navoverlayde").css("width", "100%");
-//            $("main").addClass("is-menu-visible");
-//        }
-    }
-    else {
-        if(l == "EN") {
             $(".navoverlayen").css("width", "0%");
+            $(".navoverlayde").css("width", "0%");
             $("main").removeClass("is-menu-visible");
-        }
-        else if(l == "DE"){
-             $(".navoverlayde").css("width", "0%");
-             $("main").removeClass("is-menu-visible");
-        }
-    }
+
+//    let l = getCookie("lang");
+//
+//    if (s) {
+//
+////        if(l == "EN") {
+////            $(".navoverlayen").css("width", "100%");
+////            $("main").addClass("is-menu-visible");
+////        }
+////        else if(l == "DE") {
+////            $(".navoverlayde").css("width", "100%");
+////            $("main").addClass("is-menu-visible");
+////        }
+//    }
+//    else {
+//        if(l == "EN") {
+//            $(".navoverlayen").css("width", "0%");
+//            $("main").removeClass("is-menu-visible");
+//        }
+//        else if(l == "DE"){
+//             $(".navoverlayde").css("width", "0%");
+//             $("main").removeClass("is-menu-visible");
+//        }
+//    }
 
 
  }
