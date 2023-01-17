@@ -1,24 +1,24 @@
 menuclicked = function (s) {
 
     let l = getCookie("lang");
-    
+
     if(l == "EN") {
         if (s) {
-            $("#myNav.en").css("width", "100%");
+            $(".navoverlay.en").css("width", "100%");
             $("main").addClass("is-menu-visible");
         }
         else {
-            $("#myNav.en").css("width", "0%");
+            $(".navoverlay.en").css("width", "0%");
             $("main").removeClass("is-menu-visible");
         }
     }
     else if(l == "DE") {
          if (s) {
-             $("#myNav.de").css("width", "100%");
+             $(".navoverlay.de").css("width", "100%");
              $("main").addClass("is-menu-visible");
          }
          else {
-             $("#myNav.de").css("width", "0%");
+             $(".navoverlay.de").css("width", "0%");
              $("main").removeClass("is-menu-visible");
          }
      }
