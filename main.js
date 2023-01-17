@@ -152,14 +152,14 @@ showhide = function(l) {
 
     language = !language;
     if(language) {
-        $(".langDe").hide(9000);
-        $(".langEn").show(9000);
+        $(".langDe").hide();
+        $(".langEn").show();
 
         //setCookie('lang', 'EN', 1);
     }
     else {
-        $(".langEn").hide(9000);
-        $(".langDe").show(9000);
+        $(".langEn").hide();
+        $(".langDe").show();
 
         //setCookie('lang', 'DE', 1);
     }
