@@ -126,7 +126,7 @@ function getCookie(cname) {
 
 
 function checkCookie() {
-    let l = $.cookie('lang');
+    let l = getCookie("lang");
     if (l != "" && l != null && l != undefined)
         return true;
     else
@@ -135,12 +135,12 @@ function checkCookie() {
 
 hideshow = function(l) {
     if(l == "DE") {
-        $(".langDe").show(1000);
-        $(".langEn").hide(1000);
+        $(".langDe").show();
+        $(".langEn").hide();
     }
     else if(l == "EN") {
-        $(".langEn").show(1000);
-        $(".langDe").hide(1000);
+        $(".langEn").show();
+        $(".langDe").hide();
     }
 }
 
@@ -150,18 +150,18 @@ showhide = function(l) {
         $(".langDe").hide(900);
         $(".langEn").show(900);
 
-        $.cookie('lang', 'EN', { expires: 7, path: '/' });
+        setCookie('lang', 'EN', 1);
     }
     else if(l == "EN") {
         $(".langEn").hide(900);
         $(".langDe").show(900);
 
-        $.cookie('lang', 'DE', { expires: 7, path: '/' });
+        setCookie('lang', 'DE', 1);
     }
 }
 
 changelange = function () {
-    let l = $.cookie('lang');
+    let l = getCookie('lang');
     showhide(l);
 }
 
