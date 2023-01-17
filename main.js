@@ -1,4 +1,8 @@
-var language=true;
+var language;
+
+if(language == null || language == undefined){
+    language=true;
+}
 
 menuclicked = function (s) {
 
@@ -152,7 +156,6 @@ hideshow = function(l) {
 
 showhide = function() {
 
-    language = !language;
     if(language) {
         $(".langDe").hide();
         $(".langEn").show();
