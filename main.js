@@ -1,4 +1,5 @@
 menuclicked = function (s) {
+let l = getCookie("lang");
     if (s) {
         $("#myNav").css("width", "100%");
         $("main").addClass("is-menu-visible");
