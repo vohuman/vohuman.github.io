@@ -4,12 +4,10 @@ menuclicked = function (s) {
         let l = getCookie("lang");
         if(l == "EN") {
             $(".navoverlayen").css("width", "100%");
-            $(".navoverlayde").hide();
             $("main").addClass("is-menu-visible");
         }
         else if(l == "DE") {
             $(".navoverlayde").css("width", "100%");
-            $(".navoverlayen").hide();
             $("main").addClass("is-menu-visible");
         }
     }
@@ -17,12 +15,10 @@ menuclicked = function (s) {
         let l = getCookie("lang");
         if(l == "EN") {
             $(".navoverlayen").css("width", "0%");
-            $(".navoverlayde").hide();
             $("main").removeClass("is-menu-visible");
         }
         else if(l == "DE"){
              $(".navoverlayde").css("width", "0%");
-             $(".navoverlayen").hide();
              $("main").removeClass("is-menu-visible");
         }
     }
