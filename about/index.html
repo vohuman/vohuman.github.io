@@ -61,7 +61,7 @@
 
                 </nav>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        onclick="menuclicked(1)" style="margin:0px;">
+                        onclick="enmenuclicked(1)" style="margin:0px;">
                     &#9776;
                 </button>
             </div>
@@ -314,7 +314,7 @@
 
                 </nav>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        onclick="menuclicked(1)" style="margin:0px;">
+                        onclick="demenuclicked(1)" style="margin:0px;">
                     &#9776;
                 </button>
             </div>
@@ -548,11 +548,13 @@
 </main>
 
 
-<div class="navoverlay en">
+<div class="navoverlayen">
 
-    <a href="javascript:void(0)" class="closebtn" onclick="menuclicked(0)">&times;</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="enmenuclicked(0)">&times;</a>
 
-    <div class="navoverlay-content">
+    <div class="navoverlayen-content">
+        <a href="javascript:void(0)" onclick="enmenuclicked(0)">EN | DE</a>
+        <hr/>
         <a href="../">Home</a>
         <hr/>
         <a href="../about/">About</a>
@@ -565,6 +567,26 @@
     </div>
 
 </div>
+
+<div class="navoverlayde">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="demenuclicked(0)">&times;</a>
+
+    <div class="navoverlayde-content">
+        <a href="javascript:void(0)" onclick="demenuclicked(0)">EN | DE</a>
+        <hr/>
+        <a href="../">Startseite</a>
+        <hr/>
+        <a href="../about/">Über</a>
+        <hr/>
+        <a href="../technologies/">Technische Erfahrungen</a>
+        <hr/>
+        <a href="../projects/">Projekte & Zertifikate</a>
+        <hr/>
+        <a href="../contact/">Kontakt</a>
+    </div>
+</div>
+
 <script>
         $('.btn').click(function () {
             $(this).find('i').toggleClass('fa fa-plus fa fa-minus');
