@@ -1,7 +1,9 @@
 menuclicked = function (s) {
 
+    let l = getCookie("lang");
+    showhide(l);
     if (s) {
-        let l = getCookie("lang");
+
         if(l == "EN") {
             $(".navoverlayen").css("width", "100%");
             $("main").addClass("is-menu-visible");
@@ -12,7 +14,6 @@ menuclicked = function (s) {
         }
     }
     else {
-        let l = getCookie("lang");
         if(l == "EN") {
             $(".navoverlayen").css("width", "0%");
             $("main").removeClass("is-menu-visible");
@@ -22,6 +23,8 @@ menuclicked = function (s) {
              $("main").removeClass("is-menu-visible");
         }
     }
+
+
  }
 
  langmenuclicked = function (s) {
