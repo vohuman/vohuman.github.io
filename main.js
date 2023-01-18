@@ -1,14 +1,13 @@
 var language=true;
 
 var getUrlParameter = function getUrlParameter(sParam) {
-    var result = null,
+    let result = null,
         tmp = [];
-    location.search
-        .substring(1)
-        .forEach(function (item) {
-          tmp = item.split("=");
-          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
+    let items =location.search.substring(1).split("&");
+    for (var index = 0; index < items.length; index++) {
+        tmp = items[index].split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    }
     return result;
 };
 
