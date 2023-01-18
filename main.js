@@ -4,6 +4,7 @@ var getUrlParameter = function getUrlParameter(parameterName) {
     let result = null,
         tmp = [];
     let items = window.location.search.substring(1).split("=");
+    
     if (items[0] === parameterName)
         result = decodeURIComponent(items[1]);
     return result;
