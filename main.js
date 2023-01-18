@@ -117,6 +117,8 @@ function writelata(l){
 
     let d = JSON.stringify(lang);
 
+    console.log(d);
+
     $.ajax({
         type: "GET",
         dataType : 'json',
@@ -135,6 +137,7 @@ function writelata(l){
 changelange = function () {
 
     language = !language;
+    writelata(language);
     showhide();
 }
 
