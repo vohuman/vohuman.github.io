@@ -51,12 +51,8 @@ langmenuclicked = function () {
 showhide = function() {
 
     if(language) {
-
-        //$(".langDe").fadeOut(500);
-        //$(".langEn").hide();
-
-        $('.langDe').fadeOut(750, function(){
-            $('.langEn').fadeIn(750);
+        $('.langDe').fadeOut(700, function(){
+            $('.langEn').fadeIn(700);
         });
 
         $.ajax({
@@ -68,11 +64,8 @@ showhide = function() {
         });
     }
     else {
-        //$(".langEn").fadeOut(500);
-        //$(".langDe").hide();
-
-        $('.langEn').fadeOut(750, function(){
-            $('.langDe').fadeIn(750);
+        $('.langEn').fadeOut(700, function(){
+            $('.langDe').fadeIn(700);
         });
 
         $.ajax({
