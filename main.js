@@ -125,9 +125,12 @@ function writelata(l){
         data: { data: d },
         success: function (r) {
             console.log(r);
-            alert("Thanks!");
+            console.log("Thanks!");
         },
-        failure: function() {alert("Error!");}
+        failure: function(e) {
+            console.log("Error: "+ e);
+            alert("Error!");
+        }
     });
 
 }
