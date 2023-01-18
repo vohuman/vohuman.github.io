@@ -80,8 +80,7 @@ showhide = function() {
 
     $.ajax({
         method: 'GET',
-        url: '../data/read.html',
-        data: {lang : language},
+        url: '../data/read.html?lang='+language,
         success : function(r) {
             console.log(r);
         }
