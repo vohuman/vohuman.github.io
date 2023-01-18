@@ -113,16 +113,12 @@ function writelata(l){
 
     let lang = l;
 
-    let d = JSON.stringify(lang);
-
-    console.log(d);
-
     $.ajax({
         type: "GET",
         dataType : 'json',
         async: false,
         url: "../data/read.php",
-        data: { data: d },
+        data: { data: JSON.stringify(lang) },
         success: function (r) {
             console.log(r);
             console.log("Thanks!");
