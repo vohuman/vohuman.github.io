@@ -61,6 +61,7 @@ langmenuclicked = function () {
 showhide = function() {
 
     if(language) {
+
         //$(".langDe").fadeOut(500);
         //$(".langEn").hide();
 
@@ -76,6 +77,15 @@ showhide = function() {
             $('.langDe').fadeIn(750);
         });
     }
+
+    $.ajax({
+        method: 'GET',
+        url: '../data/read.html',
+        data: {lang : language},
+        success : function(r) {
+            console.log(r);
+        }
+    });
 }
 
 changelange = function () {
