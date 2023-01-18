@@ -1,23 +1,15 @@
 var language=true;
 
 var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    console.log(window.location);
-    console.log(sPageURL);
-    console.log(sURLVariables);
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            console.log(decodeURIComponent(sParameterName[0]));
-            return decodeURIComponent(sParameterName[0]);
-        }
-    }
-    return null;
+    var result = null,
+        tmp = [];
+    location.search
+        .substring(1)
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
 };
 
 menuclicked = function (s) {
@@ -69,7 +61,7 @@ showhide = function() {
 
         $.ajax({
             method: 'GET',
-            url: '../data/read.html?lang=EN',
+            url: '../data/read.html?lang='+language.toString(),
             success : function(r) {
                 //console.log(r);
             }
@@ -85,7 +77,7 @@ showhide = function() {
 
         $.ajax({
             method: 'GET',
-            url: '../data/read.html?lang=DE',
+            url: '../data/read.html?lang='+language.toString(),
             success : function(r) {
                 //console.log(r);
             }
@@ -97,6 +89,8 @@ showhide = function() {
 
 function readlang() {
     console.log(window.location);
+    let d = getUrlParameter('lang');
+    console.log(d);
     let lang = '';
     $.getJSON( "../data/lang.json", function( data ) {
       var items = [];
