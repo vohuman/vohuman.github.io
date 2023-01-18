@@ -22,7 +22,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 menuclicked = function (s) {
 
-showhide();
+    showhide();
 
     if (s) {
         $(".navoverlay").css("width", "100%");
@@ -32,11 +32,9 @@ showhide();
         $(".navoverlay").css("width", "0%");
         $("main").removeClass("is-menu-visible");
     }
-
-
  }
 
- enmenuclicked = function () {
+enmenuclicked = function () {
 
 language = true;
 menuclicked(0);
