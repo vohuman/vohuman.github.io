@@ -53,48 +53,34 @@ showhide = function() {
             $('.langEn').fadeIn(700);
         });
 
-        $.ajax({
-            method: 'GET',
-            url: '../data/read.html?lang='+language.toString(),
-            success : function(r) {
-
-            }
-        });
     }
     else {
         $('.langEn').fadeOut(700, function(){
             $('.langDe').fadeIn(700);
         });
-
-        $.ajax({
-            method: 'GET',
-            url: '../data/read.html?lang='+language.toString(),
-            success : function(r) {
-
-            }
-        });
     }
-
-
 }
 
 function readlang() {
 
-    let items = window.location.search.substring(1).split("=");
+   $.ajax({
+       type: "GET" ,
+       url: "../data/lang.xml" ,
+       dataType: "xml" ,
+       success: function(xml) {
+            var xmlDoc = $.parseXML(xml),
+            $xml = $(xmlDoc);
+            $xml.find('lang').each(function () {
+                let t=$(this).text();
+                console.log(t);
+                let r = false;
+                if(t === 'true')
+                    r = true;
+                language = r;
+                showhide()
+            });
+   }});
 
-    let d = decodeURIComponent(items[1]);
-    console.log(d);
-    let lang = '';
-    $.getJSON( "../data/lang.json", function( data ) {
-      var items = [];
-      console.log(data);
-      lang = data[0].lang;
-      $.each( data, function( key, val ) {
-        //items.push( "<li id='" + key + "'>" + val + "</li>" );
-      });
-
-    });
-    console.log(lang);
 }
 
 function writelata(l){
