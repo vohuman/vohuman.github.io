@@ -1,5 +1,26 @@
 var language=true;
 
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    console.log(window.location.search);
+    console.log(sPageURL);
+    console.log(sURLVariables);
+    
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            console.log(decodeURIComponent(sParameterName[1]));
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+
 menuclicked = function (s) {
 
 showhide();
