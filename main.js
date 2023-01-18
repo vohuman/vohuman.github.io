@@ -4,7 +4,7 @@ var getUrlParameter = function getUrlParameter(parameterName) {
     let result = null,
         tmp = [];
     let items = window.location.search.substring(1).split("=");
-    
+
     if (items[0] === parameterName)
         result = decodeURIComponent(items[1]);
     return result;
@@ -80,7 +80,9 @@ showhide = function() {
 
 function readlang() {
 
-    let d = getUrlParameter('lang');
+    let items = window.location.search.substring(1).split("=");
+
+    let d = decodeURIComponent(items[1]);
     console.log(d);
     let lang = '';
     $.getJSON( "../data/lang.json", function( data ) {
