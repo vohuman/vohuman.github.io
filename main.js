@@ -3,11 +3,9 @@ var language=true;
 var getUrlParameter = function getUrlParameter(parameterName) {
     let result = null,
         tmp = [];
-    let items = window.location.search.substring(1);
-    for (var index = 0; index < items.length; index++) {
-        tmp = items[index].split("=");
-        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-    }
+    let items = window.location.search.substring(1).split("=");
+    if (items[0] === parameterName)
+        result = decodeURIComponent(items[1]);
     return result;
 };
 
