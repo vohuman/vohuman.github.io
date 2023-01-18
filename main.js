@@ -98,8 +98,38 @@ showhide = function() {
 }
 
 function readlang(){
-    var lang = getUrlParameter('lang');
+    let lang = '';
+    $.getJSON( "../data/lang.json", function( data ) {
+      var items = [];
+      console.log(data);
+      lang = data[0].lang;
+      $.each( data, function( key, val ) {
+        //items.push( "<li id='" + key + "'>" + val + "</li>" );
+      });
+
+    });
     console.log(lang);
+}
+
+function writelata(l){
+
+    let lang = l;
+
+    let d = JSON.stringify(lang);
+
+    $.ajax({
+        type: "GET",
+        dataType : 'json',
+        async: false,
+        url: "../data/read.php",
+        data: { data: d },
+        success: function (r) {
+            console.log(r);
+            alert("Thanks!");
+        },
+        failure: function() {alert("Error!");}
+    });
+
 }
 
 changelange = function () {
