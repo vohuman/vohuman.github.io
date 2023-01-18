@@ -13,11 +13,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
         sParameterName = sURLVariables[i].split('=');
 
         if (sParameterName[0] === sParam) {
-            console.log(decodeURIComponent(sParameterName[1]));
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            console.log(decodeURIComponent(sParameterName[0]));
+            return decodeURIComponent(sParameterName[0]);
         }
     }
-    return false;
+    return null;
 };
 
 menuclicked = function (s) {
@@ -68,6 +68,14 @@ showhide = function() {
         $('.langDe').fadeOut(750, function(){
             $('.langEn').fadeIn(750);
         });
+
+        $.ajax({
+            method: 'GET',
+            url: '../data/read.html?lang=EN',
+            success : function(r) {
+                //console.log(r);
+            }
+        });
     }
     else {
         //$(".langEn").fadeOut(500);
@@ -76,15 +84,17 @@ showhide = function() {
         $('.langEn').fadeOut(750, function(){
             $('.langDe').fadeIn(750);
         });
+
+        $.ajax({
+            method: 'GET',
+            url: '../data/read.html?lang=DE',
+            success : function(r) {
+                //console.log(r);
+            }
+        });
     }
 
-    $.ajax({
-        method: 'GET',
-        url: '../data/read.html?lang='+language,
-        success : function(r) {
-            //console.log(r);
-        }
-    });
+
 }
 
 function readlang(){
