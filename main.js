@@ -98,7 +98,8 @@ showhide = function() {
 }
 
 function readlang(){
-
+    var lang = getUrlParameter('lang');
+    console.log(lang);
 }
 
 changelange = function () {
