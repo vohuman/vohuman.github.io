@@ -82,7 +82,7 @@ showhide = function() {
         method: 'GET',
         url: '../data/read.html?lang='+language,
         success : function(r) {
-            console.log(r);
+            //console.log(r);
         }
     });
 }
