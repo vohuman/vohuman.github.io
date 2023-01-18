@@ -59,7 +59,7 @@ showhide = function() {
             method: 'GET',
             url: '../data/read.html?lang='+language.toString(),
             success : function(r) {
-                //console.log(r);
+
             }
         });
     }
@@ -72,7 +72,7 @@ showhide = function() {
             method: 'GET',
             url: '../data/read.html?lang='+language.toString(),
             success : function(r) {
-                //console.log(r);
+
             }
         });
     }
@@ -81,7 +81,7 @@ showhide = function() {
 }
 
 function readlang() {
-    console.log(window.location);
+
     let d = getUrlParameter('lang');
     console.log(d);
     let lang = '';
