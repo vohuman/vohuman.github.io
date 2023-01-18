@@ -1,6 +1,6 @@
 var language=true;
 
-var getUrlParameter = function getUrlParameter(sParam) {
+var getUrlParameter = function getUrlParameter(parameterName) {
     let result = null,
         tmp = [];
     let items = window.location.search.substring(1);
