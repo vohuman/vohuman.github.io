@@ -6,7 +6,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
         sParameterName,
         i;
 
-    console.log(window.location;
+    console.log(window.location);
     console.log(sPageURL);
     console.log(sURLVariables);
     for (i = 0; i < sURLVariables.length; i++) {
