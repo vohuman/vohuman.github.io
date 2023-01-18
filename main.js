@@ -9,7 +9,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
     console.log(window.location.search);
     console.log(sPageURL);
     console.log(sURLVariables);
-    
     for (i = 0; i < sURLVariables.length; i++) {
         sParameterName = sURLVariables[i].split('=');
 
