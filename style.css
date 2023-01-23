@@ -18,12 +18,12 @@ a {
 
 .project a {
     text-decoration: none;
-    color: #7bf;
+    color: #026;
 }
 
     .project a:hover, .project a:active, .project a:focus {
         text-decoration: none;
-        color: #159;
+        color: #359;
     }
 
 main {
