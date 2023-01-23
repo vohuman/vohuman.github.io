@@ -8,12 +8,12 @@ body {
 
 a {
     text-decoration: none;
-    color: #37b;
+    color: #159;
 }
 
     a:hover, a:active, a:focus {
         text-decoration: none;
-        color: #159;
+        color: #12b;
     }
 
 .project a {
@@ -23,7 +23,7 @@ a {
 
     .project a:hover, .project a:active, .project a:focus {
         text-decoration: none;
-        color: #015;
+        color: #019;
     }
 
 .project a.metaco {
@@ -33,7 +33,7 @@ a {
 
     .project a.metaco:hover, .project a.metaco:active, .project a.metaco:focus {
         text-decoration: none;
-        color: #015;
+        color: #019;
     }
 
 main {
