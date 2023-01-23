@@ -166,7 +166,6 @@ header li {
     background-color: #7a98d5;
     width: 100%;
     z-index: 1;
-    text-align: justify;
 }
 
 main header .container {
@@ -200,10 +199,12 @@ main header .container {
 
 .content h4 {
     font-weight: bold;
+    text-align: justify;
 }
 
 .content h5  {
     font-weight: normal;
+    text-align: justify;
 }
 
 .tech ul li h5
