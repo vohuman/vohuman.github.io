@@ -26,6 +26,16 @@ a {
         color: #015;
     }
 
+.project a.metaco {
+    text-decoration: none;
+    color: #37b;
+}
+
+    .project a.metaco:hover, .project a.metaco:active, .project a.metaco:focus {
+        text-decoration: none;
+        color: #015;
+    }
+
 main {
     height: 100%;
     transition: 2s;
