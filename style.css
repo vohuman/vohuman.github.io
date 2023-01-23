@@ -166,7 +166,7 @@ header li {
     background-color: #7a98d5;
     width: 100%;
     z-index: 1;
-    text-align:justify;
+    text-align: justify;
 }
 
 main header .container {
@@ -199,7 +199,7 @@ main header .container {
 }
 
 .content h4 {
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .content h5  {
