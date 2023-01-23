@@ -1,4 +1,4 @@
-var language=true;
+var language=false;
 
 var getUrlParameter = function getUrlParameter(parameterName) {
     let result = null,
