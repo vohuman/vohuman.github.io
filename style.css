@@ -16,6 +16,16 @@ a {
         color: #159;
     }
 
+.project a {
+    text-decoration: none;
+    color: #444;
+}
+
+    .project a:hover, .project a:active, .project a:focus {
+        text-decoration: none;
+        color: #159;
+    }
+
 main {
     height: 100%;
     transition: 2s;
