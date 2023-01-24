@@ -236,6 +236,7 @@ main header .container {
         background-color: #336;
         margin-top: 5px;
         text-align: justify;
+        margin-bottom: 5px;
     }
 
         .about .btn:hover, .btn:active, .btn:focus {
@@ -254,11 +255,12 @@ main header .container {
     }
 
     .about a {
+        color:#015;
         text-decoration: underline;
     }
 
         .about a:hover {
-
+            color: #12b;
         }
 
 img.about {
