@@ -200,11 +200,13 @@ main header .container {
 .content h4 {
     font-weight: bold;
     text-align: justify;
+    line-height: 160%;
 }
 
 .content h5  {
     font-weight: normal;
     text-align: justify;
+    line-height: 160%;
 }
 
 .tech ul li h5
