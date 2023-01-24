@@ -436,7 +436,7 @@ footer {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0, 0.8);
     overflow: hidden;
-    transition: 0.7s;
+    transition: 0.6s;
 }
 
 .navoverlay-content {
@@ -529,9 +529,9 @@ footer {
 }
 
 .is-menu-visible {
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
-    -moz-filter: blur(6px);
-    -o-filter: blur(6px);
-    -ms-filter: blur(6px);
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+    -o-filter: blur(7px);
+    -ms-filter: blur(7px);
 }
