@@ -481,14 +481,14 @@ footer {
 
 
 .flex-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 @media (max-width: 900px) {
     .flex-container {
-        /*flex-direction: column;*/
+        flex-direction: column;
     }
 }
 
