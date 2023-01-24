@@ -234,9 +234,8 @@ main header .container {
 
     .about .btn {
         background-color: #336;
-        margin-top: 5px;
+        margin-top: 10px;
         text-align: justify;
-        margin-bottom: 5px;
     }
 
         .about .btn:hover, .btn:active, .btn:focus {
