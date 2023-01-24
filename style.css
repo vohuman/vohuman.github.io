@@ -218,6 +218,7 @@ main header .container {
 {
     padding-left: 20px;
     line-height: 130%;
+    text-align: left;
 }
 
 .contactinfo {
