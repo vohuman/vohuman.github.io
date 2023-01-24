@@ -23,7 +23,7 @@ a {
 
     .project a:hover, .project a:active, .project a:focus {
         text-decoration: none;
-        color: #019;
+        color: #129;
     }
 
 .project a.metaco {
@@ -33,7 +33,7 @@ a {
 
     .project a.metaco:hover, .project a.metaco:active, .project a.metaco:focus {
         text-decoration: none;
-        color: #019;
+        color: #128;
     }
 
 main {
