@@ -254,12 +254,11 @@ main header .container {
     }
 
     .about a {
-        color:#111;
         text-decoration: underline;
     }
 
         .about a:hover {
-            color:#259;
+
         }
 
 img.about {
