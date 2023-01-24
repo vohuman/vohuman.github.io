@@ -209,9 +209,15 @@ main header .container {
     line-height: 160%;
 }
 
+.tech ul li h4
+{
+    line-height: 100%;
+}
+
 .tech ul li h5
 {
     padding-left: 20px;
+    line-height: 130%;
 }
 
 .contactinfo {
