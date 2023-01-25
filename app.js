@@ -28,14 +28,11 @@ app.controller('langCtrl', [
 
                     changel = function (l1) {
 
-                        $scope.lang = !l1;
-
-                        if(!($scope.lang))
+                        if(($scope.lang))
                             $scope.title = $scope.chooseLang[0];
                         else
                             $scope.title = $scope.chooseLang[1];
 
-                        PageService.setTitle($scope.title.about);
                     };
 
                     this.setPageTitle = PageService.setTitle;
@@ -50,9 +47,13 @@ app.controller('langCtrl', [
 
                     console.log(t);
 
-                    window.document.title=$scope.title.about;
+                    switch(t[3]){
+                        case 'about':
+                            $scope.PageTitle=$scope.title.about;
+                            break;
+                    };
 
-                    $scope.PageTitle=$scope.title.about;
+
 
                }
 ]);
