@@ -20,10 +20,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
-    <script src="../main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
 
     <script src="../app.js"></script>
+
+    <script src="../main.js"></script>
 
 </head>
 <body id="home" data-spy="scroll">
@@ -37,7 +38,7 @@
 
                     <ul class="flex-container">
                         <li style="flex-grow: 1">
-                            <a href="javascript:void(0)" onclick="changelange()"
+                            <a href="javascript:void(0)" onclick="changelange()" ng-click="changel(true)"
                                title="Change Language">
                                 EN | DE
                             </a>
@@ -120,7 +121,7 @@
                 </div>
             </div>
 
-            <div ng-view></div>
+
         </div>
     </div>
 
@@ -133,7 +134,7 @@
 
                     <ul class="flex-container">
                         <li style="flex-grow: 1">
-                            <a href="javascript:void(0)" onclick="changelange()"
+                            <a href="javascript:void(0)" onclick="changelange()" ng-click="changel(false)"
                                title="Sprache ändern">
                                 DE | EN
                             </a>
@@ -219,7 +220,7 @@
 
         </div>
 
-        <div ng-view></div>
+
     </div>
 
     <footer>
