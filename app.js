@@ -12,12 +12,12 @@ app.controller('langCtrl', [
 
                     $scope.lang = false;
 
-                    $scope.title = {about: 'Über mich | Bahman Soltani',
+                    $scope.title = {about: 'Über mich',
                         tech: 'Technische Erfahrungen | Bahman Soltani',
                         proj: 'Projekte & Zertifikate | Bahman Soltani',
                         cont: 'Kontakt | Bahman Soltani'};
 
-                    $scope.chooseLang = [{about: 'About me | Bahman Soltani',
+                    $scope.chooseLang = [{about: 'About me',
                     tech: 'Technical Experiences | Bahman Soltani',
                     proj: 'Projects & Certificates | Bahman Soltani',
                     cont: 'Contact | Bahman Soltani'},
@@ -52,6 +52,7 @@ app.controller('langCtrl', [
 
                     window.document.title=$scope.title.about;
 
+                    $scope.PageTitle=$scope.title.about;
 
                }
 ]);
