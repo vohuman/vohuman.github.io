@@ -14,12 +14,12 @@ app.controller('langCtrl', [
 
                     $scope.title = {about: 'Über mich',
                         tech: 'Technische Erfahrungen',
-                        proj: 'Projekte & Zertifikate | Bahman Soltani',
+                        proj: 'Projekte & Zertifikate',
                         cont: 'Kontakt | Bahman Soltani'};
 
                     $scope.chooseLang = [{about: 'About me',
                     tech: 'Technical Experiences',
-                    proj: 'Projects & Certificates | Bahman Soltani',
+                    proj: 'Projects & Certificates',
                     cont: 'Contact | Bahman Soltani'},
                     {about: 'Über mich | Bahman Soltani',
                     tech: 'Technische Erfahrungen | Bahman Soltani',
@@ -53,6 +53,12 @@ app.controller('langCtrl', [
                             break;
                         case "technologies":
                             $scope.PageTitle=$scope.title.tech;
+                            break;
+                        case "projects":
+                             $scope.PageTitle=$scope.title.proj;
+                             break;
+                        default:
+                            $scope.PageTitle="Bahman Soltani";
                             break;
                     };
 
