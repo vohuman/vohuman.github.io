@@ -58,6 +58,8 @@ app.controller('langCtrl', [
 
                     this.setPageTitle = PageService.setTitle;
 
+                    changel($scope.lang);
+
                     console.log($location.absUrl());
 
                     window.document.title=$scope.PageTitle + " | Bahman Soltani";
