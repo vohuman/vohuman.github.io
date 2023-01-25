@@ -52,7 +52,7 @@ app.controller('langCtrl', [
                              break;
                         };
 
-                        //this.setPageTitle = PageService.setTitle;
+                        this.setPageTitle = PageService.setTitle;
                         //window.document.title=$scope.PageTitle + " | Bahman Soltani";
                     };
 
