@@ -31,6 +31,28 @@ app.controller('langCtrl', [
                             $scope.title = $scope.chooseLang[0];
                         else
                             $scope.title = $scope.chooseLang[1];
+
+                        var t = $location.absUrl();
+                        t=t.split('/');
+
+                        console.log(t);
+                            
+                        switch(t[3]){
+                            case "about":
+                             $scope.PageTitle = $scope.title.about;
+                             break;
+                            case "technologies":
+                             $scope.PageTitle=$scope.title.tech;
+                             break;
+                            case "projects":
+                             $scope.PageTitle=$scope.title.proj;
+                             break;
+                            default:
+                             $scope.PageTitle="Bahman Soltani";
+                             break;
+                        };
+
+
                     };
 
                     this.setPageTitle = PageService.setTitle;
@@ -44,23 +66,6 @@ app.controller('langCtrl', [
                     console.log($location.absUrl());
 
                     console.log(t);
-
-                    switch(t[3]){
-                        case "about":
-                            $scope.PageTitle = $scope.title.about;
-                            break;
-                        case "technologies":
-                            $scope.PageTitle=$scope.title.tech;
-                            break;
-                        case "projects":
-                            $scope.PageTitle=$scope.title.proj;
-                            break;
-                        default:
-                            $scope.PageTitle="Bahman Soltani";
-                            break;
-                    };
-
-
 
                }
 ]);
