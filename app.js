@@ -52,8 +52,8 @@ app.controller('langCtrl', [
                              break;
                         };
 
-                        this.setPageTitle = PageService.setTitle;
-                        window.document.title=$scope.PageTitle + " | Bahman Soltani";
+                        //this.setPageTitle = PageService.setTitle;
+                        //window.document.title=$scope.PageTitle + " | Bahman Soltani";
                     };
 
                     this.setPageTitle = PageService.setTitle;
