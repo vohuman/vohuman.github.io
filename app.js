@@ -33,11 +33,11 @@ app.controller('langCtrl', [
                             $scope.title = $scope.chooseLang[1];
 
                         var t = $location.absUrl();
-                        t=t.split('/');
+                        t = t.split('/');
 
                         console.log(t);
                             
-                        switch(t[3]){
+                        switch(t[t.length - 1]){
                             case "about":
                              $scope.PageTitle = $scope.title.about+ " | Bahman Soltani";
                              break;
@@ -69,37 +69,4 @@ app.controller('langCtrl', [
                }
 ]);
 
-
-app.config(['$routeProvider','$locationProvider','$httpProvider',
-    function($routeProvider, $locationProvider, $httpProvider) {
-
-        $routeProvider.
-            when('/about', {
-                templateUrl: '../about/index.html',
-                controller: 'langCtrl'
-            }).
-            when('/', {
-                templateUrl: '../index.html',
-                controller: 'langCtrl'
-            }).
-            when('/about', {
-                templateUrl: '../about/index.html',
-                controller: 'langCtrl'
-            }).
-            when('/about', {
-                templateUrl: '../about/index.html',
-                controller: 'langCtrl'
-            }).
-            otherwise({
-                redirectTo: '/'
-            });
-
-
-        $locationProvider.html5Mode(true);
-
-        $httpProvider.interceptors.push('TokenInterceptor');
-
-    }
-
-]);
 
