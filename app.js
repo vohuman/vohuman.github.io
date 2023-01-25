@@ -15,16 +15,16 @@ app.controller('langCtrl', [
                     $scope.title = {about: 'Über mich',
                         tech: 'Technische Erfahrungen',
                         proj: 'Projekte & Zertifikate',
-                        cont: 'Kontakt | Bahman Soltani'};
+                        cont: 'Kontakt'};
 
                     $scope.chooseLang = [{about: 'About me',
                     tech: 'Technical Experiences',
                     proj: 'Projects & Certificates',
-                    cont: 'Contact | Bahman Soltani'},
+                    cont: 'Contact'},
                     {about: 'Über mich',
                     tech: 'Technische Erfahrungen',
                     proj: 'Projekte & Zertifikate',
-                    cont: 'Kontakt | Bahman Soltani'}];
+                    cont: 'Kontakt'}];
 
                     changel = function (l1) {
                         if(l1)
@@ -39,21 +39,24 @@ app.controller('langCtrl', [
                             
                         switch(t[t.length - 2]){
                             case "about":
-                             $scope.PageTitle = $scope.title.about+ " | Bahman Soltani";
-                             break;
+                                $scope.PageTitle = $scope.title.about+ " | Bahman Soltani";
+                                break;
                             case "technologies":
-                             $scope.PageTitle=$scope.title.tech+ " | Bahman Soltani";
-                             break;
+                                $scope.PageTitle=$scope.title.tech+ " | Bahman Soltani";
+                                break;
                             case "projects":
-                             $scope.PageTitle=$scope.title.proj+ " | Bahman Soltani";
-                             break;
+                                $scope.PageTitle=$scope.title.proj+ " | Bahman Soltani";
+                                break;
+                            case "contact":
+                                 $scope.PageTitle=$scope.title.cont+ " | Bahman Soltani";
+                                 break;
                             default:
-                             $scope.PageTitle="Bahman Soltani";
-                             break;
+                                $scope.PageTitle="Bahman Soltani";
+                                break;
                         };
 
-                        //this.setPageTitle = PageService.setTitle;
-                        //window.document.title=$scope.PageTitle + " | Bahman Soltani";
+                        this.setPageTitle = PageService.setTitle;
+                        window.document.title=$scope.PageTitle;
                     };
 
                     this.setPageTitle = PageService.setTitle;
