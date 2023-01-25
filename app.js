@@ -21,9 +21,9 @@ app.controller('langCtrl', [
                     tech: 'Technical Experiences',
                     proj: 'Projects & Certificates',
                     cont: 'Contact | Bahman Soltani'},
-                    {about: 'Über mich | Bahman Soltani',
-                    tech: 'Technische Erfahrungen | Bahman Soltani',
-                    proj: 'Projekte & Zertifikate | Bahman Soltani',
+                    {about: 'Über mich',
+                    tech: 'Technische Erfahrungen',
+                    proj: 'Projekte & Zertifikate',
                     cont: 'Kontakt | Bahman Soltani'}];
 
                     changel = function (l1) {
