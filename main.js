@@ -110,6 +110,8 @@ changelange = function () {
     language = !language;
 
     showhide();
+
+    changel(language);
 }
 
 contactmousemouve = function (i) {
