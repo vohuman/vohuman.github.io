@@ -39,13 +39,13 @@ app.controller('langCtrl', [
                             
                         switch(t[3]){
                             case "about":
-                             $scope.PageTitle = $scope.title.about;
+                             $scope.PageTitle = $scope.title.about+ " | Bahman Soltani";
                              break;
                             case "technologies":
-                             $scope.PageTitle=$scope.title.tech;
+                             $scope.PageTitle=$scope.title.tech+ " | Bahman Soltani";
                              break;
                             case "projects":
-                             $scope.PageTitle=$scope.title.proj;
+                             $scope.PageTitle=$scope.title.proj+ " | Bahman Soltani";
                              break;
                             default:
                              $scope.PageTitle="Bahman Soltani";
