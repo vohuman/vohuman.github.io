@@ -27,12 +27,10 @@ app.controller('langCtrl', [
                     cont: 'Kontakt | Bahman Soltani'}];
 
                     changel = function (l1) {
-
-                        if(($scope.lang))
+                        if(l1)
                             $scope.title = $scope.chooseLang[0];
                         else
                             $scope.title = $scope.chooseLang[1];
-
                     };
 
                     this.setPageTitle = PageService.setTitle;
