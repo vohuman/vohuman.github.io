@@ -37,7 +37,7 @@ app.controller('langCtrl', [
 
                         console.log(t);
                             
-                        switch(t[t.length - 1]){
+                        switch(t[t.length - 2]){
                             case "about":
                              $scope.PageTitle = $scope.title.about+ " | Bahman Soltani";
                              break;
