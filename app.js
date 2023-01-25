@@ -2,7 +2,10 @@ var app = angular.module('langApp', []);
 
 app.service('PageService', function($window) {
        return {
-          setTitle: function (newTitle) { $window.document.title = newTitle; }
+          setTitle: function (newTitle) {
+            $window.document.title = newTitle;
+            $window.location.reload();
+          }
        };
    });
 
@@ -55,8 +58,9 @@ app.controller('langCtrl', [
                                 break;
                         };
 
-                        this.setPageTitle = PageService.setTitle;
-                        window.document.title=$scope.PageTitle;
+                        //this.setPageTitle = PageService.setTitle;
+                        //window.document.title=$scope.PageTitle;
+                        //$window.location.reload();
                     };
 
                     this.setPageTitle = PageService.setTitle;
