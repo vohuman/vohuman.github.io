@@ -68,3 +68,38 @@ app.controller('langCtrl', [
 
                }
 ]);
+
+
+app.config(['$routeProvider','$locationProvider','$httpProvider',
+    function($routeProvider, $locationProvider, $httpProvider) {
+
+        $routeProvider.
+            when('/about', {
+                templateUrl: '../about/index.html',
+                controller: 'langCtrl'
+            }).
+            when('/', {
+                templateUrl: '../index.html',
+                controller: 'langCtrl'
+            }).
+            when('/about', {
+                templateUrl: '../about/index.html',
+                controller: 'langCtrl'
+            }).
+            when('/about', {
+                templateUrl: '../about/index.html',
+                controller: 'langCtrl'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+
+
+        $locationProvider.html5Mode(true);
+
+        $httpProvider.interceptors.push('TokenInterceptor');
+
+    }
+
+]);
+
