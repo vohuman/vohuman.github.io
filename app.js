@@ -43,7 +43,12 @@ app.controller('langCtrl', [
 
                     changel($scope.lang);
 
+                    var t = $location.absUrl();
+                    t=t.split('/');
+
                     console.log($location.absUrl());
+
+                    console.log(t);
 
                     window.document.title=$scope.title.about;
 
