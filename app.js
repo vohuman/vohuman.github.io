@@ -53,8 +53,11 @@ app.controller('langCtrl', [
                             $scope.PageTitle=$scope.title.tech;
                             break;
                         case "projects":
-                             $scope.PageTitle=$scope.title.proj;
-                             break;
+                            $scope.PageTitle=$scope.title.proj;
+                            break;
+                        default:
+                            $scope.PageTitle="Bahman Soltani";
+                            break;
                     };
 
 
