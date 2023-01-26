@@ -102,3 +102,6 @@ contactmousemouve = function (i) {
 
 }
 
+
+showhide();
+
