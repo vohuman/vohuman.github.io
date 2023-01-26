@@ -12,7 +12,7 @@ app.controller('langCtrl', [
                '$scope','$location', 'PageService',
                function ($scope, $location, PageService) {
 
-                    $scope.lang = false;
+                    $scope.lang = true;
 
                     $scope.title = {about: 'Über mich',
                         tech: 'Technische Erfahrungen',
