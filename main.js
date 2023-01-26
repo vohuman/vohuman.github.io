@@ -1,14 +1,5 @@
 var language=true;
 
-var getUrlParameter = function getUrlParameter(parameterName) {
-    let result = null,
-        tmp = [];
-    let items = window.location.search.substring(1).split("=");
-
-    if (items[0] === parameterName)
-        result = decodeURIComponent(items[1]);
-    return result;
-};
 
 menuclicked = function (s) {
 
@@ -61,49 +52,7 @@ showhide = function() {
     }
 }
 
-function readlang() {
 
-   $.ajax({
-       type: "GET" ,
-       url: "../data/lang.xml" ,
-       dataType: "xml" ,
-       success: function(xml) {
-            var xmlDoc = $.parseXML(xml),
-            $xml = $(xmlDoc);
-            $xml.find('lang').each(function () {
-                let t=$(this).text();
-                console.log(t);
-                let r = false;
-                if(t === 'true')
-                    r = true;
-                language = r;
-                showhide()
-            });
-   }});
-
-}
-
-function writelata(l){
-
-    let lang = l;
-
-    $.ajax({
-        type: "GET",
-        dataType : 'json',
-        async: false,
-        url: "../data/read.php",
-        data: { data: JSON.stringify(lang) },
-        success: function (r) {
-            console.log(r);
-            console.log("Thanks!");
-        },
-        failure: function(e) {
-            console.log("Error: "+ e);
-            alert("Error!");
-        }
-    });
-
-}
 
 changelange = function () {
 
