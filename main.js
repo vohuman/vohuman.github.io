@@ -43,12 +43,15 @@ showhide = function() {
         $('.langDe').fadeOut(600, function(){
             $('.langEn').fadeIn(600);
         });
-        $('header.langDe').fadeOut();
+        $('header.langDe').hide();
+        $('header.langEn').show();
     }
     else {
         $('.langEn').fadeOut(600, function(){
             $('.langDe').fadeIn(600);
         });
+        $('header.langDe').show();
+        $('header.langEn').hide();
     }
 }
 
