@@ -1,4 +1,4 @@
-var language=true;
+var language=false;
 
 
 menuclicked = function (s) {
