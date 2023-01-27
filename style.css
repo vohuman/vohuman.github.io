@@ -50,7 +50,7 @@ td,tr,tbody {
 }
 
 .project {
-    line-height:100%;
+    line-height:160%;
 }
 
 .project a {
@@ -58,7 +58,7 @@ td,tr,tbody {
     color: #159;
 }
 
-.project h5, .project h6 {
+.project p {
     margin-left:20px;
 }
 
@@ -306,7 +306,8 @@ main header .container {
     }
 
     .about section h4 {
-
+        padding-top:0px;
+        margin-top:0px;
     }
 
     .about ul {
@@ -344,7 +345,12 @@ img.about {
 }
 
 .workdate {
-    padding-top:15px;
+    padding-top:10px;
+    font-style:italic;
+}
+
+.date {
+    font-style:italic;
 }
 
 a[aria-expanded=true] .fa-chevron-right {
