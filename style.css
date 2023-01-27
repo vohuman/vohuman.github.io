@@ -34,9 +34,11 @@ td,tr,tbody {
     color:#fff;
     border-left:9px solid #36b;
     width:100%;
+    margin-right:0px;
+    padding:0px;
 }
 .contentheader h3, .contentheader h2, .contentheader h1{
-    padding:20px;
+    padding:25px;
 }
 
 .contenthome {
