@@ -475,9 +475,9 @@ hr {
 
     .navoverlay-content hr {
         width: 30%;
-        border:1px solid;
-        display:block;
-        opacity: 0.3;
+        border: 1px solid;
+        display: block;
+        opacity: 0.35;
     }
 
 .navoverlay a {
