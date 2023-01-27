@@ -270,10 +270,12 @@ main header .container {
     font-weight: bold;
     display: block;
     text-align: justify;
+    padding:15px;
 }
 
     .contactinfo a:hover {
         transition: 0.7s;
+
     }
 
 .about {
