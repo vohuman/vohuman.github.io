@@ -444,6 +444,10 @@ footer {
             text-decoration: none;
         }
 
+hr {
+    border:0px solid;
+    display:none;
+}
 
 .navoverlay {
     height: 100%;
@@ -471,6 +475,8 @@ footer {
 
     .navoverlay-content hr {
         width: 30%;
+        border:1px solid;
+        display:block;
         opacity: 0.3;
     }
 
@@ -510,10 +516,7 @@ footer {
     .col-lg-4 {
             padding-left: 20px;
         }
-hr {
-    border:0px solid;
-    display:none;
-}
+
 @media (max-width: 900px) {
     .flex-container {
         /*flex-direction: column;*/
