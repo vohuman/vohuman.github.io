@@ -275,7 +275,7 @@ main header .container {
 
     .contactinfo a:hover {
         transition: 0.7s;
-
+        font-size: 170%;
     }
 
 .about {
