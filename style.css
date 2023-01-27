@@ -34,11 +34,13 @@ td,tr,tbody {
     color:#fff;
     border-left:9px solid #36b;
     width:100%;
+    margin:0px;
     margin-right:0px;
     padding:0px;
 }
 .contentheader h3, .contentheader h2, .contentheader h1{
-    padding:25px;
+    padding:20px;
+    padding-left:30px;
 }
 
 .contenthome {
@@ -295,7 +297,7 @@ main header .container {
         background-color: #336;
         font-size:14px;
         text-align: justify;
-        margin-top:10px;
+        margin-top:15px;
     }
 
         .about .btn:hover, .btn:active, .btn:focus {
@@ -313,11 +315,12 @@ main header .container {
 
     .about section h4 {
         padding-top:0px;
-        font-size:14px;
+        font-size:18px;
         margin-top:0px;
     }
 
     .about ul {
+        padding:10px;
         margin-bottom:0;
     }
 
@@ -327,7 +330,6 @@ main header .container {
 
     .about a {
         color:#015;
-        text-decoration: underline;
     }
 
         .about a:hover {
@@ -350,16 +352,31 @@ img.about {
     font-size:14px;
 }
 
-.works ul {
-    margin-left:8px;
-    padding-left:25px;
-    border-left:3px solid #36b;
-}
+        .works ul {
+            margin-top:15px;
+            margin-left:8px;
+            padding-left:25px;
+            border-left:3px solid #36b;
+        }
+
+                .works ul li {
+                        line-height:160%;
+                }
+        .works hr {
+            display:none;
+            visible:false;
+            border:0px;
+        }
 
 .workdate {
-    padding-top:10px;
+    padding-top:15px;
     font-style:italic;
 }
+
+        .workdate a {
+            padding-right:40px;
+            font-style:normal;
+        }
 
 .date {
     font-style:italic;
@@ -481,8 +498,6 @@ footer {
     font-size: 50px;
 }
 
-
-
 .flex-container {
     display: inline-flex;
     flex-direction: row;
@@ -495,11 +510,27 @@ footer {
     .col-lg-4 {
             padding-left: 20px;
         }
-
+hr {
+    border:0px solid;
+    display:none;
+}
 @media (max-width: 900px) {
     .flex-container {
         /*flex-direction: column;*/
     }
+}
+
+@media (max-width: 600px) {
+
+        .works {
+            padding-left:0px;
+            padding-right:0px;
+        }
+            .works hr {
+                display:block;
+                visible:true;
+                border:1px solid;
+            }
 }
 
 @media screen and (max-height: 850px) {
