@@ -38,9 +38,14 @@ td,tr,tbody {
     margin-right:0px;
     padding:0px;
 }
-.contentheader h3, .contentheader h2, .contentheader h1{
+.content .contentheader h3, .content .contentheader h2{
     padding:20px;
     padding-left:30px;
+}
+
+.content .contentheader h1{
+    padding:30px;
+    padding-left:40px;
 }
 
 .contenthome {
