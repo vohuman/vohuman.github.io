@@ -5,7 +5,7 @@ html, body {
     -webkit-text-size-adjust: none;
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
-    text-size-adjust: 54%;
+    text-size-adjust: unset;
 }
 
 body {
