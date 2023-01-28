@@ -8,7 +8,7 @@ html, body {
 }
 
 .text1 {
-    float:left;
+
 }
 
 body {
@@ -385,6 +385,11 @@ main header .container {
     padding:15px;
 }
 
+    .contactinfo a:hover, .contactinfo a:active, .contactinfo a:focus {
+        text-decoration: none;
+        color: #12a;
+    }
+
 .about {
     padding-left: 10px;
     padding-right: 10px;
@@ -451,6 +456,7 @@ img.about {
     padding-left:10px;
     padding-right:20px;
     font-size: 14px !important;
+    width:100%;
 }
 
     .works ul {
