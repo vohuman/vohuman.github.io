@@ -77,19 +77,16 @@ td,tr,tbody {
     padding:15px;
     padding-left:20px;
     text-align:left;
-    width:100%;
 }
 
 .content .contentheader h2{
     padding:20px;
     padding-left:30px;
-    width:100%;
 }
 
 .content .contentheader h1{
     padding:30px;
     padding-left:40px;
-    width:100%;
 }
 
 .contenthome {
