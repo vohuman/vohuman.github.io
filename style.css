@@ -308,6 +308,10 @@ header li {
     float: left;
 }
 
+div{
+    float: left;
+}
+
 main header .container {
     padding: 0;
     margin: 0;
@@ -438,6 +442,7 @@ img.about {
     padding-left:10px;
     padding-right:20px;
     font-size:14px;
+    float: left;
 }
 
     .works ul {
@@ -459,6 +464,7 @@ img.about {
 .workdate {
     padding-top:15px;
     font-style:italic;
+    float: left;
 }
     .workdate a {
         margin-right:40px;
@@ -466,6 +472,7 @@ img.about {
         display:inline-block;
         position:relative;
         text-weight:bold;
+        float: left;
     }
         .workdate a::after {
             background-color:#129;
