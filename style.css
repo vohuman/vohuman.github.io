@@ -69,6 +69,10 @@ a {
     border-top: 2px solid #fff;
 } 
 
+.table, .table tbody, .table tbody tr {
+    width:80%;
+}
+
 .contentheader {
     background-color: #222;
     color:#fff;
@@ -78,6 +82,7 @@ a {
     margin-right:0px;
     padding:0px;
 }
+
 .content .contentheader h3{
     padding:15px;
     padding-left:20px;
@@ -120,7 +125,6 @@ a {
 .project p {
     margin-left:20px;
 }
-
 
     .project a:hover, .project a:active, .project a:focus {
         text-decoration: none;
@@ -455,6 +459,7 @@ img.about {
     padding-left:10px;
     padding-right:20px;
     font-size: 14px !important;
+    margin-bottom:30px;
 }
 
     .works ul {
@@ -471,10 +476,6 @@ img.about {
         display:block;
         border:1px solid;
     }
-
-#workde3, #work3 {
-    margin-bottom:30px;
-}
 
 .workdate {
     padding-top:15px;
