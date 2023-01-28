@@ -40,7 +40,7 @@ body {
 a {
     text-decoration: none;
     color: #159;
-    font-size: 14px !important;
+    font-size: 14px;
 }
 
     a:hover, a:active, a:focus {
@@ -107,7 +107,6 @@ td,tr,tbody {
 .project a {
     text-decoration: none;
     color: #159;
-    font-size:14px !important;
 }
 
 .project p {
