@@ -1,10 +1,10 @@
 html, body {
     min-height:1px;
     max-height:99999px;
-    text-size-adjust: revert;
-    -webkit-text-size-adjust: revert;
-    -moz-text-size-adjust: revert;
-    -ms-text-size-adjust: revert;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
