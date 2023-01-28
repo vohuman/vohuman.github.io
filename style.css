@@ -456,6 +456,10 @@ img.about {
         border:0px;
     }
 
+#workde3, #work {
+    margin-bottom:30px;
+}
+
 .workdate {
     padding-top:15px;
     font-style:italic;
