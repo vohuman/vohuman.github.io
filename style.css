@@ -70,6 +70,7 @@ a {
 
 .table, .table tbody, .table tbody tr {
     width:95%;
+    margin-left:2%;
 }
 
 .contentheader {
