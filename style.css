@@ -1,3 +1,7 @@
+$fontsize14: 14px !important;
+$fontsize14: 16px !important;
+$fontsize14: 18px !important;
+
 html, body {
     min-height:1px;
     max-height:99999px;
@@ -9,7 +13,7 @@ html, body {
 
 body {
     font-family: 'Segoe UI', Tahoma, Arial, Geneva, Verdana, sans-serif;
-    font-size: 14px;
+    font-size: $fontsize14;
     color: #fafcff;
     height: 100%;
     background-color: #223;
@@ -50,7 +54,7 @@ a {
 .project .table {
     margin:10px;
     margin-bottom:0px;
-    font-size: 16px;
+    font-size: $fontsize16;
 }
 
 td,tr,tbody {
@@ -153,7 +157,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 999;
-    font-size:14px;
+    font-size:$fontsize14;
 }
 
     header::after {
@@ -387,7 +391,7 @@ main header .container {
 
     .about .btn {
         background-color: #336;
-        font-size:14px;
+        font-size:$fontsize14;
         text-align: justify;
         margin-top:15px;
     }
@@ -401,13 +405,13 @@ main header .container {
         padding: 0px;
         text-align: justify;
         line-height: 140%;
-        font-size:14px;
+        font-size:$fontsize14;
         margin:0px;
     }
 
     .about section h4 {
         padding-top:0px;
-        font-size:18px;
+        font-size:$fontsize18;
         margin-top:0px;
     }
 
@@ -417,7 +421,7 @@ main header .container {
     }
 
     .about ul li {
-            font-size:14px;
+            font-size:$fontsize14;
         }
 
     .about a {
@@ -441,7 +445,7 @@ img.about {
 .works {
     padding-left:10px;
     padding-right:20px;
-    font-size:14px;
+    font-size:$fontsize14;
     float: left;
 }
 
