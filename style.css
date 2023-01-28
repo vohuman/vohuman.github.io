@@ -778,7 +778,7 @@ footer {
 
 html * {max-height:1000000px;}
 
-.borderless {
-    border-top: 0px solid #ddd;
+.table>tbody>tr>td.borderless {
+    border-top: 0px solid;
 }
 
