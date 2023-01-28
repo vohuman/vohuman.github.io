@@ -215,7 +215,32 @@ header ul {
 
 header li {
     float: left;
+    display: inline-block;
+    position: relative;
 }
+
+    header ul li::after {
+         background-color:#b2e5ff;
+         content: '';
+         position: absolute;
+         width: 100%;
+         transform: scaleX(0);
+         height: 4px;
+         bottom: 0;
+         left: 0;
+         transform-origin: center;
+         transition: opacity 0.25s, transform 0.25s;
+    }
+
+        header ul li:hover {
+            color: #b2e5ff;
+            text-decoration: none;
+        }
+
+            header ul li:hover::after {
+                transform: scaleX(1);
+                transform-origin: center;
+            }
 
     header li a {
         display: inline-block;
@@ -233,37 +258,38 @@ header li {
             content: '​';
         }
 
-        header li a::after {
-             background-color:#b2e5ff;
-             content: '';
-             position: absolute;
-             width: 100%;
-             transform: scaleX(0);
-             height: 4px;
-             bottom: 0;
-             left: 0;
-
-             transform-origin: center;
-             transition: opacity 0.25s, transform 0.25s;
-        }
-
-        header li a:hover {
-            color: #b2e5ff;
-            text-decoration: none;
-        }
-
-            header li a:hover::after {
-                transform: scaleX(1);
-                transform-origin: center;
-            }
-
-        header li a:active {
+        header ul li a:active {
             background-color: #39e;
+            color: #b2e5ff;
         }
 
-            header li a:active:hover {
+            header ul li a:active:hover {
                 background-color: #112;
+                color: #b2e5ff;
             }
+
+        header ul li a::after {
+                 background-color:#b2e5ff;
+                 content: '';
+                 position: absolute;
+                 width: 100%;
+                 transform: scaleX(0);
+                 height: 4px;
+                 bottom: 0;
+                 left: 0;
+                 transform-origin: center;
+                 transition: opacity 0.25s, transform 0.25s;
+            }
+
+                header ul li a:hover {
+                    color: #b2e5ff;
+                    text-decoration: none;
+                }
+
+                    header ul li a:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: center;
+                    }
 
 .content {
     margin: 0;
