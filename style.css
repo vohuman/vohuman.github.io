@@ -140,6 +140,7 @@ main {
     position: fixed;
     width: 100%;
     overflow-y: scroll;
+    float: left;
 }
 
 header {
@@ -304,6 +305,7 @@ header li {
     background-color: #7a98d5;
     width: 100%;
     z-index: 1;
+    float: left;
 }
 
 main header .container {
