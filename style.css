@@ -6,6 +6,28 @@ body {
     background-color: #223;
 }
 
+.linkunderline a {
+     display:inline-block;
+     position:relative;
+}
+    .linkunderline a::after {
+         background-color:#129;
+         content: '';
+         position: absolute;
+         width: 100%;
+         transform: scaleX(0);
+         height: 2px;
+         bottom: 0;
+         left: 0;
+         transform-origin: bottom right;
+         transition: transform 0.25s ease-out;
+    }
+
+        .linkunderline a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
 a {
     text-decoration: none;
     color: #159;
@@ -95,12 +117,12 @@ td,tr,tbody {
 
 main {
     height: 100%;
-    transition: 2s;
-    -webkit-animation: zoomout 3s;
-    -moz-animation: zoomout 3s;
-    -ms-animation: zoomout 3s;
-    -o-animation: zoomout 3s;
-    animation: zoomout 3s;
+    transition: 2.5s;
+    -webkit-animation: zoomout 2.5s;
+    -moz-animation: zoomout 2.5s;
+    -ms-animation: zoomout 2.5s;
+    -o-animation: zoomout 2.5s;
+    animation: zoomout 2.5s;
     top: 0px;
     position: fixed;
     width: 100%;
@@ -190,7 +212,8 @@ header li {
 }
 
     header li a {
-        display: block;
+        display: inline-block;
+        position: relative;
         color: #f2f9ff;
         text-align: center;
         margin: 0;
@@ -200,14 +223,33 @@ header li {
         text-transform: uppercase;
     }
 
-        header li a:before {
+        header li a::before {
             content: '​';
+        }
+
+        header li a::after {
+             background-color:#b2e5ff;
+             content: '';
+             position: absolute;
+             width: 100%;
+             transform: scaleX(0);
+             height: 2px;
+             bottom: 0;
+             left: 0;
+             top: 75%;
+             transform-origin: bottom right;
+             transition: transform 0.25s ease-out;
         }
 
         header li a:hover {
             color: #b2e5ff;
             text-decoration: none;
         }
+
+            header li a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
 
         header li a:active {
             background-color: #39e;
@@ -216,7 +258,6 @@ header li {
             header li a:active:hover {
                 background-color: #112;
             }
-
 
 .content {
     margin: 0;
@@ -284,15 +325,11 @@ main header .container {
     font-size: 160%;
     font-style: italic;
     font-weight: bold;
-    display: block;
+    display: inline-block;
+    position: relative;
     text-align: justify;
     padding:15px;
 }
-
-    .contactinfo a:hover {
-        transition: 0.7s;
-        font-size: 170%;
-    }
 
 .about {
     padding-left: 10px;
@@ -362,21 +399,21 @@ img.about {
     font-size:14px;
 }
 
-        .works ul {
-            margin-top:15px;
-            margin-left:8px;
-            padding-left:25px;
-            border-left:3px solid #36b;
+    .works ul {
+        margin-top:15px;
+        margin-left:8px;
+        padding-left:25px;
+        border-left:3px solid #36b;
+    }
+        .works ul li {
+            line-height:160%;
         }
 
-                .works ul li {
-                        line-height:160%;
-                }
-        .works hr {
-            display:none;
-            visible:false;
-            border:0px;
-        }
+    .works hr {
+        display:none;
+        visible:false;
+        border:0px;
+    }
 
 .workdate {
     padding-top:15px;
@@ -386,7 +423,26 @@ img.about {
         .workdate a {
             margin-right:40px;
             font-style:normal;
+            display:inline-block;
+            position:relative;
+            text-weight:bold;
         }
+            .workdate a::after {
+                background-color:#129;
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                transform-origin: bottom right;
+                transition: transform 0.2s ease-out;
+            }
+                .workdate a:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
 
 .date {
     font-style:italic;
@@ -438,7 +494,27 @@ footer {
 
         footer .copyright a {
             color: #48c;
+            display:inline-block;
+            position:relative;
         }
+
+        footer .copyright a::after {
+             background-color:#8bf;
+             content: '';
+             position: absolute;
+             width: 100%;
+             transform: scaleX(0);
+             height: 1px;
+             bottom: 0;
+             left: 0;
+             transform-origin: bottom right;
+             transition: transform 0.25s ease-out;
+        }
+
+            footer .copyright a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
 
             footer .copyright a:hover {
                 color: #8bf;
@@ -495,7 +571,8 @@ hr {
     margin:0;
     text-decoration: none;
     color: #fff;
-    display: block;
+    display: inline-block;
+    position:relative;
     transition: 0.3s;
     font-size: 120%;
     font-weight: bold;
@@ -507,12 +584,35 @@ hr {
         text-decoration: none;
     }
 
+        .navoverlay-content a::after {
+             background-color:#b2e0ff;
+             content: '';
+             position: absolute;
+             width: 100%;
+             transform: scaleX(0);
+             height: 3px;
+             bottom: 0;
+             left: 0;
+             top: 93%;
+             transform-origin: bottom right;
+             transition: transform 0.25s ease-out;
+        }
+
+            .navoverlay-content a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
 .navoverlay .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
     font-size: 50px;
 }
+
+    .navoverlay .closebtn:hover {
+        font-size: 55px;
+    }
 
 .flex-container {
     display: inline-flex;
