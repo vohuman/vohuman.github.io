@@ -107,6 +107,7 @@ td,tr,tbody {
 .project a {
     text-decoration: none;
     color: #159;
+    font-size:110%;
 }
 
 .project p {
@@ -470,6 +471,7 @@ img.about {
         display:inline-block;
         position:relative;
         text-weight:bold;
+        font-size:110%;
     }
         .workdate a::after {
             background-color:#129;
