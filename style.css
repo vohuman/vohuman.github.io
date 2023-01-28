@@ -240,7 +240,7 @@ header li {
              height: 2px;
              bottom: 0;
              left: 0;
-             top: 75%;
+
              transform-origin: center;
              transition: opacity 0.25s, transform 0.25s;
         }
@@ -567,7 +567,7 @@ hr {
         width: 30%;
         border: 1px solid;
         display: block;
-        opacity: 0.3;
+        opacity: 0.2;
     }
 
 .navoverlay a {
