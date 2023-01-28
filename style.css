@@ -155,7 +155,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 999;
-    font-size: 14px !important;
+    font-size: 14px;
+    text-align: center !important;
 }
 
     header::after {
@@ -188,6 +189,7 @@ header {
         margin: 0px;
         margin-left: 500px;
         text-transform: capitalize;
+        text-align: center !important;
     }
 
 .navbar-collapse, nav {
@@ -199,6 +201,7 @@ header {
     top: 0;
     margin-top: 3px;
     margin-left: 550px !important;
+    text-align: center;
 }
 
 .navbar-toggle {
@@ -221,11 +224,13 @@ header ul {
     background-color: #111129;
     top: 0;
     margin-top: 3px;
+    text-align: center;
 }
 
-header li {
+header ul li {
     display: inline-block;
     position: relative;
+    text-align: center !important;
 }
 
     header ul li::after {
@@ -251,11 +256,11 @@ header li {
                 transform-origin: center;
             }
 
-    header li a {
+    header ul li a {
         display: inline-block;
         position: relative;
         color: #f2f9ff;
-        text-align: center;
+        text-align: center !important;
         margin: 0;
         padding: 15px 20px;
         text-decoration: none;
@@ -263,7 +268,7 @@ header li {
         text-transform: uppercase;
     }
 
-        header li a::before {
+        header ul li a::before {
             content: '​';
         }
 
