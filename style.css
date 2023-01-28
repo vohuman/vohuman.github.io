@@ -63,12 +63,12 @@ a {
     font-size: 16px !important;
 }
 
-td,tr,tbody {
+/* td,tr,tbody {
     border: 0px;
 }
 .table thead tr th, .table tbody tr td {
     border: none;
-}
+} */
 
 .contentheader {
     background-color: #222;
