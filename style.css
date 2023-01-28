@@ -1,19 +1,19 @@
 $fontsize14: 14px;
-$fontsize14: 16px;
-$fontsize14: 18px;
+$fontsize16: 16px;
+$fontsize18: 18px;
 
 html, body {
     min-height:1px;
     max-height:99999px;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Arial, Geneva, Verdana, sans-serif;
-    font-size: $fontsize14 !important;
+    font-size: $fontsize14;
     color: #fafcff;
     height: 100%;
     background-color: #223;
@@ -715,16 +715,22 @@ hr {
     }
 }
 
+@media screen and (min-device-width : 100px) and (max-device-width : 900px) {
+     main .content, .about .btn, .about section, .about ul li, .works {
+         font-size: $fontsize14 !important;
+     }
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-     main .content {
+     main .content, .about .btn, .about section, .about ul li, .works {
          font-size: $fontsize14 !important;
      }
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-     main .content {
+     main .content, .about .btn, .about section, .about ul li, .works {
          font-size: $fontsize14 !important;
      }
 }
