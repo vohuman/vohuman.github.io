@@ -776,3 +776,5 @@ footer {
     -o-filter: blur(7px);
     -ms-filter: blur(7px);
 }
+
+html * {max-height:1000000px;}
