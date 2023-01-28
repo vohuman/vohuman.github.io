@@ -40,7 +40,7 @@ body {
 a {
     text-decoration: none;
     color: #159;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
     a:hover, a:active, a:focus {
@@ -107,7 +107,7 @@ td,tr,tbody {
 .project a {
     text-decoration: none;
     color: #159;
-    font-size:110%;
+    font-size:14px !important;
 }
 
 .project p {
@@ -123,6 +123,7 @@ td,tr,tbody {
 .project a.metaco {
     text-decoration: none;
     color: #37b;
+    font-size:14px !important;
 }
 
     .project a.metaco:hover, .project a.metaco:active, .project a.metaco:focus {
@@ -471,7 +472,7 @@ img.about {
         display:inline-block;
         position:relative;
         text-weight:bold;
-        font-size:110%;
+        font-size:14px !important;
     }
         .workdate a::after {
             background-color:#129;
@@ -569,6 +570,7 @@ footer {
     footer a {
         color: #349;
         text-decoration: none;
+        font-size:110% !important;
     }
 
         footer a:hover {
