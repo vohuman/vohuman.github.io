@@ -15,6 +15,10 @@ body {
     background-color: #223;
 }
 
+.text, .about, .about .btn, .tech, .table tr td {
+    float:left;
+}
+
 .linkunderline a {
      display:inline-block;
      position:relative;
