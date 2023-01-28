@@ -6,6 +6,10 @@ body {
     background-color: #223;
     min-height:1px;
     max-height:99999px;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
 }
 
 .linkunderline a {
