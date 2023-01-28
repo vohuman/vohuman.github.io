@@ -4,6 +4,8 @@ body {
     color: #fafcff;
     height: 100%;
     background-color: #223;
+    min-height:1px;
+    max-height:99999px;
 }
 
 .linkunderline a {
@@ -49,7 +51,6 @@ td,tr,tbody {
 }
 .table thead tr th, .table tbody tr td {
     border: none;
-    text-align:justify;
 }
 
 .contentheader {
