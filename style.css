@@ -546,6 +546,7 @@ hr {
     background-color: rgba(0,0,0, 0.8);
     overflow: hidden;
     transition: 0.5s;
+    overflow-y: scroll;
 }
 
 .navoverlay-content {
@@ -555,7 +556,7 @@ hr {
     text-align: center;
     margin-top: 20px;
     text-transform: capitalize;
-    overflow-y: scroll;
+
 }
 
     .navoverlay-content hr {
@@ -593,13 +594,13 @@ hr {
              bottom: 0;
              left: 0;
              top: 93%;
-             transform-origin: bottom right;
-             transition: transform 0.25s ease-out;
+             transform-origin: center;
+             transition: opacity 0.25s, transform 0.25s;
         }
 
             .navoverlay-content a:hover::after {
                 transform: scaleX(1);
-                transform-origin: bottom left;
+                transform-origin: center;
             }
 
 .navoverlay .closebtn {
