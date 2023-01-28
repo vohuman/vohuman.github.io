@@ -11,6 +11,7 @@ html, body {
 
 }
 
+
 body {
     font-family: 'Segoe UI', Tahoma, Arial, Geneva, Verdana, sans-serif;
     font-size: 14px !important;
@@ -63,12 +64,10 @@ a {
     font-size: 16px !important;
 }
 
-/* td,tr,tbody {
-    border: 0px;
-}
+
 .table thead tr th, .table tbody tr td {
-    border: none;
-} */
+    border-top: 2px solid #fff;
+} 
 
 .contentheader {
     background-color: #222;
@@ -778,3 +777,8 @@ footer {
 }
 
 html * {max-height:1000000px;}
+
+.borderless {
+    border-top: 0px solid #ddd;
+}
+
