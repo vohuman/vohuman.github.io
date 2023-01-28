@@ -237,8 +237,8 @@ header li {
              bottom: 0;
              left: 0;
              top: 75%;
-             transform-origin: bottom right;
-             transition: transform 0.25s ease-out;
+             transform-origin: center;
+             transition: opacity 0.25s, transform 0.25s;
         }
 
         header li a:hover {
@@ -248,7 +248,7 @@ header li {
 
             header li a:hover::after {
                 transform: scaleX(1);
-                transform-origin: bottom left;
+                transform-origin: center;
             }
 
         header li a:active {
@@ -419,30 +419,29 @@ img.about {
     padding-top:15px;
     font-style:italic;
 }
-
-        .workdate a {
-            margin-right:40px;
-            font-style:normal;
-            display:inline-block;
-            position:relative;
-            text-weight:bold;
+    .workdate a {
+        margin-right:40px;
+        font-style:normal;
+        display:inline-block;
+        position:relative;
+        text-weight:bold;
+    }
+        .workdate a::after {
+            background-color:#129;
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
         }
-            .workdate a::after {
-                background-color:#129;
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 2px;
-                bottom: 0;
-                left: 0;
-                transform-origin: bottom right;
-                transition: transform 0.2s ease-out;
+            .workdate a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
             }
-                .workdate a:hover::after {
-                    transform: scaleX(1);
-                    transform-origin: bottom left;
-                }
 
 .date {
     font-style:italic;
