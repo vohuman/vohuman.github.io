@@ -49,6 +49,7 @@ td,tr,tbody {
 }
 .table thead tr th, .table tbody tr td {
     border: none;
+    text-align:justify;
 }
 
 .contentheader {
