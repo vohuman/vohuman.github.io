@@ -237,7 +237,7 @@ header li {
              position: absolute;
              width: 100%;
              transform: scaleX(0);
-             height: 2px;
+             height: 4px;
              bottom: 0;
              left: 0;
 
@@ -597,7 +597,6 @@ hr {
              height: 3px;
              bottom: 0;
              left: 0;
-             top: 93%;
              transform-origin: center;
              transition: opacity 0.25s, transform 0.25s;
         }
