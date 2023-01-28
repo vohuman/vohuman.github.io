@@ -68,7 +68,8 @@ a {
     border-top: 2px solid #fff;
 } 
 
-.table, .table tbody, .table tbody tr {
+.table, table, .table tbody tr {
+    display: table;
     width:95%;
     padding-left:5%;
 }
