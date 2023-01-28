@@ -71,7 +71,7 @@ a {
 .table, table, .table tbody tr {
     display: table;
     width:95%;
-    padding-left:5%;
+    margin-left:15%;
 }
 
 .contentheader {
