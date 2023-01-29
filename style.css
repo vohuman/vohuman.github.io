@@ -63,11 +63,15 @@ a {
     font-size: 16px !important;
 }
 
-td,tr,tbody {
-    border: 0px;
-}
+
 .table thead tr th, .table tbody tr td {
-    border: none;
+    border-top: 2px solid #fff;
+} 
+
+.table, table, .table tbody tr {
+    display: table;
+    width:98%;
+    margin-left:1%;
 }
 
 .contentheader {
@@ -79,6 +83,7 @@ td,tr,tbody {
     margin-right:0px;
     padding:0px;
 }
+
 .content .contentheader h3{
     padding:15px;
     padding-left:20px;
@@ -121,7 +126,6 @@ td,tr,tbody {
 .project p {
     margin-left:20px;
 }
-
 
     .project a:hover, .project a:active, .project a:focus {
         text-decoration: none;
@@ -456,6 +460,7 @@ img.about {
     padding-left:10px;
     padding-right:20px;
     font-size: 14px !important;
+    margin-bottom:30px;
 }
 
     .works ul {
@@ -472,10 +477,6 @@ img.about {
         display:block;
         border:1px solid;
     }
-
-#workde3, #work3 {
-    margin-bottom:30px;
-}
 
 .workdate {
     padding-top:15px;
@@ -776,3 +777,10 @@ footer {
     -o-filter: blur(7px);
     -ms-filter: blur(7px);
 }
+
+html * {max-height:1000000px;}
+
+.table>tbody>tr>td.borderless {
+    border-top: 0px solid;
+}
+
