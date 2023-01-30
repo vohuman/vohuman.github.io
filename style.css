@@ -62,15 +62,22 @@ a {
     font-size: 16px !important;
 }
 
+/*
 
 .table thead tr th, .table tbody tr td {
     border-top: 2px solid #fff;
 } 
+*/
 
 .table, table, .table tbody tr {
     display: table;
     width:98%;
     margin-left:1%;
+}
+
+.table-striped {
+    background-color: #fafcff;
+    color: #7a98d5;
 }
 
 .contentheader {
@@ -322,7 +329,7 @@ header ul li {
 
 .content {
     margin: 0;
-    padding: 10px;
+    padding: 25px;
     background-color: #7a98d5;
     width: 100%;
     z-index: 1;
