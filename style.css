@@ -716,12 +716,17 @@ footer {
 
     .col-lg-8 .about .text1 {
         margin-right: 0px;
+        margin-left: 0px;
         padding-left: 5px;
-        padding-left: 10px;
     }
 
     .col-lg-4 .about .text1{
         padding-left: 10px;
+    }
+
+    .about {
+        padding-right: 0px;
+        padding-left: 0px;
     }
 
     .works {
