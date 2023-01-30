@@ -62,6 +62,13 @@ changelange = function () {
     changel(language);
 }
 
+function goUp(){
+
+console.log($("body").offset());
+
+    $('html, body').animate({scrollTop: $("body").offset().top}, 1000);
+}
+
 contactmousemouve = function (i) {
 
     var e = $('.typing' + i);
