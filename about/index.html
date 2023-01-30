@@ -822,10 +822,6 @@
         <div class="copyright">
 
             2023 &copy; <a href="../contact/">Bahman Soltani</a>
-            <br/>
-            <a href="#home" id="goup" class="scroll">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
         </div>
     </footer>
 </main>
@@ -868,15 +864,6 @@
         $('.btn').click(function () {
             $(this).find('i').toggleClass('fa fa-plus fa fa-minus');
         });
-
-$('a.scroll').click(function(event) {
-    event.preventDefault();
-    console.log($('main').offset());
-    var targetOffset = $('main').offset().top;
-    $("html, body").animate({
-        scrollTop: targetOffset + "px"
-    },6000);
-});
 
 </script>
 
