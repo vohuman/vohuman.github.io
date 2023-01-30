@@ -330,7 +330,7 @@ header ul li {
 .content {
     margin: 0;
     padding: 25px;
-    background-color: #7a98d5;
+    background-color: #8aa8e5;
     width: 100%;
     z-index: 1;
     padding-top:50px;
@@ -465,7 +465,6 @@ img.about {
     border-radius: 10px;
     background-color: #fff;
     margin: 0px;
-    margin-left: 20px;
 }
 
 .works {
@@ -703,18 +702,6 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
-
-        .works {
-            padding-left:0px;
-            padding-right:0px;
-        }
-            .works hr {
-                display:block;
-                visible:true;
-                border:1px solid;
-            }
-}
 
 @media screen and (max-height: 850px) {
     .navoverlay a {
@@ -739,6 +726,10 @@ footer {
     .works {
         padding-left:10px;
         padding-right:10px;
+    }
+
+    img.about {
+        margin-left: 20px;
     }
 }
 
