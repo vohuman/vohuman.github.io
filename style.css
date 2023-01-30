@@ -54,7 +54,6 @@ a {
 .content a {
     text-decoration: none;
     color: #159;
-    font-size: 105% !important;
 }
 
 .project .table {
@@ -104,7 +103,7 @@ a {
 }
 
 .contenthome {
-    padding:15px;
+    padding:10px;
     text-align: justify;
     line-height: 160%;
     margin-bottom:0;
@@ -112,6 +111,11 @@ a {
 
 .contenthome h4, .contenthome h3 {
     color:#127;
+}
+
+.row {
+    margin-left:0px;
+    margin-right:0px;
 }
 
 .project {
@@ -318,11 +322,11 @@ header ul li {
 
 .content {
     margin: 0;
-    padding: 50px;
+    padding: 10px;
     background-color: #7a98d5;
     width: 100%;
     z-index: 1;
-
+    padding-top:50px;
 }
 
 main header .container {
@@ -454,6 +458,7 @@ img.about {
     border-radius: 10px;
     background-color: #fff;
     margin: 0px;
+    margin-left: 20px;
 }
 
 .works {
@@ -678,12 +683,12 @@ footer {
     flex-wrap: wrap;
 }
 
-.col-lg-8 .about .text1 {
+/*.col-lg-8 .about .text1 {
         padding-right: 20px;
     }
     .col-lg-4 .about .text1 {
             padding-left: 20px;
-        }
+        }*/
 
 @media (max-width: 900px) {
     .flex-container {
@@ -716,38 +721,18 @@ footer {
     }
 
     .col-lg-8 .about .text1 {
-        padding-right: 0px;
+        padding-right: 10px;
         padding-left: 0px;
     }
 
     .col-lg-4 .about .text1{
-        padding-left: 0px;
+        padding-left: 10px;
     }
 
     .works {
-        padding-left:0px;
-        padding-right:0px;
+        padding-left:10px;
+        padding-right:10px;
     }
-}
-
-@media screen and (min-device-width : 100px) and (max-device-width : 900px) {
-     main .content, .about .btn, .about section, .about ul li, .works {
-         font-size: 14px !important;
-     }
-}
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-     main .content, .about .btn, .about section, .about ul li, .works {
-         font-size: 14px !important;
-     }
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-     main .content, .about .btn, .about section, .about ul li, .works {
-         font-size: 14px !important;
-     }
 }
 
 @keyframes zoomout {
