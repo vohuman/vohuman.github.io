@@ -715,7 +715,7 @@ footer {
     }
 
     .col-lg-8 .about .text1 {
-        padding-right: 10px;
+        margin-right: 10px;
         padding-left: 0px;
     }
 
@@ -724,12 +724,12 @@ footer {
     }
 
     .works {
-        padding-left:10px;
-        padding-right:10px;
+        padding-left:0px;
+        padding-right:0px;
     }
 
     img.about {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 }
 
