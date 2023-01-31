@@ -382,15 +382,15 @@ main header .container {
 {
     padding-left: 20px;
     line-height: 100%;
-    font-size:14px !important;
+    font-size:16px !important;
 }
 
 .tech h5
 {
-    padding-left: 40px;
+    padding-left: 50px;
     line-height: 130%;
     text-align: left;
-    font-size:14px !important;
+    font-size:16px !important;
 }
 
 .contactinfo {
