@@ -369,6 +369,7 @@ main header .container {
     font-weight: bold;
     text-align: justify;
     line-height: 160%;
+    font-size: 24px !important;
 }
 
 .content h5  {
@@ -434,10 +435,10 @@ main header .container {
         margin:0px;
     }
 
-    .about section h4 {
-        padding-top:0px;
+    .about h4 .btn {
+        padding:10px;
         font-size: 18px !important;
-        margin-top:0px;
+        margin:5px;
     }
 
     .about ul {
@@ -470,22 +471,26 @@ img.about {
 .works {
     padding-left:10px;
     padding-right:20px;
-    font-size: 14px !important;
+    margin-left:10px;
+    margin-right:10px;
 }
 
     .works ul {
         margin-top:15px;
-        margin-left:8px;
+        margin-left:18px;
         padding-left:25px;
         border-left:3px solid #36b;
     }
         .works ul li {
             line-height:160%;
+            margin-right:10px;
         }
 
-    .works hr {
+    .works hr, .about hr {
         display:block;
         border:1px solid;
+        margin-left:10px;
+        width:98%;
     }
 
 .workdate {
