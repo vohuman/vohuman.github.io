@@ -712,7 +712,7 @@ footer {
 }
 
 
-@media screen and (max-height: 850px) {
+@media screen and (max-height: 900px) {
     .navoverlay a {
         /*font-size: 20px*/
     }
