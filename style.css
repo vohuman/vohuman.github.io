@@ -16,7 +16,7 @@ body {
     font-size: 14px !important;
     color: #fff;
     height: 100%;
-    background-color: #223;
+    background-color: #222239;
 }
 
 .linkunderline a {
@@ -155,12 +155,12 @@ a {
 
 main {
     height: 100%;
-    transition: 2.5s;
-    -webkit-animation: zoomout 2.5s;
-    -moz-animation: zoomout 2.5s;
-    -ms-animation: zoomout 2.5s;
-    -o-animation: zoomout 2.5s;
-    animation: zoomout 2.5s;
+    transition: 2s;
+    -webkit-animation: zoomout 2s;
+    -moz-animation: zoomout 2s;
+    -ms-animation: zoomout 2s;
+    -o-animation: zoomout 2s;
+    animation: zoomout 2s;
     top: 0px;
     position: fixed;
     width: 100%;
@@ -330,7 +330,7 @@ header ul li {
 .content {
     margin: 0;
     padding: 25px;
-    background-color: #8aa8e5;
+    background-color: #7f9dda;
     width: 100%;
     z-index: 1;
     padding-top:50px;
@@ -694,6 +694,11 @@ footer {
     .col-lg-4 .about .text1 {
             padding-left: 20px;
         }*/
+
+.content hr {
+    border-color: #f2f9ff;
+}
+
 
 @media (max-width: 900px) {
     .flex-container {
