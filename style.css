@@ -382,6 +382,7 @@ main header .container {
 {
     padding-left: 20px;
     line-height: 100%;
+    font-size:14px !important;
 }
 
 .tech h5
@@ -389,6 +390,7 @@ main header .container {
     padding-left: 40px;
     line-height: 130%;
     text-align: left;
+    font-size:14px !important;
 }
 
 .contactinfo {
@@ -422,18 +424,16 @@ main header .container {
         background-color: #233669;
         text-align: justify;
         color: #fff;
-        transition: background-color 1s ease;
     }
 
     .about .btn.collapsed {
         background-color: #363636;
         text-align: justify;
         color: #fff;
-        transition: background-color 1s ease;
     }
 
         .about .btn:hover, .btn:focus, .btn:active {
-            background-color: #334669;
+            background-color: #233669;
 
         }
 
