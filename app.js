@@ -36,8 +36,6 @@ app.controller('langCtrl', [
 
                         var t = $location.absUrl();
                         t = t.split('/');
-
-                        console.log(t);
                             
                         switch(t[t.length - 2]){
                             case "about":
@@ -68,11 +66,7 @@ app.controller('langCtrl', [
 
                     changel($scope.lang);
 
-                    console.log($location.absUrl());
-
                     window.document.title=$scope.PageTitle + " | Bahman Soltani";
-
-                    console.log($location.absUrl().split('/'));
 
                }
 ]);
