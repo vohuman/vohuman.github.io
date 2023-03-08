@@ -17,7 +17,7 @@ app.controller('langCtrl', [
                     $scope.title = {about: 'Über mich',
                         tech: 'Technische Erfahrungen',
                         proj: 'Projekte & Zertifikate',
-                        edu: 'Education',
+                        edu: 'Ausbildung',
                         cont: 'Kontakt'};
 
                     $scope.chooseLang = [{about: 'About me',
