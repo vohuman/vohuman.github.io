@@ -51,6 +51,11 @@ showhide = function() {
     }
 }
 
+function mm(){
+    let t =$('header.langDe').innerHtml;
+    console.log(t);
+}
+
 
 
 changelange = function () {
