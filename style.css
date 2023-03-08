@@ -56,7 +56,7 @@ a {
     color: #159;
 }
 
-.project .table {
+.edu .table {
     margin:10px;
     margin-bottom:0px;
     font-size: 16px !important;
@@ -125,30 +125,30 @@ a {
     margin-right:0px;
 }
 
-.project {
+.edu {
     line-height:160%;
 }
 
-.project a {
+.edu a {
     text-decoration: none;
     color: #159;
 }
 
-.project p {
+.edu p {
     margin-left:20px;
 }
 
-    .project a:hover, .project a:active, .project a:focus {
+    .edu a:hover, .edu a:active, .edu a:focus {
         text-decoration: none;
         color: #129;
     }
 
-a.metaco {
+.edu a.metaco {
     text-decoration: none;
     color: #37b;
 }
 
-    a.metaco:hover, a.metaco:active, a.metaco:focus {
+    .edu a.metaco:hover, .edu a.metaco:active, .edu a.metaco:focus {
         text-decoration: none;
         color: #128;
     }
