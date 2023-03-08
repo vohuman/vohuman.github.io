@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head ng-app="langApp" ng-controller="langCtrl">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=yes">
+
+    <title ng-bind="PageTitle"></title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./style.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="./main.js"></script>
+
+    <script src="./app.js"></script>
+
+</head>
+<body id="home" data-spy="scroll">
+<main>
+    <div class="langEn">
+        <header id="myNavbar" class="langEn">
+            <div class="container">
+                <a class="homepage" href="./">Home</a>
+                <nav class="site-navigation collapse navbar-collapse fixed-top navbar-expand-lg"
+                     role="navigation" style="margin:0px;">
+
+                    <ul class="flex-container">
+                        <li style="flex-grow: 1">
+                            <a href="javascript:void(0)" onclick="changelange()"
+                               title="Change Language">
+                                EN | DE
+                            </a>
+                        </li>
+                        <li style="flex-grow: 1">
+                            <a href="./about/">
+                                About
+                            </a>
+                        </li>
+                        <li style="flex-grow: 1">
+                            <a href="./education/">
+                                Education
+                            </a>
+                        </li>
+                        <li style="flex-grow: 1">
+                            <a href="./technologies">
+                                Technical Experiences
+                            </a>
+                        </li>
+
+                        <li style="flex-grow: 1">
+                            <a href="./contact">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse"
+                        onclick="menuclicked(1)" style="margin:0px;">
+                    &#9776;
+                </button>
+            </div>
+        </header>
+
+        <div class="content langEn">
+            <h3>
+                Education
+            </h3>
+            <div id="edu" class="edu collapse">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <b class="linkunderline">
+                            Master of Computer Science
+                            <br/>
+                            <a target="_blank"
+                               href="http://www.iu.de/en">
+                                IU International University of Applied Sciences</a>
+                        </b>
+                    </div>
+                    <div class="col-lg-4">
+                        <i>
+                            October 2021 - Present
+                            <br/>
+                            Berlin, Germany
+                        </i>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <b class="linkunderline">
+                            English Course
+                            <br/>
+                            <a target="_blank"
+                               href="http://www.iu.de/en">
+                                IU International University of Applied Sciences</a>
+                        </b>
+                    </div>
+                    <div class="col-lg-4">
+                        <i>
+                            September 2020 - September 2021
+                            <br/>
+                            Berlin, Germany
+                        </i>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <b class="linkunderline">
+                            Bachelor of Software Engineering
+                            <br/>
+                            <a target="_blank"
+                               href="https://iaun.iau.ir/en">
+                                Islamic Azad University, Najafabad Branch</a>
+                        </b>
+                    </div>
+                    <div class="col-lg-4">
+                        <i>
+                            January 2011 – April 2014
+                            <br/>
+                            Najafabad, Iran
+                        </i>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <b class="linkunderline">
+                            Associate Degree of Computer Science
+                            <br/>
+                            <a target="_blank"
+                               href="https://khsh.iau.ir/">
+                                Islamic Azad University, Khomeinishahr Branch</a>
+                            <br/>
+                            <a target="_blank"
+                               href="https://www.linkedin.com/company/iaukhsh/">
+                                University's LinkedIn Page</a>
+                            <br/>
+                            <h6>
+                                <i>
+                                    * It seems that they have blocked access to the university website from abroad.
+                                </i>
+                            </h6>
+                        </b>
+                    </div>
+                    <div class="col-lg-4">
+                        <i>
+                            January 2007 – June 2010
+                            <br/>
+                            Khomeinishahr, Iran
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="langDe">
+        <header class="langDe">
+            <div class="container">
+                <a class="homepage" href="./">Startseite</a>
+                <nav class="site-navigation collapse navbar-collapse fixed-top navbar-expand-lg"
+                     role="navigation" style="margin:0px;">
+
+                    <ul class="flex-container">
+                        <li style="flex-grow: 1">
+                            <a href="javascript:void(0)" onclick="changelange()"
+                               title="Sprache ändern">
+                                DE | EN
+                            </a>
+                        </li>
+                        <li style="flex-grow: 1">
+                            <a href="./about/">
+                                Über
+                            </a>
+                        </li>
+                        <li style="flex-grow: 1">
+                            <a href="./education/">
+                                Ausbildung
+                            </a>
+                        </li>
+                        <li style="flex-grow: 1">
+                            <a href="./technologies">
+                                Technische Erfahrungen
+                            </a>
+                        </li>
+
+                        <li style="flex-grow: 1">
+                            <a href="./contact">
+                                Kontakt
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse"
+                        onclick="menuclicked(1)" style="margin:0px;">
+                    &#9776;
+                </button>
+            </div>
+        </header>
+
+        <div class="content langDe">
+            <div class="contentheader">
+                <h3>
+                    Willkommen auf meinem Portfolio!
+                </h3>
+            </div>
+            <div class="contenthome">
+                <h4>
+                    Hallo!
+                </h4>
+                Ich bin Bahman, ein leidenschaftlicher und agiler Software Ingenieur mit solider und
+                bewieser technischer und geschäftlicher Wissen und umfangreiche Erfahrung in der
+                Arbeit in agilen Umgebungen als C# Entwickler und defensiver .NET Entwickler mit
+                solider Full-Stack Erfahrung.
+                <br/><br/>
+                Ich habe durch viele verschiedene Projekte, in denen ich mit internen
+                Engineering-Teams als unterschiedliche Kunden und Stakeholder zusammengearbeitet
+                habe, hervorragende zwischenmenschliche und kundenorientierte Fähigkeiten
+                entwickelt. Vertraut und erfahren mit komplexen Arbeitsumgebungen und
+                unterstützenden unternehmenskritischen Systemen.
+                <br/><br/>
+                Als Entwickler habe ich strenge Fähigkeiten zur Problemlösung mit einem gründlichen
+                und analytischen Ansatz entwickelt, der sowohl methodisch als auch organisiert ist;
+                (mehr zu technischer Erfahrung)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact">
+            <a href="tel:+4917655568384" style="float:left;">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                    </span>
+            </a>
+            <a href="mailto:bahman.soltani@gmail.com">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+            </a>
+            <a href="https://www.linkedin.com/in/vohuman/">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                    </span>
+            </a>
+            <a href="https://github.com/vohuman">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+            </a>
+        </div>
+        <div class="copyright">
+
+            2023 &copy; <a href="/about/">Bahman Soltani</a>
+        </div>
+    </footer>
+</main>
+
+
+<div class="navoverlay">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="menuclicked(0)">&times;</a>
+
+    <div class="navoverlay-content langEn">
+        <a href="javascript:void(0)" onclick="langmenuclicked()">EN | DE</a>
+        <hr/>
+        <a href="../">Home</a>
+        <hr/>
+        <a href="../about/">About</a>
+        <hr/>
+        <a href="../education/">Education</a>
+        <hr/>
+        <a href="../technologies/">Technical Experiences</a>
+        <hr/>
+        <a href="../contact/">Contact</a>
+    </div>
+
+    <div class="navoverlay-content langDe">
+        <a href="javascript:void(0)" onclick="langmenuclicked()">DE | EN</a>
+        <hr/>
+        <a href="../">Startseite</a>
+        <hr/>
+        <a href="../about/">Über</a>
+        <hr/>
+        <a href="../education/">Ausbildung</a>
+        <hr/>
+        <a href="../technologies/">Technische Erfahrungen</a>
+        <hr/>
+        <a href="../contact/">Kontakt</a>
+    </div>
+</div>
+
+<script>
+
+    showhide();
+
+</script>
+
+</body>
+</html>
