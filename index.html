@@ -29,7 +29,7 @@
 <body id="home" data-spy="scroll">
 <main>
     <div class="langEn">
-        <header id="myNavbar">
+        <header id="myNavbar" class="langEn">
             <div class="container">
                 <a class="homepage" href="./">Home</a>
                 <nav class="site-navigation collapse navbar-collapse fixed-top navbar-expand-lg"
@@ -103,7 +103,7 @@
     </div>
 
     <div class="langDe">
-        <header>
+        <header class="langDe">
             <div class="container">
                 <a class="homepage" href="./">Startseite</a>
                 <nav class="site-navigation collapse navbar-collapse fixed-top navbar-expand-lg"
@@ -247,9 +247,12 @@
 
     showhide();
 
-
-
-
+    var t =$('header.langDe').html();
+    console.log(t);
+    var json = JSON.stringify(t);
+    console.log(json);
+    var t2 = JSON.parse(json);
+    console.log(t2);
 </script>
 
 </body>
