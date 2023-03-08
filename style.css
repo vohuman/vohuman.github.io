@@ -143,12 +143,12 @@ a {
         color: #129;
     }
 
-.project a.metaco {
+a.metaco {
     text-decoration: none;
     color: #37b;
 }
 
-    .project a.metaco:hover, .project a.metaco:active, .project a.metaco:focus {
+    a.metaco:hover, a.metaco:active, a.metaco:focus {
         text-decoration: none;
         color: #128;
     }
