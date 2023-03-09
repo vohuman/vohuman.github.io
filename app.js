@@ -32,7 +32,7 @@ app.controller('langCtrl', [
                     cont: 'Kontakt'}];
 
                     changel = function (l1) {
-                        if(!l1)
+                        if(l1)
                             $scope.title = $scope.chooseLang[0];
                         else
                             $scope.title = $scope.chooseLang[1];
