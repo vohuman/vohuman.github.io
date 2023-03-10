@@ -420,51 +420,7 @@ main header .container {
         margin-top:15px;
     }
 
-    .about .btn {
-        background-color: #233669;
-        text-align: justify;
-        color: #fff;
-    }
 
-    .about .btn.collapsed {
-        background-color: #363636;
-        text-align: justify;
-        color: #fff;
-    }
-
-        .about .btn:hover, .btn:focus, .btn:active {
-            background-color: #233669;
-
-        }
-
-    .about h4 .btn {
-
-        background-color: #124;
-
-    }
-
-    .about h4 .btn.collapsed {
-        background-color: #262626;
-    }
-
-        .about h4 .btn:hover, .about h4 .btn:active, .about h4 .btn:focus {
-            background-color: #124;
-
-        }
-
-    .about section {
-        padding: 0px;
-        text-align: justify;
-        line-height: 140%;
-        font-size: 14px !important;
-        margin:0px;
-    }
-
-    .about h4 .btn {
-        padding:10px;
-        font-size: 18px !important;
-        margin:5px;
-    }
 
     .about ul {
         padding:10px;
@@ -517,6 +473,52 @@ img.about {
         margin-left:10px;
         width:98%;
     }
+
+    .works .btn {
+            background-color: #233669;
+            text-align: justify;
+            color: #fff;
+        }
+
+        .works .btn.collapsed {
+            background-color: #363636;
+            text-align: justify;
+            color: #fff;
+        }
+
+            .works .btn:hover, .btn:focus, .btn:active {
+                background-color: #233669;
+
+            }
+
+        .works h4 .btn {
+
+            background-color: #124;
+
+        }
+
+        .works h4 .btn.collapsed {
+            background-color: #262626;
+        }
+
+            .works h4 .btn:hover, .works h4 .btn:active, .works h4 .btn:focus {
+                background-color: #124;
+
+            }
+
+        .works section {
+            padding: 0px;
+            text-align: justify;
+            line-height: 140%;
+            font-size: 16px !important;
+            margin:0px;
+        }
+
+        .works h4 .btn {
+            padding:10px;
+            font-size: 24px !important;
+            margin:5px;
+        }
 
 .workdate {
     padding-top:15px;
