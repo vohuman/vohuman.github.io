@@ -491,17 +491,21 @@ img.about {
 
             }
 
-        .content .works h4 .btn {
+        .works h4 .btn {
 
             background-color: #124;
-
         }
 
-        .content .works h4 .btn.collapsed {
+        .works h4 button {
+
+                    background-color: #124;
+                }
+
+        .works h4 button.collapsed {
             background-color: #262626;
         }
 
-            .content .works h4 .btn:hover, .content .works h4 .btn:active, .content .works h4 .btn:focus {
+            .works h4 button:hover, .works h4 button:active, .works h4 button:focus {
                 background-color: #124;
 
             }
@@ -514,7 +518,7 @@ img.about {
             margin:0px;
         }
 
-        .content .works h4 .btn {
+        .works h4 button {
             padding:10px;
             font-size: 24px !important;
             margin:5px;
