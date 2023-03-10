@@ -18,17 +18,20 @@ app.controller('langCtrl', [
                         tech: 'Technische Erfahrungen',
                         proj: 'Projekte & Zertifikate',
                         edu: 'Ausbildung',
+                        cv: 'Lebenslauf',
                         cont: 'Kontakt'};
 
                     $scope.chooseLang = [{about: 'About me',
                     tech: 'Technical Experiences',
                     proj: 'Projects & Certificates',
                     edu: 'Education',
+                    cv: 'Resume',
                     cont: 'Contact'},
                     {about: 'Über mich',
                     tech: 'Technische Erfahrungen',
                     proj: 'Projekte & Zertifikate',
                     edu: 'Ausbildung',
+                    cv: 'Lebenslauf',
                     cont: 'Kontakt'}];
 
                     changel = function (l1) {
@@ -53,6 +56,9 @@ app.controller('langCtrl', [
                                 break;
                             case "education":
                                 $scope.PageTitle=$scope.title.edu+ " | Bahman Soltani";
+                                break;
+                            case "resume":
+                                $scope.PageTitle=$scope.title.cv+ " | Bahman Soltani";
                                 break;
                             case "contact":
                                  $scope.PageTitle=$scope.title.cont+ " | Bahman Soltani";
