@@ -480,7 +480,7 @@ img.about {
             color: #fff;
         }
 
-         .btn .collapsed {
+         .btn.collapsed {
             background-color: #363636;
             text-align: justify;
             color: #fff;
@@ -488,12 +488,13 @@ img.about {
 
             .btn:hover, .btn:focus, .btn:active {
                 background-color: #233669;
-
+                color: #fff;
             }
 
         h4 .btn {
 
             background-color: #124;
+             color: #fff;
         }
 
         h4 button {
@@ -503,11 +504,12 @@ img.about {
 
         h4 button.collapsed {
             background-color: #262626;
+             color: #fff;
         }
 
             h4 button:hover, h4 button:active, h4 button:focus {
                 background-color: #124;
-
+                 color: #fff;
             }
 
         .works section {
