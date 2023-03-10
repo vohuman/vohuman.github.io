@@ -369,7 +369,7 @@ main header .container {
     font-weight: bold;
     text-align: justify;
     line-height: 160%;
-    font-size: 24px !important;
+    font-size: 24px;
 }
 
 .content h5  {
@@ -474,38 +474,38 @@ img.about {
         width:98%;
     }
 
-    .works .btn {
+     .btn {
             background-color: #233669;
             text-align: justify;
             color: #fff;
         }
 
-        .works .btn.collapsed {
+         .btn .collapsed {
             background-color: #363636;
             text-align: justify;
             color: #fff;
         }
 
-            .works .btn:hover, .btn:focus, .btn:active {
+            .btn:hover, .btn:focus, .btn:active {
                 background-color: #233669;
 
             }
 
-        .works h4 .btn {
+        h4 .btn {
 
             background-color: #124;
         }
 
-        .works h4 button {
+        h4 button {
 
                     background-color: #124;
                 }
 
-        .works h4 button.collapsed {
+        h4 button.collapsed {
             background-color: #262626;
         }
 
-            .works h4 button:hover, .works h4 button:active, .works h4 button:focus {
+            h4 button:hover, h4 button:active, h4 button:focus {
                 background-color: #124;
 
             }
@@ -518,7 +518,7 @@ img.about {
             margin:0px;
         }
 
-        .works h4 button {
+        h4 button {
             padding:10px;
             font-size: 24px !important;
             margin:5px;
