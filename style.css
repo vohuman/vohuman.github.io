@@ -491,17 +491,17 @@ img.about {
 
             }
 
-        .works h4 .btn {
+        .content .works h4 .btn {
 
             background-color: #124;
 
         }
 
-        .works h4 .btn.collapsed {
+        .content .works h4 .btn.collapsed {
             background-color: #262626;
         }
 
-            .works h4 .btn:hover, .works h4 .btn:active, .works h4 .btn:focus {
+            .content .works h4 .btn:hover, .content .works h4 .btn:active, .content .works h4 .btn:focus {
                 background-color: #124;
 
             }
@@ -514,7 +514,7 @@ img.about {
             margin:0px;
         }
 
-        .works h4 .btn {
+        .content .works h4 .btn {
             padding:10px;
             font-size: 24px !important;
             margin:5px;
