@@ -416,28 +416,7 @@ main header .container {
     margin:0px;
 
 }
-    .btn {
-        margin-top:15px;
-    }
 
-
-
-    .about ul {
-        padding:10px;
-        margin-bottom:0;
-    }
-
-    .about ul li {
-            font-size: 14px !important;
-        }
-
-    .about a {
-        color:#015;
-    }
-
-        .about a:hover {
-            color: #129;
-        }
 
 img.about {
     width: 350px;
@@ -455,6 +434,27 @@ img.about {
     margin-left:10px;
     margin-right:10px;
 }
+
+.btn {
+        margin-top:15px;
+    }
+
+    .works ul {
+        padding:10px;
+        margin-bottom:0;
+    }
+
+    .works ul li {
+            font-size: 16px !important;
+        }
+
+    .works a {
+        color:#015;
+    }
+
+        .works a:hover {
+            color: #129;
+        }
 
     .works ul {
         margin-top:15px;
