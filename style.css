@@ -509,7 +509,7 @@ img.about {
 
             h4 button:hover, h4 button:active, h4 button:focus {
                 background-color: #124;
-                 color: #fff;
+                color: #fff;
             }
 
         .works section {
@@ -521,8 +521,8 @@ img.about {
         }
 
         h4 button {
-            padding:10px;
-            font-size: 24px !important;
+            padding:15px;
+            font-size: 21px !important;
             margin:5px;
         }
 
