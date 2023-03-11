@@ -3,7 +3,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head ng-app="langApp" ng-controller="langCtrl">
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=yes">
 
     <title ng-bind="PageTitle"></title>
 
@@ -86,93 +87,104 @@
                 </h3>
             </div>
             <div id="edu" class="edu">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Master of Computer Science
-                            <br/>
-                            <a target="_blank"
-                               href="http://www.iu.de/en">
-                                IU International University of Applied Sciences</a>
-                        </b>
+                <h4>
+                    <button class="btn collapsed" data-toggle="collapse"
+                            data-target="#eduen">
+                        Education's details
+                        &nbsp;<i class="fa fa-plus"></i>
+                    </button>
+                </h4>
+                <section id="eduen" class="collapse">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Master of Computer Science
+                                <br/>
+                                <a target="_blank"
+                                   href="http://www.iu.de/en">
+                                    IU International University of Applied Sciences</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                October 2021 - Present
+                                <br/>
+                                Berlin, Germany
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            October 2021 - Present
-                            <br/>
-                            Berlin, Germany
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                English Course
+                                <br/>
+                                <a target="_blank"
+                                   href="http://www.iu.de/en">
+                                    IU International University of Applied Sciences</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                September 2020 - September 2021
+                                <br/>
+                                Berlin, Germany
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            English Course
-                            <br/>
-                            <a target="_blank"
-                               href="http://www.iu.de/en">
-                                IU International University of Applied Sciences</a>
-                        </b>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Bachelor of Software Engineering
+                                <br/>
+                                <a target="_blank"
+                                   href="https://iaun.iau.ir/en">
+                                    Islamic Azad University, Najafabad Branch</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                January 2011 – April 2014
+                                <br/>
+                                Najafabad, Iran
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            September 2020 - September 2021
-                            <br/>
-                            Berlin, Germany
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Associate Degree of Computer Science
+                                <br/>
+                                <a target="_blank"
+                                   href="https://khsh.iau.ir/">
+                                    Islamic Azad University, Khomeinishahr Branch</a>
+                                <br/>
+                                <a target="_blank"
+                                   href="https://www.linkedin.com/company/iaukhsh/">
+                                    University's LinkedIn Page</a>
+                                <br/>
+                                <h6>
+                                    <i>
+                                        * It seems that they have blocked access to the university
+                                        website from abroad.
+                                    </i>
+                                </h6>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                January 2007 – June 2010
+                                <br/>
+                                Khomeinishahr, Iran
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Bachelor of Software Engineering
-                            <br/>
-                            <a target="_blank"
-                               href="https://iaun.iau.ir/en">
-                                Islamic Azad University, Najafabad Branch</a>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            January 2011 – April 2014
-                            <br/>
-                            Najafabad, Iran
-                        </i>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Associate Degree of Computer Science
-                            <br/>
-                            <a target="_blank"
-                               href="https://khsh.iau.ir/">
-                                Islamic Azad University, Khomeinishahr Branch</a>
-                            <br/>
-                            <a target="_blank"
-                               href="https://www.linkedin.com/company/iaukhsh/">
-                                University's LinkedIn Page</a>
-                            <br/>
-                            <h6>
-                                <i>
-                                    * It seems that they have blocked access to the university website from abroad.
-                                </i>
-                            </h6>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            January 2007 – June 2010
-                            <br/>
-                            Khomeinishahr, Iran
-                        </i>
-                    </div>
-                </div>
+                </section>
             </div>
             <br/>
+
             <div class="contentheader">
                 <h3>
                     Certificates
@@ -180,80 +192,89 @@
             </div>
 
             <div id="educeren" class="edu">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            C#.NET
-                            <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
-                                Center in Esfahan, Iran</a>
-                        </b>
+                <h4>
+                    <button class="btn collapsed" data-toggle="collapse"
+                            data-target="#ceren">
+                        Certificates details
+                        &nbsp;<i class="fa fa-plus"></i>
+                    </button>
+                </h4>
+                <section id="ceren" class="collapse">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                C#.NET
+                                <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
+                                    Center in Esfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                August 2009 – October 2009
+                                <br/>
+                                Esfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            August 2009 – October 2009
-                            <br/>
-                            Esfahan, Iran
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Microsoft SQL Server
+                                <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
+                                    Center in Esfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                October 2012 – December 2012
+                                <br/>
+                                Esfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Microsoft SQL Server
-                            <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
-                                Center in Esfahan, Iran</a>
-                        </b>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                ASP.NET MVC
+                                <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
+                                    Center in Esfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                August 2015 – October 2015
+                                <br/>
+                                Esfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            October 2012 – December 2012
-                            <br/>
-                            Esfahan, Iran
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Java <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
+                                    Center in Esfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                August 2008 – October 2008
+                                <br/>
+                                Esfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            ASP.NET MVC
-                            <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
-                                Center in Esfahan, Iran</a>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            August 2015 – October 2015
-                            <br/>
-                            Esfahan, Iran
-                        </i>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Java <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Training
-                                Center in Esfahan, Iran</a>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            August 2008 – October 2008
-                            <br/>
-                            Esfahan, Iran
-                        </i>
-                    </div>
-                </div>
+                </section>
                 <br/>
             </div>
 
@@ -318,92 +339,102 @@
                 </h3>
             </div>
 
-            <div id="edude" class="edu">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Master of Computer Science
-                            <br/>
-                            <a target="_blank"
-                               href="http://www.iu.de" class="linkunderline">
-                                IU Internationale Hochschule</a>
-                        </b>
+            <div class="edu">
+                <h4>
+                    <button class="btn collapsed" data-toggle="collapse"
+                            data-target="#edude">
+                        Details zum Studium
+                        &nbsp;<i class="fa fa-plus"></i>
+                    </button>
+                </h4>
+                <section id="edude" class="collapse">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Master of Computer Science
+                                <br/>
+                                <a target="_blank"
+                                   href="http://www.iu.de" class="linkunderline">
+                                    IU Internationale Hochschule</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                Oktober 2021 - heute
+                                <br/>
+                                Berlin, Deutschland
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            Oktober 2021 - heute
-                            <br/>
-                            Berlin, Deutschland
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                English Course
+                                <br/>
+                                <a target="_blank"
+                                   href="http://www.iu.de" class="linkunderline">
+                                    IU Internationale Hochschule</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                September 2020 - September 2021
+                                <br/>
+                                Berlin, Deutschland
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            English Course
-                            <br/>
-                            <a target="_blank"
-                               href="http://www.iu.de" class="linkunderline">
-                                IU Internationale Hochschule</a>
-                        </b>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Bachelor of Software Engineering
+                                <br/>
+                                <a target="_blank"
+                                   href="https://iaun.iau.ir/en" class="linkunderline">
+                                    Islamic Azad University, Zweigstelle Najafabad</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                Januar 2011 – April 2014
+                                <br/>
+                                Najafabad, Iran
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            September 2020 - September 2021
-                            <br/>
-                            Berlin, Deutschland
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Associate Degree of Computer Science
+                                <br/>
+                                <a target="_blank"
+                                   href="https://khsh.iau.ir/">
+                                    Islamic Azad University, Zweigstelle Khomeinishahr</a>
+                                <br/>
+                                <a target="_blank"
+                                   href="https://www.linkedin.com/company/iaukhsh/">
+                                    LinkedIn-Seite der Universität</a>
+                                <h6>
+                                    <i>
+                                        * Es scheint dass sie Access zur Hochschule Website vom
+                                        Ausland
+                                        blockieren haben.
+                                    </i>
+                                </h6>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                Januar 2007 – Juni 2010
+                                <br/>
+                                Khomeinishahr, Iran
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Bachelor of Software Engineering
-                            <br/>
-                            <a target="_blank"
-                               href="https://iaun.iau.ir/en" class="linkunderline">
-                                Islamic Azad University, Zweigstelle Najafabad</a>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            Januar 2011 – April 2014
-                            <br/>
-                            Najafabad, Iran
-                        </i>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Associate Degree of Computer Science
-                            <br/>
-                            <a target="_blank"
-                               href="https://khsh.iau.ir/">
-                                Islamic Azad University, Zweigstelle Khomeinishahr</a>
-                            <br/>
-                            <a target="_blank"
-                               href="https://www.linkedin.com/company/iaukhsh/">
-                                LinkedIn-Seite der Universität</a>
-                            <h6>
-                                <i>
-                                    * Es scheint dass sie Access zur Hochschule Website vom Ausland blockieren haben.
-                                </i>
-                            </h6>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            Januar 2007 – Juni 2010
-                            <br/>
-                            Khomeinishahr, Iran
-                        </i>
-                    </div>
-                </div>
-                <br/>
+                </section>
             </div>
             <br/>
 
@@ -413,81 +444,89 @@
                 </h3>
             </div>
             <div id="educer" class="edu">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            C#.NET
-                            <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
-                                in Isfahan, Iran</a>
-                        </b>
+                <h4>
+                    <button class="btn collapsed" data-toggle="collapse"
+                            data-target="#cerde">
+                        Details zur Ausbildung
+                        &nbsp;<i class="fa fa-plus"></i>
+                    </button>
+                </h4>
+                <section id="cerde" class="collapse">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                C#.NET
+                                <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
+                                    in Isfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                August 2009 – Oktober 2009
+                                <br/>
+                                Isfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            August 2009 – Oktober 2009
-                            <br/>
-                            Isfahan, Iran
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Microsoft SQL Server
+                                <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
+                                    in Isfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                Oktober 2012 – Dezember 2012
+                                <br/>
+                                Isfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Microsoft SQL Server
-                            <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
-                                in Isfahan, Iran</a>
-                        </b>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                ASP.NET MVC
+                                <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
+                                    in Isfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                August 2015 – Oktober 2015
+                                <br/>
+                                Isfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <i>
-                            Oktober 2012 – Dezember 2012
-                            <br/>
-                            Isfahan, Iran
-                        </i>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <b class="linkunderline">
+                                Java <br/>
+                                <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
+                                <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
+                                    in Isfahan, Iran</a>
+                            </b>
+                        </div>
+                        <div class="col-lg-4">
+                            <i>
+                                August 2008 – Oktober 2008
+                                <br/>
+                                Isfahan, Iran
+                            </i>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            ASP.NET MVC
-                            <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
-                                in Isfahan, Iran</a>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            August 2015 – Oktober 2015
-                            <br/>
-                            Isfahan, Iran
-                        </i>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <b class="linkunderline">
-                            Java <br/>
-                            <a href="https://www.linkedin.com/company/metaco-ptc/">Metaco</a>
-                            <a href="https://fa.metacomplex.com/contact-us/" class="metaco">Trainingszentrum
-                                in Isfahan, Iran</a>
-                        </b>
-                    </div>
-                    <div class="col-lg-4">
-                        <i>
-                            August 2008 – Oktober 2008
-                            <br/>
-                            Isfahan, Iran
-                        </i>
-                    </div>
-                </div>
-                <br/>
+                </section>
             </div>
         </div>
     </div>
@@ -564,8 +603,21 @@
 </div>
 
 <script>
+        $('.btn').click(function () {
+            $(this).find('i').toggleClass('fa fa-plus fa fa-minus');
+        });
+
+
+
+
+</script>
+
+<script>
 
     showhide();
+
+
+
 
 </script>
 

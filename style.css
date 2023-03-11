@@ -520,6 +520,12 @@ img.about {
             margin:0px;
         }
 
+        .edu section {
+                    padding: 10px !important;
+                    padding-left: 25px !important;
+                    padding-right: 30px !important;
+                }
+
         h4 button {
             padding:12px !important;
             font-size: 24px !important;
