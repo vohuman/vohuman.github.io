@@ -27,6 +27,14 @@
     "about5": "Durch die Arbeit in einem teamorientierten Umgebung und durch viele Projekte und Ausbildungen habe ich gute Kommunikations- und Interaktionsfähigkeiten entwickelt, die mir ermöglichen, die Bedürfnisse von Aufgaben zu entdecken und die täglichen Herausforderungen erfolgreich zu lösen.",
     "cvheader": "Berufliche Laufbahn",
     "cvheader2": "Einzelheiten zu den Erfahrungen",
+    "jobtitle5": "Senior Full Stack Developer",
+    "job5date": "December 2023 to Present",
+    "job5ort": "Rotenburg Wümme, Germany",
+    "job5detail1": "Created different modules to speed up the booking.",
+    "job5detail2": "Fetched information via PDF analysis, XML format, and etc. to make bookings.",
+    "job5detail3": "Analyzed business data to create an optimized database and optimized application that meets the customer's requirements.",
+    "job5detail4": "Worked with C#, Microsoft SQL Server, .NET Core, Web API, .NET Core Entity Framework, Multi-layered Architecture, Razor, jQuery, Dynamic Javascript, and Design Patterns.",
+    
     "jobtitle4": "Full Stack Web Entwickler (Home Office)",
     "job4date": "Juli 2023 bis November 2020",
     "job4ort": "Darmstadt, Deutschland",
@@ -81,5 +89,6 @@
     "agile": "Agile Methoden",
     "Germany": "Deutschland",
     "and": "und"
+
 
 }
