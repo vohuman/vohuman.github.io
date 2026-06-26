@@ -314,12 +314,13 @@ body {
 .project-card {
   position: relative; /* Required for the pseudo-element */
   background-color: #ffffff; /* Start as white */
-  color: #000000; /* Start with dark text */
+  color: #222; /* Start with dark text */
   overflow: hidden; /* Ensures the blue background stays inside the card */
   transition: color 0.3s ease; /* Smooth text color change */
   cursor: pointer;
   padding: 20px; /* Adjust as needed */
   border: 1px solid #ddd; /* Optional */
+  border-radius: 0;
 }
 
 /* This is the background layer that creates the animation */
@@ -330,8 +331,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-    color: #ffffff;
-  background-color: #001f3f; /* Your Dark Blue */
+  color: #ffffff;
+  background-color: #00153f; /* Your Dark Blue */
   transform: scaleX(0); /* Initially invisible (0 width) */
   transform-origin: center; /* This makes it expand from the middle */
   transition: transform 0.5s ease-in-out; /* The "slowly" part of the animation */
@@ -340,7 +341,7 @@ body {
 
 /* Trigger the animation on hover */
 .project-card:hover::before {
-    color: #ffffff;
+  color: #ffffff;
   transform: scaleX(1); /* Expands to full width */
 }
 
