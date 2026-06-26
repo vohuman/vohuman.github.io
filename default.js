@@ -658,8 +658,11 @@ const wrapper = $('#wrapper');
 
 $(document).on('click', function (e) {
     var element = $(e.target);
-    if (!element.hasClass('iconmenu'))
-        toggleSidebar();
+    if (!element.hasClass('iconmenu')) {
+        const sidebar = $('#sidebar-wrapper');
+        if (sidebar.hasClass('toggled'))
+            closeside();
+    }
 });
 
 function closeside() {
@@ -667,11 +670,11 @@ function closeside() {
     const overlay = $('#sidebar-overlay');
     if (sidebar.hasClass('toggled')) {
         sidebar.removeClass('toggled');
-        sidebar.addClass('hidden');
+        //sidebar.addClass('hidden');
     }
     if (overlay.hasClass('show')) {
         overlay.removeClass('show');
-        overlay.addClass('hidden');
+        //overlay.addClass('hidden');
     }
 }
 
