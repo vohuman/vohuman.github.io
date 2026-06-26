@@ -198,7 +198,7 @@ renderHero = function () {
 loadintro = function () {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="mt-4 ${fade}">
-       <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
+       <div class="card project-card border-0 shadow-sm rounded-4 custom-card-hover">
            <div class="card-body p-4 p-md-5">
                <div class="d-flex align-items-center gap-3 mb-4">
                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
