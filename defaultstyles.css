@@ -330,6 +330,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+    color: #ffffff;
   background-color: #001f3f; /* Your Dark Blue */
   transform: scaleX(0); /* Initially invisible (0 width) */
   transform-origin: center; /* This makes it expand from the middle */
@@ -339,6 +340,7 @@ body {
 
 /* Trigger the animation on hover */
 .project-card:hover::before {
+    color: #ffffff;
   transform: scaleX(1); /* Expands to full width */
 }
 
