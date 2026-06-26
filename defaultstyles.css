@@ -234,11 +234,11 @@ body {
 }
 
 .bg-pink-subtle {
-    background-color: #ffe0e9 !important; /* Custom Pink Background */
+    background-color: #ffe0e9 !important;
 }
 
 .text-pink-emphasis {
-    color: #8a0030 !important; /* Darker Pink Text */
+    color: #8a0030 !important;
 }
 
 .border-pink-subtle {
@@ -305,4 +305,8 @@ body {
     100% {
         width: 100%;
     }
+}
+
+.card {
+    border-radius: 0;
 }
