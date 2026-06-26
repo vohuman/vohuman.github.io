@@ -359,7 +359,8 @@ body {
 
 /* Ensure the text is readable on the dark blue background */
 .card:hover {
-  color: #ffffff !important; /* Change text color to white */
+  color: #ffffff !important;
+  box-shadow: 0 0.325rem 0.45rem rgba(0,0,0,0.075);
 }
 
 /* This ensures your card content sits on top of the blue background */
