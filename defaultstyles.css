@@ -6,13 +6,11 @@
 
 body {
     font-family: 'Inter', 'sans-serif';
-    background-color: #f8f9fa; /* Bootstrap bg-light equivalent */
+    background-color: #f8f9fa;
     overflow-x: hidden;
     color: #333;
 }
 
-
-/* --- Sidebar Styles --- */
 #sidebar-wrapper {
     width: var(--sidebar-width);
     position: fixed;
@@ -34,7 +32,7 @@ body {
     padding: 2rem;
 }
 
-/* Mobile Adjustments */
+
 @media (max-width: 768px) {
     #sidebar-wrapper {
         margin-left: 0;
@@ -94,7 +92,6 @@ body {
     padding: 0 1rem;
 }
 
-/* Navigation Links */
 .nav-link {
     color: #adb5bd;
     padding: 0.75rem 1rem;
@@ -115,9 +112,6 @@ body {
         text-align: center;
     }
 
-/* --- Custom Component Styles --- */
-
-/* Card Hover Effect */
 .custom-card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
@@ -126,10 +120,9 @@ body {
     .custom-card-hover:hover {
         transform: translateY(-5px);
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-        border-color: #cfe2ff; /* Bootstrap blue-200 equivalent */
+        border-color: #cfe2ff;
     }
 
-/* Timeline */
 .timeline-item {
     padding-left: 2rem;
     padding-bottom: 2rem;
@@ -166,10 +159,8 @@ body {
         border-color: #198754bf;
     }
 
-/* Tech Stack Badges */
 .tech-badge {
     font-size: 0.75rem;
-    /* Colors are handled via inline classes now */
     transition: all 0.2s;
     cursor: default;
 }
@@ -178,7 +169,6 @@ body {
         filter: brightness(0.95);
     }
 
-/* Link Underline Animation */
 .custom-link-hover {
     text-decoration: none;
     position: relative;
@@ -207,7 +197,6 @@ body {
         color: var(--primary-color);
     }
 
-/* Avatar */
 .avatar-container {
     width: 150px;
     height: 150px;
@@ -224,7 +213,6 @@ body {
     object-fit: cover;
 }
 
-/* Language Button Active State */
 .lang-btn.active {
     background-color: var(--primary-color);
     color: white;
@@ -241,7 +229,6 @@ body {
         color: white;
     }
 
-/* --- CUSTOM PINK UTILITIES --- */
 .text-pink {
     color: #d63384 !important;
 }
