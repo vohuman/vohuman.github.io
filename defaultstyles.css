@@ -311,7 +311,7 @@ body {
     border-radius: 0;
 }
 
-.project-card {
+.card {
   position: relative; /* Required for the pseudo-element */
   background-color: #ffffff; /* Start as white */
   color: #222; /* Start with dark text */
@@ -324,7 +324,7 @@ body {
 }
 
 /* This is the background layer that creates the animation */
-.project-card::before {
+.card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -340,18 +340,18 @@ body {
 }
 
 /* Trigger the animation on hover */
-.project-card:hover::before {
+.card:hover::before {
   color: #ffffff;
   transform: scaleX(1); /* Expands to full width */
 }
 
 /* Ensure the text is readable on the dark blue background */
-.project-card:hover {
+.card:hover {
   color: #ffffff; /* Change text color to white */
 }
 
 /* This ensures your card content sits on top of the blue background */
-.project-card > * {
+.card > * {
   position: relative;
   z-index: 1;
 }
