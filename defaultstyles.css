@@ -324,7 +324,9 @@ body {
 
 .card:hover,
 .card:hover h1,
-.card:hover h4,
+.card:hover h5,
+.card:hover h6,
+.card:hover .text-muted,
 .card:hover p,
 .card:hover li,
 .card:hover b {
