@@ -10,7 +10,7 @@ body {
     background-color: #f8f9fa;
     overflow-x: hidden;
     color: #333;
-    background: linear-gradient(100deg, #001656 0%, #001050 25%, #000732 50%, #000611 75%, #000408 100%);
+    background: linear-gradient(130deg, #001656 0%, #001050 25%, #000732 50%, #000611 75%, #000408 100%);
 }
 
 #sidebar-wrapper {
@@ -267,7 +267,7 @@ body {
 
 .card {
   position: relative !important;
-  background-color: #fff !important;
+  background-color: #f8f9fa !important;
   color: #333 !important;
   overflow: hidden !important;
   transition: color 0.3s ease !important;
