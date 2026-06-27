@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Inter', 'sans-serif';
+    font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
     overflow-x: hidden;
     color: #333;
@@ -32,16 +32,15 @@ body {
     padding: 2rem;
 }
 
-
 @media (max-width: 768px) {
     #sidebar-wrapper {
         margin-left: 0;
         transform: translateX(-100%);
     }
 
-        #sidebar-wrapper.toggled {
-            transform: translateX(0);
-        }
+    #sidebar-wrapper.toggled {
+        transform: translateX(0);
+    }
 
     #page-content-wrapper {
         margin-left: 0;
@@ -64,9 +63,9 @@ body {
         z-index: 1040;
     }
 
-        .sidebar-overlay.show {
-            display: block;
-        }
+    .sidebar-overlay.show {
+        display: block;
+    }
 }
 
 .sidebar-overlay.hidden {
@@ -102,26 +101,26 @@ body {
     gap: 10px;
 }
 
-    .nav-link:hover {
-        color: white;
-        background-color: rgba(255,255,255,0.1);
-    }
+.nav-link:hover {
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+}
 
-    .nav-link i {
-        width: 20px;
-        text-align: center;
-    }
+.nav-link i {
+    width: 20px;
+    text-align: center;
+}
 
 .custom-card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-    .custom-card-hover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-        border-color: #cfe2ff;
-    }
+.custom-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    border-color: #cfe2ff;
+}
 
 .timeline-item {
     padding-left: 2rem;
@@ -130,9 +129,9 @@ body {
     border-left: 2px solid #dee2e6;
 }
 
-    .timeline-item:last-child {
-        border-left: 2px solid transparent;
-    }
+.timeline-item:last-child {
+    border-left: 2px solid transparent;
+}
 
 .timeline-dot {
     position: absolute;
@@ -146,18 +145,18 @@ body {
     transition: border-color 0.3s;
 }
 
-    .timeline-dot.first {
-        background: #198754bf;
-    }
+.timeline-dot.first {
+    background: #198754bf;
+}
 
 .timeline-item:hover .timeline-dot {
     border-color: var(--primary-color);
 }
 
-    .timeline-item:hover .timeline-dot.first {
-        background-color: white;
-        border-color: #198754bf;
-    }
+.timeline-item:hover .timeline-dot.first {
+    background-color: white;
+    border-color: #198754bf;
+}
 
 .tech-badge {
     font-size: 0.75rem;
@@ -165,9 +164,9 @@ body {
     cursor: default;
 }
 
-    .tech-badge:hover {
-        filter: brightness(0.95);
-    }
+.tech-badge:hover {
+    filter: brightness(0.95);
+}
 
 .custom-link-hover {
     text-decoration: none;
@@ -175,27 +174,27 @@ body {
     color: inherit;
 }
 
-    .custom-link-hover::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background-color: var(--primary-color);
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
+.custom-link-hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom right;
+    transition: transform 0.255s ease-out;
+}
 
-    .custom-link-hover:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+.custom-link-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
-    .custom-link-hover:hover {
-        color: var(--primary-color);
-    }
+.custom-link-hover:hover {
+    color: var(--primary-color);
+}
 
 .avatar-container {
     width: 150px;
@@ -225,28 +224,16 @@ body {
     border: none;
 }
 
-    .lang-btn:hover {
-        color: white;
-    }
-
-.text-pink {
-    color: #d63384 !important;
+.lang-btn:hover {
+    color: white;
 }
 
-.bg-pink-subtle {
-    background-color: #ffe0e9 !important;
-}
+.text-pink { color: #d63384 !important; }
+.bg-pink-subtle { background-color: #ffe0e9 !important; }
+.text-pink-emphasis { color: #8a0030 !important; }
+.border-pink-subtle { border-color: #ffc2d1 !important; }
 
-.text-pink-emphasis {
-    color: #8a0030 !important;
-}
-
-.border-pink-subtle {
-    border-color: #ffc2d1 !important;
-}
-
-
-.edu {
+.edu, .cer {
     position: relative;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -254,57 +241,26 @@ body {
     display: flex;
 }
 
-    .edu:hover {
-        border-color: rgba(13, 174, 84, 0.6);
-    }
-
-.cer {
-    position: relative;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-left: 3px solid #ddd;
-    display: flex;
-}
-
-    .cer:hover {
-        border-color: rgba(244, 193, 7, 0.6);
-    }
-
+.edu:hover { border-color: rgba(13, 174, 84, 0.6); }
+.cer:hover { border-color: rgba(244, 193, 7, 0.6); }
 
 .fadein {
     opacity: 1;
-    animation-name: fade;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 1.6s;
-    animation-fill-mode: forwards;
+    animation: fade 1.6s ease-in forwards;
 }
 
 @keyframes fade {
-    from {
-        opacity: 0;
-        /*transform: translate3d(-50%, 0, 0);*/
-    }
-
-    to {
-        opacity: 1;
-        /*transform: none;*/
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .progress {
-    animation: progressBar 1s ease-in-out;
-    animation-fill-mode: both;
+    animation: progressBar 1s ease-in-out both;
 }
 
 @keyframes progressBar {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 .card {
@@ -328,10 +284,8 @@ body {
 .card:hover li,
 .card:hover b {
   color: #ffffff !important;
-  transition: color 0.3s ease;
 }
 
-/* This is the background layer that creates the animation */
 .card::before {
   content: '';
   position: absolute;
@@ -346,7 +300,6 @@ body {
   z-index: 0;
 }
 
-/* Trigger the animation on hover */
 .card:hover::before {
   transform: scaleX(1);
 }
@@ -355,19 +308,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
-/* Ensure the text is readable on the dark blue background */
-.card:hover {
-  color: #ffffff !important;
-  box-shadow: 0 0.5rem 0.6rem rgba(0,16,47,0.075);
-}
-
-/* This ensures your card content sits on top of the blue background */
-.card > * {
-  position: relative;
-  z-index: 1;
-}
-
 
 .firstcard {
   position: relative !important;
@@ -382,11 +322,16 @@ body {
 
 .firstcard:hover,
 .firstcard:hover h1,
+.firstcard:hover h4,
+.firstcard:hover h5,
+.firstcard:hover h6,
+.firstcard:hover .text-muted,
+.firstcard:hover p,
+.firstcard:hover li,
+.firstcard:hover b {
   color: #333 !important;
-  transition: color 0.3s ease;
 }
 
-/* This is the background layer that creates the animation */
 .firstcard::before {
   content: '';
   position: absolute;
@@ -401,7 +346,6 @@ body {
   z-index: 0;
 }
 
-/* Trigger the animation on hover */
 .firstcard:hover::before {
   transform: scaleX(1);
 }
@@ -410,16 +354,3 @@ body {
   position: relative;
   z-index: 1;
 }
-
-/* Ensure the text is readable on the dark blue background */
-.firstcard:hover {
-  color: #222 !important;
-  box-shadow: 0 0.5rem 0.6rem rgba(0,16,47,0.075);
-}
-
-/* This ensures your card content sits on top of the blue background */
-.firstcard > * {
-  position: relative;
-  z-index: 1;
-}
-
