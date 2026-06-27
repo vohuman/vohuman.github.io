@@ -275,6 +275,10 @@ body {
   border-radius: 0 !important;
 }
 
+.card:hover {
+    box-shadow: 0 0.4rem 0.6rem rgba(0,16,48,0.4);
+}
+
 .card:hover,
 .card:hover h1,
 .card:hover h4,
@@ -317,7 +321,7 @@ body {
   overflow: hidden !important;
   transition: color 0.3s ease !important;
   cursor: pointer;
-  border: 1px solid #02d !important;
+  border: 1px solid #ddd !important;
   border-radius: 0 !important;
 }
 
@@ -331,6 +335,10 @@ body {
 .firstcard:hover li,
 .firstcard:hover b {
   color: #fff !important;
+}
+
+.firstcard:hover {
+    box-shadow: 0 0.4rem 0.6rem rgba(0,16,48,0.4);
 }
 
 .firstcard::before {
