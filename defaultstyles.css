@@ -276,7 +276,7 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 0.4rem 0.6rem rgba(0,16,48,0.4);
+    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.6);
 }
 
 .card:hover,
@@ -338,7 +338,7 @@ body {
 }
 
 .firstcard:hover {
-    box-shadow: 0 0.4rem 0.6rem rgba(0,16,48,0.4);
+    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.8);
 }
 
 .firstcard::before {
