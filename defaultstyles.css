@@ -10,7 +10,7 @@ body {
     background-color: #f8f9fa;
     overflow-x: hidden;
     color: #333;
-    background: linear-gradient(130deg, #004499 0%, #002266 25%, #001144 50%, #000622 75%, #000211 100%);
+    background: linear-gradient(180deg, #004499 0%, #002266 25%, #001144 50%, #000622 75%, #000211 100%);
 }
 
 #sidebar-wrapper {
