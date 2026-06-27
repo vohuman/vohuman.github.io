@@ -2,6 +2,7 @@
 :root {
     --sidebar-width: 280px;
     --primary-color: #0d6efd;
+    --card-blue: #b3e4ff;
 }
 
 body {
@@ -265,7 +266,7 @@ body {
 
 .card {
   position: relative !important;
-  background-color: #ffffff !important;
+  background-color: #fff !important;
   color: #333 !important;
   overflow: hidden !important;
   transition: color 0.3s ease !important;
@@ -311,8 +312,8 @@ body {
 
 .firstcard {
   position: relative !important;
-  background-color: #002057 !important;
-  color: #fff !important;
+  background-color: var(--card-blue) !important;
+  color: #333 !important;
   overflow: hidden !important;
   transition: color 0.3s ease !important;
   cursor: pointer;
@@ -329,7 +330,7 @@ body {
 .firstcard:hover p,
 .firstcard:hover li,
 .firstcard:hover b {
-  color: #333 !important;
+  color: #fff !important;
 }
 
 .firstcard::before {
@@ -339,7 +340,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff !important;
+  background-color: #002057 !important;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.5s ease-in-out;
