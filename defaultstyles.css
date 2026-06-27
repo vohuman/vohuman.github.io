@@ -324,6 +324,7 @@ body {
 
 .card:hover,
 .card:hover h1,
+.card:hover h4,
 .card:hover h5,
 .card:hover h6,
 .card:hover .text-muted,
@@ -362,7 +363,7 @@ body {
 /* Ensure the text is readable on the dark blue background */
 .card:hover {
   color: #ffffff !important;
-  box-shadow: 0 0.325rem 0.45rem rgba(0,0,0,0.075);
+  box-shadow: 0 0.5rem 0.6rem rgba(0,16,47,0.075);
 }
 
 /* This ensures your card content sits on top of the blue background */
