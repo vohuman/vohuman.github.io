@@ -13,6 +13,10 @@ body {
     background: linear-gradient(180deg, #004499 0%, #002266 25%, #001144 50%, #000622 75%, #000211 100%);
 }
 
+section, main {
+    background-color: #f8f9fa;
+}
+
 #sidebar-wrapper {
     width: var(--sidebar-width);
     position: fixed;
