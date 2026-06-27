@@ -308,13 +308,9 @@ body {
 }
 
 .card {
-    border-radius: 0;
-}
-
-.card {
   position: relative !important;
   background-color: #ffffff !important;
-  color: #222 !important;
+  color: #333 !important;
   overflow: hidden !important;
   transition: color 0.3s ease !important;
   cursor: pointer;
@@ -371,3 +367,59 @@ body {
   position: relative;
   z-index: 1;
 }
+
+
+.firstcard {
+  position: relative !important;
+  background-color: #002057 !important;
+  color: #fff !important;
+  overflow: hidden !important;
+  transition: color 0.3s ease !important;
+  cursor: pointer;
+  border: 1px solid #02d !important;
+  border-radius: 0 !important;
+}
+
+.firstcard:hover,
+.firstcard:hover h1,
+  color: #333 !important;
+  transition: color 0.3s ease;
+}
+
+/* This is the background layer that creates the animation */
+.firstcard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff !important;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+/* Trigger the animation on hover */
+.firstcard:hover::before {
+  transform: scaleX(1);
+}
+
+.firstcard > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure the text is readable on the dark blue background */
+.firstcard:hover {
+  color: #222 !important;
+  box-shadow: 0 0.5rem 0.6rem rgba(0,16,47,0.075);
+}
+
+/* This ensures your card content sits on top of the blue background */
+.firstcard > * {
+  position: relative;
+  z-index: 1;
+}
+
