@@ -15,7 +15,7 @@ body {
 
 main {
     background-color: #f8f9fa;
-    padding: 2rem;
+    padding: 1.2rem;
 }
 
 #sidebar-wrapper {
@@ -277,12 +277,13 @@ main {
   overflow: hidden !important;
   transition: color 0.3s ease !important;
   cursor: pointer;
-  border: 1px solid #ddd !important;
+  border: 0;
   border-radius: 0 !important;
 }
 
 .card:hover {
     box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.6);
+    animation: fade 0.3s ease !important;
 }
 
 .card:hover,
@@ -327,7 +328,7 @@ main {
   overflow: hidden !important;
   transition: color 0.3s ease !important;
   cursor: pointer;
-  border: 1px solid #ddd !important;
+  border: 0;
   border-radius: 0 !important;
 }
 
@@ -344,7 +345,8 @@ main {
 }
 
 .firstcard:hover {
-    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.8);
+    box-shadow: 0 0.8rem 1.6rem rgba(200,240,255,0.8);
+    animation: fade 0.3s ease !important;
 }
 
 .firstcard::before {
