@@ -312,6 +312,7 @@ main {
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.5s ease-in-out;
+  animation: fade 0.5s ease !important;
   z-index: 0;
 }
 
@@ -364,6 +365,7 @@ main {
   transform-origin: center;
   transition: transform 0.5s ease-in-out;
   z-index: 0;
+  animation: fade 0.5s ease !important;
 }
 
 .firstcard:hover::before {
