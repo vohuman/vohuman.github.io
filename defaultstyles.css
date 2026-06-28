@@ -13,7 +13,7 @@ body {
     background: linear-gradient(60deg, #004499 0%, #002266 25%, #001144 50%, #000622 75%, #000211 100%);
 }
 
-section, main {
+main {
     background-color: #f8f9fa;
 }
 
