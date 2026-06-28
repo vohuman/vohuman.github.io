@@ -285,7 +285,7 @@ main {
 }
 
 .card:hover {
-    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.6);
+    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.9) !important;
     animation: fade 0.3s ease !important;
 }
 
@@ -348,7 +348,7 @@ main {
 }
 
 .firstcard:hover {
-    box-shadow: 0 0.8rem 1.6rem rgba(200,240,255,0.8);
+    box-shadow: 0 0.8rem 1.6rem rgba(200,240,255,0.9) !important;
     animation: fade 0.3s ease !important;
 }
 
