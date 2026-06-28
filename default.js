@@ -197,7 +197,7 @@ renderHero = function () {
 
 loadintro = function () {
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}">
+    var html = `<section id="section-intro" class="mt-4 p-4 ${fade}">
        <div class="card project-card border-0 shadow-sm rounded-4 custom-card-hover">
            <div class="card-body p-4 p-md-5">
                <div class="d-flex align-items-center gap-3 mb-4">
@@ -232,7 +232,7 @@ loadintro = function () {
 
 loadhistory = function () {
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}">
+    var html = `<section id="section-intro" class="mt-4 p-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
@@ -350,7 +350,7 @@ loadskills = function () {
     };
 
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}">
+    var html = `<section id="section-intro" class="mt-4 p-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
        </div>
@@ -406,7 +406,7 @@ loadedu = function () {
     var cer = resumeData[currentLang].certificates;
 
     var fade = !changelanges ? 'fadein' : '';
-    var d = `<section id="section-intro" class="mt-4 ${fade}">
+    var d = `<section id="section-intro" class="mt-4 p-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'education')}</h2>
        </div>
@@ -508,7 +508,7 @@ loadeduLang = function () {
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
-    var d = `<div id="section-education" class="row g-4 mt-4 pb-5">
+    var d = `<div id="section-education" class="row g-4 mt-4 p-5">
        <div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
