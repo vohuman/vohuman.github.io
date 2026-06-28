@@ -20,6 +20,10 @@ main section {
     margin-top: 5px !important;
 }
 
+main {
+    background-color: #f8f9fa !important;
+}
+
 #sidebar-wrapper {
     width: var(--sidebar-width);
     position: fixed;
