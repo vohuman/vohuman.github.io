@@ -278,7 +278,7 @@ main {
   background-color: #f8f9fa !important;
   color: #333 !important;
   overflow: hidden !important;
-  transition: color 0.5s ease !important;
+  transition: color 0.8s ease !important;
   cursor: pointer;
   border: 0;
   border-radius: 0 !important;
@@ -286,7 +286,7 @@ main {
 
 .card:hover {
     box-shadow: 0 0 0.8rem 0.2rem rgba(0,16,48,0.7) !important;
-    animation: fade 0.5s ease !important;
+    animation: fade 0.8s ease !important;
 }
 
 .card:hover,
@@ -330,7 +330,7 @@ main {
   background-color: #002057 !important;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
   z-index: 0;
 }
 
@@ -349,7 +349,7 @@ main {
   background-color: var(--card-blue) !important;
   color: #333 !important;
   overflow: hidden !important;
-  transition: color 0.5s ease !important;
+  transition: color 0.8s ease !important;
   cursor: pointer;
   border: 0;
   border-radius: 0 !important;
@@ -382,7 +382,7 @@ main {
   background-color: #002057 !important;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.5s ease-in-out, opacity 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
   z-index: 0;
 }
 
