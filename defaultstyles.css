@@ -285,7 +285,7 @@ main {
 }
 
 .card:hover {
-    box-shadow: 0 0 1.6rem 0.4rem rgba(0,16,48,0.7) !important;
+    box-shadow: 0 0 0.8rem 0.2rem rgba(0,16,48,0.7) !important;
     animation: fade 0.5s ease !important;
 }
 
@@ -299,6 +299,25 @@ main {
 .card:hover li,
 .card:hover b {
   color: #ffffff !important;
+}
+.card:hover .backend {
+  color:#0d6efd !important;
+}
+
+.card:hover .frontend {
+  color:#d63384 !important;
+}
+
+.card:hover .database {
+  color:#198754 !important;
+}
+
+.card:hover .sourceControl {
+  color:#ffc107 !important;
+}
+
+.card:hover .projectManagement {
+  color:#0dcaf0 !important;
 }
 
 .card::before {
@@ -349,7 +368,7 @@ main {
 }
 
 .firstcard:hover {
-    box-shadow: 0 0 1.6rem 0.4rem rgba(200,240,255,0.7) !important;
+    box-shadow: 0 0 0.8rem 0.2rem rgba(200,240,255,0.7) !important;
     animation: fade 0.5s ease !important;
 }
 
