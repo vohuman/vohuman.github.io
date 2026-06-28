@@ -368,7 +368,7 @@ loadskills = function () {
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
                <div class="d-flex align-items-center gap-2 mb-3">
                    <i class="${conf.icon} ${textClass} fs-5"></i>
-                   <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
+                   <h6 class="fw-bold text-secondary text-capitalize ${label} mb-0">${label}</h6>
                </div>
                <div class="d-flex flex-wrap gap-2">`;
         $.each(skills[key], function (index, skill) {
