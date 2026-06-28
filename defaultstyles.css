@@ -278,15 +278,15 @@ main {
   background-color: #f8f9fa !important;
   color: #333 !important;
   overflow: hidden !important;
-  transition: color 0.3s ease !important;
+  transition: color 0.5s ease !important;
   cursor: pointer;
   border: 0;
   border-radius: 0 !important;
 }
 
 .card:hover {
-    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.9) !important;
-    animation: fade 0.3s ease !important;
+    box-shadow: 0 0.8rem 1.6rem rgba(0,16,48,0.7) !important;
+    animation: fade 0.5s ease !important;
 }
 
 .card:hover,
@@ -329,7 +329,7 @@ main {
   background-color: var(--card-blue) !important;
   color: #333 !important;
   overflow: hidden !important;
-  transition: color 0.3s ease !important;
+  transition: color 0.5s ease !important;
   cursor: pointer;
   border: 0;
   border-radius: 0 !important;
@@ -348,8 +348,8 @@ main {
 }
 
 .firstcard:hover {
-    box-shadow: 0 0.8rem 1.6rem rgba(200,240,255,0.9) !important;
-    animation: fade 0.3s ease !important;
+    box-shadow: 0 0.8rem 1.6rem rgba(200,240,255,0.7) !important;
+    animation: fade 0.5s ease !important;
 }
 
 .firstcard::before {
