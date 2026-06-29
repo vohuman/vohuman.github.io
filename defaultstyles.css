@@ -285,7 +285,7 @@ main {
 }
 
 .card:hover {
-    box-shadow: 0 0 0.8rem 0.2rem rgba(0,16,48,0.7) !important;
+    box-shadow: 0 0 0.4rem 0.2rem rgba(0,16,48,0.7) !important;
 }
 
 .card:hover,
@@ -366,7 +366,7 @@ main {
 }
 
 .firstcard:hover {
-    box-shadow: 0 0 0.8rem 0.2rem rgba(200,240,255,0.7) !important;
+    box-shadow: 0 0 0.4rem 0.2rem rgba(200,240,255,0.7) !important;
 }
 
 .firstcard::before {
