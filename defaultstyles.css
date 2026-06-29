@@ -299,23 +299,23 @@ main {
 .card:hover b {
   color: #ffffff !important;
 }
-.card:hover .backend {
+.card:hover .Backend {
   color:#0d6efd !important;
 }
 
-.card:hover .frontend {
+.card:hover .Frontend {
   color:#d63384 !important;
 }
 
-.card:hover .database {
+.card:hover .Database {
   color:#198754 !important;
 }
 
-.card:hover .sourceControl {
+.card:hover .DevOps {
   color:#ffc107 !important;
 }
 
-.card:hover .projectManagement {
+.card:hover .Management {
   color:#0dcaf0 !important;
 }
 
