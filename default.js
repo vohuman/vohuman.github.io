@@ -720,7 +720,11 @@ typetitle = function() {
             const pauseEnd = 2000;      // How long to pause after a phrase is fully typed
             const pauseStart = 500;     // How long to pause before typing the next phrase
 
-            function typeLoop() {
+            // Start the effect after the initial pause
+            setTimeout(typeLoop, pauseStart);
+}
+
+function typeLoop() {
                 const currentPhrase = phrases[currentPhraseIndex];
                 
                 if (isDeleting) {
@@ -751,11 +755,7 @@ typetitle = function() {
 
                 // Recursively call the function
                 setTimeout(typeLoop, timeoutSpeed);
-            }
-
-            // Start the effect after the initial pause
-            setTimeout(typeLoop, pauseStart);
-        }
+}
 
 typetitle();
     
