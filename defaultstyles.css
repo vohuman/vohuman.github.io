@@ -256,7 +256,7 @@ main {
 
 .fadein {
     opacity: 1;
-    animation: fade 1.6s ease-in forwards;
+    animation: fade 0.8s ease-in forwards;
 }
 
 @keyframes fade {
