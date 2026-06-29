@@ -276,6 +276,26 @@ main {
     100% { width: 100%; }
 }
 
+.typing-cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #38bdf8; /* A nice vibrant blue matching the 'Midnight Cyber' theme */
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Subtle gradient text for the name to make it pop */
+        .gradient-text {
+            background: linear-gradient(to right, #f8fafc, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 .card {
   position: relative !important;
   background-color: #f8f9fa !important;
