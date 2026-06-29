@@ -406,8 +406,8 @@ loadedu = function () {
     var cer = resumeData[currentLang].certificates;
 
     var fade = !changelanges ? 'fadein' : '';
-    var d = `<section id="section-intro" class="mt-4 p-4 ${fade}">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+    var d = `<section id="section-intro" class="mt-4 p-5 ${fade}">
+       <div class="d-flex align-items-center gap-3 mb-4 p-4 border-bottom">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'education')}</h2>
        </div>
        <div class="row g-4"><div class="col-md-6">
