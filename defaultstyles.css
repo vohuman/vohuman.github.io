@@ -286,7 +286,6 @@ main {
 
 .card:hover {
     box-shadow: 0 0 0.8rem 0.2rem rgba(0,16,48,0.7) !important;
-    animation: fade 0.8s ease !important;
 }
 
 .card:hover,
@@ -330,13 +329,12 @@ main {
   background-color: #002057 !important;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
   z-index: 0;
 }
 
 .card:hover::before {
   transform: scaleX(1);
-  opacity:1;
 }
 
 .card > * {
@@ -369,7 +367,6 @@ main {
 
 .firstcard:hover {
     box-shadow: 0 0 0.8rem 0.2rem rgba(200,240,255,0.7) !important;
-    animation: fade 0.8s ease !important;
 }
 
 .firstcard::before {
@@ -382,13 +379,12 @@ main {
   background-color: #002057 !important;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
   z-index: 0;
 }
 
 .firstcard:hover::before {
   transform: scaleX(1);
-  opacity: 1;
 }
 
 .firstcard > * {
