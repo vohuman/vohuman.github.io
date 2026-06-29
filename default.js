@@ -698,8 +698,7 @@ function toggleSidebar() {
 }
 
 
-<
-        $(document).ready(function() {
+typetitle = function() {
             // --- Typewriter Effect Logic (jQuery version) ---
             
             const $textElement = $('#typewriter-text');
@@ -756,5 +755,7 @@ function toggleSidebar() {
 
             // Start the effect after the initial pause
             setTimeout(typeLoop, pauseStart);
-        });
+        }
+
+typetitle();
     
