@@ -697,7 +697,12 @@ function toggleSidebar() {
     overlay.removeClass('hidden');
 }
 
-const $textElement = $('#typewriter-text');
+
+<
+        $(document).ready(function() {
+            // --- Typewriter Effect Logic (jQuery version) ---
+            
+            const $textElement = $('#typewriter-text');
             
             // The phrases you want to loop through
             const phrases = [
@@ -751,3 +756,5 @@ const $textElement = $('#typewriter-text');
 
             // Start the effect after the initial pause
             setTimeout(typeLoop, pauseStart);
+        });
+    
