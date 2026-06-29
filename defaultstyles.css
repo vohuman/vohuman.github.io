@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
     color: #333;
     background: url('file_0000000079b8722fbf389d85031be6b4.png') repeat, linear-gradient(90deg, #004499 0%, #002266 25%, #001144 50%, #000622 75%, #000211 100%);
-    background-size: 50%, cover;
+    background-size: 90%, cover;
     
 }
 
