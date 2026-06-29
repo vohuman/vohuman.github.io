@@ -700,7 +700,11 @@ function toggleSidebar() {
 const $textElement = $('#typewriter-text');
             
             // The phrases you want to loop through
-            const phrases = i18n[currentLang][phrases];
+            const phrases = [
+                "Senior Full Stack Developer.",
+                ".NET Core Architect.",
+                "Problem Solver."
+            ];
             
             let currentPhraseIndex = 0;
             let currentCharIndex = 0;
