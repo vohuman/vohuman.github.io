@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Connective Canvas Showcase</title>
+    <style>
+        /* Base Body Styling - Updated to match the soft gradient in the screenshot */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #a2b7d9 0%, #cbb6d6 50%, #90a6cf 100%);
+            color: #1f2937; /* Dark text for readability on light background */
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Canvas Background Magic: Fixed behind everything */
+        #network-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; 
+            pointer-events: none; 
+        }
+
+        /* Layout wrapper mimicking the screenshot's columns */
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            pointer-events: auto;
+        }
+
+        /* Frosted Glassmorphism Effect for the cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            padding: 40px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            max-width: 320px;
+        }
+
+        .main-content {
+            flex: 2.5;
+            min-width: 300px;
+        }
+
+        /* Typography matching the screenshot */
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #111827;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: #111827;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        p {
+            color: #374151;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .profile-pic {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            background: #e5e7eb; 
+            margin: 0 auto 30px auto; 
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 15px;
+        }
+        
+        .nav-tabs span {
+            cursor: pointer;
+            font-weight: 500;
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        .nav-tabs span.active {
+            color: #111827;
+            border-bottom: 2px solid #a855f7; /* Purple accent */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Structure replacing the old dummy content with the Glass Layout -->
+    <div class="main-wrapper">
+        <!-- Sidebar Panel (Left) -->
+        <div class="glass-panel sidebar">
+            <div class="profile-pic">
+                <img src="./assets/Bild.jpg" alt="Bahman Soltani" onerror="this.src='https://via.placeholder.com/150'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <p><strong>📍</strong> 27356 Rotenburg, Germany</p>
+            <p><strong>✉️</strong> bahman.soltani@gmail.com</p>
+            <p><strong>📞</strong> +49 176 55568384</p>
+            
+            <h3>Portfolio</h3>
+            <p><a href="https://www.linkedin.com/in/vohuman/" target="_blank" style="color: #4b5563; text-decoration: none;">in LinkedIn</a></p>
+            
+            <h3>Languages</h3>
+            <p>English (Fluent)<br>German (Intermediate)<br>Persian (Native)</p>
+        </div>
+
+        <!-- Main Content Panel (Right) -->
+        <div class="glass-panel main-content">
+            <div class="nav-tabs">
+                <span class="active">About</span>
+                <span>Experience</span>
+                <span>Skills</span>
+                <span>Education</span>
+            </div>
+            
+            <h1>Bahman Soltani</h1>
+            <h2>Senior Full Stack Developer</h2>
+
+            <h3>Introduction</h3>
+            <p>Welcome to my portfolio! I am Bahman Soltani, a Software Engineer with over 15 years of experience building robust, scalable applications. My expertise spans the full software development lifecycle, with a deep specialization in the Microsoft ecosystem—specifically C#, .NET Core, and modern web architectures.</p>
+            
+            <p>I bridge the gap between complex technical requirements and business goals. Having led projects in high-pressure environments, I am as comfortable collaborating with cross-functional stakeholders as I am architecting secure, high-performance code. I pride myself on a methodical, problem-solving approach that ensures projects are not only delivered on time but are built to last.</p>
+        </div>
+    </div>
+
+    <!-- 1. Include this Canvas element in your body -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- 2. Embed this standard JQuery Script hook before closing </body> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Automatic adaptive scaling setup
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        $(window).on('resize', function() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        const settings = {
+            density: 120,      /* Slightly more nodes */
+            threshold: 140,    /* Longer connection lines */
+            speed: 0.4,        /* Slower, elegant floating speed */
+            color: '#8b5cf6',  /* Vibrant purple nodes matching the screenshot */
+            gravity: 'pull'
+        };
+
+        const mouse = { x: null, y: null, radius: 150 };
+
+        // Track mouse globally across the window
+        $(window).on('mousemove', function(e) {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        $(document).on('mouseleave', function() {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // Hex converter for connecting lines alpha drop-offs
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        // Initialize/Spawn Particles
+        function initParticles() {
+            particles.length = 0;
+            for (let i = 0; i < settings.density; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.6 * settings.speed,
+                    vy: (Math.random() - 0.5) * 0.6 * settings.speed,
+                    radius: Math.random() * 2.5 + 1
+                });
+            }
+        }
+
+        // CHANGED: Listen to the document instead of the canvas so clicks over text/divs still trigger nodes
+        $(document).on('click', function(e) {
+            for (let i = 0; i < 8; i++) {
+                particles.push({
+                    x: e.clientX,
+                    y: e.clientY,
+                    vx: (Math.random() - 0.5) * 2 * settings.speed,
+                    vy: (Math.random() - 0.5) * 2 * settings.speed,
+                    radius: Math.random() * 3 + 1.5
+                });
+            }
+        });
+
+        // The Animation & Draw Tick Loop
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            const rgb = hexToRgb(settings.color);
+
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // Bounce from boundary limits
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                // Handle Cursor Gravity Mechanics
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < mouse.radius) {
+                        const force = (mouse.radius - dist) / mouse.radius;
+                        if (settings.gravity === 'pull') {
+                            p.x += dx * force * 0.02;
+                            p.y += dy * force * 0.02;
+                        } else if (settings.gravity === 'push') {
+                            p.x -= dx * force * 0.02;
+                            p.y -= dy * force * 0.02;
+                        }
+                    }
+                }
+
+                // Draw individual nodes
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = settings.color;
+                ctx.globalAlpha = 0.45;
+                ctx.fill();
+            });
+
+            // Compute connecting wires
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p1 = particles[i];
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < settings.threshold) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        const alpha = ((settings.threshold - dist) / settings.threshold) * 0.25;
+                        ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+                        ctx.globalAlpha = 1.0;
+                        ctx.lineWidth = 0.75;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        initParticles();
+        animate();
+    });
+    </script>
+</body>
+</html>
