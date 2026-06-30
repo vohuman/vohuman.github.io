@@ -4,12 +4,12 @@
     --primary-color: #0d6efd;
     --card-blue: #b3e4ff;
     --half-card-blue: rgba(179,228,255,0.9);
-    --half-card-white: rgba(248,249,250,0.9);
+    --half-card-white: rgba(248,249,250,0.8);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8f9fa;
+    
     overflow-x: hidden;
     color: #333;
     background: url('file_0000000079b8722fbf389d85031be6b4.png') repeat, linear-gradient(90deg, #004499 0%, #002266 25%, #001144 50%, #000622 75%, #000211 100%);
@@ -18,11 +18,11 @@ body {
 }
 
 main section {
-    background-color: #f8f9fa;
+    background-color: var(--half-card-white);
 }
 
 main {
-    background-color: #f8f9fa !important;
+    background-color: var(--half-card-white) !important;
 }
 
 #sidebar-wrapper {
