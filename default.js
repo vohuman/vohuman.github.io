@@ -697,3 +697,4 @@ function toggleSidebar() {
     //overlay.removeClass('hidden');
 }
 
+loadintro();
