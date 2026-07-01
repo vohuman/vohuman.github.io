@@ -6,7 +6,7 @@
     <title>Bahman Soltani</title>
     <link rel="stylesheet" href="defaultstyles0.css">
     <style>
-        /* Base Body Styling - Updated to match the soft gradient in the screenshot */
+        
         body {
             margin: 0;
             padding: 0;
@@ -218,6 +218,13 @@
             pointer-events: auto;
         }
 
+        .nav-transition {
+            transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .lang-active {
+            font-weight: 800;
+            text-decoration: underline;
+        }
 
     </style>
 
@@ -230,6 +237,8 @@
 
 </head>
 <body>
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+    
 
     <!-- Structure replacing the old dummy content with the Glass Layout -->
     <div class="main-wrapper">
@@ -319,41 +328,70 @@
 
         
         <div class="glass-panel main-content">
-            <header>
-                <div class="nav-tabs">
-                    <ul class="list-unstyled px-3" id="nav-links">
+                <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tighter text-stone-900">
+                Bahman Soltani<span class="text-amber-600">.</span>
+            </div>
 
-                    <li class="mb-1 active">
-                        <a href="#" onclick="loadintro()" class="nav-link">
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest">
+            
+                        <a href="#" onclick="loadintro()" class="nav-link active">
                             <i class="fa-solid fa-user"></i>
                             <span id="about">About</span>
                         </a>
-                    </li>
-
-                    <li class="mb-1">
+                    
                         <a href="#" onclick="loadhistory()" class="nav-link">
                             <i class="fa-solid fa-briefcase"></i>
                             <span id="ex">Experience</span>
                         </a>
-                    </li>
-
-                    <li class="mb-1">
                         <a href="#" onclick="loadskills()" class="nav-link">
                             <i class="fa-solid fa-code"></i>
                             <span id="skill">Skills</span>
                         </a>
-                    </li>
-
-                    <li class="mb-1">
+                    
                         <a href="#" onclick="loadedu()" class="nav-link">
                             <i class="fa-solid fa-graduation-cap"></i>
                             <span id="edu">Education</span>
                         </a>
-                    </li>
-                </ul>
-                </div>
+                    
+            </nav>
 
-            </header>
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="p-2 text-stone-800 focus:outline-none">
+                    <span id="menu-icon" class="text-3xl">&#9776;</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 overflow-hidden nav-transition max-h-0 opacity-0">
+            <div class="flex flex-col p-6 space-y-4 text-center text-sm font-medium uppercase tracking-widest">
+                
+                <a href="#" onclick="loadintro()" class="nav-link active">
+                            <i class="fa-solid fa-user"></i>
+                            <span id="about">About</span>
+                        </a>
+                    
+                        <a href="#" onclick="loadhistory()" class="nav-link">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span id="ex">Experience</span>
+                        </a>
+                        <a href="#" onclick="loadskills()" class="nav-link">
+                            <i class="fa-solid fa-code"></i>
+                            <span id="skill">Skills</span>
+                        </a>
+                    
+                        <a href="#" onclick="loadedu()" class="nav-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span id="edu">Education</span>
+                        </a>
+                <div class="flex justify-center items-center space-x-4 pt-4 border-t border-stone-100">
+                    <button onclick="setLanguage('en'); toggleMenu()" class="hover:text-amber-600">English</button>
+                    <button onclick="setLanguage('de'); toggleMenu()" class="hover:text-amber-600">Deutsch</button>
+                </div>
+            </div>
+        </div>
+        </header>
+            
             <main>
                 <section class="card custom-card-hover">
                     <h3>Introduction</h3>
