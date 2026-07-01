@@ -698,3 +698,26 @@ function toggleSidebar() {
 }
 
 
+// Ensure the toggle function exists globally
+toggleMenu = function() {
+    const $menu = $('#mobile-menu'); // The mobile container in your HTML
+    const $icon = $('#menu-icon');   // The hamburger/close icon
+    
+    // Check if the menu is visible
+    if (!$menu.hasClass('show')) {
+        $menu.show().addClass('show'); // Slide down
+        $icon.html('&#10005;');       // Set to 'X'
+    } else {
+        $menu.removeClass('show');     // Slide up
+        setTimeout(() => {
+            $menu.hide();              // Hide after animation finishes
+        }, 300);
+        $icon.html('&#9776;');       // Set to Hamburger
+    }
+};
+
+// Ensure the event is attached only once
+$(document).ready(function() {
+    // Remove old listeners to avoid double firing
+    $('#menu-toggle').off('click').on('click', toggleMenu);
+});
