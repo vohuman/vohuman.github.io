@@ -670,8 +670,8 @@ $(document).on('click', function (e) {
     var element = $(e.target);
     if (!element.hasClass('iconmenu')) {
         const sidebar = $('#sidebar-wrapper');
-        if (sidebar.hasClass('toggled'))
-            closeside();
+        //if (sidebar.hasClass('toggled'))
+           // closeside();
     }
 });
 
@@ -697,35 +697,4 @@ function toggleSidebar() {
     overlay.removeClass('hidden');
 }
 
-
-
-function toggleMenu() {
-    // Cache the jQuery objects for better performance
-    const $menu = $('#mobile-menu');
-    const $icon = $('#menu-icon');
-    
-    if ($menu.hasClass('hidden')) {
-        $menu.removeClass('hidden');
-        
-        // Small delay to allow the DOM to register the removal of 'hidden'
-        // before starting the CSS transition
-        setTimeout(() => {
-            $menu.removeClass('max-h-0 opacity-0').addClass('max-h-96 opacity-100');
-        }, 10);
-        
-        $icon.html('&#10005;'); // Close icon (X)
-    } else {
-        $menu.addClass('max-h-0 opacity-0').removeClass('max-h-96 opacity-100');
-        
-        // Wait for the CSS transition duration (300ms) before hiding completely
-        setTimeout(() => $menu.addClass('hidden'), 300);
-        
-        $icon.html('&#9776;');
-    }
-}
-
-// Ensure the DOM is fully loaded before attaching the event listener
-$(document).ready(function() {
-    $('#menu-toggle').on('click', toggleMenu);
-});
 
