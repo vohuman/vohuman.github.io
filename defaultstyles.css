@@ -12,7 +12,7 @@ body {
     
     overflow-x: hidden;
     color: #333;
-    background: linear-gradient(135deg, #83a9e6 20%, #cbb6d6 50%, #7386ce 100%);
+    background: url('bg1.png') repeat, linear-gradient(135deg, #7399d6 20%, #bba6c6 50%, #6376be 100%);
     background-size: 50%, cover;
     
 }
