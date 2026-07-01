@@ -281,7 +281,7 @@
                 </div>
             </div>
 
-            <!-- Languages Card (Now stacked neatly below Profile) -->
+            
             <div class="glass-panel firstcard border-0">
                 <h3 class="text-primary align-items-center gap-2 mb-4"><i class="fa-solid fa-language me-2"></i><span id="lang">Languages</span></h3>
                 <div style="display:flex; flex-direction:column" class="gap-3" id="langbar">
@@ -293,7 +293,8 @@
                         <div class="progress" style="height: 8px;">
                             <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                    </div><div class="mb-3">
+                    </div>
+                    <div class="mb-3">
                         <div class="mb-1">
                             <b id="english">German</b>
                             <span style="font-size: 0.8rem; color: #777" id="fluent">Intermediate</span>
@@ -301,7 +302,8 @@
                         <div class="progress" style="height: 8px;">
                             <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                    </div><div class="mb-3">
+                    </div>
+                    <div class="mb-3">
                         <div class="mb-1">
                             <b id="english">Persian</b>
                             <span style="font-size: 0.8rem; color: #777" id="fluent">Mother tongue</span>
@@ -315,14 +317,40 @@
 
         </div>
 
-        <!-- Main Content Panel (Right) -->
+        
         <div class="glass-panel main-content">
             <header>
                 <div class="nav-tabs">
-                    <span class="active">About</span>
-                    <span>Experience</span>
-                    <span>Skills</span>
-                    <span>Education</span>
+                    <ul class="list-unstyled px-3" id="nav-links">
+
+                    <li class="mb-1 active">
+                        <a href="#" onclick="loadintro()" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <span id="about">About</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" onclick="loadhistory()" class="nav-link">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span id="ex">Experience</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" onclick="loadskills()" class="nav-link">
+                            <i class="fa-solid fa-code"></i>
+                            <span id="skill">Skills</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" onclick="loadedu()" class="nav-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span id="edu">Education</span>
+                        </a>
+                    </li>
+                </ul>
                 </div>
 
             </header>
@@ -384,9 +412,9 @@
 
             const particles = [];
             const settings = {
-                density: 240,      /* Slightly more nodes */
+                density: 180,      /* Slightly more nodes */
                 threshold: 140,    /* Longer connection lines */
-                speed: 0.8,        /* Slower, elegant floating speed */
+                speed: 0.9,        /* Slower, elegant floating speed */
                 color: '#8b5cf6',  /* Vibrant purple nodes matching the screenshot */
                 gravity: 'pull'
             };
