@@ -697,26 +697,3 @@ function toggleSidebar() {
     //overlay.removeClass('hidden');
 }
 
-window.toggleMenu = function() {
-    const $menu = $('#mobile-menu');
-    const $icon = $('#menu-icon');
-
-    // If the menu is currently hidden (d-none is present)
-    if ($menu.hasClass('d-none')) {
-        $menu.removeClass('d-none');
-        // Small delay to ensure CSS classes apply before animation
-        setTimeout(() => {
-            $menu.addClass('show');
-        }, 10);
-        $icon.text('✕');
-    } else {
-        // Hide the menu
-        $menu.removeClass('show');
-        // Wait for the animation to finish (0.3s) before setting display: none
-        setTimeout(() => {
-            $menu.addClass('d-none');
-        }, 300);
-        $icon.text('☰');
-    }
-};
-
