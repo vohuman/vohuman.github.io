@@ -237,69 +237,72 @@
 
 </head>
 <body>
- <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-2xl font-bold tracking-tighter text-stone-900">
-                Bahman Soltani<span class="text-amber-600">.</span>
+ <header class="fixed-top glass-header border-bottom shadow-sm">
+        <div class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between" style="max-width: 1600px;">
+            
+            <!-- Brand -->
+            <div class="fs-4 fw-bold text-dark">
+                Bahman Soltani<span class="text-primary">.</span>
             </div>
 
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center">
-                <nav class="flex space-x-8 text-sm font-medium uppercase tracking-widest mr-8">
-                    <a href="#" onclick="loadintro()" class="nav-link active hover:text-amber-600 transition-colors">
-                        <i class="fa-solid fa-user mr-1"></i> <span data-i18n="nav_about">About</span>
+            <!-- Desktop Nav (Hidden on mobile via d-none d-md-flex) -->
+            <div class="d-none d-md-flex align-items-center">
+                <nav class="d-flex gap-4 text-uppercase fw-medium me-4" style="font-size: 0.85rem; letter-spacing: 0.1em;">
+                    <a href="#" onclick="loadintro()" class="text-decoration-none nav-link-custom">
+                        <i class="fa-solid fa-user me-1"></i> <span data-i18n="nav_about">About</span>
                     </a>
-                    <a href="#" onclick="loadhistory()" class="nav-link hover:text-amber-600 transition-colors">
-                        <i class="fa-solid fa-briefcase mr-1"></i> <span data-i18n="nav_experience">Experience</span>
+                    <a href="#" onclick="loadhistory()" class="text-decoration-none nav-link-custom">
+                        <i class="fa-solid fa-briefcase me-1"></i> <span data-i18n="nav_experience">Experience</span>
                     </a>
-                    <a href="#" onclick="loadskills()" class="nav-link hover:text-amber-600 transition-colors">
-                        <i class="fa-solid fa-code mr-1"></i> <span data-i18n="nav_skills">Skills</span>
+                    <a href="#" onclick="loadskills()" class="text-decoration-none nav-link-custom">
+                        <i class="fa-solid fa-code me-1"></i> <span data-i18n="nav_skills">Skills</span>
                     </a>
-                    <a href="#" onclick="loadedu()" class="nav-link hover:text-amber-600 transition-colors">
-                        <i class="fa-solid fa-graduation-cap mr-1"></i> <span data-i18n="nav_education">Education</span>
+                    <a href="#" onclick="loadedu()" class="text-decoration-none nav-link-custom">
+                        <i class="fa-solid fa-graduation-cap me-1"></i> <span data-i18n="nav_education">Education</span>
                     </a>
                 </nav>
                 
                 <!-- Desktop Language Switcher -->
-                <div class="flex items-center space-x-3 border-l border-stone-300 pl-6">
-                    <button onclick="setLanguage('en')" class="lang-btn text-sm font-bold text-amber-600 transition-colors" data-lang="en">EN</button>
-                    <span class="text-stone-300">|</span>
-                    <button onclick="setLanguage('de')" class="lang-btn text-sm font-medium text-stone-500 hover:text-amber-600 transition-colors" data-lang="de">DE</button>
+                <div class="d-flex align-items-center gap-2 border-start ps-4">
+                    <button onclick="setLanguage('en')" class="btn btn-link p-0 text-decoration-none lang-btn fw-bold text-primary" data-lang="en">EN</button>
+                    <span class="text-secondary">|</span>
+                    <button onclick="setLanguage('de')" class="btn btn-link p-0 text-decoration-none lang-btn fw-medium text-secondary" data-lang="de">DE</button>
                 </div>
             </div>
 
-            <!-- Mobile Hamburger Button -->
-            <div class="md:hidden flex items-center">
-                <button id="menu-toggle" class="p-2 text-stone-800 focus:outline-none">
-                    <span id="menu-icon" class="text-3xl">&#9776;</span>
+            <!-- Mobile Hamburger Button (Visible only on mobile via d-md-none) -->
+            <div class="d-md-none d-flex align-items-center">
+                <button id="menu-toggle" class="btn btn-light border-0 shadow-none">
+                    <span id="menu-icon" class="fs-3">&#9776;</span>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 overflow-hidden nav-transition max-h-0 opacity-0">
-            <div class="flex flex-col p-6 space-y-5 text-center text-sm font-medium uppercase tracking-widest">
-                <a href="#" onclick="loadintro(); toggleMenu()" class="nav-link active">
-                    <i class="fa-solid fa-user mr-2"></i><span data-i18n="nav_about">About</span>
+        <!-- Mobile Nav Menu (Custom Dropdown) -->
+        <div id="mobile-menu" class="d-none d-md-none bg-white border-bottom mobile-menu-wrap">
+            <div class="d-flex flex-column p-4 gap-4 text-center text-uppercase fw-medium" style="font-size: 0.85rem; letter-spacing: 0.1em;">
+                <a href="#" onclick="loadintro(); toggleMenu()" class="text-decoration-none nav-link-custom">
+                    <i class="fa-solid fa-user me-2"></i><span data-i18n="nav_about">About</span>
                 </a>
-                <a href="#" onclick="loadhistory(); toggleMenu()" class="nav-link">
-                    <i class="fa-solid fa-briefcase mr-2"></i><span data-i18n="nav_experience">Experience</span>
+                <a href="#" onclick="loadhistory(); toggleMenu()" class="text-decoration-none nav-link-custom">
+                    <i class="fa-solid fa-briefcase me-2"></i><span data-i18n="nav_experience">Experience</span>
                 </a>
-                <a href="#" onclick="loadskills(); toggleMenu()" class="nav-link">
-                    <i class="fa-solid fa-code mr-2"></i><span data-i18n="nav_skills">Skills</span>
+                <a href="#" onclick="loadskills(); toggleMenu()" class="text-decoration-none nav-link-custom">
+                    <i class="fa-solid fa-code me-2"></i><span data-i18n="nav_skills">Skills</span>
                 </a>
-                <a href="#" onclick="loadedu(); toggleMenu()" class="nav-link">
-                    <i class="fa-solid fa-graduation-cap mr-2"></i><span data-i18n="nav_education">Education</span>
+                <a href="#" onclick="loadedu(); toggleMenu()" class="text-decoration-none nav-link-custom">
+                    <i class="fa-solid fa-graduation-cap me-2"></i><span data-i18n="nav_education">Education</span>
                 </a>
                 
                 <!-- Mobile Language Switcher -->
-                <div class="flex justify-center items-center space-x-6 pt-5 border-t border-stone-100">
-                    <button onclick="setLanguage('en'); toggleMenu()" class="lang-btn font-bold text-amber-600" data-lang="en">English</button>
-                    <button onclick="setLanguage('de'); toggleMenu()" class="lang-btn text-stone-500 hover:text-amber-600" data-lang="de">Deutsch</button>
+                <div class="d-flex justify-content-center align-items-center gap-4 pt-3 border-top">
+                    <button onclick="setLanguage('en'); toggleMenu()" class="btn btn-link p-0 text-decoration-none lang-btn fw-bold text-primary" data-lang="en">English</button>
+                    <button onclick="setLanguage('de'); toggleMenu()" class="btn btn-link p-0 text-decoration-none lang-btn fw-medium text-secondary" data-lang="de">Deutsch</button>
                 </div>
             </div>
         </div>
- </header>
+    </header>
+     
         
     <!-- Structure replacing the old dummy content with the Glass Layout -->
     <div class="main-wrapper">
@@ -441,15 +444,22 @@
                 const $menu = $('#mobile-menu');
                 const $icon = $('#menu-icon');
                 
-                if ($menu.hasClass('hidden')) {
-                    $menu.removeClass('hidden');
+                // If it's currently hidden (d-none)
+                if ($menu.hasClass('d-none')) {
+                    $menu.removeClass('d-none'); // Unhide element
+                    
+                    // Small delay so display block registers before CSS transition
                     setTimeout(() => {
-                        $menu.removeClass('max-h-0 opacity-0').addClass('max-h-96 opacity-100');
+                        $menu.addClass('show'); 
                     }, 10);
-                    $icon.html('&#10005;'); // Close icon
+                    
+                    $icon.html('&#10005;'); // Close icon (X)
                 } else {
-                    $menu.addClass('max-h-0 opacity-0').removeClass('max-h-96 opacity-100');
-                    setTimeout(() => $menu.addClass('hidden'), 300);
+                    $menu.removeClass('show'); // Start shrink/fade animation
+                    
+                    // Wait for CSS transition (0.3s) before actually hiding the div
+                    setTimeout(() => $menu.addClass('d-none'), 300);
+                    
                     $icon.html('&#9776;'); // Hamburger icon
                 }
             };
