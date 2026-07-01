@@ -451,32 +451,6 @@
     <script src="default.js"></script>
     <script>
         $(document).ready(function () {
-
-            toggleMenu = function() {
-                const $menu = $('#mobile-menu');
-                const $icon = $('#menu-icon');
-                
-                // If it's currently hidden (d-none)
-                if ($menu.hasClass('d-none')) {
-                    $menu.removeClass('d-none'); // Unhide element
-                    
-                    // Small delay so display block registers before CSS transition
-                    setTimeout(() => {
-                        $menu.addClass('show'); 
-                    }, 10);
-                    
-                    $icon.html('&#10005;'); // Close icon (X)
-                } else {
-                    $menu.removeClass('show'); // Start shrink/fade animation
-                    
-                    // Wait for CSS transition (0.3s) before actually hiding the div
-                    setTimeout(() => $menu.addClass('d-none'), 300);
-                    
-                    $icon.html('&#9776;'); // Hamburger icon
-                }
-            };
-
-            $('#menu-toggle').on('click', toggleMenu);
             
             const canvas = document.getElementById('network-canvas');
             const ctx = canvas.getContext('2d');
