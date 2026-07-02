@@ -36,7 +36,6 @@
             padding: 20px;
         }
 
-        /* Canvas Background Magic: Fixed behind everything */
         #network-canvas {
             position: fixed;
             top: 0;
@@ -47,7 +46,6 @@
             pointer-events: none;
         }
 
-        /* Layout wrapper mimicking the screenshot's columns */
         .main-wrapper {
             position: relative;
             z-index: 1;
@@ -60,14 +58,13 @@
             pointer-events: auto;
         }
 
-        /* Frosted Glassmorphism Effect for the cards */
         .sidebar {
             flex: 1;
             min-width: 300px;
             max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 30px; /* Spacing between profile and languages card */
+            gap: 30px; 
         }
 
         .sidebar {
@@ -76,7 +73,7 @@
             max-width: 450px;
             display: flex;
             flex-direction: column;
-            gap: 30px; /* Spacing between profile and languages card */
+            gap: 30px; 
         }
 
         .main-content {
@@ -85,7 +82,6 @@
         }
 
 
-        /* Typography matching the screenshot */
         h1 {
             font-size: 2.5rem;
             margin-top: 0;
@@ -147,10 +143,9 @@
                     border-bottom: 2px solid #a855f7;
                 }
 
-        /* Custom Hover Card Effects */
         .glass-panel.firstcard {
             position: relative !important;
-            background-color: var(--half-card-blue) !important; /* Adjusted to blend */
+            background-color: var(--half-card-blue) !important; 
             overflow: hidden !important;
             transition: color 0.8s ease !important;
             cursor: default;
@@ -204,8 +199,8 @@
         .main-wrapper {
             position: relative;
             z-index: 1;
-            max-width: 1600px; /* Increased from 1100px to allow a wider layout */
-            width: 95%; /* Ensures it takes up most of the screen width */
+            max-width: 1600px; 
+            width: 95%; 
             margin: 60px auto;
             padding: 0 20px;
             display: flex;
@@ -222,13 +217,12 @@
             text-decoration: underline;
         }
 
-        /* Mobile Menu Animation CSS */
         .mobile-menu-wrap {
             transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
-            display: none; /* Default hidden */
+            display: none;
         }
         
         .mobile-menu-wrap.show {
@@ -251,9 +245,9 @@
  <header class="fixed-top glass-header border-bottom shadow-sm">
         <div class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between" style="max-width: 1600px;">
             
-            <div class="fs-4 fw-bold text-dark">
+            <h3 class="fs-4 fw-bold text-dark">
                 Bahman Soltani<span class="text-primary">.</span>
-            </div>
+            </h3>
 
             <div class="d-none d-md-flex align-items-center">
                 <nav class="d-flex gap-4 text-uppercase fw-medium me-4 nav-tabs" style="font-size: 0.85rem; letter-spacing: 0.1em;">
