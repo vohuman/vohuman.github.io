@@ -6,7 +6,7 @@
     <title>Bahman Soltani</title>
     <link rel="stylesheet" href="defaultstyles0.css">
     <style>
-        
+
         body {
             margin: 0;
             padding: 0;
@@ -64,7 +64,7 @@
             max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 30px; 
+            gap: 30px;
         }
 
         .sidebar {
@@ -73,7 +73,7 @@
             max-width: 450px;
             display: flex;
             flex-direction: column;
-            gap: 30px; 
+            gap: 30px;
         }
 
         .main-content {
@@ -145,13 +145,13 @@
 
         .glass-panel.firstcard {
             position: relative !important;
-            background-color: var(--half-card-blue) !important; 
+            background-color: var(--half-card-blue) !important;
             overflow: hidden !important;
             transition: color 0.8s ease !important;
             cursor: default;
         }
 
-            
+
             .glass-panel.firstcard:hover a,
             .glass-panel.firstcard:hover p {
                 color: #fff !important;
@@ -199,9 +199,9 @@
         .main-wrapper {
             position: relative;
             z-index: 1;
-            max-width: 1600px; 
-            width: 95%; 
-            margin: 60px auto;
+            max-width: 1600px;
+            width: 95%;
+            margin: 110px auto;
             padding: 0 20px;
             display: flex;
             flex-wrap: wrap;
@@ -212,6 +212,7 @@
         .nav-transition {
             transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
         }
+
         .lang-active {
             font-weight: 800;
             text-decoration: underline;
@@ -224,13 +225,12 @@
             overflow: hidden;
             display: none;
         }
-        
-        .mobile-menu-wrap.show {
-            display: block;
-            max-height: 500px;
-            opacity: 1;
-        }
 
+            .mobile-menu-wrap.show {
+                display: block;
+                max-height: 500px;
+                opacity: 1;
+            }
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -242,9 +242,9 @@
 
 </head>
 <body>
- <header class="fixed-top glass-header border-bottom shadow-sm">
+    <header class="fixed-top glass-header border-bottom shadow-sm">
         <div class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between" style="max-width: 1600px;">
-            
+
             <div class="fs-4 fw-bold" style="font-size:1.2rem;">
                 Bahman Soltani<span class="text-primary">.</span>
             </div>
@@ -264,7 +264,7 @@
                         <i class="fa-solid fa-graduation-cap me-1"></i> <span data-i18n="nav_education">Education</span>
                     </a>
                 </nav>
-                
+
                 <div style="display:flex" class="bg-secondary bg-opacity-25 rounded p-1 mb-3">
                     <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
                     <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
@@ -272,13 +272,13 @@
             </div>
 
             <div class="d-md-none d-flex align-items-center">
-                <button id="menu-toggle" class="btn btn-light border-0 shadow-none" onclick="toggleMenu()" >
+                <button id="menu-toggle" class="btn btn-light border-0 shadow-none" onclick="toggleMenu()">
                     <span id="menu-icon" class="fs-3">&#9776;</span>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="d-none d-md-none border-bottom mobile-menu-wrap" style="background-color: rgba(248,249,250,0.75); padding: 5px;" >
+        <div id="mobile-menu" class="d-none d-md-none border-bottom mobile-menu-wrap" style="background-color: rgba(248,249,250,0.75); padding: 5px;">
             <div class="nav-tabs d-flex flex-column p-4 gap-4 text-center text-uppercase fw-medium" style="font-size: 0.85rem; letter-spacing: 0.1em;">
                 <a href="#" onclick="loadintro(); toggleMenu()" class="text-decoration-none nav-link-custom active">
                     <i class="fa-solid fa-user me-2"></i><span data-i18n="nav_about">About</span>
@@ -292,7 +292,7 @@
                 <a href="#" onclick="loadedu(); toggleMenu()" class="text-decoration-none nav-link-custom">
                     <i class="fa-solid fa-graduation-cap me-2"></i><span data-i18n="nav_education">Education</span>
                 </a>
-                
+
                 <div class="d-flex justify-content-center align-items-center gap-4 pt-3 border-top">
                     <button id="btn-en" class="btn btn-link p-0 text-decoration-none lang-btn fw-bold text-primary lang-btn active rounded" onclick="setLanguage('en')">English</button>
                     <button id="btn-de" class="btn btn-link p-0 text-decoration-none lang-btn fw-bold text-primary lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
@@ -300,9 +300,9 @@
             </div>
         </div>
     </header>
-     
+
     <div class="main-wrapper">
-        
+
         <div class="sidebar">
 
             <div class="glass-panel firstcard border-0">
@@ -349,7 +349,7 @@
                 </div>
             </div>
 
-            
+
             <div class="glass-panel firstcard border-0">
                 <h3 class="text-primary align-items-center gap-2 mb-4"><i class="fa-solid fa-language me-2"></i><span id="lang">Languages</span></h3>
                 <div style="display:flex; flex-direction:column" class="gap-3" id="langbar">
@@ -385,15 +385,15 @@
 
         </div>
 
-        
+
         <div class="glass-panel main-content">
-                
+
             <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            
+
                 <main>
                     <section class="card custom-card-hover">
                         <h3>Introduction</h3>
-    
+
                         <p class="fw-bold fs-5 mb-2">Welcome to my portfolio!</p>
                         <p class="mb-3">
                             I am Bahman Soltani, a Software Engineer with over 15 years
@@ -423,172 +423,171 @@
                         </p>
                     </section>
                 </main>
+            </div>
         </div>
-    </div>
         </div>
+        <canvas id="network-canvas"></canvas>
 
-    <canvas id="network-canvas"></canvas>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="default.js"></script>
+        <script>
+            $(document).ready(function () {
+                window.toggleMenu = function () {
+                    const menu = $('#mobile-menu');
+                    const icon = $('#menu-icon');
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="default.js"></script>
-    <script>
-        $(document).ready(function () {
-            window.toggleMenu = function() {
-                const menu = $('#mobile-menu');
-                const icon = $('#menu-icon');
-            
-                if (menu.hasClass('d-none')) {
-                    menu.removeClass('d-none');
-                    setTimeout(() => {
-                        menu.addClass('show');
-                    }, 10);
-                    icon.text('✕');
-                } else {
-                    menu.removeClass('show');
-                    setTimeout(() => {
-                        menu.addClass('d-none');
-                    }, 300);
-                    icon.text('☰');
+                    if (menu.hasClass('d-none')) {
+                        menu.removeClass('d-none');
+                        setTimeout(() => {
+                            menu.addClass('show');
+                        }, 10);
+                        icon.text('✕');
+                    } else {
+                        menu.removeClass('show');
+                        setTimeout(() => {
+                            menu.addClass('d-none');
+                        }, 300);
+                        icon.text('☰');
+                    }
+                };
+
+
+                const canvas = document.getElementById('network-canvas');
+                const ctx = canvas.getContext('2d');
+
+                // Automatic adaptive scaling setup
+                let width = (canvas.width = window.innerWidth);
+                let height = (canvas.height = window.innerHeight);
+
+                $(window).on('resize', function () {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                });
+
+                const particles = [];
+                const settings = {
+                    density: 150,      /* Slightly more nodes */
+                    threshold: 140,    /* Longer connection lines */
+                    speed: 0.8,        /* Slower, elegant floating speed */
+                    color: '#8b5cf6',  /* Vibrant purple nodes matching the screenshot */
+                    gravity: 'pull'
+                };
+
+                const mouse = { x: null, y: null, radius: 150 };
+
+                // Track mouse globally across the window
+                // $(window).on('mousemove', function(e) {
+                //     mouse.x = e.clientX;
+                //     mouse.y = e.clientY;
+                // });
+
+                // $(document).on('mouseleave', function() {
+                //     mouse.x = null;
+                //     mouse.y = null;
+                // });
+
+                // Hex converter for connecting lines alpha drop-offs
+                function hexToRgb(hex) {
+                    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                    return result ? {
+                        r: parseInt(result[1], 16),
+                        g: parseInt(result[2], 16),
+                        b: parseInt(result[3], 16)
+                    } : null;
                 }
-            };
 
+                // Initialize/Spawn Particles
+                function initParticles() {
+                    particles.length = 0;
+                    for (let i = 0; i < settings.density; i++) {
+                        particles.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            vx: (Math.random() - 0.5) * 0.6 * settings.speed,
+                            vy: (Math.random() - 0.5) * 0.6 * settings.speed,
+                            radius: Math.random() * 2.5 + 1
+                        });
+                    }
+                }
 
-            const canvas = document.getElementById('network-canvas');
-            const ctx = canvas.getContext('2d');
+                // CHANGED: Listen to the document instead of the canvas so clicks over text/divs still trigger nodes
+                // $(document).on('click', function(e) {
+                //     for (let i = 0; i < 8; i++) {
+                //         particles.push({
+                //             x: e.clientX,
+                //             y: e.clientY,
+                //             vx: (Math.random() - 0.5) * 2 * settings.speed,
+                //             vy: (Math.random() - 0.5) * 2 * settings.speed,
+                //             radius: Math.random() * 3 + 1.5
+                //         });
+                //     }
+                // });
 
-            // Automatic adaptive scaling setup
-            let width = (canvas.width = window.innerWidth);
-            let height = (canvas.height = window.innerHeight);
+                // The Animation & Draw Tick Loop
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    const rgb = hexToRgb(settings.color);
 
-            $(window).on('resize', function () {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            });
+                    particles.forEach(p => {
+                        p.x += p.vx;
+                        p.y += p.vy;
 
-            const particles = [];
-            const settings = {
-                density: 150,      /* Slightly more nodes */
-                threshold: 140,    /* Longer connection lines */
-                speed: 0.8,        /* Slower, elegant floating speed */
-                color: '#8b5cf6',  /* Vibrant purple nodes matching the screenshot */
-                gravity: 'pull'
-            };
+                        // Bounce from boundary limits
+                        if (p.x < 0 || p.x > width) p.vx *= -1;
+                        if (p.y < 0 || p.y > height) p.vy *= -1;
 
-            const mouse = { x: null, y: null, radius: 150 };
+                        // Handle Cursor Gravity Mechanics
+                        if (mouse.x !== null && mouse.y !== null) {
+                            const dx = mouse.x - p.x;
+                            const dy = mouse.y - p.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < mouse.radius) {
+                                const force = (mouse.radius - dist) / mouse.radius;
+                                if (settings.gravity === 'pull') {
+                                    p.x += dx * force * 0.02;
+                                    p.y += dy * force * 0.02;
+                                } else if (settings.gravity === 'push') {
+                                    p.x -= dx * force * 0.02;
+                                    p.y -= dy * force * 0.02;
+                                }
+                            }
+                        }
 
-            // Track mouse globally across the window
-            // $(window).on('mousemove', function(e) {
-            //     mouse.x = e.clientX;
-            //     mouse.y = e.clientY;
-            // });
-
-            // $(document).on('mouseleave', function() {
-            //     mouse.x = null;
-            //     mouse.y = null;
-            // });
-
-            // Hex converter for connecting lines alpha drop-offs
-            function hexToRgb(hex) {
-                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-                return result ? {
-                    r: parseInt(result[1], 16),
-                    g: parseInt(result[2], 16),
-                    b: parseInt(result[3], 16)
-                } : null;
-            }
-
-            // Initialize/Spawn Particles
-            function initParticles() {
-                particles.length = 0;
-                for (let i = 0; i < settings.density; i++) {
-                    particles.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.6 * settings.speed,
-                        vy: (Math.random() - 0.5) * 0.6 * settings.speed,
-                        radius: Math.random() * 2.5 + 1
+                        // Draw individual nodes
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = settings.color;
+                        ctx.globalAlpha = 0.45;
+                        ctx.fill();
                     });
-                }
-            }
 
-            // CHANGED: Listen to the document instead of the canvas so clicks over text/divs still trigger nodes
-            // $(document).on('click', function(e) {
-            //     for (let i = 0; i < 8; i++) {
-            //         particles.push({
-            //             x: e.clientX,
-            //             y: e.clientY,
-            //             vx: (Math.random() - 0.5) * 2 * settings.speed,
-            //             vy: (Math.random() - 0.5) * 2 * settings.speed,
-            //             radius: Math.random() * 3 + 1.5
-            //         });
-            //     }
-            // });
+                    // Compute connecting wires
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const p1 = particles[i];
+                            const p2 = particles[j];
+                            const dx = p1.x - p2.x;
+                            const dy = p1.y - p2.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
 
-            // The Animation & Draw Tick Loop
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                const rgb = hexToRgb(settings.color);
-
-                particles.forEach(p => {
-                    p.x += p.vx;
-                    p.y += p.vy;
-
-                    // Bounce from boundary limits
-                    if (p.x < 0 || p.x > width) p.vx *= -1;
-                    if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                    // Handle Cursor Gravity Mechanics
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const dx = mouse.x - p.x;
-                        const dy = mouse.y - p.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            if (settings.gravity === 'pull') {
-                                p.x += dx * force * 0.02;
-                                p.y += dy * force * 0.02;
-                            } else if (settings.gravity === 'push') {
-                                p.x -= dx * force * 0.02;
-                                p.y -= dy * force * 0.02;
+                            if (dist < settings.threshold) {
+                                ctx.beginPath();
+                                ctx.moveTo(p1.x, p1.y);
+                                ctx.lineTo(p2.x, p2.y);
+                                const alpha = ((settings.threshold - dist) / settings.threshold) * 0.5;
+                                ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+                                ctx.globalAlpha = 1.0;
+                                ctx.lineWidth = 0.75;
+                                ctx.stroke();
                             }
                         }
                     }
-
-                    // Draw individual nodes
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = settings.color;
-                    ctx.globalAlpha = 0.45;
-                    ctx.fill();
-                });
-
-                // Compute connecting wires
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const p1 = particles[i];
-                        const p2 = particles[j];
-                        const dx = p1.x - p2.x;
-                        const dy = p1.y - p2.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < settings.threshold) {
-                            ctx.beginPath();
-                            ctx.moveTo(p1.x, p1.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            const alpha = ((settings.threshold - dist) / settings.threshold) * 0.5;
-                            ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
-                            ctx.globalAlpha = 1.0;
-                            ctx.lineWidth = 0.75;
-                            ctx.stroke();
-                        }
-                    }
+                    requestAnimationFrame(animate);
                 }
-                requestAnimationFrame(animate);
-            }
 
-            initParticles();
-            animate();
-        });
-    </script>
+                initParticles();
+                animate();
+            });
+        </script>
 </body>
 </html>
