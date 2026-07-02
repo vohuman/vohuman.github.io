@@ -223,19 +223,19 @@
         }
 
         /* Mobile Menu Animation CSS */
-.mobile-menu-wrap {
-    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    display: none; /* Default hidden */
-}
-
-.mobile-menu-wrap.show {
-    display: block;
-    max-height: 500px;
-    opacity: 1;
-}
+        .mobile-menu-wrap {
+            transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            display: none; /* Default hidden */
+        }
+        
+        .mobile-menu-wrap.show {
+            display: block;
+            max-height: 500px;
+            opacity: 1;
+        }
 
     </style>
 
@@ -251,12 +251,10 @@
  <header class="fixed-top glass-header border-bottom shadow-sm">
         <div class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between" style="max-width: 1600px;">
             
-            <!-- Brand -->
             <div class="fs-4 fw-bold text-dark">
                 Bahman Soltani<span class="text-primary">.</span>
             </div>
 
-            <!-- Desktop Nav (Hidden on mobile via d-none d-md-flex) -->
             <div class="d-none d-md-flex align-items-center">
                 <nav class="d-flex gap-4 text-uppercase fw-medium me-4 nav-tabs" style="font-size: 0.85rem; letter-spacing: 0.1em;">
                     <a href="#" onclick="loadintro()" class="text-decoration-none nav-link-custom active">
@@ -279,7 +277,6 @@
                 </div>
             </div>
 
-            <!-- Mobile Hamburger Button (Visible only on mobile via d-md-none) -->
             <div class="d-md-none d-flex align-items-center">
                 <button id="menu-toggle" class="btn btn-light border-0 shadow-none" onclick="toggleMenu()" >
                     <span id="menu-icon" class="fs-3">&#9776;</span>
@@ -396,75 +393,69 @@
 
         
         <div class="glass-panel main-content">
-                <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                                    
+                
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             
-            <main>
-                <section class="card custom-card-hover">
-                    <h3>Introduction</h3>
-
-                    <p class="fw-bold fs-5 mb-2">Welcome to my portfolio!</p>
-                    <p class="mb-3">
-                        I am Bahman Soltani, a Software Engineer with over 15 years
-                        of experience building robust, scalable applications.
-                        My expertise spans the full software development lifecycle,
-                        with a deep specialization in the Microsoft ecosystem—specifically C#,
-                        .NET Core, and modern web architectures.
-                    </p>
-                    <p class="mb-3">
-                        I bridge the gap between complex technical requirements and
-                        business goals. Having led projects in high-pressure environments,
-                        I am as comfortable collaborating with cross-functional stakeholders as
-                        I am architecting secure, high-performance code.
-                        I pride myself on a methodical, problem-solving approach
-                        that ensures projects are not only delivered on time but are built to last.
-                    </p>
-                    <p class="mb-3">
-                        <b>Core Expertise:</b>
-                        <br />
-                        <ul>
-                            <li><b>Backend:</b> C#, ASP.NET Core, WinForms, Entity Framework, MVC, Web API, OOP.</li>
-                            <li><b>Frontend:</b> JavaScript, jQuery, Angular, TypeScript, Razor.</li>
-                            <li><b>Data:</b> SQL Server, JSON, XML.</li>
-                            <li><b>Management Tools:</b> Git, TFS, and Jira.</li>
-                            <li><b>Focus:</b> Full-stack development, Security-conscious programming and stakeholder management.</li>
-                        </ul>
-                    </p>
-                </section>
-            </main>
+                <main>
+                    <section class="card custom-card-hover">
+                        <h3>Introduction</h3>
+    
+                        <p class="fw-bold fs-5 mb-2">Welcome to my portfolio!</p>
+                        <p class="mb-3">
+                            I am Bahman Soltani, a Software Engineer with over 15 years
+                            of experience building robust, scalable applications.
+                            My expertise spans the full software development lifecycle,
+                            with a deep specialization in the Microsoft ecosystem—specifically C#,
+                            .NET Core, and modern web architectures.
+                        </p>
+                        <p class="mb-3">
+                            I bridge the gap between complex technical requirements and
+                            business goals. Having led projects in high-pressure environments,
+                            I am as comfortable collaborating with cross-functional stakeholders as
+                            I am architecting secure, high-performance code.
+                            I pride myself on a methodical, problem-solving approach
+                            that ensures projects are not only delivered on time but are built to last.
+                        </p>
+                        <p class="mb-3">
+                            <b>Core Expertise:</b>
+                            <br />
+                            <ul>
+                                <li><b>Backend:</b> C#, ASP.NET Core, WinForms, Entity Framework, MVC, Web API, OOP.</li>
+                                <li><b>Frontend:</b> JavaScript, jQuery, Angular, TypeScript, Razor.</li>
+                                <li><b>Data:</b> SQL Server, JSON, XML.</li>
+                                <li><b>Management Tools:</b> Git, TFS, and Jira.</li>
+                                <li><b>Focus:</b> Full-stack development, Security-conscious programming and stakeholder management.</li>
+                            </ul>
+                        </p>
+                    </section>
+                </main>
         </div>
     </div>
 
-    <!-- 1. Include this Canvas element in your body -->
     <canvas id="network-canvas"></canvas>
 
-    <!-- 2. Embed this standard JQuery Script hook before closing </body> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="default.js"></script>
     <script>
         $(document).ready(function () {
             window.toggleMenu = function() {
-    const $menu = $('#mobile-menu');
-    const $icon = $('#menu-icon');
-
-    // If the menu is currently hidden (d-none is present)
-    if ($menu.hasClass('d-none')) {
-        $menu.removeClass('d-none');
-        // Small delay to ensure CSS classes apply before animation
-        setTimeout(() => {
-            $menu.addClass('show');
-        }, 10);
-        $icon.text('✕');
-    } else {
-        // Hide the menu
-        $menu.removeClass('show');
-        // Wait for the animation to finish (0.3s) before setting display: none
-        setTimeout(() => {
-            $menu.addClass('d-none');
-        }, 300);
-        $icon.text('☰');
-    }
-};
+                const menu = $('#mobile-menu');
+                const icon = $('#menu-icon');
+            
+                if (menu.hasClass('d-none')) {
+                    menu.removeClass('d-none');
+                    setTimeout(() => {
+                        menu.addClass('show');
+                    }, 10);
+                    icon.text('✕');
+                } else {
+                    menu.removeClass('show');
+                    setTimeout(() => {
+                        menu.addClass('d-none');
+                    }, 300);
+                    icon.text('☰');
+                }
+            };
 
 
             const canvas = document.getElementById('network-canvas');
