@@ -188,6 +188,7 @@
         .avatar-img {
             max-width: 120px;
             border-radius: 50%;
+            margin-bottom: 20px;
         }
 
         .custom-link-hover {
@@ -200,7 +201,8 @@
             z-index: 1;
             max-width: 1600px;
             width: 95%;
-            margin: 110px auto;
+            margin: 60px auto;
+            margin-top: 7rem;
             padding: 0 20px;
             display: flex;
             flex-wrap: wrap;
@@ -262,12 +264,13 @@
                     <a href="#" onclick="loadedu()" class="text-decoration-none nav-link-custom">
                         <i class="fa-solid fa-graduation-cap me-1"></i> <span data-i18n="nav_education">Education</span>
                     </a>
-                </nav>
 
-                <div style="display:flex" class="bg-secondary bg-opacity-25 rounded p-1 mb-3">
-                    <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
-                    <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
-                </div>
+
+                    <div style="display:flex" class="bg-secondary bg-opacity-25 rounded">
+                        <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">EN</button>
+                        <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">DE</button>
+                    </div>
+                </nav>
             </div>
 
             <div class="d-md-none d-flex align-items-center">
