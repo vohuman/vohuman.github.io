@@ -670,8 +670,8 @@ $(document).on('click', function (e) {
     var element = $(e.target);
     if (!element.hasClass('iconmenu')) {
         const sidebar = $('#sidebar-wrapper');
-        //if (sidebar.hasClass('toggled'))
-           // closeside();
+        if (sidebar.hasClass('toggled'))
+            closeside();
     }
 });
 
@@ -691,10 +691,9 @@ function closeside() {
 function toggleSidebar() {
     const sidebar = $('#sidebar-wrapper');
     const overlay = $('#sidebar-overlay');
-    //sidebar.toggleClass('toggled');
-    //overlay.toggleClass('show');
-    //sidebar.removeClass('hidden');
-    //overlay.removeClass('hidden');
+    sidebar.toggleClass('toggled');
+    overlay.toggleClass('show');
+    sidebar.removeClass('hidden');
+    overlay.removeClass('hidden');
 }
 
-loadintro();
