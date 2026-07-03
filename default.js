@@ -539,7 +539,7 @@ loadedu = function () {
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
-    $('.edu').addClass('active');
+    $('.education').addClass('active');
 
     changelanges = false;
 }
