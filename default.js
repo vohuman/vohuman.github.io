@@ -202,6 +202,11 @@ renderHero = function () {
         $('#title').html('Senior Full Stack Entwickler');
     }
 
+    $('#about').html(i18n[currentLang].nav.intro);
+    $('#ex').html(i18n[currentLang].nav.history);
+    $('#skill').html(i18n[currentLang].nav.skills);
+    $('#edu').html(i18n[currentLang].nav.education);
+
     $('#lang').html(i18n[currentLang].headers.languages);
 }
 
