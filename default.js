@@ -243,6 +243,7 @@ loadintro = function () {
 
     var links = $('a.active');
     $.each(links, function(index, link) {
+        console.log(link);
         link.removeClass('active');
     });
     $('#about').addClass('active');
