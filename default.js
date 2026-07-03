@@ -217,7 +217,7 @@ loadintro = function () {
            <div class="card-body p-4 p-md-5">
                <div class="d-flex align-items-center gap-3 mb-4">
                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-      <i class="fa-solid fa-circle-info fs-5"></i>
+                      <i class="fa-solid fa-circle-info fs-5"></i>
                    </div>
                    <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
                </div>
@@ -240,6 +240,12 @@ loadintro = function () {
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
     }
+
+    var links = $('a');
+    $.each(links, function(index, link) {
+        link.removeClass('active');
+    });
+    $('#about').addClass('active');
 
     changelanges = false;
 }
@@ -350,6 +356,12 @@ loadhistory = function () {
         $('main').addClass('history');
     }
 
+     var links = $('a');
+    $.each(links, function(index, link) {
+        link.removeClass('active');
+    });
+    $('#ex').addClass('active');
+
     changelanges = false;
 }
 
@@ -412,6 +424,12 @@ loadskills = function () {
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
     }
+
+     var links = $('a');
+    $.each(links, function(index, link) {
+        link.removeClass('active');
+    });
+    $('#skill').addClass('active');
 
     changelanges = false;
 }
@@ -515,6 +533,12 @@ loadedu = function () {
     if (!$('main').hasClass('education')) {
         $('main').addClass('education');
     }
+
+     var links = $('a');
+    $.each(links, function(index, link) {
+        link.removeClass('active');
+    });
+    $('#edu').addClass('active');
 
     changelanges = false;
 }
