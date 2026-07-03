@@ -277,14 +277,19 @@
 
             // Hex converter for connecting lines alpha drop-offs
             function hexToRgb(hex) {
-                let rrandom = Math.floor(Math.random() * 3) + 1;
-                let grandom = Math.floor(Math.random() * 3) + 1;
-                let brandom = Math.floor(Math.random() * 3) + 1;
                 const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                let rrandom = Math.floor(Math.random() * parseInt(result[1], 16)) + 1;
+                let grandom = Math.floor(Math.random() * parseInt(result[2], 16)) + 1;
+                let brandom = Math.floor(Math.random() * parseInt(result[3], 16)) + 1;
+                
                 return result ? {
-                    r: parseInt(result[1] * rrandom, 16),
-                    g: parseInt(result[2] * grandom, 16),
-                    b: parseInt(result[3] * brandom, 16)
+                    r: rrandom,
+                    g: grandom,
+                    b: brandom
+                    
+                    //r: parseInt(result[1], 16),
+                    //g: parseInt(result[2] * grandom, 16),
+                    //b: parseInt(result[3] * brandom, 16)
                 } : null;
             }
 
