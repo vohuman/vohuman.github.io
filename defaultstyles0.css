@@ -611,7 +611,7 @@ body {
 
                 .nav-tabs a:hover {
                     color: #000;
-                    border-bottom: 2px solid #830bf4;
+                    border-bottom: 2px solid #3a0ed8 !important;
                 }
 
         .glass-panel.firstcard {
