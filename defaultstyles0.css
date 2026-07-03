@@ -609,6 +609,11 @@ body {
                     border-bottom: 2px solid #a855f7;
                 }
 
+                .nav-tabs a:hover {
+                    color: #000;
+                    border-bottom: 2px solid #830bf4;
+                }
+
         .glass-panel.firstcard {
             position: relative !important;
             background-color: var(--half-card-blue) !important;
