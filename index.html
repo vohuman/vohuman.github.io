@@ -283,13 +283,13 @@
                 let brandom = Math.floor(Math.random() * 250) + 1;
                 
                 return result ? {
-                    r: rrandom,
-                    g: grandom,
-                    b: brandom
+                    //r: rrandom,
+                    //g: grandom,
+                    //b: brandom
                     
-                    //r: parseInt(result[1], 16),
-                    //g: parseInt(result[2] * grandom, 16),
-                    //b: parseInt(result[3] * brandom, 16)
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2] * grandom, 16),
+                    b: parseInt(result[3] * brandom, 16)
                 } : null;
             }
 
