@@ -588,6 +588,8 @@ body {
             display: flex;
             gap: 30px;
             margin-bottom: 30px;
+            border:0;
+            border-bottom:0 !important;
             padding: 10px;
             padding-bottom: 15px;
         }
