@@ -244,7 +244,7 @@ loadintro = function () {
     var links = $('a.active');
     $.each(links, function(index, link) {
         console.log(link);
-        link.removeClass('active');
+        $(link).removeClass('active');
     });
     $('#about').addClass('active');
 
@@ -359,7 +359,7 @@ loadhistory = function () {
 
      var links = $('a.active');
     $.each(links, function(index, link) {
-        link.removeClass('active');
+        $(link).removeClass('active');
     });
     $('#ex').addClass('active');
 
@@ -428,7 +428,7 @@ loadskills = function () {
 
      var links = $('a.active');
     $.each(links, function(index, link) {
-        link.removeClass('active');
+        $(link).removeClass('active');
     });
     $('#skill').addClass('active');
 
@@ -537,7 +537,7 @@ loadedu = function () {
 
      var links = $('a.active');
     $.each(links, function(index, link) {
-        link.removeClass('active');
+        $(link).removeClass('active');
     });
     $('#edu').addClass('active');
 
