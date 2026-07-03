@@ -241,7 +241,7 @@ loadintro = function () {
         $('main').addClass('intro');
     }
 
-    var links = $('a');
+    var links = $('a.nav-link-custom');
     $.each(links, function(index, link) {
         console.log(link);
         $(link).removeClass('active');
@@ -357,7 +357,7 @@ loadhistory = function () {
         $('main').addClass('history');
     }
 
-     var links = $('a');
+     var links = $('a.nav-link-custom');
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
@@ -426,7 +426,7 @@ loadskills = function () {
         $('main').addClass('skills');
     }
 
-     var links = $('a');
+     var links = $('a.nav-link-custom');
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
@@ -535,7 +535,7 @@ loadedu = function () {
         $('main').addClass('education');
     }
 
-     var links = $('a');
+     var links = $('a.nav-link-custom');
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
