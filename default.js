@@ -241,7 +241,7 @@ loadintro = function () {
         $('main').addClass('intro');
     }
 
-    var links = $('a');
+    var links = $('a.active');
     $.each(links, function(index, link) {
         link.removeClass('active');
     });
@@ -300,21 +300,21 @@ loadhistory = function () {
 
                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
-      <div>
-          <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
-              <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
-              <span>•</span>
-              <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
-          </div>
-      </div>
-      <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
-          ${h.startDate} — ${h.endDate}
-      </span>
-      </div>
+              <div>
+                  <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
+                  <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                      <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+                      <span>•</span>
+                      <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                  </div>
+              </div>
+              <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                  ${h.startDate} — ${h.endDate}
+              </span>
+              </div>
 
                    <div class="mb-3">
-      <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
 
             $.each(h.responsibilities, function (i, r) {
                 html += `<li class="d-flex gap-2 text-secondary">
@@ -356,7 +356,7 @@ loadhistory = function () {
         $('main').addClass('history');
     }
 
-     var links = $('a');
+     var links = $('a.active');
     $.each(links, function(index, link) {
         link.removeClass('active');
     });
@@ -425,7 +425,7 @@ loadskills = function () {
         $('main').addClass('skills');
     }
 
-     var links = $('a');
+     var links = $('a.active');
     $.each(links, function(index, link) {
         link.removeClass('active');
     });
@@ -534,7 +534,7 @@ loadedu = function () {
         $('main').addClass('education');
     }
 
-     var links = $('a');
+     var links = $('a.active');
     $.each(links, function(index, link) {
         link.removeClass('active');
     });
