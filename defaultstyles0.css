@@ -696,7 +696,7 @@ body {
         footer {
             margin-top: 60px;
             padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.175);
             backdrop-filter: blur(10px);
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
