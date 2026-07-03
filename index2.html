@@ -17,6 +17,20 @@
             min-height: 100vh;
         }
 
+        .glass-header {
+            background-color: transparent;
+            transition: all 0.3s ease-in-out;
+            border-bottom: 1px solid transparent !important;
+        }
+
+        .glass-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+        }
+
         section {
             background-color: transparent !important;
         }
@@ -112,9 +126,7 @@
             margin-bottom: 15px;
             font-size: 0.95rem;
         }
-
-       
-
+        
         .nav-tabs {
             display: flex;
             gap: 30px;
@@ -416,6 +428,14 @@
     <script src="default.js"></script>
     <script>
         $(document).ready(function () {
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.glass-header').addClass('scrolled');
+                } else {
+                    $('.glass-header').removeClass('scrolled');
+                }
+            });
+            
             window.toggleMenu = function () {
                 const menu = $('#mobile-menu');
                 const icon = $('#menu-icon');
