@@ -727,3 +727,30 @@ function toggleSidebar() {
     overlay.removeClass('hidden');
 }
 
+$(window).on('scroll', function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.glass-header').addClass('scrolled');
+                } else {
+                    $('.glass-header').removeClass('scrolled');
+                }
+            });
+            
+            
+window.toggleMenu = function () {
+                const menu = $('#mobile-menu');
+                const icon = $('#menu-icon');
+
+                if (menu.hasClass('d-none')) {
+                    menu.removeClass('d-none');
+                    setTimeout(() => {
+                        menu.addClass('show');
+                    }, 10);
+                    icon.text('✕');
+                } else {
+                    menu.removeClass('show');
+                    setTimeout(() => {
+                        menu.addClass('d-none');
+                    }, 300);
+                    icon.text('☰');
+                }
+            };
