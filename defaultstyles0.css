@@ -3,10 +3,10 @@
     --sidebar-width: 280px;
     --primary-color: #0d6efd;
     --card-blue: #b3e4ff;
-    --half-card-blue: rgba(179,228,255,0.17);
-    --new-card-blue: rgba(179,228,255,0.6);
+    --half-card-blue: rgba(179,228,255,0.2);
+    --new-card-blue: rgba(179,228,255,0.5);
     --half-card-white: rgba(248,249,250,0.2);
-    --new-card-white: rgba(248,249,250,0.7);
+    --new-card-white: rgba(248,249,250,0.5);
     --bs-nav-tabs-border-width:0px !important;
 }
 
