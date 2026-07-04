@@ -168,6 +168,8 @@ function setLanguage(lang) {
     }
 
     toggleSidebar();
+
+    $('#contact').html(i18n[currentLang].labels.labels.contact);
 }
 
 renderHero = function () {    
