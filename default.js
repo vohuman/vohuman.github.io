@@ -169,7 +169,6 @@ function setLanguage(lang) {
 
     toggleSidebar();
 
-    $('#contact').html(i18n[currentLang].labels.labels.contact);
 }
 
 renderHero = function () {    
@@ -199,9 +198,11 @@ renderHero = function () {
     if (currentLang === 'en') {
         $('#germany').html('Germany');
         $('#title').html('Senior Full Stack Developer');
+        $('#contact').html('Contact');
     } else {
         $('#germany').html('Deutschland');
         $('#title').html('Senior Full Stack Entwickler');
+        $('#contact').html('Kontakt');
     }
 
     $('#about').html(i18n[currentLang].nav.intro);
