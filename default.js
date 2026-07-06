@@ -244,7 +244,7 @@ loadintro = function () {
         $('main').addClass('intro');
     }
 
-    var links = $('a.nav-link-custom');
+    var links = $('a.navlinkcustom');
     $.each(links, function(index, link) {
         console.log(link);
         $(link).removeClass('active');
@@ -359,8 +359,8 @@ loadhistory = function () {
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
     }
-
-     var links = $('a.nav-link-custom');
+     
+    var links = $('a.navlinkcustom');
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
@@ -428,8 +428,8 @@ loadskills = function () {
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
     }
-
-     var links = $('a.nav-link-custom');
+     
+    var links = $('a.navlinkcustom');
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
@@ -537,8 +537,8 @@ loadedu = function () {
     if (!$('main').hasClass('education')) {
         $('main').addClass('education');
     }
-
-     var links = $('a.nav-link-custom');
+     
+    var links = $('a.navlinkcustom');
     $.each(links, function(index, link) {
         $(link).removeClass('active');
     });
