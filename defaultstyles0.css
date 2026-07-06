@@ -608,8 +608,12 @@ body {
                 font-size: 1.05rem;
             }
 
-            .nav-tabs a::after {
+            .nav-link-custom::after {
                 background-color: #3a0ed8 !important;
+            }
+
+            .nav-link-custom:hover::after {
+                border-color: #3a0ed8 !important;
             }
 
 
