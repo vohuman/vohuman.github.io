@@ -113,20 +113,24 @@ const i18n = {
 
 function load() {
     if (resumeData == null) {
+        $('#loading').show();
         $.ajax({
             url: 'https://vohuman.github.io/site/resume.json',
             method: 'GET',
             success: function (data) {
-                console.log(data);
+                
                 resumeData = data;
-
+                
                 $('#btn-en').prop('disabled', false);
                 $('#btn-de').prop('disabled', false);
 
                 renderAll();
+
+                $('#loading').hide();
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
+                $('#loading').hide();
             }
         });
     }
