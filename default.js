@@ -145,7 +145,7 @@ async function initApp(defaultLang = 'de') {
         // 2. Set the language safely AFTER data is ready
         await setLanguage(defaultLang);
         
-        $('#loading').fadeOut(500);
+        $('#loading').hide(500);
     } catch (e) {
         console.error("Initialization failed:", e);
         $('#loading').fadeOut(500);
