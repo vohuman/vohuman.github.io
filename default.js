@@ -143,6 +143,8 @@ function formatText(text) {
 }
 
 function setLanguage(lang) {
+
+    load();
     
     currentLang = lang;
 
@@ -214,6 +216,9 @@ renderHero = function () {
 }
 
 loadintro = function () {
+    if (resumeData == null)
+        load();
+
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
        <div class="card project-card border-0 shadow-sm rounded-4 custom-card-hover">
