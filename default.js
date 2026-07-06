@@ -4,7 +4,6 @@ let resumeData = null;
 
 let isfirstload = true; // Add this line at the top
 
-
 const i18n = {
     en: {
         headers: {
@@ -138,7 +137,7 @@ async function getResumeData() {
 }
 
 
-async function initApp(defaultLang = 'en') {
+async function initApp(defaultLang = 'de') {
     try {
         // 1. Fetch data first
         await getResumeData();
@@ -762,7 +761,7 @@ rendersidemenu = function () {
     target.append(div);
 }
 
-renderAll();
+//renderAll();
 
 const wrapper = $('#wrapper');
 
@@ -797,6 +796,4 @@ function toggleSidebar() {
     overlay.removeClass('hidden');
 }
 
-$(document).ready(() => {
-    
-});
+
