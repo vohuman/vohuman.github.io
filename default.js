@@ -126,11 +126,11 @@ function load() {
 
                 renderAll();
 
-                $('#loading').hide();
+                $('#loading').hide(3000);
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
-                $('#loading').hide();
+                $('#loading').hide(3000);
             }
         });
     }
