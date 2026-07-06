@@ -137,15 +137,19 @@ async function getResumeData() {
     });
 }
 
-async function initApp() {
+
+async function initApp(defaultLang = 'en') {
     try {
-        await getResumeData(); // Wait for AJAX to finish
-        renderAll();           // Render only after data is ready
-        loadintro();           // Load default view
-        $('#loading').fadeOut(500); // Hide loader
+        // 1. Fetch data first
+        await getResumeData();
+        
+        // 2. Set the language safely AFTER data is ready
+        await setLanguage(defaultLang);
+        
+        $('#loading').fadeOut(500);
     } catch (e) {
-        console.error("Failed to initialize:", e);
-        $('#loading').fadeOut(500); // Hide anyway to let page show errors
+        console.error("Initialization failed:", e);
+        $('#loading').fadeOut(500);
     }
 }
 
@@ -794,5 +798,5 @@ function toggleSidebar() {
 }
 
 $(document).ready(() => {
-    initApp();
+    
 });
