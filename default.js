@@ -114,6 +114,42 @@ const i18n = {
     }
 };
 
+
+async function getResumeData() {
+    
+    if (resumeData) return resumeData;
+    
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: 'https://vohuman.github.io/site/resume.json', // Ensure this path is correct
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                resumeData = data;
+                console.log("Resume data loaded successfully");
+                resolve(resumeData);
+            },
+            error: function(xhr, status, error) {
+                console.error("Critical: Could not load resume data via AJAX:", error);
+                reject(error);
+            }
+        });
+    });
+}
+
+async function initApp() {
+    try {
+        await getResumeData(); // Wait for AJAX to finish
+        renderAll();           // Render only after data is ready
+        loadintro();           // Load default view
+        $('#loading').fadeOut(500); // Hide loader
+    } catch (e) {
+        console.error("Failed to initialize:", e);
+        $('#loading').fadeOut(500); // Hide anyway to let page show errors
+    }
+}
+
+
 function load() {
     if (resumeData == null) {
         $('#loading').show();
@@ -121,7 +157,6 @@ function load() {
             url: 'https://vohuman.github.io/site/resume.json',
             method: 'GET',
             success: function (data) {
-                
                 resumeData = data;
                 
                 $('#btn-en').prop('disabled', false);
@@ -156,9 +191,10 @@ function formatText(text) {
     return text;
 }
 
-function setLanguage(lang) {
+async function setLanguage(lang) {
 
-    load();
+    if (!resumeData) 
+        await getResumeData();
     
     currentLang = lang;
 
@@ -757,3 +793,6 @@ function toggleSidebar() {
     overlay.removeClass('hidden');
 }
 
+$(document).ready(() => {
+    initApp();
+});
