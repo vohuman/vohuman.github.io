@@ -21,7 +21,7 @@ body {
 }
 
 li {
-    color:#222;
+    color:#333;
 }
 
 
@@ -603,20 +603,25 @@ body {
         }
 
             .nav-tabs a {
-                cursor: pointer;
                 font-weight: 500;
                 color: #444;
                 font-size: 1.05rem;
             }
 
+            .nav-tabs a::after {
+                background-color: #3a0ed8 !important;
+            }
+
+
                 .nav-tabs a.active {
-                    color: #111;
+                    color: #222;
                     border-bottom: 2px solid #a855f7;
                 }
 
                 .nav-tabs a:hover {
                     color: #000;
                     border-bottom: 2px solid #3a0ed8 !important;
+                    border-color: #3a0ed8 !important;
                 }
 
         .glass-panel.firstcard {
