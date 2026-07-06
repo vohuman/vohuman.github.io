@@ -2,6 +2,9 @@ let currentLang = 'en';
 let changelanges = false;
 let resumeData = null;
 
+let isfirstload = true; // Add this line at the top
+
+
 const i18n = {
     en: {
         headers: {
@@ -126,11 +129,18 @@ function load() {
 
                 renderAll();
 
-                $('#loading').hide(3000);
+                $if (isfirstload) {
+                    setTimeout(function() {
+                        $('#loading').fadeOut(5000);
+                    }, 20000); // 10,000ms = 10 seconds
+                    isfirstload = false; // Disable flag after first run
+                } else {
+                    $('#loading').fadeOut(5000); // Hide instantly for future loads
+                }
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
-                $('#loading').hide(3000);
+                 $('#loading').fadeOut(500); 
             }
         });
     }
