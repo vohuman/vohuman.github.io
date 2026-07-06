@@ -106,9 +106,9 @@ p {
 .nav-tabs {
     display: flex;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: 15px;
+    padding: 10px;
 }
 
     .nav-tabs span {
@@ -426,7 +426,7 @@ p {
     }
 }
 
-/* Subtle gradient text for the name to make it pop */
+
 .gradient-text {
     background: linear-gradient(to right, #f8fafc, #94a3b8);
     -webkit-background-clip: text;
