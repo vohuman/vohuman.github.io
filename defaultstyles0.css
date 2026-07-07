@@ -3,10 +3,10 @@
     --sidebar-width: 280px;
     --primary-color: #0d6efd;
     --card-blue: #b3e4ff;
-    --half-card-blue: rgba(179,228,255,0.5);
-    --new-card-blue: rgba(179,228,255,0.8);
-    --half-card-white: rgba(248,249,250,0.5);
-    --new-card-white: rgba(248,249,250,0.8);
+    --half-card-blue: rgba(179,228,255,0.4);
+    --new-card-blue: rgba(179,228,255,0.7);
+    --half-card-white: rgba(248,249,250,0.4);
+    --new-card-white: rgba(248,249,250,0.7);
     --bs-nav-tabs-border-width: 0px !important;
 }
 
@@ -569,7 +569,7 @@ section {
 
 
 .glass-panel {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     /*backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);*/
     /*border: 1px solid rgba(255, 255, 255, 0.6);*/
