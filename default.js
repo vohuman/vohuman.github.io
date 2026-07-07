@@ -483,10 +483,7 @@ loadedu = function () {
     var fade = !changelanges ? 'fadein' : '';
     var d = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 border-bottom">
-           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-               <i class="fa-solid fa-book-open-lines fs-5"></i>
-           </div>
-           <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'education')}</h2>
+           <h2 class="h3 fw-bold text-dark mb-0"><i class="fa-sharp fa-solid fa-book-open-lines"></i> ${translate('headers', 'education')}</h2>
        </div>
        <div class="row g-4"><div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
