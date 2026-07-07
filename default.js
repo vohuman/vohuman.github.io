@@ -131,14 +131,9 @@ function load() {
 
                 renderAll();
 
-                $if (isfirstload) {
-                    setTimeout(function() {
+                setTimeout(function() {
                         $('#loading').fadeOut(5000);
                     }, 20000); 
-                    isfirstload = false; 
-                } else {
-                    $('#loading').fadeOut(5000); 
-                }
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
