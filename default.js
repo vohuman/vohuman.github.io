@@ -128,7 +128,7 @@ function load() {
                 $('#btn-de').prop('disabled', false);
 
                 renderAll();
-                $('#loading').fadeOut(1500);
+                $('#loading').fadeOut(1800);
  
             },
             error: function (jqxhr, textStatus, error) {
@@ -138,7 +138,7 @@ function load() {
         });
     }
     else {
-        $('#loading').fadeOut(1500); 
+        $('#loading').fadeOut(1800); 
     }
 }
 
