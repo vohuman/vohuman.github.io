@@ -158,6 +158,7 @@ function formatText(text) {
 
 function setLanguage(lang) {
 
+    console.log(resumeData);
     if (!resumeData) 
         load();
     
