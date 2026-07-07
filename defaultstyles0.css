@@ -3,9 +3,9 @@
     --sidebar-width: 280px;
     --primary-color: #0d6efd;
     --card-blue: #b3e4ff;
-    --half-card-blue: rgba(179,228,255,0.3);
+    --half-card-blue: rgba(179,228,255,0.4);
     --new-card-blue: rgba(179,228,255,0.8);
-    --half-card-white: rgba(248,249,250,0.3);
+    --half-card-white: rgba(248,249,250,0.4);
     --new-card-white: rgba(248,249,250,0.8);
     --bs-nav-tabs-border-width: 0px !important;
 }
