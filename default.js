@@ -417,7 +417,7 @@ loadskills = function () {
 
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
-       <div class="d-flex align-items-center gap-3 border-bottom">
+       <div class="d-flex align-items-center gap-3 border-bottom mb-4">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
        </div>
        <div class="row g-4">`;
