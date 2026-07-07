@@ -530,7 +530,7 @@ loadedu = function () {
               <p class="text-success small fw-medium mb-1">${e.institution}</p>
               <div class="d-flex justify-content-between align-items-center small text-muted">
                   <span>${e.location}</span>
-                  <span class="bg-light px-2 py-1 rounded">${e.startDate} - ${e.endDate}</span>
+                  <span class="bg-light px-2 py-1 rounded mx-2">${e.startDate} - ${e.endDate}</span>
               </div>
           </div>
       </div>`;
