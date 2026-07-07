@@ -418,6 +418,9 @@ loadskills = function () {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 border-bottom mb-4">
+           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+               <i class="fa-solid fa-code fs-5"></i>
+           </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'skills')}</h2>
        </div>
        <div class="row g-4">`;
@@ -483,7 +486,10 @@ loadedu = function () {
     var fade = !changelanges ? 'fadein' : '';
     var d = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 border-bottom">
-           <h2 class="h3 fw-bold text-dark mb-2"><i class="fa fa-book"></i> ${translate('headers', 'education')}</h2>
+           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+               <i class="fa-solid fa-book fs-5"></i>
+           </div>
+           <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'education')}</h2>
        </div>
        <div class="row g-4"><div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
