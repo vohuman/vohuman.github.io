@@ -286,6 +286,9 @@ loadintro = function () {
 
 
 loadhistory = function () {
+     if (!resumeData) 
+        load();
+    
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
@@ -400,6 +403,10 @@ loadhistory = function () {
 }
 
 loadskills = function () {
+    
+     if (!resumeData) 
+        load();
+    
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
         backend: { color: "primary", icon: "fa-solid fa-server" },
@@ -469,6 +476,10 @@ loadskills = function () {
 }
 
 loadedu = function () {
+
+     if (!resumeData) 
+        load();
+    
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
