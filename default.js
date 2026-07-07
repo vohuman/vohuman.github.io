@@ -240,8 +240,11 @@ renderHero = function () {
 }
 
 loadintro = function () {
-    if (resumeData == null)
+    console.log(resumeData);
+    if (!resumeData) {
         load();
+        return;
+    }
 
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
