@@ -114,48 +114,12 @@ const i18n = {
 };
 
 
-async function getResumeData() {
-    
-    if (resumeData) return resumeData;
-    
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url: 'https://vohuman.github.io/site/resume.json', // Ensure this path is correct
-            method: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                resumeData = data;
-                console.log("Resume data loaded successfully");
-                resolve(resumeData);
-            },
-            error: function(xhr, status, error) {
-                console.error("Critical: Could not load resume data via AJAX:", error);
-                reject(error);
-            }
-        });
-    });
-}
-
-
-async function initApp(defaultLang = 'de') {
-    try {
-        // 1. Fetch data first
-        await getResumeData();
-        
-        // 2. Set the language safely AFTER data is ready
-        await setLanguage(defaultLang);
-        
-        $('#loading').hide(500);
-    } catch (e) {
-        console.error("Initialization failed:", e);
-        $('#loading').fadeOut(500);
-    }
-}
 
 
 function load() {
+     $('#loading').show();
     if (resumeData == null) {
-        $('#loading').show();
+       
         $.ajax({
             url: 'https://vohuman.github.io/site/resume.json',
             method: 'GET',
@@ -170,17 +134,20 @@ function load() {
                 $if (isfirstload) {
                     setTimeout(function() {
                         $('#loading').fadeOut(5000);
-                    }, 20000); // 10,000ms = 10 seconds
-                    isfirstload = false; // Disable flag after first run
+                    }, 20000); 
+                    isfirstload = false; 
                 } else {
-                    $('#loading').fadeOut(5000); // Hide instantly for future loads
+                    $('#loading').fadeOut(5000); 
                 }
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
-                 $('#loading').fadeOut(500); 
+                 $('#loading').hide(500); 
             }
         });
+    }
+    else {
+        $('#loading').fadeOut(1000); 
     }
 }
 
@@ -194,10 +161,10 @@ function formatText(text) {
     return text;
 }
 
-async function setLanguage(lang) {
+function setLanguage(lang) {
 
     if (!resumeData) 
-        await getResumeData();
+        load();
     
     currentLang = lang;
 
