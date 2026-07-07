@@ -820,12 +820,12 @@ footer {
 
         .loader div:nth-child(2) {
             animation-delay: -0.45s;
-            border-top-color: #e74c3c;
+            border-top-color: #494cf1;
         }
 
         .loader div:nth-child(3) {
             animation-delay: -0.9s;
-            border-top-color: #f1c40f;
+            border-top-color: #766cf6;
         }
 
         @keyframes ring {
