@@ -18,12 +18,20 @@
     background-color: rgba(112, 20, 240, 0.2) !important;
 }
 
+.text-indigo-emphasis {
+    color: #2610c2 !important;
+}
+
 .text-orange {
     color: #fd7e14 !important;
 }
 
 .bg-orange {
     background-color: rgba(250, 125, 20, 0.2) !important;
+}
+
+.text-orange-emphasis {
+    color: #cd3e14 !important;
 }
 
 body {
