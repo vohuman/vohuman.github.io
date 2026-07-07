@@ -543,7 +543,7 @@ loadedu = function () {
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
                    <div class="d-flex align-items-center gap-3 mb-4">
-      <div class="bg-warning bg-opacity-10 text-warning p-2 rounded">
+      <div class="bg-warning bg-opacity-10 text-indigo p-2 rounded">
           <i class="fa-solid fa-certificate fs-5"></i>
       </div>
       <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
@@ -552,7 +552,7 @@ loadedu = function () {
 
     $.each(cer, function (index, c) {
         html += `<div class="cer">
-          <i class="fa-solid fa-trophy text-warning mt-1 fs-5"></i>
+          <i class="fa-solid fa-trophy text-indigo mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
               <h6 class="text-dark mb-1 small"><b>${c.title}</b></h6>
               <div class="small text-muted d-flex gap-2">
@@ -650,7 +650,7 @@ rendersidemenu = function () {
 
    <li class="mb-1">
        <a href="#" onclick="loadedu()" class="nav-link">
-           <i class="fa-solid fa-graduation-cap"></i>
+           <i class="fa fa-book"></i>
            <span id="edu">${i18n[currentLang].nav.education}</span>
        </a>
    </li>`;
