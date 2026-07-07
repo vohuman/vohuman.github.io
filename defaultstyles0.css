@@ -465,6 +465,7 @@ p {
 .card {
     position: relative !important;
     background-color: var(--half-card-white) !important;
+    backdrop-filter: blur(12px);
     color: #333 !important;
     overflow: hidden !important;
     transition: color 0.8s ease !important;
@@ -739,9 +740,9 @@ p {
 .glass-panel.firstcard {
     position: relative !important;
     background-color: var(--half-card-blue) !important;
+    backdrop-filter: blur(12px);
     overflow: hidden !important;
     transition: color 0.8s ease !important;
-    cursor: default;
 }
 
 
