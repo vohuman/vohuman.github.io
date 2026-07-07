@@ -487,7 +487,7 @@ loadedu = function () {
     var d = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-               <i class="fa-solid fa-book fs-5"></i>
+               <i class="fa fa-book fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'education')}</h2>
        </div>
@@ -591,85 +591,6 @@ loadedu = function () {
     changelanges = false;
 }
 
-loadeduLang = function () {
-    var edu = resumeData[currentLang].education;
-    var cer = resumeData[currentLang].certificates;
-
-    var d = `<div id="section-education" class="row g-4 mt-4 p-5">
-       <div class="col-lg-6">
-           <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
-               <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
-      <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-          <i class="fa-solid fa-graduation-cap fs-5"></i>
-      </div>
-      <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.education}</h5>
-                   </div>
-                   <div>`;
-
-    $.each(edu, function (index, e) {
-        d += `<div class="edu">
-          <div>
-              <h6 class="mb-0">${e.degree}</h6>
-              <p class="text-primary small fw-medium mb-1">${e.institution}</p>
-              <div class="d-flex justify-content-between align-items-center small text-muted">
-                  <span>${e.location}</span>
-                  <span class="bg-light px-2 py-1 rounded">${e.startDate} - ${e.endDate}</span>
-              </div>
-          </div>
-      </div>`;
-    });
-
-    d += `</div>
-               </div>
-           </div>
-       </div>`;
-
-
-    d += `<div class="col-lg-6">
-           <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
-               <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
-      <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-          <i class="fa-solid fa-certificate fs-5"></i>
-      </div>
-      <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
-                   </div>
-                   <div>`;
-
-    $.each(cer, function (index, c) {
-        d += `<div class="edu">
-          <i class="fa-solid fa-trophy text-primary mt-1 fs-5"></i>
-          <div style="padding-left: 1rem;">
-              <h6 class="text-dark mb-1 small"><b>${c.title}</b></h6>
-              <div class="small text-muted d-flex gap-2">
-                  <span class="fw-medium text-secondary">${c.issuer}</span>
-                  <span>•</span>
-                  <span>${c.date}</span>
-              </div>
-          </div>
-        </div>`;
-    });
-
-    d += `</div>
-               </div>
-           </div>
-       </div>
-   </div>`;
-
-    let div = $(d);
-    let target = $('main');
-    target.empty();
-    target.append(div);
-
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('intro');
-
-    if (!$('main').hasClass('education')) {
-        $('main').addClass('education');
-    }
-}
 
 function updateLangBtns() {
 
