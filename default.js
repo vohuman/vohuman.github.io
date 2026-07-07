@@ -130,10 +130,8 @@ function load() {
                 $('#btn-de').prop('disabled', false);
 
                 renderAll();
-
-                setTimeout(function() {
-                        $('#loading').fadeOut(5000);
-                    }, 20000); 
+                $('#loading').fadeOut(5000);
+ 
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
@@ -142,7 +140,7 @@ function load() {
         });
     }
     else {
-        $('#loading').fadeOut(1000); 
+        $('#loading').fadeOut(3000); 
     }
 }
 
