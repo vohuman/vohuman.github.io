@@ -815,6 +815,18 @@ p {
         opacity: 1;
     }
 
+@media (max-width: 500px) {
+    .main-wrapper {
+        margin: 30px auto;
+        margin-top: 5rem !important;
+        padding: 0 10px;
+    }
+
+    .glass-panel {
+        padding: 10px;
+    }
+}
+
 footer {
     margin-top: 60px;
     padding: 40px 20px;
