@@ -488,7 +488,7 @@ loadedu = function () {
     var d = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-               <i class="fa fa-book fs-5"></i>
+               <i class="fa-solid fa-book fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'education')}</h2>
        </div>
