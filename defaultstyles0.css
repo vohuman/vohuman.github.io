@@ -16,7 +16,7 @@
 
 .bg-indigo {
     --bs-bg-opacity: 1;
-    background-color: rgba(112, 20, 240, 1) !important;
+    background-color: rgba(112, 20, 240, 0.5) !important;
 }
 
 body {
