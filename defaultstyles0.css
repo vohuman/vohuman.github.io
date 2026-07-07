@@ -14,6 +14,11 @@
     color: #6610f2 !important;
 }
 
+.bg-indigo {
+    --bs-bg-opacity: 1;
+    background-color: rgba(112, 20, 240, 1) !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
