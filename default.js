@@ -157,7 +157,6 @@ function formatText(text) {
 function setLanguage(lang) {
 
     console.log(resumeData);
-    if (!resumeData) 
         load();
     
     currentLang = lang;
@@ -244,6 +243,8 @@ loadintro = function () {
         return;
     }
 
+    load();
+
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
        <div class="card project-card border-0 custom-card-hover">
@@ -286,8 +287,8 @@ loadintro = function () {
 
 
 loadhistory = function () {
-     if (!resumeData) 
-        load();
+            
+    load();
     
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
@@ -404,8 +405,7 @@ loadhistory = function () {
 
 loadskills = function () {
     
-     if (!resumeData) 
-        load();
+    load();
     
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
@@ -477,8 +477,7 @@ loadskills = function () {
 
 loadedu = function () {
 
-     if (!resumeData) 
-        load();
+    load();
     
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
