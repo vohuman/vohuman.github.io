@@ -411,8 +411,8 @@ loadskills = function () {
         frontend: { color: "pink", icon: "fa-solid fa-desktop" },
         database: { color: "success", icon: "fa-solid fa-database" },
         sourceControl: { color: "orange", icon: "fa-solid fa-code-branch" },
-        projectManagement: { color: "info", icon: "fa-solid fa-list-check" },
-        general: { color: "indigo", icon: "fa-solid fa-gears" }
+        projectManagement: { color: "indigo", icon: "fa-solid fa-list-check" },
+        general: { color: "info", icon: "fa-solid fa-gears" }
     };
 
     var fade = !changelanges ? 'fadein' : '';
