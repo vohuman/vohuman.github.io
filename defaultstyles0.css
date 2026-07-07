@@ -10,6 +10,10 @@
     --bs-nav-tabs-border-width: 0px !important;
 }
 
+.text-indigo {
+    color: --bs-indigo !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
