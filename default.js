@@ -543,7 +543,7 @@ loadedu = function () {
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
                    <div class="d-flex align-items-center gap-3 mb-4">
-      <div class="bg-warning bg-opacity-10 text-indigo p-2 rounded">
+      <div class="bg-indigo bg-opacity-10 text-indigo p-2 rounded">
           <i class="fa-solid fa-certificate fs-5"></i>
       </div>
       <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
