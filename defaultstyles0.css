@@ -15,8 +15,15 @@
 }
 
 .bg-indigo {
-    --bs-bg-opacity: 1;
     background-color: rgba(112, 20, 240, 0.3) !important;
+}
+
+.text-orange {
+    color: #fd7e14 !important;
+}
+
+.bg-orange {
+    background-color: rgba(250, 125, 20, 0.3) !important;
 }
 
 body {
