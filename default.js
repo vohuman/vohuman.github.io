@@ -114,8 +114,6 @@ const i18n = {
 };
 
 
-
-
 function load() {
      $('#loading').show();
     if (resumeData == null) {
@@ -130,7 +128,7 @@ function load() {
                 $('#btn-de').prop('disabled', false);
 
                 renderAll();
-                $('#loading').fadeOut(2000);
+                $('#loading').fadeOut(1500);
  
             },
             error: function (jqxhr, textStatus, error) {
@@ -140,7 +138,7 @@ function load() {
         });
     }
     else {
-        $('#loading').fadeOut(2000); 
+        $('#loading').fadeOut(1500); 
     }
 }
 
