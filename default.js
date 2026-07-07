@@ -251,7 +251,7 @@ loadintro = function () {
                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                       <i class="fa-solid fa-circle-info fs-5"></i>
                    </div>
-                   <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
+                   <h4 class="fw-bold text-dark mb-2">${i18n[currentLang].headers.intro}</h4>
                </div>
                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
@@ -294,7 +294,7 @@ loadhistory = function () {
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
            </div>
-           <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
+           <h2 class="h3 fw-bold text-dark mb-2">${i18n[currentLang].headers.experience}</h2>
        </div>`;
 
     var history = resumeData[currentLang].employmentHistory;
@@ -418,7 +418,7 @@ loadskills = function () {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 border-bottom mb-4">
-           <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+           <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'skills')}</h2>
        </div>
        <div class="row g-4">`;
 
@@ -483,7 +483,7 @@ loadedu = function () {
     var fade = !changelanges ? 'fadein' : '';
     var d = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 border-bottom">
-           <h2 class="h3 fw-bold text-dark mb-0"><i class="bi bi-book"></i> ${translate('headers', 'education')}</h2>
+           <h2 class="h3 fw-bold text-dark mb-2"><i class="fa fa-book"></i> ${translate('headers', 'education')}</h2>
        </div>
        <div class="row g-4"><div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
