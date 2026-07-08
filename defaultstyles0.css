@@ -10,29 +10,7 @@
     --bs-nav-tabs-border-width: 0px !important;
 }
 
-.text-indigo {
-    color: #6610f2 !important;
-}
 
-.bg-indigo {
-    background-color: rgba(112, 20, 240, 0.2) !important;
-}
-
-.text-indigo-emphasis {
-    color: #1605a2 !important;
-}
-
-.text-orange {
-    color: #fd7e14 !important;
-}
-
-.bg-orange {
-    background-color: rgba(250, 125, 20, 0.2) !important;
-}
-
-.text-orange-emphasis {
-    color: #b02004 !important;
-}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -389,6 +367,46 @@ p {
 
 .border-pink-subtle {
     border-color: #ffc2d1 !important;
+}
+
+.text-indigo {
+    color: #6610f2 !important;
+}
+
+.bg-indigo-subtle {
+    background-color: #6610f2 !important;
+}
+
+.border-indigo-subtle {
+    border-color: #6610f2 !important;
+}
+
+.bg-indigo {
+    background-color: rgba(112, 20, 240, 0.2) !important;
+}
+
+.text-indigo-emphasis {
+    color: #1605a2 !important;
+}
+
+.text-orange {
+    color: #fd7e14 !important;
+}
+
+.bg-orange-subtle {
+    background-color: #fd7e14 !important;
+}
+
+.border-orange-subtle {
+    border-color: #fd7e14 !important;
+}
+
+.bg-orange {
+    background-color: rgba(250, 125, 20, 0.2) !important;
+}
+
+.text-orange-emphasis {
+    color: #b02004 !important;
 }
 
 .edu, .cer {
