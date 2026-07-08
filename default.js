@@ -2,7 +2,7 @@ let currentLang = 'en';
 let changelanges = false;
 let resumeData = null;
 
-let isfirstload = true; // Add this line at the top
+let isfirstload = true;
 
 const i18n = {
     en: {
@@ -180,7 +180,7 @@ function setLanguage(lang) {
         loadedu();
     }
 
-    toggleSidebar();
+    //toggleSidebar();
 
     if (currentLang === 'en') {
         $('#btn-en').addClass('active');
@@ -668,14 +668,14 @@ rendersidemenu = function () {
 
 const wrapper = $('#wrapper');
 
-$(document).on('click', function (e) {
+/*$(document).on('click', function (e) {
     var element = $(e.target);
     if (!element.hasClass('iconmenu')) {
         const sidebar = $('#sidebar-wrapper');
         if (sidebar.hasClass('toggled'))
             closeside();
     }
-});
+});*/
 
 function closeside() {
     const sidebar = $('#sidebar-wrapper');
