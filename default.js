@@ -180,7 +180,7 @@ function setLanguage(lang) {
         loadedu();
     }
 
-    //toggleSidebar();
+    toggleSidebar();
 
     if (currentLang === 'en') {
         $('#btn-en').addClass('active');
