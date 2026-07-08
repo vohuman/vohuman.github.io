@@ -499,7 +499,7 @@ p {
                 color: #d63384 !important;
             }
 
-            .card:hover .Database {
+            .card:hover .Database,  .card:hover .Datenbank {
                 color: #198754 !important;
             }
 
@@ -509,6 +509,10 @@ p {
 
             .card:hover .Management {
                 color: #6610f2 !important;
+            }
+
+            .card:hover .Allgemein, .card:hover .General {
+                color: #0dcaf0 !important;
             }
 
     .card::before {
