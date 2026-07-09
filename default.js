@@ -662,6 +662,16 @@ rendersidemenu = function () {
     let target = $('#nav-links');
     target.empty();
     target.append(div);
+
+    $('#about').html(i18n[currentLang].nav.intro);
+    $('#about1').html(i18n[currentLang].nav.intro);
+    $('#ex').html(i18n[currentLang].nav.history);
+    $('#ex1').html(i18n[currentLang].nav.history);
+    $('#skill').html(i18n[currentLang].nav.skills);
+    $('#skill1').html(i18n[currentLang].nav.skills);
+    $('#edu').html(i18n[currentLang].nav.education);
+    $('#edu1').html(i18n[currentLang].nav.education);
+    
 }
 
 //renderAll();
