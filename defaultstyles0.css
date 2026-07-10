@@ -186,6 +186,16 @@ p {
         .sidebar-overlay.show {
             display: block;
         }
+    
+    .main-wrapper {
+        margin: 30px auto;
+        margin-top: 4rem !important;
+        padding: 0 10px;
+    }
+
+    .glass-panel {
+        padding: 20px !important;
+    }
 }
 
 .sidebar-overlay.hidden {
@@ -838,18 +848,6 @@ p {
         max-height: 500px;
         opacity: 1;
     }
-
-@media (max-width: 500px) {
-    .main-wrapper {
-        margin: 30px auto;
-        margin-top: 4rem !important;
-        padding: 0 10px;
-    }
-
-    .glass-panel {
-        padding: 20px !important;
-    }
-}
 
 footer {
     margin-top: 60px;
