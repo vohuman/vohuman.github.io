@@ -568,15 +568,13 @@ body {
 }
 
 .glass-header {
-    background-color: rgba(255,255,255,0.125) !important;
+    background-color: rgba(248,249,250,0.125) !important;
     transition: all 0.3s ease-in-out;
     border-bottom: 1px solid transparent !important;
 }
 
     .glass-header.scrolled {
-        background-color: rgba(248,249,250,0.7) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(248,249,250,0.75) !important;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
     }
@@ -851,10 +849,9 @@ p {
 footer {
     margin-top: 60px;
     padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.175);
-    backdrop-filter: blur(10px);
+    background: rgba(248,249,250, 0.175);
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(248,249,250, 0.25);
     color: #374151;
 }
 
