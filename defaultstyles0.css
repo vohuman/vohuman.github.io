@@ -916,3 +916,9 @@ footer {
     align-items: center;
     background-color: rgba(26,26,26,0.5);
 }
+
+#menu-icon {
+    background-color: rgba(248,249,250,0.5);
+    color: #444;
+    border-color: #fff;
+}
