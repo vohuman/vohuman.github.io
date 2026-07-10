@@ -928,3 +928,6 @@ footer {
 
 }
 
+#menu-toggle:hover {
+    border-radius: 50%;
+}
