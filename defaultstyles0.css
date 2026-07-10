@@ -575,6 +575,8 @@ body {
 
     .glass-header.scrolled {
         background-color: rgba(248,249,250,0.75) !important;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
     }
@@ -849,9 +851,9 @@ p {
 footer {
     margin-top: 60px;
     padding: 40px 20px;
-    background: rgba(248,249,250, 0.175);
+    background: rgba(248,249,250, 0.25);
     text-align: center;
-    border-top: 1px solid rgba(248,249,250, 0.25);
+    border-top: 1px solid rgba(248,249,250, 0.5);
     color: #374151;
 }
 
