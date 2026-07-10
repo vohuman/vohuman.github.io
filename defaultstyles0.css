@@ -5,8 +5,10 @@
     --card-blue: #b3e4ff;
     --half-card-blue: rgba(179,228,255,0.4);
     --new-card-blue: rgba(179,228,255,0.6);
+    --semi-half-card-blue: rgba(179,228,255,0.2);
     --half-card-white: rgba(248,249,250,0.4);
     --new-card-white: rgba(248,249,250,0.65);
+    --semi-half-card-white: rgba(248,249,250,0.2);
     --bs-nav-tabs-border-width: 0px !important;
 }
 
@@ -851,7 +853,7 @@ p {
 footer {
     margin-top: 60px;
     padding: 40px 20px;
-    background: rgba(248,249,250, 0.25);
+    background: var(--semi-half-card-blue);
     text-align: center;
     border-top: 1px solid rgba(248,249,250, 0.5);
     color: #374151;
