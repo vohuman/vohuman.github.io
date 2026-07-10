@@ -196,6 +196,12 @@ p {
     .glass-panel {
         padding: 20px !important;
     }
+
+    #menu-icon {
+        font-size: 1.05rem !important;
+        font-weight: 500 !important;
+    }
+
 }
 
 .sidebar-overlay.hidden {
@@ -919,5 +925,4 @@ footer {
     background-color: rgba(248,249,250,0.5);
     color: #444;
     border-color: #fff;
-    padding: 2px;
 }
