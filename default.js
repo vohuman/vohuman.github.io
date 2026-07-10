@@ -183,11 +183,11 @@ function setLanguage(lang) {
     toggleSidebar();
 
     if (currentLang === 'en') {
-        $('#btn-en').addClass('active');
-        $('#btn-de').removeClass('active');
+        $('.btn-en').addClass('active');
+        $('.btn-de').removeClass('active');
     } else {
-        $('#btn-de').addClass('active');
-        $('#btn-en').removeClass('active');
+        $('.btn-de').addClass('active');
+        $('.btn-en').removeClass('active');
     }
 
 }
