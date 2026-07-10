@@ -874,6 +874,7 @@ footer {
     background-color: rgba(248,249,250,0.5);
     color: #444;
     border-color: #fff;
+    transition: border-radius 0.6s ease-in-out, background-color 0.3s ease;
 }
 
 @media (max-width: 768px) {
