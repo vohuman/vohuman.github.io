@@ -229,13 +229,16 @@
                     setTimeout(() => {
                         menu.addClass('show');
                     }, 10);
+                    
                     icon.text('✕');
+                    $('menu-toggle').addClass('active');
                 } else {
                     menu.removeClass('show');
                     setTimeout(() => {
                         menu.addClass('d-none');
                     }, 300);
                     icon.text('☰');
+                    $('menu-toggle').removeClass('active');
                 }
             };
 
