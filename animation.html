@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahman Soltani</title>
+    <link rel="stylesheet" href="defaultstyles0.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+  
+<body>
+<canvas id="network-canvas"></canvas>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="default.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 100) {
+                    $('.glass-header').addClass('scrolled');
+                } else {
+                    $('.glass-header').removeClass('scrolled');
+                }
+            });
+            
+            window.toggleMenu = function () {
+                const menu = $('#mobile-menu');
+                const icon = $('#menu-icon');
+
+                if (menu.hasClass('d-none')) {
+                    menu.removeClass('d-none');
+                    setTimeout(() => {
+                        menu.addClass('show');
+                    }, 10);
+                    
+                    icon.text('✕');
+                    $('#menu-toggle').addClass('active');
+                } else {
+                    menu.removeClass('show');
+                    setTimeout(() => {
+                        menu.addClass('d-none');
+                    }, 300);
+                    icon.text('☰');
+                    $('#menu-toggle').removeClass('active');
+                }
+            };
+
+            
+            const canvas = document.getElementById('network-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Automatic adaptive scaling setup
+            let width = (canvas.width = window.innerWidth);
+            let height = (canvas.height = window.innerHeight);
+
+            $(window).on('resize', function () {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const particles = [];
+            const settings = {
+                density: 150,      /* Slightly more nodes */
+                threshold: 140,    /* Longer connection lines */
+                speed: 0.8,        /* Slower, elegant floating speed */
+                color: '#8b6cf6',  /* Vibrant purple nodes matching the screenshot */
+                gravity: 'pull'
+            };
+
+            const mouse = { x: null, y: null, radius: 150 };
+
+            // Track mouse globally across the window
+            // $(window).on('mousemove', function(e) {
+            //     mouse.x = e.clientX;
+            //     mouse.y = e.clientY;
+            // });
+
+            // $(document).on('mouseleave', function() {
+            //     mouse.x = null;
+            //     mouse.y = null;
+            // });
+
+            // Hex converter for connecting lines alpha drop-offs
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                let rrandom = Math.floor(Math.random() * 250) + 1;
+                let grandom = Math.floor(Math.random() * 250) + 1;
+                let brandom = Math.floor(Math.random() * 250) + 1;
+                
+                return result ? {
+                    //r: rrandom,
+                    //g: grandom,
+                    //b: brandom
+                    
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+
+            // Initialize/Spawn Particles
+            function initParticles() {
+                particles.length = 0;
+                for (let i = 0; i < settings.density; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.6 * settings.speed,
+                        vy: (Math.random() - 0.5) * 0.6 * settings.speed,
+                        radius: Math.random() * 2.5 + 1
+                    });
+                }
+            }
+
+            // CHANGED: Listen to the document instead of the canvas so clicks over text/divs still trigger nodes
+            // $(document).on('click', function(e) {
+            //     for (let i = 0; i < 8; i++) {
+            //         particles.push({
+            //             x: e.clientX,
+            //             y: e.clientY,
+            //             vx: (Math.random() - 0.5) * 2 * settings.speed,
+            //             vy: (Math.random() - 0.5) * 2 * settings.speed,
+            //             radius: Math.random() * 3 + 1.5
+            //         });
+            //     }
+            // });
+
+            // The Animation & Draw Tick Loop
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                const rgb = hexToRgb(settings.color);
+
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Bounce from boundary limits
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    // Handle Cursor Gravity Mechanics
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - p.x;
+                        const dy = mouse.y - p.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            if (settings.gravity === 'pull') {
+                                p.x += dx * force * 0.02;
+                                p.y += dy * force * 0.02;
+                            } else if (settings.gravity === 'push') {
+                                p.x -= dx * force * 0.02;
+                                p.y -= dy * force * 0.02;
+                            }
+                        }
+                    }
+
+                    // Draw individual nodes
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = settings.color;
+                    ctx.globalAlpha = 0.45;
+                    ctx.fill();
+                });
+
+                // Compute connecting wires
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p1 = particles[i];
+                        const p2 = particles[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < settings.threshold) {
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            const alpha = ((settings.threshold - dist) / settings.threshold) * 0.5;
+                            ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+                            ctx.globalAlpha = 1.0;
+                            ctx.lineWidth = 0.75;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+
+            initParticles();
+            animate();
+
+            //$('#loading').fadeOut(900);
+
+            setLanguage('de');
+
+        });
+    </script>
+
+    
+</body>
+</html>
