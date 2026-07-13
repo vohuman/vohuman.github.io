@@ -22,37 +22,7 @@
     <script>
         $(document).ready(function () {
             
-            $(window).on('scroll', function() {
-                if ($(window).scrollTop() > 100) {
-                    $('.glass-header').addClass('scrolled');
-                } else {
-                    $('.glass-header').removeClass('scrolled');
-                }
-            });
-            
-            window.toggleMenu = function () {
-                const menu = $('#mobile-menu');
-                const icon = $('#menu-icon');
-
-                if (menu.hasClass('d-none')) {
-                    menu.removeClass('d-none');
-                    setTimeout(() => {
-                        menu.addClass('show');
-                    }, 10);
-                    
-                    icon.text('✕');
-                    $('#menu-toggle').addClass('active');
-                } else {
-                    menu.removeClass('show');
-                    setTimeout(() => {
-                        menu.addClass('d-none');
-                    }, 300);
-                    icon.text('☰');
-                    $('#menu-toggle').removeClass('active');
-                }
-            };
-
-            
+                        
             const canvas = document.getElementById('network-canvas');
             const ctx = canvas.getContext('2d');
 
@@ -197,9 +167,6 @@
             initParticles();
             animate();
 
-            //$('#loading').fadeOut(900);
-
-            setLanguage('de');
 
         });
     </script>
