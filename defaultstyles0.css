@@ -770,6 +770,10 @@ p {
     color: #004ebd;
 }
 
+.firstcard a.btn {
+    color: #fff;
+}
+
 
 .main-wrapper {
     position: relative;
