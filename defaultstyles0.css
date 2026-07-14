@@ -267,7 +267,7 @@ p {
         height: 2px;
         bottom: -2px;
         left: 0;
-        background-color: var(--primary-color);
+        background-color: #fff;
         transform-origin: bottom right;
         transition: transform 0.255s ease-out;
     }
@@ -278,7 +278,7 @@ p {
     }
 
     .custom-link-hover:hover {
-        color: var(--primary-color);
+        color: #fff;
     }
 
 .avatar-container {
@@ -765,6 +765,10 @@ p {
         position: relative;
         z-index: 1;
     }
+
+.firstcard a {
+    color: #0d6efd;
+}
 
 
 .main-wrapper {
