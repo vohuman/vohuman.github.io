@@ -743,6 +743,10 @@ p {
         color: var(--primary-color) !important;
     }
 
+    .glass-panel.firstcard:hover a.btn {
+        color: #fff !important;
+    }
+
     .glass-panel.firstcard:hover {
         box-shadow: 0 0 0.4rem 0.2rem rgba(0,32,87,0.6) !important;
     }
