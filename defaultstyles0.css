@@ -278,7 +278,7 @@ p {
     }
 
     .custom-link-hover:hover {
-        color: #fff;
+        color: var(--primary-color);
     }
 
 .avatar-container {
