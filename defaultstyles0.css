@@ -11,6 +11,8 @@
     --semi-half-card-white: rgba(248,249,250,0.2);
     --half-card-purple: rgba(80,0,200,0.4);
     --new-card-purple: rgba(80,0,200,0.6);
+    --half-card-neon: rgba(80,120,255,0.4);
+    --new-card-neon: rgba(80,120,255,0.6);
     --bs-nav-tabs-border-width: 0px !important;
 }
 
@@ -730,7 +732,7 @@ p {
 
 .glass-panel.firstcard {
     position: relative !important;
-    background-color: var(--half-card-purple) !important;
+    background-color: var(--half-card-neon) !important;
     overflow: hidden !important;
     transition: color 0.8s ease !important;
 }
@@ -760,7 +762,7 @@ p {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--new-card-purple) !important;
+        background-color: var(--new-card-neon) !important;
         transform: scaleX(0);
         transform-origin: center;
         transition: transform 0.5s ease-in-out;
