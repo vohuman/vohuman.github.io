@@ -732,7 +732,7 @@ p {
 
 .glass-panel.firstcard {
     position: relative !important;
-    background-color: var(--half-card-neon) !important;
+    background-color: var(--half-card-blue) !important;
     overflow: hidden !important;
     transition: color 0.8s ease !important;
 }
@@ -762,7 +762,7 @@ p {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--new-card-neon) !important;
+        background-color: var(--new-card-blue) !important;
         transform: scaleX(0);
         transform-origin: center;
         transition: transform 0.5s ease-in-out;
