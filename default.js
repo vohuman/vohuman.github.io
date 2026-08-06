@@ -312,7 +312,7 @@ loadhistory = function () {
           <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
               <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
               <span>•</span>
-              <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+              <span><i class="fa-solid fa-location-dot me-1"></i><a href="${h.link}" target="_blank">${h.location}</a></span>
           </div>
       </div>
       <span class="badge rounded-pill text-bg-success bg-opacity-75 px-3 py-2">
@@ -529,7 +529,7 @@ loadedu = function () {
               <h6 class="mb-0">${e.degree}</h6>
               <p class="text-success small fw-medium mb-1">${e.institution}</p>
               <div class="d-flex justify-content-between align-items-center small text-muted">
-                  <span>${e.location}</span>
+                  <a href="${e.link}"><span>${e.location}</span></a>
                   <span class="bg-light px-2 py-1 rounded mx-2">${e.startDate} - ${e.endDate}</span>
               </div>
           </div>
