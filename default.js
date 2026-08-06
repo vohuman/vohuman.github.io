@@ -311,7 +311,7 @@ loadhistory = function () {
           <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
           <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
               <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
-              <span>•</span><a href="${h.link}">Link</a>
+              <span>•</span>
               <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
           </div>
       </div>
@@ -527,9 +527,15 @@ loadedu = function () {
         html += `<div class="edu">
           <div>
               <h6 class="mb-0">${e.degree}</h6>
-              <p class="text-success small fw-medium mb-1">${e.institution}</p>
+              <p class="text-success small fw-medium mb-1">${e.institution}
+                <h5 class="institution-name">
+                  <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                    ${e.institution}
+                  </a>
+                </h5>
+              </p>
               <div class="d-flex justify-content-between align-items-center small text-muted">
-                  <a href="${e.link}"><span>${e.location}</span></a>
+                  <span>${e.location}</span>
                   <span class="bg-light px-2 py-1 rounded mx-2">${e.startDate} - ${e.endDate}</span>
               </div>
           </div>
