@@ -524,6 +524,7 @@ loadedu = function () {
 
 
     $.each(edu, function (index, e) {
+        console.log(e);
         html += `<div class="edu">
           <div>
               <h6 class="mb-0">${e.degree}</h6>
