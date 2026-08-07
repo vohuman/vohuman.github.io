@@ -528,7 +528,7 @@ loadedu = function () {
           <div>
               <h6 class="text-success mb-0">${e.degree}</h6>
               <p class="text-success small fw-medium mb-1">
-                  <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                  <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
                     ${e.institution}
                   </a>
               </p>
@@ -562,7 +562,7 @@ loadedu = function () {
           <i class="fa-solid fa-trophy text-orange mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
               <h6 class="text-dark mb-1 small">
-                   <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                   <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
                        <b>${c.title}</b>
                    </a>
               </h6>
