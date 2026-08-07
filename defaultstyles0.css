@@ -285,13 +285,13 @@ p {
         color: var(--primary-color);
     }
 
-.link1-hover {
+.link1 {
     text-decoration: none;
     position: relative;
     color: inherit;
 }
 
-    .link1-hover::after {
+    .link1::after {
         content: '';
         position: absolute;
         width: 100%;
@@ -304,12 +304,12 @@ p {
         transition: transform 0.255s ease-out;
     }
 
-    .link1-hover:hover::after {
+    .link1:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
     }
 
-    .link1-hover:hover {
+    .link1:hover {
         
     }
 
