@@ -299,7 +299,7 @@ p {
         height: 2px;
         bottom: -2px;
         left: 0;
-        background-color: #fff;
+        background-color: rgba(80,120,255,0.0);
         transform-origin: bottom right;
         transition: transform 0.255s ease-out;
     }
