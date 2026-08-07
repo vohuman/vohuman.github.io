@@ -524,17 +524,13 @@ loadedu = function () {
 
 
     $.each(edu, function (index, e) {
-        console.log(e);
-        
         html += `<div class="edu">
           <div>
               <h6 class="mb-0">${e.degree}</h6>
-              <p class="text-success small fw-medium mb-1">${e.institution}
-                <h5 class="institution-name">
-                  <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+              <p class="text-success small fw-medium mb-1">
+                  <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-success text-decoration-none">
                     ${e.institution}
                   </a>
-                </h5>
               </p>
               <div class="d-flex justify-content-between align-items-center small text-muted">
                   <span>${e.location}</span>
@@ -565,7 +561,11 @@ loadedu = function () {
         html += `<div class="cer">
           <i class="fa-solid fa-trophy text-orange mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
-              <h6 class="text-dark mb-1 small"><b>${c.title}</b></h6>
+              <h6 class="text-dark mb-1 small">
+                   <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-dark text-decoration-none">
+                       <b>${c.title}</b>
+                   </a>
+              </h6>
               <div class="small text-muted d-flex gap-2">
                   <span class="fw-medium text-secondary">${c.issuer}</span>
                   <span>•</span>
