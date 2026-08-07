@@ -285,6 +285,34 @@ p {
         color: var(--primary-color);
     }
 
+.link1-hover {
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+}
+
+    .link1-hover::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #fff;
+        transform-origin: bottom right;
+        transition: transform 0.255s ease-out;
+    }
+
+    .link1-hover:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .link1-hover:hover {
+        
+    }
+
 .avatar-container {
     width: 200px;
     height: 200px;
