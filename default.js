@@ -310,7 +310,12 @@ loadhistory = function () {
       <div>
           <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
           <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
-              <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+              <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
+                       <span class="fw-semibold">
+              <i class="fa-regular fa-building me-1"></i>
+              ${h.company}</span>
+                   </a>
+              
               <span>•</span>
               <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
           </div>
@@ -339,7 +344,12 @@ loadhistory = function () {
               <div>
                   <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
                   <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
-                      <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+                     <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
+                       <span class="fw-semibold">
+              <i class="fa-regular fa-building me-1"></i>
+              ${h.company}</span>
+                   </a>
+                      
                       <span>•</span>
                       <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
                   </div>
