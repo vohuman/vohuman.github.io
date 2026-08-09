@@ -288,7 +288,7 @@ p {
 .link1 {
     text-decoration: none;
     position: relative;
-    color: inherit;
+    color: #0d6efd;
 }
 
     .link1::after {
@@ -310,7 +310,7 @@ p {
     }
 
     .link1:hover {
-        
+        color:#064ecd;
     }
 
 .avatar-container {
