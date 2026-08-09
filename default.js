@@ -559,7 +559,7 @@ loadedu = function () {
 
     $.each(cer, function (index, c) {
         html += `<div class="cer">
-          <i class="fa-solid fa-trophy mt-1 fs-5"></i>
+          <i class="fa-solid fa-trophy text-primary mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
               <h6 class="mb-1 small">
                    <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
