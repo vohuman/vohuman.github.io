@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahman Soltani</title>
+    
+    <!-- Bootstrap 5 CSS for Layout and Components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        /* Base Styles & Typography */
+        body { 
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            background-color: #f8f9fa; 
+            color: #333;
+        }
+        
+        /* Layout Structure */
+        #wrapper { 
+            display: flex; 
+            min-height: 100vh; 
+            overflow-x: hidden; 
+        }
+        
+        #sidebar-wrapper { 
+            width: 280px; 
+            background: #ffffff; 
+            border-right: 1px solid #dee2e6; 
+            transition: transform 0.3s ease-in-out; 
+            z-index: 1000; 
+            display: flex; 
+            flex-direction: column; 
+            flex-shrink: 0;
+        }
+        
+        #page-content-wrapper { 
+            flex: 1; 
+            padding: 2rem; 
+            width: 100%; 
+            min-width: 0; /* Prevents flex blowout */
+        }
+        
+        /* Mobile Sidebar Handling */
+        @media (max-width: 768px) {
+            #sidebar-wrapper { 
+                position: fixed; 
+                height: 100%; 
+                transform: translateX(-100%); 
+            }
+            #sidebar-wrapper.toggled { 
+                transform: translateX(0); 
+            }
+            #page-content-wrapper { 
+                padding: 1rem; 
+            }
+        }
+        
+        #sidebar-overlay { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.5); 
+            z-index: 999; 
+            backdrop-filter: blur(2px);
+        }
+        
+        #sidebar-overlay.show { 
+            display: block; 
+        }
+        
+        /* Custom Interactions & Animations */
+        .custom-card-hover { 
+            transition: transform 0.25s ease, box-shadow 0.25s ease; 
+        }
+        .custom-card-hover:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1)!important; 
+        }
+        
+        .fadein { 
+            animation: fadeIn 0.4s ease-out forwards; 
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(15px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        /* Navigation Links */
+        .navlinkcustom { 
+            text-decoration: none; 
+            color: #495057; 
+            display: flex; 
+            align-items: center; 
+            padding: 10px 15px; 
+            border-radius: 8px; 
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        .navlinkcustom:hover { 
+            background: #f8f9fa; 
+            color: #0d6efd; 
+        }
+        .navlinkcustom.active { 
+            background: #e7f1ff; 
+            color: #0d6efd; 
+        }
+        
+        /* Language Buttons */
+        .lang-btn { 
+            cursor: pointer; 
+            border: 1px solid #dee2e6; 
+            padding: 4px 12px; 
+            border-radius: 6px; 
+            background: white; 
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .lang-btn:hover:not(:disabled) {
+            background: #f8f9fa;
+        }
+        .lang-btn.active { 
+            background: #0d6efd; 
+            color: white; 
+            border-color: #0d6efd; 
+        }
+        .lang-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Timeline specific (Experience section) */
+        .timeline-item { 
+            position: relative; 
+            padding-left: 2rem; 
+            margin-bottom: 1.5rem; 
+            border-left: 2px solid #e9ecef; 
+        }
+        .timeline-dot { 
+            position: absolute; 
+            left: -0.4rem; 
+            top: 1.5rem; 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+            background: #0d6efd; 
+            border: 2px solid #fff; 
+        }
+        .timeline-dot.first { 
+            background: #198754; 
+            width: 14px; 
+            height: 14px; 
+            left: -0.45rem; 
+        }
+        
+        /* Education & Certificate specifics */
+        .edu, .cer { 
+            margin-bottom: 1rem; 
+            padding-bottom: 1rem; 
+            border-bottom: 1px solid #f1f3f5; 
+            display: flex; 
+        }
+        .cer { align-items: flex-start; }
+        .edu:last-child, .cer:last-child { 
+            border-bottom: none; 
+            margin-bottom: 0; 
+            padding-bottom: 0; 
+        }
+        
+        .link1 {
+            color: #0d6efd;
+            transition: color 0.2s;
+        }
+        .link1:hover {
+            color: #0a58ca;
+            text-decoration: underline !important;
+        }
+
+        /* Loading Screen */
+        #loading { 
+            position: fixed; 
+            inset: 0; 
+            background: #ffffff; 
+            z-index: 9999; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        /* Custom Bootstrap Colors injected by your JS (Pink, Orange, Indigo) */
+        .text-pink { color: #d63384 !important; }
+        .bg-pink-subtle { background-color: #f8d7da !important; }
+        .border-pink-subtle { border-color: #f1aeb5 !important; }
+        .text-pink-emphasis { color: #b02a37 !important; }
+
+        .text-orange { color: #fd7e14 !important; }
+        .bg-orange-subtle { background-color: #ffe5d0 !important; }
+        .border-orange-subtle { border-color: #ffc299 !important; }
+        .text-orange-emphasis { color: #cc5900 !important; }
+
+        .text-indigo { color: #6610f2 !important; }
+        .bg-indigo-subtle { background-color: #e0cffc !important; }
+        .border-indigo-subtle { border-color: #c29ffa !important; }
+        .text-indigo-emphasis { color: #520dc2 !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Overlay -->
+    <div id="loading">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <h5 class="mt-3 text-secondary fw-medium">Loading Profile...</h5>
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <div id="wrapper">
+        <!-- Sidebar Navigation -->
+        <div id="sidebar-wrapper" class="shadow-sm">
+            <div class="p-4 d-flex flex-column h-100">
+                
+                <!-- Profile Header -->
+                <div class="text-center mb-4 pb-3 border-bottom">
+                    <img src="https://ui-avatars.com/api/?name=Vohuman&background=0d6efd&color=fff&size=120" class="rounded-circle mb-3 shadow-sm border border-3 border-white" alt="Profile Avatar">
+                    <h5 class="fw-bold mb-1">Bahman Soltani</h5>
+                    <p class="text-primary fw-medium small mb-2" id="title">Senior Full Stack Developer</p>
+                    <p class="text-muted small mb-0"><i class="fa-solid fa-location-dot me-1"></i> <span id="germany">Germany</span></p>
+                </div>
+
+                <!-- Navigation Links Area -->
+                <ul class="list-unstyled mb-4 flex-grow-1" id="nav-links">
+                    <!-- Nav items populated dynamically by rendersidemenu() -->
+                </ul>
+
+                <!-- Language Skills Bar -->
+                <div class="mb-4">
+                    <h6 class="fw-bold text-uppercase small text-muted mb-3" id="lang">Languages</h6>
+                    <div id="langbar">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Footer (Language switcher & Socials) -->
+                <div class="mt-auto border-top pt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="small fw-bold text-muted" id="contact">Contact</span>
+                        <div class="d-flex gap-2">
+                            <button id="btn-en" class="lang-btn active" onclick="setLanguage('en')" disabled>EN</button>
+                            <button id="btn-de" class="lang-btn" onclick="setLanguage('de')" disabled>DE</button>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 justify-content-center mt-2">
+                        <a href="https://github.com/vohuman" target="_blank" class="text-secondary custom-card-hover fs-5"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="text-secondary custom-card-hover fs-5"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-secondary custom-card-hover fs-5"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page Content -->
+        <div id="page-content-wrapper">
+            
+            <!-- Mobile Header Navigation (Visible only on small screens) -->
+            <nav class="navbar navbar-light bg-white d-md-none rounded-4 shadow-sm mb-4 px-3 py-2 border">
+                <div class="container-fluid p-0">
+                    <button class="btn btn-light border-0 shadow-sm rounded-circle p-2 iconmenu d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-bars iconmenu"></i>
+                    </button>
+                    <span class="navbar-brand mb-0 h5 fw-bold text-primary">Portfolio</span>
+                </div>
+            </nav>
+
+            <!-- Dynamic Content Area -->
+            <main class="intro">
+                <!-- Content injected by JavaScript loadintro(), loadhistory(), etc. -->
+            </main>
+            
+        </div>
+    </div>
+
+    <!-- Embedded Application JavaScript -->
+    <script>
+        let currentLang = 'en';
+        let changelanges = false;
+        let resumeData = null;
+        let isfirstload = true;
+
+        const i18n = {
+            en: {
+                headers: {
+                    intro: "Introduction",
+                    languages: "Languages",
+                    skills: "Technical Skills",
+                    experience: "Employment History",
+                    education: "Education",
+                    certificates: "Certificates",
+                    universities: "Universities"
+                },
+                labels: {
+                    techStack: "Tech Stack",
+                    contact: "Contact",
+                    present: "Present"
+                },
+                nav: {
+                    home: "Profile",
+                    intro: "About",
+                    history: "Experience",
+                    skills: "Skills",
+                    education: "Education"
+                },
+                categories: {
+                    backend: "Backend",
+                    frontend: "Frontend",
+                    database: "Database",
+                    sourceControl: "DevOps & Tools",
+                    projectManagement: "Management",
+                    general: "General"
+                },
+                phrases: [
+                    "Senior Full Stack Developer.",
+                    ".NET Core Architect.",
+                    "Problem Solver."
+                ],
+                "languages": [
+                    { "language": "English", "fluency": "Fluent", "percent": 90 },
+                    { "language": "German", "fluency": "Intermediate", "percent": 60 },
+                    { "language": "Persian", "fluency": "Mother tongue", "percent": 100 }
+                ],
+            },
+            de: {
+                headers: {
+                    intro: "Einführung",
+                    languages: "Sprachkenntnisse",
+                    skills: "Technische Fähigkeiten",
+                    experience: "Berufserfahrung",
+                    education: "Ausbildung",
+                    certificates: "Zertifikate",
+                    universities: "Universitäten"
+                },
+                labels: {
+                    techStack: "Technologien",
+                    contact: "Kontakt",
+                    present: "Aktuell"
+                },
+                nav: {
+                    home: "Profil",
+                    intro: "Über mich",
+                    history: "Erfahrung",
+                    skills: "Fähigkeiten",
+                    education: "Ausbildung"
+                },
+                categories: {
+                    backend: "Backend",
+                    frontend: "Frontend",
+                    database: "Datenbank",
+                    sourceControl: "DevOps & Tools",
+                    projectManagement: "Management",
+                    general: "Allgemein"
+                },
+                phrases: [
+                    "Senior Full-Stack-Entwickler.",
+                    ".NET Core-Architekt.",
+                    "Problemlöser."
+                ],
+                "languages": [
+                    { "language": "Englisch", "fluency": "Fließend", "percent": 90 },
+                    { "language": "Deutsch", "fluency": "Fortgeschritten", "percent": 60 },
+                    { "language": "Persisch", "fluency": "Muttersprache", "percent": 100 }
+                ],
+            }
+        };
+
+        function load() {
+            $('#loading').show();
+            if (resumeData == null) {
+                $.ajax({
+                    url: 'https://vohuman.github.io/site/resume.json',
+                    method: 'GET',
+                    success: function (data) {
+                        resumeData = data;
+                        
+                        $('#btn-en').prop('disabled', false);
+                        $('#btn-de').prop('disabled', false);
+
+                        renderAll();
+                        loadintro(); // Added to auto-render intro page on start
+                        $('#loading').fadeOut(800); 
+                    },
+                    error: function (jqxhr, textStatus, error) {
+                        console.log("Error loading JSON: ", error);
+                        $('#loading').hide(500); 
+                        // Fallback handling to show something went wrong
+                        $('main').html(`<div class="alert alert-danger" role="alert">Failed to load resume data. Please ensure the repository URL is correct and accessible.</div>`);
+                    }
+                });
+            }
+            else {
+                $('#loading').fadeOut(800); 
+            }
+        }
+
+        function translate(key, subkey) {
+            return i18n[currentLang][key][subkey];
+        }
+
+        function formatText(text) {
+            if (text === "Present") return i18n[currentLang].labels.present;
+            if (text === "Aktuell") return i18n[currentLang].labels.present;
+            return text;
+        }
+
+        function setLanguage(lang) {
+            load();
+            currentLang = lang;
+            changelanges = true;
+
+            updateLangBtns();
+            renderAll();
+
+            if ($('main').hasClass('intro')) {
+                loadintro();        
+            }
+            else if ($('main').hasClass('history')) {
+                loadhistory();
+            }
+            else if ($('main').hasClass('skills')) {
+                loadskills();
+            }
+            else if ($('main').hasClass('education')) {
+                loadedu();
+            }
+
+            closeside(); // Auto-close sidebar on mobile after clicking language
+
+            if (currentLang === 'en') {
+                $('#btn-en').addClass('active');
+                $('#btn-de').removeClass('active');
+            } else {
+                $('#btn-de').addClass('active');
+                $('#btn-en').removeClass('active');
+            }
+        }
+
+        function renderHero() {    
+            if (!resumeData) return;
+            let langs = i18n[currentLang].languages; // Sourced locally to support bilingual mapping properly
+
+            var langdiv = '';
+
+            $.each(langs, function (index, l) {
+                langdiv += `<div class="mb-3">
+                           <div class="mb-1 d-flex justify-content-between align-items-center">
+                                   <b class="small" id="english-${index}">${l.language}</b>
+                                   <span style="font-size: 0.75rem; color: #777" id="fluent-${index}">${l.fluency}</span>
+                           </div>
+                           <div class="progress" style="height: 6px; background-color: #e9ecef;">
+                                   <div class="progress-bar rounded-pill" role="progressbar" style="width: ${l.percent}%" aria-valuenow="${l.percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                           </div>
+                    </div>`;
+            });
+
+            let div = $(langdiv);
+            let target = $('#langbar');
+            target.empty();
+            target.append(div);
+
+            if (currentLang === 'en') {
+                $('#germany').html('Germany');
+                $('#title').html('Senior Full Stack Developer');
+                $('#contact').html('Contact');
+            } else {
+                $('#germany').html('Deutschland');
+                $('#title').html('Senior Full Stack Entwickler');
+                $('#contact').html('Kontakt');
+            }
+
+            $('#about').html(i18n[currentLang].nav.intro);
+            $('#ex').html(i18n[currentLang].nav.history);
+            $('#skill').html(i18n[currentLang].nav.skills);
+            $('#edu').html(i18n[currentLang].nav.education);
+            $('#lang').html(i18n[currentLang].headers.languages);
+        }
+
+        function loadintro() {
+            if (!resumeData) {
+                load();
+                return;
+            }
+
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-intro" class="${fade}">
+               <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
+                   <div class="card-body p-4 p-md-5">
+                       <div class="d-flex align-items-center gap-3 mb-4">
+                           <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                              <i class="fa-solid fa-circle-info fs-5"></i>
+                           </div>
+                           <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
+                       </div>
+                       <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                           <p class="fs-5 mb-0" style="font-weight: 500;">${resumeData[currentLang].introduction}</p>
+                       </div>
+                   </div>
+               </div>
+           </section>`;
+
+            let div = $(html);
+            let target = $('main');
+            target.empty();
+            target.append(div);
+
+            $('main').removeClass('history skills education').addClass('intro');
+
+            $('a.navlinkcustom').removeClass('active');
+            $('.about').addClass('active');
+
+            changelanges = false;
+        }
+
+        function loadhistory() {
+            if (!resumeData) return;
+            
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-intro" class="${fade}">
+               <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                   <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                       <i class="fa-solid fa-briefcase fs-5"></i>
+                   </div>
+                   <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
+               </div>`;
+
+            var history = resumeData[currentLang].employmentHistory;
+
+            $.each(history, function (index, h) {
+                let isFirst = index == 0 ? "first" : "";
+                let badgeClass = index == 0 ? "text-bg-success bg-opacity-75" : "text-bg-light border text-secondary";
+                
+                html += `<div class="timeline-item">
+                   <div class="timeline-dot ${isFirst}"></div>
+
+                   <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                       <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                          <div>
+                              <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
+                              <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                  <a href="${h.link || '#'}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
+                                      <span class="fw-semibold">
+                                          <i class="fa-regular fa-building me-1"></i>
+                                          ${h.company}
+                                      </span>
+                                  </a>
+                                  <span>•</span>
+                                  <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                              </div>
+                          </div>
+                          <span class="badge rounded-pill ${badgeClass} px-3 py-2">
+                              ${h.startDate} — ${formatText(h.endDate)}
+                          </span>
+                       </div>
+
+                       <div class="mb-3">
+                          <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+
+                $.each(h.responsibilities, function (i, r) {
+                    html += `<li class="d-flex gap-2 text-secondary">
+                               <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.85rem;"></i>
+                               <span>${r}</span>
+                         </li>`;
+                });
+
+                html += `</ul>
+                        </div>
+                        <div class="pt-3 border-top">
+                          <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.75rem;">${i18n[currentLang].labels.techStack}</small>
+                          <div class="d-flex flex-wrap gap-2">`;
+
+                $.each(h.techStack, function (j, t) {
+                    html += `<span class="badge rounded-pill text-primary bg-primary bg-opacity-10 border border-primary-subtle tech-badge">${t}</span>`;
+                })
+
+                html += `</div>
+                       </div>
+                   </div>
+               </div>`
+            });
+
+            html += '</section>';
+
+            let div = $(html);
+            let target = $('main');
+            target.empty();
+            target.append(div);
+
+            $('main').removeClass('intro skills education').addClass('history');
+
+            $('a.navlinkcustom').removeClass('active');
+            $('.ex').addClass('active');
+
+            changelanges = false;
+        }
+
+        function loadskills() {
+            if (!resumeData) return;
+            
+            const skills = resumeData[currentLang].technicalSkills;
+            const config = {
+                backend: { color: "primary", icon: "fa-solid fa-server" },
+                frontend: { color: "pink", icon: "fa-solid fa-desktop" },
+                database: { color: "success", icon: "fa-solid fa-database" },
+                sourceControl: { color: "orange", icon: "fa-solid fa-code-branch" },
+                projectManagement: { color: "indigo", icon: "fa-solid fa-list-check" },
+                general: { color: "info", icon: "fa-solid fa-gears" }
+            };
+
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-intro" class="${fade}">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                   <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                       <i class="fa-solid fa-code fs-5"></i>
+                   </div>
+                   <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+               </div>
+               
+               <div class="row g-4">`;
+
+            $.each(config, function (key, conf) {
+                const label = i18n[currentLang].categories[key] || key;
+                const textClass = `text-${conf.color}`;
+                const badgeBg = 'bg-' + conf.color + '-subtle';
+                const badgeText = 'text-' + conf.color + '-emphasis';
+                const badgeBorder = 'border-' + conf.color + '-subtle';
+
+                html += `<div class="col-md-6">
+                   <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                       <div class="d-flex align-items-center gap-2 mb-3">
+                           <i class="${conf.icon} ${textClass} fs-5"></i>
+                           <h6 class="fw-bold text-secondary text-capitalize mb-0" style="margin-left: 5px;">${label}</h6>
+                       </div>
+                       <div class="d-flex flex-wrap gap-2">`;
+                       
+                if(skills[key]) {
+                    $.each(skills[key], function (index, skill) {
+                        html += `<span style="font-weight:500" class="badge rounded-pill border bg-light ${badgeText} ${badgeBorder} tech-badge">
+                          ${skill}
+                      </span>`;
+                    });
+                }
+
+                html += `</div>
+                   </div>
+               </div>`;
+            });
+
+            html += `</div></section>`;
+
+            let div = $(html);
+            let target = $('main');
+            target.empty();
+            target.append(div);
+
+            $('main').removeClass('intro history education').addClass('skills');
+             
+            $('a.navlinkcustom').removeClass('active');
+            $('.skill').addClass('active');
+
+            changelanges = false;
+        }
+
+        function loadedu() {
+            if (!resumeData) return;
+            
+            var edu = resumeData[currentLang].education;
+            var cer = resumeData[currentLang].certificates;
+
+            var fade = !changelanges ? 'fadein' : '';
+
+            var html = `<section id="section-intro" class="${fade}">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                   <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                       <i class="fa-solid fa-book-open fs-5"></i>
+                   </div>
+                   <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'education')}</h2>
+               </div>
+               <div class="row g-4">
+                   <div class="col-lg-6">
+                       <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                           <div class="card-body p-4">
+                               <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                                  <div class="bg-info bg-opacity-10 text-info p-2 rounded">
+                                      <i class="fa-solid fa-graduation-cap fs-5"></i>
+                                  </div>
+                                  <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.universities}</h5>
+                               </div>
+                           <div>`;
+
+            $.each(edu, function (index, e) {
+                html += `<div class="edu">
+                  <div class="w-100">
+                      <h6 class="text-dark fw-bold mb-1">${e.degree}</h6>
+                      <p class="small fw-medium mb-2">
+                          <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
+                            <i class="fa-solid fa-building-columns me-1"></i>${e.institution}
+                          </a>
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center small text-muted">
+                          <span><i class="fa-solid fa-location-dot me-1"></i>${e.location}</span>
+                          <span class="bg-light px-2 py-1 border rounded">${e.startDate} - ${formatText(e.endDate)}</span>
+                      </div>
+                  </div>
+              </div>`;
+            });
+
+            html += `</div>
+                       </div>
+                   </div>
+               </div>`;
+
+            html += `<div class="col-lg-6">
+                   <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                       <div class="card-body p-4">
+                           <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+                              <div class="bg-warning bg-opacity-10 text-warning p-2 rounded">
+                                  <i class="fa-solid fa-certificate fs-5"></i>
+                              </div>
+                              <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
+                           </div>
+                           <div>`;
+
+            if(cer) {
+                $.each(cer, function (index, c) {
+                    html += `<div class="cer">
+                      <i class="fa-solid fa-award text-warning mt-1 fs-5"></i>
+                      <div class="w-100" style="padding-left: 1rem;">
+                          <h6 class="mb-1 small fw-bold">
+                               <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
+                                   ${c.title}
+                               </a>
+                          </h6>
+                          <div class="d-flex justify-content-between text-muted small mt-2">
+                              <span><i class="fa-solid fa-building me-1"></i>${c.issuer}</span>
+                              <span>${c.date}</span>
+                          </div>
+                      </div>
+                    </div>`;
+                });
+            }
+
+            html += `</div>
+                       </div>
+                   </div>
+               </div>
+           </div></section>`;
+
+            let div = $(html);
+            let target = $('main');
+            target.empty();
+            target.append(div);
+
+            $('main').removeClass('history skills intro').addClass('education');
+             
+            $('a.navlinkcustom').removeClass('active');
+            $('.education').addClass('active');
+
+            changelanges = false;
+        }
+
+        function updateLangBtns() {
+            $('.lang-btn').removeClass('active');
+            if (currentLang === 'en') {
+                $('#btn-en').addClass('active');
+            } else {
+                $('#btn-de').addClass('active');
+            }
+        }
+
+        function renderAll() {
+            if (resumeData == null) {
+                load();
+                return;
+            }
+            renderHero();
+            rendersidemenu();
+        }
+
+        function rendersidemenu() {
+            var d = '';
+            // Adjusted side menu generation to attach correct class mapping for "active" indicators.
+            d +=`<li class="mb-2">
+               <a href="javascript:void(0)" onclick="loadintro(); closeside();" class="navlinkcustom about">
+                   <i class="fa-solid fa-user me-3 text-secondary" style="width: 20px; text-align: center;"></i>
+                   <span id="about">${i18n[currentLang].nav.intro}</span>
+               </a>
+           </li>
+
+           <li class="mb-2">
+               <a href="javascript:void(0)" onclick="loadhistory(); closeside();" class="navlinkcustom ex">
+                   <i class="fa-solid fa-briefcase me-3 text-secondary" style="width: 20px; text-align: center;"></i>
+                   <span id="ex">${i18n[currentLang].nav.history}</span>
+               </a>
+           </li>
+
+           <li class="mb-2">
+               <a href="javascript:void(0)" onclick="loadskills(); closeside();" class="navlinkcustom skill">
+                   <i class="fa-solid fa-code me-3 text-secondary" style="width: 20px; text-align: center;"></i>
+                   <span id="skill">${i18n[currentLang].nav.skills}</span>
+               </a>
+           </li>
+
+           <li class="mb-2">
+               <a href="javascript:void(0)" onclick="loadedu(); closeside();" class="navlinkcustom education">
+                   <i class="fa-solid fa-book-open me-3 text-secondary" style="width: 20px; text-align: center;"></i>
+                   <span id="edu">${i18n[currentLang].nav.education}</span>
+               </a>
+           </li>`;
+
+            let target = $('#nav-links');
+            target.html(d);
+            
+            // Immediately apply active class if applicable
+            if ($('main').hasClass('intro')) $('.about').addClass('active');
+            else if ($('main').hasClass('history')) $('.ex').addClass('active');
+            else if ($('main').hasClass('skills')) $('.skill').addClass('active');
+            else if ($('main').hasClass('education')) $('.education').addClass('active');
+        }
+
+        function closeside() {
+            const sidebar = $('#sidebar-wrapper');
+            const overlay = $('#sidebar-overlay');
+            if (sidebar.hasClass('toggled')) {
+                sidebar.removeClass('toggled');
+            }
+            if (overlay.hasClass('show')) {
+                overlay.removeClass('show');
+            }
+        }
+
+        function toggleSidebar() {
+            const sidebar = $('#sidebar-wrapper');
+            const overlay = $('#sidebar-overlay');
+            sidebar.toggleClass('toggled');
+            overlay.toggleClass('show');
+        }
+
+        // Initialize script logic once the DOM is safe to interact with
+        $(document).ready(function() {
+            // Initiate app loop
+            setLanguage('en');
+        });
+
+    </script>
+</body>
+</html>
+
