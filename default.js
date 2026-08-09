@@ -495,7 +495,7 @@ loadedu = function () {
        <div class="row g-4"><div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
               <div class="d-flex align-items-center gap-3 mb-4">
-                 <div class="bg-success bg-opacity-10 text-success p-2 rounded">
+                 <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                      <i class="fa-solid fa-graduation-cap fs-5"></i>
                  </div>
                  <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.universities}</h5>
