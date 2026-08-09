@@ -413,16 +413,18 @@ p {
     position: relative;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-left: 3px solid #ddd;
+    border-left: 3px solid #ccc;
     display: flex;
 }
 
     .edu:hover {
         border-color: rgba(13, 174, 84, 0.6);
+        border-color: rgba(255, 255, 255, 0.9);
     }
 
     .cer:hover {
         border-color: rgba(250, 125, 20, 0.6);
+        border-color: rgba(255, 255, 255, 0.9);
     }
 
 .fadein {
