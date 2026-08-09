@@ -515,7 +515,7 @@ loadedu = function () {
                <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                    <div class="card-body p-4">
                        <div class="d-flex align-items-center gap-3 mb-4">
-                          <div class="bg-success bg-opacity-10 text-success p-2 rounded">
+                          <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                               <i class="fa-solid fa-graduation-cap fs-5"></i>
                           </div>
                             <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.universities}</h5>
@@ -526,8 +526,8 @@ loadedu = function () {
     $.each(edu, function (index, e) {
         html += `<div class="edu">
           <div>
-              <h6 class="text-success mb-0">${e.degree}</h6>
-              <p class="text-success small fw-medium mb-1">
+              <h6 class="text-dark mb-0 mb-0">${e.degree}</h6>
+              <p class="small fw-medium mb-1">
                   <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
                     ${e.institution}
                   </a>
@@ -550,7 +550,7 @@ loadedu = function () {
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
                    <div class="d-flex align-items-center gap-3 mb-4">
-                      <div class="bg-orange bg-opacity-10 text-orange p-2 rounded">
+                      <div class="bg-primary bg-opacity-10 text-text-primary ange p-2 rounded">
                           <i class="fa-solid fa-certificate fs-5"></i>
                       </div>
                       <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
@@ -559,17 +559,17 @@ loadedu = function () {
 
     $.each(cer, function (index, c) {
         html += `<div class="cer">
-          <i class="fa-solid fa-trophy text-orange mt-1 fs-5"></i>
+          <i class="fa-solid fa-trophy mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
-              <h6 class="mb-1 small">
-                   <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1 text-primary">
-                       <b>${c.title}</b>
-                   </a>
+              <h6 class="mb-1 text-secondary small">
+                   <b>${c.title}</b>
               </h6>
-              <div class="small text-secondary d-flex gap-2">
-                  <span class="fw-medium text-dark">${c.issuer}</span>
-                  <span>•</span>
-                  <span>${c.date}</span>
+              <div class="d-flex gap-2">
+                  <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
+                       <b>${c.issuer}</b>
+                   </a>
+                  <span class="text-secondary">•</span>
+                  <span class="text-secondary">${c.date}</span>
               </div>
           </div>
         </div>`;
