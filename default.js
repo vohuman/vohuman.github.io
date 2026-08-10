@@ -539,7 +539,7 @@ loadedu = function () {
               <h6 class="text-dark mb-0 mb-0">${e.degree}</h6>
               <p class="small fw-medium mb-1">
                   <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
-                    ${e.institution}
+                    <i class="fa-solid fa-building-columns me-1"></i>${e.institution}
                   </a>
               </p>
               <div class="d-flex justify-content-between align-items-center small text-muted">
@@ -569,7 +569,7 @@ loadedu = function () {
 
     $.each(cer, function (index, c) {
         html += `<div class="cer">
-          <i class="fa-solid fa-trophy text-primary mt-1 fs-5"></i>
+          <i class="fa-solid fa-award text-primary mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
               <h6 class="mb-1 small">
                    <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
