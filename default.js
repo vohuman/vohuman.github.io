@@ -516,7 +516,7 @@ loadedu = function () {
     var html = `<section id="section-intro" class="mt-4 ${fade}">
         <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-               <i class="fa-solid fa-book fs-5"></i>
+               <i class="fa-solid fa-book-open fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'education')}</h2>
        </div>
@@ -536,7 +536,7 @@ loadedu = function () {
     $.each(edu, function (index, e) {
         html += `<div class="edu">
           <div>
-              <i class="fa-solid fa-diploma"></i><h6 class="text-dark mb-0 mb-0">${e.degree}</h6>
+              <h6 class="text-dark mb-0 mb-0"><i class="fa-solid fa-diploma"></i>${e.degree}</h6>
               <p class="small fw-medium mb-1">
                   <a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
                     <i class="fa-solid fa-building-columns me-1"></i>${e.institution}
