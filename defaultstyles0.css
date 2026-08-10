@@ -982,3 +982,28 @@ footer {
 #menu-toggle.active {
     border-radius: 50%;
 }
+
+.text-pink-emphasis {
+    color: #b02a37 !important;
+}
+
+.border-pink-subtle
+ {
+    border-color: #f1aeb5 !important;
+}
+
+.text-orange-emphasis {
+    color: #cc5900 !important;
+}
+
+.border-orange-subtle {
+    border-color: #ffc299 !important;
+}
+
+.text-indigo-emphasis {
+    color: #520dc2 !important;
+}
+
+.border-indigo-subtle {
+    border-color: #c29ffa !important;
+}
