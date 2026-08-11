@@ -31,6 +31,9 @@
 
     --glass-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
 
+    --primary-color: #4169E1;
+
+    --primary-color-hover: #1B318F;
 }
 
 footer a {
