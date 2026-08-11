@@ -682,7 +682,7 @@ h2 {
 
 h3 {
     font-size: 1.25rem;
-    color: #111827;
+    color: var(--primary-color);
     margin-top: 30px;
     margin-bottom: 15px;
     font-weight: 500;
