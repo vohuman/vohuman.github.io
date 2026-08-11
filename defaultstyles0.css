@@ -34,29 +34,6 @@
 
 }
 
-.progress-bar,
-.bg-primary {
-  background-color: var(--primary-color) !important;
-}
-
-.btn-primary {
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
-  color: #ffffff;
-}
-
-.text-primary {
-    color: var(--primary-color) !important;
-}
-
-.btn-primary:hover, 
-.btn-primary:focus, 
-.btn-primary:active {
-  background-color: var(--primary-color-hover) !important;
-  border-color: var(--primary-color-hover) !important;
-  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.5) !important; /* Custom focus ring */
-}
-
 a {
     color: var(--primary-color) !important;
 }
@@ -1054,4 +1031,28 @@ footer {
 
 .border-indigo-subtle {
     border-color: #c29ffa !important;
+}
+
+
+.progress-bar,
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #ffffff;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+  background-color: var(--primary-color-hover) !important;
+  border-color: var(--primary-color-hover) !important;
+  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.5) !important; /* Custom focus ring */
 }
