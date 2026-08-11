@@ -577,7 +577,7 @@ loadedu = function () {
                    </a>
               </h6>
               <div class="d-flex gap-2">
-                  <span><i class="fa-solid fa-building me-1"></i>${c.issuer}</span>
+                  <span>${c.issuer}</span>
                   <span>•</span>
                   <span>${c.date}</span>
               </div>
