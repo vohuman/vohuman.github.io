@@ -40,6 +40,10 @@
   color: #ffffff;
 }
 
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
 .btn-primary:hover, 
 .btn-primary:focus, 
 .btn-primary:active {
