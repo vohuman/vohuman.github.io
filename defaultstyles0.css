@@ -837,7 +837,7 @@ p {
     }
 
 .firstcard a {
-    color: #002699;
+    color: var(--primary-color-hover);
 }
 
 .firstcard a.btn {
