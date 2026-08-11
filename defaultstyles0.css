@@ -284,7 +284,7 @@ p {
 .custom-link-hover {
     text-decoration: none;
     position: relative;
-    color: inherit;
+    color: #4338ca;
 }
 
     .custom-link-hover::after {
