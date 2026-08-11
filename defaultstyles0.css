@@ -1044,7 +1044,7 @@ footer {
   color: #ffffff;
 }
 
-.text-primary {
+.firstcard .text-primary, .firstcard i.text-primary {
     color: var(--primary-color) !important;
 }
 
