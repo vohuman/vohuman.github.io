@@ -276,7 +276,7 @@ p {
 .custom-link-hover {
     text-decoration: none;
     position: relative;
-    color: inherit;
+    color: var(--card-blue);
 }
 
     .custom-link-hover::after {
