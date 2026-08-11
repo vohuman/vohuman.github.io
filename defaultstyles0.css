@@ -14,6 +14,22 @@
     --half-card-neon: rgba(80,120,255,0.4);
     --new-card-neon: rgba(80,120,255,0.6);
     --bs-nav-tabs-border-width: 0px !important;
+    
+
+    --primary-color: #4f46e5; /* Indigo */
+
+    --primary-light: #e0e7ff;
+
+    --secondary-color: #0f172a; /* Slate 900 */
+
+    --text-muted: #64748b;
+
+    --glass-bg: rgba(255, 255, 255, 0.85); /* Highly readable glass */
+
+    --glass-border: rgba(255, 255, 255, 1);
+
+    --glass-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
+
 }
 
 
