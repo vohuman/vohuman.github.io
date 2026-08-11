@@ -14,7 +14,6 @@
     --half-card-neon: rgba(80,120,255,0.4);
     --new-card-neon: rgba(80,120,255,0.6);
     --bs-nav-tabs-border-width: 0px !important;
-    
 
     --primary-color: #4f46e5; /* Indigo */
 
@@ -34,11 +33,11 @@
 
 }
 
-a {
+footer a {
     color: var(--primary-color) !important;
 }
 
-a:hover {
+footer a:hover {
     color: var(--primary-color-hover) !important;
 }
 
