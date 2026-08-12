@@ -248,7 +248,7 @@ loadintro = function () {
        <div class="card project-card border-0 custom-card-hover">
            <div class="card-body">
                <div class="d-flex align-items-center gap-3 mb-4">
-                   <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                   <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                       <i class="fa-solid fa-circle-info fs-5"></i>
                    </div>
                    <h4 class="fw-bold text-dark mb-2">${i18n[currentLang].headers.intro}</h4>
