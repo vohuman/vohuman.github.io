@@ -35,6 +35,8 @@
     --primary-color: #3159D1;
 
     --primary-color-hover: #1B318F;
+
+    --bs-primary-rgb: 49, 89, 209;
 }
 
 footer a {
