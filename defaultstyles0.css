@@ -36,7 +36,15 @@
 
     --primary-color-hover: #1B318F;
 
-    --bs-primary-rgb: 49, 89, 209;
+    --bs-royalblue-rgb: 49, 89, 209;
+}
+
+.bg-royalblue {
+    background-color: rgba(49, 89, 209, 0.1) !important;
+}
+
+.text-royalblue {
+    background-color: rgba(49, 89, 209, 1) !important;
 }
 
 footer a {
