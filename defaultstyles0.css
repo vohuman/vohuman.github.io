@@ -326,7 +326,7 @@ p {
 .link1 {
     text-decoration: none;
     position: relative;
-    color: #0d6efd;
+    color: #4169E1;
 }
 
     .link1::after {
@@ -348,7 +348,7 @@ p {
     }
 
     .link1:hover {
-        color:#064ecd;
+        color: #1B318F;
     }
 
 .avatar-container {
