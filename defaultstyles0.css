@@ -40,12 +40,11 @@
 }
 
 .bg-royalblue {
-    background-color: rgba(49, 89, 209, 0.1) !important;
+    background-color: rgba(49, 89, 209, 0.15) !important;
 }
 
 .text-royalblue {
     color: rgba(49, 89, 209, 1) !important;
-    background-color: rgba(49, 89, 209, 0.1) !important;
 }
 
 footer a {
