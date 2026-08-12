@@ -291,7 +291,7 @@ loadhistory = function () {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+           <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${i18n[currentLang].headers.experience}</h2>
@@ -428,7 +428,7 @@ loadskills = function () {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="${fade}">
         <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+           <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                <i class="fa-solid fa-code fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'skills')}</h2>
@@ -497,7 +497,7 @@ loadedu = function () {
     var fade = !changelanges ? 'fadein' : '';
     var d = `<section id="section-intro" class="${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+           <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                <i class="fa-solid fa-book fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'education')}</h2>
@@ -505,7 +505,7 @@ loadedu = function () {
        <div class="row g-4"><div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
               <div class="d-flex align-items-center gap-3 mb-4">
-                 <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                 <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                      <i class="fa-solid fa-graduation-cap fs-5"></i>
                  </div>
                  <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.universities}</h5>
@@ -515,7 +515,7 @@ loadedu = function () {
 
     var html = `<section id="section-intro" class="mt-4 ${fade}">
         <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+           <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                <i class="fa-solid fa-book-open fs-5"></i>
            </div>
            <h2 class="h3 fw-bold text-dark mb-2">${translate('headers', 'education')}</h2>
@@ -525,7 +525,7 @@ loadedu = function () {
                <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                    <div class="card-body p-4">
                        <div class="d-flex align-items-center gap-3 mb-4">
-                          <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                          <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
                               <i class="fa-solid fa-graduation-cap fs-5"></i>
                           </div>
                             <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.universities}</h5>
@@ -560,7 +560,7 @@ loadedu = function () {
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
                    <div class="d-flex align-items-center gap-3 mb-4">
-                      <div class="bg-primary bg-opacity-10 text-primary ange p-2 rounded">
+                      <div class="bg-royalblue bg-opacity-10 text-royalblue ange p-2 rounded">
                           <i class="fa-solid fa-certificate fs-5"></i>
                       </div>
                       <h5 class="fw-bold mb-0">${i18n[currentLang].headers.certificates}</h5>
@@ -569,7 +569,7 @@ loadedu = function () {
 
     $.each(cer, function (index, c) {
         html += `<div class="cer">
-          <i class="fa-solid fa-award text-primary mt-1 fs-5"></i>
+          <i class="fa-solid fa-award text-royalblue mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
               <h6 class="mb-1 small">
                    <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1">
