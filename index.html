@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <header class="fixed-top glass-header border-bottom shadow-sm">
+    <header class="fixed-top glass-header border-bottom shadow">
         <div class="container-fluid d-flex align-items-center justify-content-between" style="max-width: 1600px;">
 
             <div style="font-size:1.5rem; padding: 10px;">
@@ -25,16 +25,16 @@
 
             <div class="d-none d-md-flex align-items-center">
                 <nav class="d-flex gap-4 text-uppercase nav-tabs" style="font-size: 1.05rem; letter-spacing: 0.1em;">
-                    <a href="#" onclick="loadintro()" class="text-decoration-none navlinkcustom active about">
+                    <a href="#" onclick="loadintro()" class="navlinkcustom active about">
                         <i class="fa-solid fa-user me-1"></i> <span id="about">About</span>
                     </a>
-                    <a href="#" onclick="loadhistory()" class="text-decoration-none navlinkcustom ex">
+                    <a href="#" onclick="loadhistory()" class="navlinkcustom ex">
                         <i class="fa-solid fa-briefcase me-1"></i> <span id="ex">Experience</span>
                     </a>
-                    <a href="#" onclick="loadskills()" class="text-decoration-none navlinkcustom skill">
+                    <a href="#" onclick="loadskills()" class="navlinkcustom skill">
                         <i class="fa-solid fa-code me-1"></i> <span id="skill">Skills</span>
                     </a>
-                    <a href="#" onclick="loadedu()" class="text-decoration-none navlinkcustom education">
+                    <a href="#" onclick="loadedu()" class="navlinkcustom education">
                         <i class="fa-solid fa-book-open me-1"></i> <span id="edu">Education</span>
                     </a>
                     
@@ -46,7 +46,7 @@
             </div>
 
             <div class="d-md-none d-flex align-items-center">
-                <button id="menu-toggle" class="btn border-1 shadow-none" onclick="toggleMenu()">
+                <button id="menu-toggle" class="btn border-1" onclick="toggleMenu()">
                     <span id="menu-icon">&#9776;</span>
                 </button>
             </div>
