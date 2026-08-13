@@ -255,7 +255,7 @@ p {
     .custom-card-hover:hover {
         transform: translateY(-5px);
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-        border-color: #cfe2ff;
+        border-color: #cdf;
     }
 
 .timeline-item {
@@ -307,7 +307,7 @@ p {
 .custom-link-hover {
     text-decoration: none;
     position: relative;
-    color: #4338ca;
+    color: #04f;
 }
 
     .custom-link-hover::after {
@@ -503,14 +503,6 @@ p {
     }
 }
 
-.typing-cursor {
-    display: inline-block;
-    width: 3px;
-    background-color: #38bdf8; /* A nice vibrant blue matching the 'Midnight Cyber' theme */
-    margin-left: 4px;
-    animation: blink 1s step-end infinite;
-}
-
 @keyframes blink {
     from, to {
         opacity: 1;
@@ -610,7 +602,9 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #83a9e6 0%, #cbb6d6 50%, #7386ce 100%);
-    color: #333;
+    background: linear-gradient(135deg, #69f 10%, #76e 50%, #89c 100%);
+    
+    color: #444;
     font-family: system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
@@ -758,7 +752,7 @@ p {
     text-decoration: none;
     position: relative;
     font-weight: 500;
-    color: #444;
+    color: #555;
     font-size: 1.2rem;
     padding-bottom: 4px;
     transition: color 0.3s ease;
@@ -775,6 +769,7 @@ p {
         bottom: -2px;
         left: 0;
         background-color: #3a0ed8;
+        background-color: #04f;
         transform: scaleX(0);
         transform-origin: bottom center;
         transition: transform 0.3s ease-out;
