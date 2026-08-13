@@ -330,7 +330,7 @@ loadhistory = function () {
 
             $.each(h.responsibilities, function (i, r) {
                 html += `<li class="d-flex gap-2 text-secondary">
-                           <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                           <i class="fa-solid fa-circle-check text-royalblue mt-1" style="font-size: 0.8rem;"></i>
                            <span>${r}</span>
                      </li>`;
             });
@@ -364,7 +364,7 @@ loadhistory = function () {
 
             $.each(h.responsibilities, function (i, r) {
                 html += `<li class="d-flex gap-2 text-secondary">
-       <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+       <i class="fa-solid fa-circle-check text-royalblue mt-1" style="font-size: 0.8rem;"></i>
        <span>${r}</span>
                   </li>`;
             });
@@ -378,7 +378,7 @@ loadhistory = function () {
       <div class="d-flex flex-wrap gap-1">`;
 
         $.each(h.techStack, function (j, t) {
-            html += `<span class="badge rounded-1 text-primary bg-light border tech-badge">${t}</span>`;
+            html += `<span class="badge rounded-1 text-royalblue bg-light border tech-badge">${t}</span>`;
         })
 
         html += `</div>
