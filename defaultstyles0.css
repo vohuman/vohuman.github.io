@@ -70,6 +70,7 @@ body {
     overflow-x: hidden;
     color: #444;
     background: linear-gradient(135deg, #83a9e6 10%, #cbb6d6 50%, #7386ce 100%);
+    background: linear-gradient(135deg, #69f 10%, #76e 50%, #89c 100%);
     background-size: 50%, cover;
 }
 
