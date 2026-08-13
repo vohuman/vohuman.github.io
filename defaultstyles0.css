@@ -324,7 +324,7 @@ p {
     }
 
 .link1 {
-    text-decoration: none;
+    text-decoration: underline;
     position: relative;
     color: #3159D1;
 }
