@@ -34,17 +34,21 @@
     --primary-color: #4169E1;
     --primary-color: #3159D1;
 
-    --primary-color-hover: #1B318F;
+    --primary-color: #4169E1;
+
+    --primary-color-hover: #233773;
 
     --bs-royalblue-rgb: 49, 89, 209;
 }
 
 .bg-royalblue {
     background-color: rgba(49, 89, 209, 0.15) !important;
+    background-color: rgba(65, 105, 225, 0.15) !important;
 }
 
 .text-royalblue {
     color: rgba(49, 89, 209, 1) !important;
+    color: rgba(65, 105, 225, 1) !important;
 }
 
 footer a {
