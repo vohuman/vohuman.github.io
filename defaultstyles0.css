@@ -346,7 +346,7 @@ p {
         height: 2px;
         bottom: -2px;
         left: 0;
-        background-color: #80B0FF;
+        background-color: #8bf;
         transform-origin: bottom right;
         transition: transform 0.255s ease-out;
     }
