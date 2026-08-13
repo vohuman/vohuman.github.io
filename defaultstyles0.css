@@ -15,17 +15,17 @@
     --new-card-neon: rgba(80,120,255,0.6);
     --bs-nav-tabs-border-width: 0px !important;
 
-    --primary-color: #4f46e5; /* Indigo */
+    --primary-color: #4f46e5; /*indigo*/
 
     --primary-color-hover: #4338ca; 
     
     --primary-light: #e0e7ff;
 
-    --secondary-color: #0f172a; /* Slate 900 */
+    --secondary-color: #0f172a;
 
     --text-muted: #64748b;
 
-    --glass-bg: rgba(255, 255, 255, 0.85); /* Highly readable glass */
+    --glass-bg: rgba(255, 255, 255, 0.85);
 
     --glass-border: rgba(255, 255, 255, 1);
 
@@ -1072,5 +1072,5 @@ footer {
 .btn-primary:active {
   background-color: var(--primary-color-hover) !important;
   border-color: var(--primary-color-hover) !important;
-  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.5) !important; /* Custom focus ring */
+  box-shadow: 0 0 0 0.25rem rgba(65, 105, 225, 0.5) !important; /* Custom focus ring */
 }
