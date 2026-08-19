@@ -335,7 +335,6 @@ p {
     text-decoration: none;
     position: relative;
     color: var(--primary-color);
-    border-bottom: 2px solid #dee2e6;
 }
 
     .link1::after {
@@ -357,8 +356,9 @@ p {
     }
 
     .link1:hover {
-        color: var(--primary-color-hover);
+        color: var(--primary-color-hover) !important;
     }
+
 
 .avatar-container {
     width: 200px;
