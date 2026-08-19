@@ -474,6 +474,11 @@ p {
         border-color: rgba(255, 255, 255, 0.9);
     }
 
+
+.cer a:hover {
+    color: var(--primary-color-hover) !important;
+}
+
 .fadein {
     opacity: 1;
     animation: fade 0.4s ease-in forwards;
