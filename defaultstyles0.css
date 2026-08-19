@@ -578,6 +578,10 @@ p {
                 color: #0dcaf0 !important;
             }
 
+            .card:hover h6 a:hover {
+                 color: var(--primary-color-hover) !important;
+            }
+
     .card::before {
         content: '';
         position: absolute;
