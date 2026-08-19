@@ -332,9 +332,10 @@ p {
     }
 
 .link1 {
-    text-decoration: underline;
+    text-decoration: none;
     position: relative;
     color: var(--primary-color);
+    border-bottom: 2px solid #dee2e6;
 }
 
     .link1::after {
