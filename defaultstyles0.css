@@ -746,6 +746,14 @@ p {
     color: #333 !important;
 }
 
+    .nav-tabs .btn.active {
+        color: #fff !important;
+    }
+
+    .nav-tabs .btn:hover {
+        color: #fff !important;
+    }
+
 /*.nav-tabs a:hover {
             color: #000;
             border-bottom: 2px solid #3a0ed8 !important;
