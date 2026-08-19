@@ -925,7 +925,7 @@ footer {
     border-top: 1px solid rgba(248,249,250, 0.5);
     border-top: 0px;
     color: #374151;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px -0.5rem 1rem;
 }
 
 .loader {
