@@ -16,6 +16,7 @@
             --bg-card: #091330;
             --glow-red: #DC3C3C;
             --glow-cyan: #2D91C3;
+            --glow-light-cyan: #5DC1F3;
             --glow-blue: #1E5096;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -457,35 +458,35 @@
 
     <header class="profile-banner">
         <div class="profile-info">
-             <div class="profile-img">
-                <img src="/assets/Bild.jpg" alt="Bahman Soltani">
-             </div>
+            <div class="profile-img">
+                <img src="https://vohuman.github.io/assets/Bild.jpg" alt="Profile Picture">
+            </div>
             <div class="profile-details">
                 <h1>Bahman Soltani</h1>
-                <h3 id="title">Full Stack Developer</h3>
+                <h3 id="title" style="margin-bottom: 10px; color: var(--glow-light-cyan);">Full Stack Developer</h3>
                 <p><i class="fa-solid fa-location-dot" style="color: var(--glow-cyan)"></i> 27356 Rotenburg Wümme, <span id="germany">Germany</span></p>
 
-                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
-                    <i class="fa-solid fa-envelope text-primary"></i>
-                    <a href="mailto:bahman.soltani@gmail.com" class="custom-link-hover">bahman.soltani@gmail.com</a>
+                <div class="contact-info">
+                    <i class="fa-solid fa-envelope" style="color: var(--glow-cyan)"></i>
+                    <a href="mailto:bahman.soltani@gmail.com">bahman.soltani@gmail.com</a>
                 </div>
-                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
-                    <i class="fa-solid fa-phone text-primary"></i>
-                    <a href="tel:+4917655568384" class="custom-link-hover">+4917655568384</a>
+                <div class="contact-info">
+                    <i class="fa-solid fa-phone" style="color: var(--glow-cyan)"></i>
+                    <a href="tel:+4917655568384">+4917655568384</a>
                 </div>
 
-                <div style="display:flex" class="flex-wrap gap-2 justify-content-center justify-content-md-start mt-4">
-                                <a class="btn btn-primary btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2" target="_blank" href="https://www.linkedin.com/in/vohuman/">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                    LinkedIn
-                                </a>
+                <div>
+                    <a class="social-btn" target="_blank" href="https://www.linkedin.com/in/vohuman/">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
         <div class="profile-stats">
             <h4 id="lang" style="color: var(--text-main); margin-bottom: 15px; font-size: 1.1rem;">Languages</h4>
             <div id="langbar">
-                
+                <!-- JS dynamically injects languages here -->
             </div>
         </div>
     </header>
