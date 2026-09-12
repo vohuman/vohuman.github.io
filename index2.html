@@ -1,1 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahman Soltani</title>
+    <link rel="stylesheet" href="defaultstyles0.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="glass-header">
+        <div class="container-fluid d-flex align-items-center justify-content-between" style="max-width: 1600px;">
+
+            <div style="font-size:1.5rem; padding: 10px;">
+                <b>
+                Bahman Soltani
+                </b>
+            </div>
+
+            <div class="d-none d-md-flex align-items-center">
+                <nav class="d-flex gap-4 text-uppercase nav-tabs" style="font-size: 1.05rem; letter-spacing: 0.1em;">
+                    <a href="#" onclick="loadintro()" class="navlinkcustom active about">
+                        <i class="fa-solid fa-user me-1"></i> <span id="about">About</span>
+                    </a>
+                    <a href="#" onclick="loadhistory()" class="navlinkcustom ex">
+                        <i class="fa-solid fa-briefcase me-1"></i> <span id="ex">Experience</span>
+                    </a>
+                    <a href="#" onclick="loadskills()" class="navlinkcustom skill">
+                        <i class="fa-solid fa-code me-1"></i> <span id="skill">Skills</span>
+                    </a>
+                    <a href="#" onclick="loadedu()" class="navlinkcustom education">
+                        <i class="fa-solid fa-book-open me-1"></i> <span id="edu">Education</span>
+                    </a>
+                    
+                    <div style="display:flex" class="bg-secondary bg-opacity-25 rounded">
+                        <button id="btn-en" class="btn-en btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
+                        <button id="btn-de" class="btn-de btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="d-md-none d-flex align-items-center">
+                <button id="menu-toggle" class="btn border-1" onclick="toggleMenu()">
+                    <span id="menu-icon">&#9776;</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="d-none d-md-none border-bottom mobile-menu-wrap" style="background-color: rgba(248,249,250,0.75); padding: 5px;">
+            <div class="nav-tabs d-flex flex-column p-2 gap-4 text-center text-uppercase" style="font-size: 0.85rem; letter-spacing: 0.1em;">
+                <a href="#" onclick="loadintro(); toggleMenu()" class="text-decoration-none navlinkcustom active about">
+                    <i class="fa-solid fa-user me-2"></i> <span id="about1">About</span>
+                </a>
+                <a href="#" onclick="loadhistory(); toggleMenu()" class="text-decoration-none navlinkcustom ex">
+                    <i class="fa-solid fa-briefcase me-2"></i> <span id="ex1">Experience</span>
+                </a>
+                <a href="#" onclick="loadskills(); toggleMenu()" class="text-decoration-none navlinkcustom skill">
+                    <i class="fa-solid fa-code me-2"></i> <span id="skill1">Skills</span>
+                </a>
+                <a href="#" onclick="loadedu(); toggleMenu()" class="text-decoration-none navlinkcustom education">
+                    <i class="fa-solid fa-book-open me-1"></i> <span id="edu1">Education</span>
+                </a>
+
+                <div style="display:flex" class="bg-secondary bg-opacity-25 rounded">
+                    <button id="btn-en" class="btn-en btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
+                    <button id="btn-de" class="btn-de btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+
+        <div class="sidebar">
+
+            <div class="glass-panel firstcard border-0">
+                <div class="card-body p-0">
+                    <div style="display:flex; flex-direction:column" class="align-items-center align-items-md-start text-center text-md-start">
+
+                        <div class="flex-grow-1 position-relative" style="z-index: 2;">
+                            <div class="align-items-center text-center mb-2">                                
+                                <div class="avatar-container">
+                                   <img src="./assets/Bild.jpg" alt="Bahman Soltani" class="avatar-img" />
+                                </div>                                
+                            </div>
+                            
+                            <h1 class="mb-2">Bahman Soltani</h1>
+                            <h3 class="mt-0 mb-2">
+                                <span id="title">Senior Full Stack Developer</span>
+                            </h3>
+
+                            <p style="display:flex; flex-direction:column" class="gap-3 mb-4">
+                                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
+                                    <i class="fa-solid fa-location-dot text-primary"></i>
+                                    <span>27356 Rotenburg, <span id="germany">Germany</span></span>
+                                </div>
+                                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
+                                    <i class="fa-solid fa-envelope text-primary"></i>
+                                    <a href="mailto:bahman.soltani@gmail.com" class="custom-link-hover">bahman.soltani@gmail.com</a>
+                                </div>
+                                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
+                                    <i class="fa-solid fa-phone text-primary"></i>
+                                    <a href="tel:+4917655568384" class="custom-link-hover">+4917655568384</a>
+                                </div>
+                            </p>
+
+                            <div style="display:flex" class="flex-wrap gap-2 justify-content-center justify-content-md-start mt-4">
+                                <a class="btn btn-primary btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2" target="_blank" href="https://www.linkedin.com/in/vohuman/">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="glass-panel firstcard border-0">
+                <h3 class="align-items-center gap-2 mb-4"><i class="fa-solid fa-language me-2"></i><span id="lang">Languages</span></h3>
+                <div style="display:flex; flex-direction:column" class="gap-3" id="langbar">
+                    <div class="mb-3">
+                        <div class="mb-1">
+                            <b id="english">English</b>
+                            <span style="font-size: 0.8rem; color: #777" id="fluent">Fluent</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-1">
+                            <b id="english">German</b>
+                            <span style="font-size: 0.8rem; color: #777" id="fluent">Intermediate</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-1">
+                            <b id="english">Persian</b>
+                            <span style="font-size: 0.8rem; color: #777" id="fluent">Mother tongue</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="glass-panel main-content">
+
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+                <main class="intro">
+                    <section id="section-intro" class="">
+                       <div class="card project-card border-0 custom-card-hover">
+                           <div class="card-body">
+                               <div class="d-flex align-items-center gap-3 mb-4">
+                                   <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
+                                      <i class="fa-solid fa-circle-info fs-5"></i>
+                                   </div>
+                                   <h4 class="fw-bold text-dark mb-0">Einführung</h4>
+                               </div>
+                               <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                                   <p class="fw-bold fs-5 mb-2"></p>
+                                   <p class="fw-bold mb-2">Willkommen in meinem Portfolio!</p>
+                                   <p class="mb-3">Ich bin Bahman Soltani, Softwareentwickler mit mehr als 13 Jahren Erfahrung in der Entwicklung von stabilen und skalierbaren Applikationen. Meine Erfahrung umfasst den gesamten Lebenszyklus der Softwareentwicklung, mit einer tiefen Spezialisierung auf das Microsoft Ökosystem besonders C#, .NET Core und moderne Web Technologien.</p><p class="mb-3">Mir ist es wichtig, technische Anforderungen mit den Zielen des Unternehmens zu verbinden. Ich habe viel Erfahrung in der Arbeit mit verschiedenen Teams und Stakeholdern gesammelt. Deshalb arbeite ich nicht nur methodisch und strukturiert an meinem Code, sondern kommuniziere auch klar und lösungsorientiert mit meinen Kollegen und Kunden.</p><p class="mb-3"><b>Meine technischen Kenntnisse:</b><br></p><ul><li><b>Backend:</b> C#, ASP.NET Core, WinForms, Entity Framework, MVC, Web API, OOP.</li><li><b>Frontend:</b> JavaScript, jQuery, Angular, TypeScript, Razor.</li><li><b>Data:</b> SQL Server, JSON, XML.</li><li><b>Management-Tools:</b> Git, TFS, und Jira.</li><li><b>Fokus:</b> Full-stack Entwicklung, Sicherheitsbewusste Programmierung und die Entwicklung von skalierbaren Systemen.</li></ul><p></p><p></p>
+                               </div>
+                           </div>
+                       </div>
+                   </section>
+                </main>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 Bahman Soltani.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://www.linkedin.com/in/vohuman" class="text-decoration-none"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:bahman.soltani@gmail.com" class="text-decoration-none"><i class="fa-solid fa-envelope"></i> <span id="contact">Contact</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loading">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <canvas id="network-canvas"></canvas>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="default.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 100) {
+                    $('.glass-header').addClass('scrolled');
+                } else {
+                    $('.glass-header').removeClass('scrolled');
+                }
+            });
+            
+            window.toggleMenu = function () {
+                const menu = $('#mobile-menu');
+                const icon = $('#menu-icon');
+
+                if (menu.hasClass('d-none')) {
+                    menu.removeClass('d-none');
+                    setTimeout(() => {
+                        menu.addClass('show');
+                    }, 10);
+                    
+                    icon.text('✕');
+                    $('#menu-toggle').addClass('active');
+                } else {
+                    menu.removeClass('show');
+                    setTimeout(() => {
+                        menu.addClass('d-none');
+                    }, 300);
+                    icon.text('☰');
+                    $('#menu-toggle').removeClass('active');
+                }
+            };
+
+            
+            const canvas = document.getElementById('network-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Automatic adaptive scaling setup
+            let width = (canvas.width = window.innerWidth);
+            let height = (canvas.height = window.innerHeight);
+
+            $(window).on('resize', function () {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const particles = [];
+            const settings = {
+                density: 150,      /* Slightly more nodes */
+                threshold: 140,    /* Longer connection lines */
+                speed: 0.8,        /* Slower, elegant floating speed */
+                color: '#8b6cf6',  /* Vibrant purple nodes matching the screenshot */
+                gravity: 'pull'
+            };
+
+            const mouse = { x: null, y: null, radius: 150 };
+
+            // Track mouse globally across the window
+            // $(window).on('mousemove', function(e) {
+            //     mouse.x = e.clientX;
+            //     mouse.y = e.clientY;
+            // });
+
+            // $(document).on('mouseleave', function() {
+            //     mouse.x = null;
+            //     mouse.y = null;
+            // });
+
+            // Hex converter for connecting lines alpha drop-offs
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                let rrandom = Math.floor(Math.random() * 250) + 1;
+                let grandom = Math.floor(Math.random() * 250) + 1;
+                let brandom = Math.floor(Math.random() * 250) + 1;
+                
+                return result ? {
+                    //r: rrandom,
+                    //g: grandom,
+                    //b: brandom
+                    
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+
+            // Initialize/Spawn Particles
+            function initParticles() {
+                particles.length = 0;
+                for (let i = 0; i < settings.density; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.6 * settings.speed,
+                        vy: (Math.random() - 0.5) * 0.6 * settings.speed,
+                        radius: Math.random() * 2.5 + 1
+                    });
+                }
+            }
+
+            // CHANGED: Listen to the document instead of the canvas so clicks over text/divs still trigger nodes
+            // $(document).on('click', function(e) {
+            //     for (let i = 0; i < 8; i++) {
+            //         particles.push({
+            //             x: e.clientX,
+            //             y: e.clientY,
+            //             vx: (Math.random() - 0.5) * 2 * settings.speed,
+            //             vy: (Math.random() - 0.5) * 2 * settings.speed,
+            //             radius: Math.random() * 3 + 1.5
+            //         });
+            //     }
+            // });
+
+            // The Animation & Draw Tick Loop
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                const rgb = hexToRgb(settings.color);
+
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Bounce from boundary limits
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    // Handle Cursor Gravity Mechanics
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - p.x;
+                        const dy = mouse.y - p.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            if (settings.gravity === 'pull') {
+                                p.x += dx * force * 0.02;
+                                p.y += dy * force * 0.02;
+                            } else if (settings.gravity === 'push') {
+                                p.x -= dx * force * 0.02;
+                                p.y -= dy * force * 0.02;
+                            }
+                        }
+                    }
+
+                    // Draw individual nodes
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = settings.color;
+                    ctx.globalAlpha = 0.45;
+                    ctx.fill();
+                });
+
+                // Compute connecting wires
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p1 = particles[i];
+                        const p2 = particles[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < settings.threshold) {
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            const alpha = ((settings.threshold - dist) / settings.threshold) * 0.5;
+                            ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+                            ctx.globalAlpha = 1.0;
+                            ctx.lineWidth = 0.75;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+
+            initParticles();
+            //animate();
+
+            //$('#loading').fadeOut(900);
+
+            setLanguage('de');
+
+        });
+    </script>
+
+    
+</body>
+</html>
