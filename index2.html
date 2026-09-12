@@ -1,51 +1,104 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bahman Soltani</title>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <style>
+        /* --- CSS VARIABLES (Color Palette & Theme) --- */
         :root {
             --bg-base: #040814;
             --bg-darker: #02040a;
             --bg-card: #091330;
-            --glow-red: #DC3C3C;
+            
             --glow-cyan: #2D91C3;
-            --glow-light-cyan: #5DC1F3;
+            --glow-cyan-bright: #45c4ff;
+            --glow-red: #DC3C3C;
+            --glow-red-bright: #ff5e5e;
             --glow-blue: #1E5096;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            
+            --text-main: #f0f4f8;
+            --text-muted: #a0aec0;
+            
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* --- GLOBAL STYLES --- */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             font-family: var(--font-family);
             background-color: var(--bg-base);
-            background-image: 
-                radial-gradient(circle at 85% 30%, rgba(220, 60, 60, 0.25) 0%, transparent 45%),
-                radial-gradient(circle at 15% 60%, rgba(45, 145, 195, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(30, 80, 150, 0.2) 0%, transparent 70%);
-            background-attachment: fixed;
             color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
+            /* Intense Neon Background with Dot Pattern */
+            background-image: 
+                radial-gradient(ellipse at 90% 30%, rgba(220, 60, 60, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 10% 40%, rgba(45, 145, 195, 0.5) 0%, transparent 55%),
+                radial-gradient(circle at 50% 80%, rgba(30, 80, 150, 0.4) 0%, transparent 60%),
+                url('data:image/svg+xml;utf8,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>');
+            background-attachment: fixed;
+            line-height: 1.6;
         }
 
-        .navbar {
+        /* --- GLASSMORPHISM BASE CLASS (Cards) --- */
+        .glass-panel {
+            background: rgba(9, 19, 48, 0.4) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(69, 196, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Keep children above the ::before background */
+        .glass-panel > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animated ScaleX Background */
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 80, 150, 0.25) !important; /* Glowing blue tint */
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.5s ease-in-out;
+            z-index: 0;
+        }
+
+        .glass-panel:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .glass-panel:hover {
+            border-color: rgba(69, 196, 255, 0.4);
+            box-shadow: 0 10px 40px 0 rgba(45, 145, 195, 0.25);
+            transform: translateY(-3px);
+        }
+
+        /* --- NAVBAR --- */
+        .navbar-custom {
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -53,520 +106,437 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: rgba(2, 4, 10, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(30, 80, 150, 0.3);
+            background: rgba(4, 8, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(45, 145, 195, 0.2);
         }
 
-        .nav-brand {
+        .navbar-brand {
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            letter-spacing: 1px;
         }
-
-        .nav-menu-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+        
+        .navbar-brand span {
+            color: var(--glow-cyan-bright);
         }
 
         .nav-menu {
             display: flex;
+            gap: 20px;
+            align-items: center;
             list-style: none;
-            gap: 5px;
+            margin: 0;
+            padding: 0;
         }
 
-        .nav-link {
+        .nav-menu li a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 15px;
-            color: var(--text-muted);
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
         }
 
-        .nav-link:hover, .nav-link.active {
-            background: rgba(45, 145, 195, 0.1);
-            color: var(--glow-cyan);
-            box-shadow: inset 0 -3px 0 var(--glow-cyan);
+        .nav-menu li a:hover, .nav-menu li a.active {
+            color: var(--glow-cyan-bright);
+            background: rgba(45, 145, 195, 0.15);
+            text-shadow: 0 0 10px var(--glow-cyan);
         }
 
-        .mobile-toggle {
-            display: none;
-            background: transparent;
-            border: 1px solid var(--glow-cyan);
-            color: var(--glow-cyan);
-            padding: 5px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .lang-switcher {
+        .lang-switch {
             display: flex;
             gap: 10px;
+            margin-left: 20px;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding-left: 20px;
         }
 
         .lang-btn {
-            background: transparent;
-            border: 1px solid var(--glow-blue);
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: var(--text-muted);
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 5px 10px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
+            transition: all 0.3s;
         }
 
-        .lang-btn:hover {
-            border-color: var(--glow-cyan);
-            color: var(--glow-cyan);
+        .lang-btn.active, .lang-btn:hover {
+            border-color: var(--glow-cyan-bright);
+            color: var(--glow-cyan-bright);
+            background: rgba(45, 145, 195, 0.1);
+            box-shadow: 0 0 10px rgba(45,145,195,0.3);
         }
 
-        .lang-btn.active {
-            background: var(--glow-blue);
-            color: #fff;
-            border-color: var(--glow-blue);
+        .mobile {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--glow-cyan-bright);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* --- PROFILE BANNER --- */
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 5%;
         }
 
         .profile-banner {
-            max-width: 1200px;
-            margin: 40px auto 20px auto;
-            padding: 30px;
-            background: rgba(9, 19, 48, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(30, 80, 150, 0.3);
-            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
             display: flex;
-            flex-wrap: wrap;
             gap: 40px;
             align-items: center;
-            width: 90%;
         }
 
-        .profile-info {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .profile-img {
-            width: 100px;
-            height: 100px;
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background-color: var(--bg-card);
-            border: 2px solid var(--glow-cyan);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: var(--glow-cyan);
-            box-shadow: 0 0 15px rgba(45, 145, 195, 0.3);
+            border: 3px solid var(--glow-cyan);
+            box-shadow: 0 0 20px rgba(45, 145, 195, 0.8), 0 0 40px rgba(45, 145, 195, 0.4);
+            animation: pulseGlow 3s infinite alternate;
             flex-shrink: 0;
             overflow: hidden;
         }
 
-        .profile-img img {
+        .profile-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(45, 145, 195, 0.6); border-color: var(--glow-cyan); }
+            100% { box-shadow: 0 0 30px rgba(69, 196, 255, 1); border-color: var(--glow-cyan-bright); }
+        }
+
+        .profile-details {
+            flex-grow: 1;
+        }
+
         .profile-details h1 {
-            color: var(--text-main);
+            font-size: 2.8rem;
+            font-weight: 800;
             margin-bottom: 5px;
-            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--glow-cyan-bright), #fff, var(--glow-red-bright));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(69, 196, 255, 0.4));
         }
 
-        .profile-details p {
+        .profile-details h3 {
+            font-size: 1.2rem;
             color: var(--text-muted);
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 5px;
-            flex-wrap: wrap;
+            margin-bottom: 15px;
+            font-weight: 500;
         }
 
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 5px;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-        }
-        
-        .contact-info a {
-            color: var(--text-muted);
+        /* --- CUSTOM ANIMATED LINK HOVER --- */
+        .custom-link-hover {
             text-decoration: none;
-            transition: color 0.3s ease;
-            word-break: break-word;
+            position: relative;
+            color: inherit;
         }
-        
-        .social-btn {
+
+        .custom-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--glow-cyan-bright);
+            transform-origin: bottom right;
+            transition: transform 0.255s ease-out;
+            box-shadow: 0 0 8px var(--glow-cyan);
+        }
+
+        .custom-link-hover:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .custom-link-hover:hover {
+            color: var(--glow-cyan-bright) !important;
+        }
+
+        .btn-action {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 8px 16px;
-            background: rgba(30, 80, 150, 0.2);
-            border: 1px solid var(--glow-blue);
-            color: var(--text-main);
+            background: rgba(220, 60, 60, 0.15);
+            border: 1px solid var(--glow-red);
+            color: var(--glow-red-bright);
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(220, 60, 60, 0.3);
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        .social-btn:hover {
-            background: rgba(45, 145, 195, 0.2);
-            border-color: var(--glow-cyan);
-            box-shadow: 0 0 10px rgba(45, 145, 195, 0.3);
-            color: var(--glow-cyan);
         }
 
-        .profile-stats {
-            flex: 1;
-            min-width: 300px;
-            border-left: 1px solid rgba(30, 80, 150, 0.3);
-            padding-left: 40px;
+        .btn-action:hover {
+            background: var(--glow-red);
+            color: white;
+            box-shadow: 0 0 25px rgba(220, 60, 60, 0.8);
+            transform: translateY(-2px);
         }
 
-        main {
-            flex: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            width: 90%;
-        }
-
-        .card {
-            background: rgba(9, 19, 48, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(30, 80, 150, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .card:hover {
-            border-color: rgba(45, 145, 195, 0.5);
-            box-shadow: 0 4px 20px rgba(45, 145, 195, 0.1);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(30, 80, 150, 0.3);
-        }
-
-        .icon-box {
-            background: rgba(45, 145, 195, 0.1);
-            color: var(--glow-cyan);
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            background: rgba(30, 80, 150, 0.2);
-            border: 1px solid var(--glow-blue);
-            color: var(--text-main);
-            margin: 0 5px 5px 0;
-        }
-        
-        .badge.cyan { color: var(--glow-cyan); border-color: var(--glow-cyan); background: rgba(45, 145, 195, 0.1); }
-        .badge.red { color: var(--glow-red); border-color: var(--glow-red); background: rgba(220, 60, 60, 0.1); }
-        .badge.blue { color: #8cb4ff; border-color: var(--glow-blue); background: rgba(30, 80, 150, 0.2); }
-
-        .progress-container {
-            margin-bottom: 15px;
-        }
-        
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: var(--bg-darker);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--glow-cyan);
-            border-radius: 3px;
-            transition: width 1s ease;
-        }
-
-        .timeline {
-            position: relative;
+        .languages-container {
+            min-width: 250px;
+            border-left: 1px solid rgba(69, 196, 255, 0.2);
             padding-left: 30px;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--glow-blue);
+        .lang-item { margin-bottom: 15px; }
+        .lang-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        .progress-bg {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--glow-blue), var(--glow-cyan-bright));
+            border-radius: 3px;
+            transition: width 1s ease;
+            box-shadow: 0 0 10px rgba(69, 196, 255, 0.8);
         }
 
+        /* --- DYNAMIC CONTENT AREA (JS Generated) --- */
+        #main-content { min-height: 400px; }
+
+        /* Timeline Styles */
         .timeline-item {
             position: relative;
+            padding-left: 30px;
             margin-bottom: 30px;
+            border-left: 2px solid rgba(45, 145, 195, 0.3);
         }
-
         .timeline-dot {
             position: absolute;
-            left: -35px;
+            left: -8px;
             top: 20px;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: var(--bg-card);
             border: 2px solid var(--glow-cyan);
-            z-index: 2;
-        }
-
-        .timeline-dot.first {
-            background: var(--glow-cyan);
             box-shadow: 0 0 10px var(--glow-cyan);
         }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
+        .timeline-dot.first {
+            border-color: var(--glow-red-bright);
+            box-shadow: 0 0 10px var(--glow-red-bright);
         }
 
-        .timeline-title h5 { font-size: 1.2rem; color: var(--text-main); }
-        .timeline-meta { font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 10px; align-items: center; margin-top: 5px;}
-        .timeline-meta a { color: var(--glow-cyan); text-decoration: none; }
-        .timeline-meta a:hover { text-decoration: underline; }
-
-        .timeline-list { list-style: none; margin-bottom: 15px;}
-        .timeline-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-            color: var(--text-muted);
-        }
-        .timeline-list li i {
-            position: absolute;
-            left: 0;
-            top: 4px;
-            color: var(--glow-cyan);
+        /* Badges */
+        .badge-custom {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
+            margin: 4px 4px 4px 0;
+            border: 1px solid rgba(45, 145, 195, 0.5);
+            background: rgba(45, 145, 195, 0.1);
+            color: var(--glow-cyan-bright);
+        }
+        
+        .badge-red { 
+            background: rgba(220, 60, 60, 0.1); 
+            color: var(--glow-red-bright); 
+            border-color: var(--glow-red); 
         }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .edu-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(30, 80, 150, 0.2); }
-        .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .edu-item h6 { font-size: 1.1rem; margin-bottom: 5px; color: var(--text-main); }
-        .edu-item a { color: var(--glow-cyan); text-decoration: none; }
-        .edu-item .meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
-
-        .footer {
-            background: rgba(2, 4, 10, 0.9);
-            border-top: 1px solid rgba(30, 80, 150, 0.3);
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-            color: var(--text-muted);
-        }
-
-        #loading {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-base);
-            z-index: 9999;
-            display: flex;
+        /* Icon Boxes */
+        .icon-box {
+            background: rgba(45, 145, 195, 0.15);
+            color: var(--glow-cyan-bright);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--glow-cyan);
-            font-size: 2rem;
-            flex-direction: column;
-            gap: 15px;
+            box-shadow: 0 0 15px rgba(45, 145, 195, 0.3);
+            border: 1px solid rgba(45, 145, 195, 0.3);
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(45, 145, 195, 0.3);
-            border-top-color: var(--glow-cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        /* --- BOOTSTRAP OVERRIDES TO FIX CONTRAST --- */
+        .text-primary { color: var(--glow-cyan-bright) !important; }
+        .text-dark { color: var(--text-main) !important; } /* Stops Bootstrap from making text black */
+        .text-secondary { color: var(--text-muted) !important; } /* Brightens gray text */
+        .text-muted { color: #8e9db0 !important; } /* Brightens very dark text for readability */
+        .border-bottom { border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+        .border-top { border-top: 1px solid rgba(255,255,255,0.1) !important; }
+        a { text-decoration: none; color: inherit; }
+        
         .fadein { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Loader */
+        #loading {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-base); z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            color: var(--glow-cyan-bright); font-size: 2rem;
+        }
+
+        /* --- RESPONSIVE FIXES --- */
         @media (max-width: 992px) {
-            .mobile-toggle { display: block; }
-            .nav-menu-container {
-                display: none; 
-                flex-direction: column; 
-                position: absolute;
-                top: 100%; left: 0; width: 100%; 
-                background: rgba(2, 4, 10, 0.95);
-                padding: 20px; 
-                border-bottom: 1px solid rgba(30, 80, 150, 0.3);
-                align-items: flex-start;
-            }
-            .nav-menu-container.show { display: flex; }
-            .nav-menu { flex-direction: column; width: 100%; gap: 15px; }
-            .nav-link { box-shadow: none !important; border-left: 3px solid transparent; border-radius: 0; padding: 10px; }
-            .nav-link:hover, .nav-link.active { border-left-color: var(--glow-cyan); }
-            
-            .profile-stats {
-                border-left: none;
-                padding-left: 0;
-                border-top: 1px solid rgba(30, 80, 150, 0.3);
-                padding-top: 25px;
-            }
-            
-            .profile-info {
+            .profile-banner {
                 flex-direction: column;
                 text-align: center;
-                min-width: 100%;
+                padding: 30px 20px;
             }
+            .languages-container {
+                border-left: none;
+                border-top: 1px solid rgba(69, 196, 255, 0.2);
+                padding-left: 0;
+                padding-top: 20px;
+                width: 100%;
+            }
+            /* Stack icons and text gracefully on mobile */
+            .profile-details .d-flex {
+                justify-content: center !important;
+                flex-wrap: wrap;
+                word-break: break-word;
+            }
+        }
 
-            .profile-details p, .contact-info {
-                justify-content: center;
-            }
-            
-            .profile-banner {
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: rgba(4, 8, 20, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
                 padding: 20px;
-                gap: 25px;
+                border-bottom: 1px solid rgba(45, 145, 195, 0.3);
+                display: none;
+            }
+            .nav-menu.active { display: flex; }
+            .lang-switch {
+                margin: 10px 0 0 0;
+                border-left: none;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 15px 0 0 0;
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
-    
-    
 </head>
 <body>
 
-    <div id="loading">
-        <div class="spinner"></div>
-        <span style="font-size: 1rem; color: var(--text-muted);">Loading...</span>
-    </div>
+    <div id="loading"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
 
-    
-    <nav class="navbar">
-        <div class="nav-brand">
-            <span style="color: var(--glow-cyan);">&lt;</span>Bahman Soltani<span style="color: var(--glow-red);">/&gt;</span>
+    <!-- NAVBAR (Replaces Sidebar) -->
+    <nav class="navbar-custom">
+        <div class="navbar-brand">
+            <i class="fa-solid fa-code" style="color: var(--glow-red-bright); margin-right: 8px;"></i>
+            Bahman <span>Soltani</span>
         </div>
         
-        <button class="mobile-toggle" onclick="toggleMenu()">
+        <button class="hamburger" id="mobile-menu-btn">
             <i class="fa-solid fa-bars"></i>
         </button>
-        
-        <div class="nav-menu-container" id="nav-menu-container">
-            <ul id="nav-links" class="nav-menu">
-                
-            </ul>
 
-            <div class="lang-switcher">
-                <button id="btn-en" class="lang-btn active" onclick="setLanguage('en')">EN</button>
-                <button id="btn-de" class="lang-btn" onclick="setLanguage('de')">DE</button>
-            </div>
-        </div>
+        <ul class="nav-menu" id="nav-links">
+            <!-- JS will inject Nav Links here -->
+        </ul>
     </nav>
 
-    <header class="profile-banner">
-        <div class="profile-info">
-            <div class="profile-img">
-                <img src="https://vohuman.github.io/assets/Bild.jpg" alt="Profile Picture">
+    <div class="container-custom">
+        <!-- PROFILE BANNER (Always Visible) -->
+        <header class="profile-banner glass-panel">
+            <div class="profile-img-container">
+                <img src="https://vohuman.github.io/assets/Bild.jpg" alt="Bahman Soltani">
             </div>
+            
             <div class="profile-details">
                 <h1>Bahman Soltani</h1>
-                <h3 id="title" style="margin-bottom: 10px; color: var(--glow-light-cyan);">Full Stack Developer</h3>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--glow-cyan)"></i> 27356 Rotenburg Wümme, <span id="germany">Germany</span></p>
+                <h2 id="title">Senior Full Stack Developer</h2>
+                
+                <p class="mb-2"><i class="fa-solid fa-location-dot" style="color: var(--glow-cyan)"></i> 27356 Rotenburg Wümme, <span id="germany">Germany</span></p>
 
-                <div class="contact-info">
-                    <i class="fa-solid fa-envelope" style="color: var(--glow-cyan)"></i>
-                    <a href="mailto:bahman.soltani@gmail.com">bahman.soltani@gmail.com</a>
+                <div class="d-flex align-items-center justify-content-start gap-2 mb-1">
+                    <i class="fa-solid fa-envelope text-primary"></i>
+                    <a href="mailto:bahman.soltani@gmail.com" class="custom-link-hover">bahman.soltani@gmail.com</a>
                 </div>
-                <div class="contact-info">
-                    <i class="fa-solid fa-phone" style="color: var(--glow-cyan)"></i>
-                    <a href="tel:+4917655568384">+4917655568384</a>
+                <div class="d-flex align-items-center justify-content-start gap-2 mb-3">
+                    <i class="fa-solid fa-phone text-primary"></i>
+                    <a href="tel:+4917655568384" class="custom-link-hover">+4917655568384</a>
                 </div>
 
-                <div>
-                    <a class="social-btn" target="_blank" href="https://www.linkedin.com/in/vohuman/">
-                        <i class="fa-brands fa-linkedin"></i>
-                        LinkedIn
+                <div class="d-flex flex-wrap gap-2 justify-content-start mt-3">
+                    <a class="btn-action" target="_blank" href="https://www.linkedin.com/in/vohuman/">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="profile-stats">
-            <h4 id="lang" style="color: var(--text-main); margin-bottom: 15px; font-size: 1.1rem;">Languages</h4>
-            <div id="langbar">
-                <!-- JS dynamically injects languages here -->
+
+            <div class="languages-container">
+                <h4 class="mb-3 text-primary fw-bold" id="lang-title"><i class="fa-solid fa-language me-2"></i>Languages</h4>
+                <div id="langbar">
+                    <!-- JS will inject language bars here -->
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-
-    <main class="intro">
+        <!-- MAIN CONTENT (Dynamically Injected) -->
+        <main id="main-content">
+            <!-- JS logic replaces this content -->
+        </main>
         
-    </main>
+        <!-- FOOTER -->
+        <footer class="text-center text-muted mt-5 pb-4 border-top pt-4">
+            <p>&copy; 2026 Bahman Soltani.</p>
+              <p class="mt-2">
+                    <a href="mailto:bahman.soltani@gmail.com">
+                        <i class="fa-solid fa-envelope text-primary"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/vohuman/">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+              </p>
+        </footer>
+    </div>
 
-    
-    <footer class="footer">
-        <p>&copy; 2026 Bahman Soltani.</p>
-        <div style="margin-top: 10px; display: flex; justify-content: center; gap: 15px;">
-            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-github"></i></a>
-            <a href="mailto:bahman.soltani@gmail.com" style="color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:bahman.soltani@gmail.com" style="color: var(--text-muted);"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-    </footer>
-
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         let currentLang = 'en';
         let changelanges = false;
         let resumeData = null;
-        let isfirstload = true;
+
+        // Mobile Menu Toggle
+        $('#mobile-menu-btn').click(function() {
+            $('#nav-links').toggleClass('active');
+        });
+
+        // Close mobile menu on link click
+        $(document).on('click', '.navlinkcustom', function() {
+            if($(window).width() <= 768) {
+                $('#nav-links').removeClass('active');
+            }
+        });
 
         const i18n = {
             en: {
@@ -579,13 +549,7 @@
                     certificates: "Certificates",
                     universities: "Universities"
                 },
-                labels: {
-                    techStack: "Tech Stack",
-                    contact: "Contact",
-                    present: "Present"
-                },
                 nav: {
-                    home: "Profile",
                     intro: "About",
                     history: "Experience",
                     skills: "Skills",
@@ -610,13 +574,7 @@
                     certificates: "Zertifikate",
                     universities: "Universitäten"
                 },
-                labels: {
-                    techStack: "Technologien",
-                    contact: "Kontakt",
-                    present: "Aktuell"
-                },
                 nav: {
-                    home: "Profil",
                     intro: "Über mich",
                     history: "Erfahrung",
                     skills: "Fähigkeiten",
@@ -634,298 +592,41 @@
         };
 
         function load() {
-             $('#loading').show();
+            $('#loading').show();
             if (resumeData == null) {
                 $.ajax({
                     url: 'https://vohuman.github.io/site/resume.json',
                     method: 'GET',
                     success: function (data) {
                         resumeData = data;
-                        $('#btn-en').prop('disabled', false);
-                        $('#btn-de').prop('disabled', false);
-
                         renderAll();
-                        if(isfirstload) {
-                            loadintro();
-                            isfirstload = false;
-                        }
                         $('#loading').fadeOut(800);
                     },
                     error: function (jqxhr, textStatus, error) {
-                        console.log(error);
+                        console.log("Error loading JSON:", error);
                         $('#loading').hide(); 
-                        $('main').html('<div class="card"><p style="color: var(--glow-red)">Error loading resume data. Please try again later.</p></div>');
+                        $('#main-content').html('<div class="glass-panel p-4 text-center" style="color: var(--glow-red-bright);">Error loading profile data. Please try again later.</div>');
                     }
                 });
             } else {
-                $('#loading').fadeOut(800); 
+                $('#loading').fadeOut(500); 
             }
-        }
-
-        function translate(key, subkey) {
-            return i18n[currentLang][key][subkey];
         }
 
         function setLanguage(lang) {
-            load();
             currentLang = lang;
             changelanges = true;
+            
             updateLangBtns();
-            renderAll();
+            renderHero();
+            rendersidemenu();
 
-            if ($('main').hasClass('intro')) loadintro();        
-            if ($('main').hasClass('history')) loadhistory();
-            if ($('main').hasClass('skills')) loadskills();
-            if ($('main').hasClass('education')) loadedu();
-
-            closeMenu();
-        }
-
-        const renderHero = function () {    
-            if (!resumeData) return;
-            let langs = resumeData[currentLang].languages;
-            var langdiv = '';
-
-            $.each(langs, function (index, l) {
-                langdiv += `<div class="progress-container">
-                           <div class="progress-label">
-                                   <b style="color: var(--text-main)">${l.language}</b>
-                                   <span style="color: var(--text-muted)">${l.fluency}</span>
-                           </div>
-                           <div class="progress-bar">
-                                   <div class="progress-fill" style="width: ${l.percent}%"></div>
-                           </div>
-                    </div>`;
-            });
-
-            $('#langbar').empty().append($(langdiv));
-
-            if (currentLang === 'en') {
-                $('#germany').html('Germany');
-                $('#title').html('Senior Full Stack Developer');
-            } else {
-                $('#germany').html('Deutschland');
-                $('#title').html('Senior Full Stack Entwickler');
-            }
-
-            $('#lang').html(i18n[currentLang].headers.languages);
-        }
-
-        const rendernavbar = function () {
-            var d = `
-           <li>
-               <a href="#" onclick="loadintro()" class="nav-link navlinkcustom about">
-                   <i class="fa-solid fa-user"></i>
-                   <span id="about">${i18n[currentLang].nav.intro}</span>
-               </a>
-           </li>
-           <li>
-               <a href="#" onclick="loadhistory()" class="nav-link navlinkcustom ex">
-                   <i class="fa-solid fa-briefcase"></i>
-                   <span id="ex">${i18n[currentLang].nav.history}</span>
-               </a>
-           </li>
-           <li>
-               <a href="#" onclick="loadskills()" class="nav-link navlinkcustom skill">
-                   <i class="fa-solid fa-code"></i>
-                   <span id="skill">${i18n[currentLang].nav.skills}</span>
-               </a>
-           </li>
-           <li>
-               <a href="#" onclick="loadedu()" class="nav-link navlinkcustom education">
-                   <i class="fa fa-book"></i>
-                   <span id="edu">${i18n[currentLang].nav.education}</span>
-               </a>
-           </li>`;
-
-            $('#nav-links').empty().append($(d));
-            highlightActiveMenu();
-        }
-
-        function highlightActiveMenu() {
-            $('a.navlinkcustom').removeClass('active');
-            if ($('main').hasClass('intro')) $('.about').addClass('active');
-            if ($('main').hasClass('history')) $('.ex').addClass('active');
-            if ($('main').hasClass('skills')) $('.skill').addClass('active');
-            if ($('main').hasClass('education')) $('.education').addClass('active');
-        }
-
-        const loadintro = function () {
-            if (!resumeData) { load(); return; }
-            var fade = !changelanges ? 'fadein' : '';
-            var html = `<section id="section-intro" class="${fade}">
-               <div class="card">
-                   <div class="section-header" style="border-bottom: none; padding-bottom: 0;">
-                       <div class="icon-box"><i class="fa-solid fa-circle-info"></i></div>
-                       <h2 style="font-size: 1.5rem">${i18n[currentLang].headers.intro}</h2>
-                   </div>
-                   <div style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem; padding-top: 15px;">
-                       <p>${resumeData[currentLang].introduction}</p>
-                   </div>
-               </div>
-           </section>`;
-
-            $('main').empty().append($(html)).removeClass('history skills education').addClass('intro');
-            highlightActiveMenu();
-            closeMenu();
-            changelanges = false;
-        }
-
-        const loadhistory = function () {
-            if (!resumeData) { load(); return; }
-            var fade = !changelanges ? 'fadein' : '';
-            var html = `<section id="section-history" class="${fade}">
-               <div class="section-header">
-                   <div class="icon-box" style="color: var(--glow-red); background: rgba(220, 60, 60, 0.1);"><i class="fa-solid fa-briefcase"></i></div>
-                   <h2>${i18n[currentLang].headers.experience}</h2>
-               </div>
-               <div class="timeline">`;
-
-            var history = resumeData[currentLang].employmentHistory;
-
-            $.each(history, function (index, h) {
-                let dotClass = index == 0 ? "timeline-dot first" : "timeline-dot";
-                let badgeClass = index == 0 ? "badge red" : "badge";
-                
-                html += `<div class="timeline-item">
-                   <div class="${dotClass}"></div>
-                   <div class="card">
-                       <div class="timeline-header">
-                          <div class="timeline-title">
-                              <h5>${h.role}</h5>
-                              <div class="timeline-meta">
-                                  <a href="#" target="_blank"><i class="fa-regular fa-building"></i> ${h.company}</a>
-                                  <span>•</span>
-                                  <span><i class="fa-solid fa-location-dot"></i> ${h.location}</span>
-                              </div>
-                          </div>
-                          <div><span class="${badgeClass}">${h.startDate} — ${h.endDate}</span></div>
-                       </div>
-                       <ul class="timeline-list">`;
-
-                $.each(h.responsibilities, function (i, r) {
-                    html += `<li><i class="fa-solid fa-circle-check"></i> <span>${r}</span></li>`;
-                });
-
-                html += `</ul>
-                      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(30, 80, 150, 0.2);">
-                      <small style="color: var(--glow-cyan); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px;">Tech Stack</small>
-                      <div>`;
-
-                $.each(h.techStack, function (j, t) {
-                    html += `<span class="badge blue">${t}</span>`;
-                })
-
-                html += `</div></div></div></div>`;
-            });
-
-            html += '</div></section>';
-            $('main').empty().append($(html)).removeClass('intro skills education').addClass('history');
-            highlightActiveMenu();
-            closeMenu();
-            changelanges = false;
-        }
-
-        const loadskills = function () {
-            if (!resumeData) { load(); return; }
-            const skills = resumeData[currentLang].technicalSkills;
-            const config = {
-                backend: { color: "cyan", icon: "fa-solid fa-server" },
-                frontend: { color: "red", icon: "fa-solid fa-desktop" },
-                database: { color: "blue", icon: "fa-solid fa-database" },
-                sourceControl: { color: "cyan", icon: "fa-solid fa-code-branch" },
-                projectManagement: { color: "blue", icon: "fa-solid fa-list-check" },
-                general: { color: "red", icon: "fa-solid fa-gears" }
-            };
-
-            var fade = !changelanges ? 'fadein' : '';
-            var html = `<section id="section-skills" class="${fade}">
-                <div class="section-header">
-                   <div class="icon-box" style="color: var(--glow-blue); background: rgba(30, 80, 150, 0.2);"><i class="fa-solid fa-code"></i></div>
-                   <h2>${translate('headers', 'skills')}</h2>
-               </div>
-               <div class="grid-2">`;
-
-            $.each(config, function (key, conf) {
-                const label = i18n[currentLang].categories[key] || key;
-                html += `<div class="card" style="margin-bottom: 0;">
-                       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-                           <i class="${conf.icon}" style="color: var(--glow-${conf.color}); font-size: 1.2rem;"></i>
-                           <h4 style="color: var(--text-main); font-weight: normal;">${label}</h4>
-                       </div>
-                       <div>`;
-                $.each(skills[key], function (index, skill) {
-                    html += `<span class="badge ${conf.color}">${skill}</span>`;
-                });
-                html += `</div></div>`;
-            });
-
-            html += `</div></section>`;
-            $('main').empty().append($(html)).removeClass('intro history education').addClass('skills');
-            highlightActiveMenu();
-            closeMenu();
-            changelanges = false;
-        }
-
-        const loadedu = function () {
-            if (!resumeData) { load(); return; }
-            var edu = resumeData[currentLang].education;
-            var cer = resumeData[currentLang].certificates;
-
-            var fade = !changelanges ? 'fadein' : '';
-            var html = `<section id="section-edu" class="${fade}">
-                <div class="section-header">
-                   <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
-                   <h2>${translate('headers', 'education')}</h2>
-               </div>
-               <div class="grid-2">
-                   <!-- Universities -->
-                   <div class="card">
-                       <div class="section-header" style="border:none; margin-bottom:20px; padding-bottom:0;">
-                          <div class="icon-box" style="background: transparent; border: 1px solid var(--glow-cyan);"><i class="fa-solid fa-graduation-cap"></i></div>
-                          <h4>${i18n[currentLang].headers.universities}</h4>
-                       </div>
-                   <div>`;
-
-            $.each(edu, function (index, e) {
-                html += `<div class="edu-item">
-                      <h6>${e.degree}</h6>
-                      <a href="${e.link}" target="_blank"><i class="fa-solid fa-building-columns"></i> ${e.institution}</a>
-                      <div class="meta">
-                          <span>${e.location}</span>
-                          <span class="badge" style="margin:0;">${e.startDate} - ${e.endDate}</span>
-                      </div>
-                  </div>`;
-            });
-
-            html += `</div></div>
-                   <!-- Certificates -->
-                   <div class="card">
-                       <div class="section-header" style="border:none; margin-bottom:20px; padding-bottom:0;">
-                          <div class="icon-box" style="color: var(--glow-red); background: transparent; border: 1px solid var(--glow-red);"><i class="fa-solid fa-certificate"></i></div>
-                          <h4>${i18n[currentLang].headers.certificates}</h4>
-                       </div>
-                   <div>`;
-
-            $.each(cer, function (index, c) {
-                html += `<div class="edu-item" style="display: flex; gap: 15px;">
-                  <i class="fa-solid fa-trophy" style="color: var(--glow-red); font-size: 1.2rem; margin-top: 3px;"></i>
-                  <div>
-                      <h6><a href="${c.link}" target="_blank" style="color: var(--text-main);">${c.title}</a></h6>
-                      <div class="meta" style="justify-content: flex-start; gap: 10px;">
-                          <span>${c.issuer}</span>
-                          <span>•</span>
-                          <span>${c.date}</span>
-                      </div>
-                  </div>
-                </div>`;
-            });
-
-            html += `</div></div></div></section>`;
-            $('main').empty().append($(html)).removeClass('history skills intro').addClass('education');
-            highlightActiveMenu();
-            closeMenu();
-            changelanges = false;
+            let mainClasses = $('#main-content').attr('class') || '';
+            if (mainClasses.includes('intro')) loadintro();
+            else if (mainClasses.includes('history')) loadhistory();
+            else if (mainClasses.includes('skills')) loadskills();
+            else if (mainClasses.includes('education')) loadedu();
+            else loadintro(); 
         }
 
         function updateLangBtns() {
@@ -937,24 +638,273 @@
             }
         }
 
-        const renderAll = function () {
-            if (resumeData == null) { load(); return; }
+        function renderHero() {    
+            if (!resumeData) return;
+            let langs = resumeData[currentLang].languages;
+            let langHTML = '';
+
+            $.each(langs, function (index, l) {
+                langHTML += `
+                <div class="lang-item">
+                    <div class="lang-header">
+                        <b class="text-dark">${l.language}</b>
+                        <span class="text-muted">${l.fluency}</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: ${l.percent}%"></div>
+                    </div>
+                </div>`;
+            });
+            $('#langbar').html(langHTML);
+
+            if (currentLang === 'en') {
+                $('#germany').text('Germany');
+                $('.footer-germany').text('Germany');
+                $('#title').text('Senior Full Stack Developer');
+                $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Languages');
+            } else {
+                $('#germany').text('Deutschland');
+                $('.footer-germany').text('Deutschland');
+                $('#title').text('Senior Full Stack Entwickler');
+                $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Sprachkenntnisse');
+            }
+        }
+
+        function rendersidemenu() {
+            var navHTML = `
+               <li><a href="#" onclick="loadintro(); return false;" class="navlinkcustom about active"><i class="fa-solid fa-user"></i> ${i18n[currentLang].nav.intro}</a></li>
+               <li><a href="#" onclick="loadhistory(); return false;" class="navlinkcustom ex"><i class="fa-solid fa-briefcase"></i> ${i18n[currentLang].nav.history}</a></li>
+               <li><a href="#" onclick="loadskills(); return false;" class="navlinkcustom skill"><i class="fa-solid fa-code"></i> ${i18n[currentLang].nav.skills}</a></li>
+               <li><a href="#" onclick="loadedu(); return false;" class="navlinkcustom edu"><i class="fa-solid fa-book"></i> ${i18n[currentLang].nav.education}</a></li>
+               
+               <div class="lang-switch">
+                   <button id="btn-en" class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="setLanguage('en')">EN</button>
+                   <button id="btn-de" class="lang-btn ${currentLang === 'de' ? 'active' : ''}" onclick="setLanguage('de')">DE</button>
+               </div>
+            `;
+            $('#nav-links').html(navHTML);
+        }
+
+        function updateActiveNav(className) {
+            $('.navlinkcustom').removeClass('active');
+            $(`.${className}`).addClass('active');
+            $('#main-content').removeClass('intro history skills education').addClass(className);
+        }
+
+        function loadintro() {
+            if (!resumeData) return load();
+            var fade = !changelanges ? 'fadein' : '';
+            
+            var html = `
+            <div class="glass-panel p-4 ${fade}">
+               <div class="d-flex align-items-center gap-3 mb-4">
+                   <div class="icon-box"><i class="fa-solid fa-circle-info"></i></div>
+                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.intro}</h2>
+               </div>
+               <p class="fs-5 text-secondary" style="line-height: 1.8; text-align: justify;">
+                   ${resumeData[currentLang].introduction}
+               </p>
+            </div>`;
+            
+            $('#main-content').html(html);
+            updateActiveNav('intro');
+            changelanges = false;
+        }
+
+        function loadhistory() {
+            if (!resumeData) return load();
+            var fade = !changelanges ? 'fadein' : '';
+            
+            var html = `
+            <div class="${fade}">
+               <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                   <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.experience}</h2>
+               </div>`;
+
+            var history = resumeData[currentLang].employmentHistory;
+
+            $.each(history, function (index, h) {
+                let dotClass = index === 0 ? 'first' : '';
+                let badgeClass = index === 0 ? 'badge-red' : 'badge-custom';
+                
+                html += `
+                <div class="timeline-item">
+                   <div class="timeline-dot ${dotClass}"></div>
+                   <div class="glass-panel p-4">
+                       <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                          <div>
+                              <h4 class="fw-bold text-primary mb-1">${h.role}</h4>
+                              <div class="d-flex flex-wrap align-items-center gap-2 text-secondary">
+                                  <span class="fw-semibold text-dark"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
+                                  <span>•</span>
+                                  <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                              </div>
+                          </div>
+                          <span class="${badgeClass} px-3 py-2 fw-bold" style="font-size:0.9rem;">
+                              ${h.startDate} — ${h.endDate}
+                          </span>
+                       </div>
+
+                       <div class="mb-3">
+                          <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+
+                $.each(h.responsibilities, function (i, r) {
+                    html += `
+                        <li class="d-flex gap-2 text-secondary">
+                           <i class="fa-solid fa-angle-right text-primary mt-1"></i>
+                           <span>${r}</span>
+                        </li>`;
+                });
+
+                html += `</ul>
+                       </div>
+                       
+                       <div class="pt-3 border-top">
+                          <small class="text-uppercase fw-bold text-muted d-block mb-2" style="letter-spacing:1px;">Tech Stack</small>
+                          <div class="d-flex flex-wrap gap-1">`;
+
+                // Render all tech stack badges in uniform Cyan
+                $.each(h.techStack, function (j, t) {
+                    html += `<span class="badge-custom">${t}</span>`;
+                });
+
+                html += `</div></div></div></div>`;
+            });
+
+            html += '</div>';
+            $('#main-content').html(html);
+            updateActiveNav('history');
+            changelanges = false;
+        }
+
+        function loadskills() {
+            if (!resumeData) return load();
+            var fade = !changelanges ? 'fadein' : '';
+            const skills = resumeData[currentLang].technicalSkills;
+            
+            // Replaced purple with bright cyan/cyan variations to keep theme consistent
+            const config = {
+                backend: { color: "var(--glow-cyan-bright)", icon: "fa-solid fa-server" },
+                frontend: { color: "var(--glow-red-bright)", icon: "fa-solid fa-desktop" },
+                database: { color: "#4ade80", icon: "fa-solid fa-database" },
+                sourceControl: { color: "#fbd38d", icon: "fa-solid fa-code-branch" },
+                projectManagement: { color: "var(--glow-cyan)", icon: "fa-solid fa-list-check" },
+                general: { color: "var(--text-main)", icon: "fa-solid fa-gears" }
+            };
+
+            var html = `
+            <div class="${fade}">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                   <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.skills}</h2>
+                </div>
+                <div class="row g-4">`;
+
+            $.each(config, function (key, conf) {
+                const label = i18n[currentLang].categories[key] || key;
+                html += `
+                <div class="col-lg-6">
+                   <div class="glass-panel p-4 h-100">
+                       <div class="d-flex align-items-center gap-3 mb-3 pb-2 border-bottom">
+                           <i class="${conf.icon} fs-5" style="color:${conf.color}"></i>
+                           <h5 class="fw-bold mb-0" style="color:${conf.color}">${label}</h5>
+                       </div>
+                       <div class="d-flex flex-wrap gap-2">`;
+                       
+                $.each(skills[key], function (index, skill) {
+                    html += `<span class="badge-custom" style="border-color:${conf.color}; color:${conf.color}; background:transparent;">${skill}</span>`;
+                });
+
+                html += `</div></div></div>`;
+            });
+
+            html += `</div></div>`;
+            $('#main-content').html(html);
+            updateActiveNav('skills');
+            changelanges = false;
+        }
+
+        function loadedu() {
+            if (!resumeData) return load();
+            var fade = !changelanges ? 'fadein' : '';
+            var edu = resumeData[currentLang].education;
+            var cer = resumeData[currentLang].certificates;
+
+            var html = `
+            <div class="${fade}">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                   <div class="icon-box"><i class="fa-solid fa-book"></i></div>
+                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.education}</h2>
+                </div>
+                <div class="row g-4">
+                   <div class="col-lg-6">
+                       <div class="glass-panel p-4 h-100">
+                           <div class="d-flex align-items-center gap-3 mb-4">
+                              <div class="icon-box" style="color:var(--glow-red-bright)"><i class="fa-solid fa-graduation-cap"></i></div>
+                              <h5 class="fw-bold mb-0 text-dark">${i18n[currentLang].headers.universities}</h5>
+                           </div>
+                           <div class="d-flex flex-column gap-4">`;
+
+            $.each(edu, function (index, e) {
+                html += `
+                <div>
+                    <h5 class="fw-bold text-primary mb-1">${e.degree}</h5>
+                    <p class="mb-1 text-secondary">
+                        <a href="${e.link}" target="_blank" class="fw-semibold text-dark custom-link-hover">${e.institution}</a>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center text-muted small">
+                        <span><i class="fa-solid fa-location-dot"></i> ${e.location}</span>
+                        <span class="badge-custom m-0">${e.startDate} - ${e.endDate}</span>
+                    </div>
+                </div>`;
+            });
+
+            html += `</div></div></div>
+            <div class="col-lg-6">
+               <div class="glass-panel p-4 h-100">
+                   <div class="d-flex align-items-center gap-3 mb-4">
+                      <div class="icon-box" style="color:var(--glow-cyan-bright)"><i class="fa-solid fa-certificate"></i></div>
+                      <h5 class="fw-bold mb-0 text-dark">${i18n[currentLang].headers.certificates}</h5>
+                   </div>
+                   <div class="d-flex flex-column gap-3">`;
+
+            $.each(cer, function (index, c) {
+                html += `
+                <div class="d-flex gap-3 align-items-start border-bottom pb-2">
+                  <i class="fa-solid fa-trophy text-primary mt-1"></i>
+                  <div>
+                      <h6 class="mb-1 fw-bold">
+                           <a href="${c.link}" target="_blank" class="text-dark custom-link-hover">${c.title}</a>
+                      </h6>
+                      <div class="d-flex flex-wrap gap-2 text-muted small">
+                          <span>${c.issuer}</span>
+                          <span>•</span>
+                          <span>${c.date}</span>
+                      </div>
+                  </div>
+                </div>`;
+            });
+
+            html += `</div></div></div></div></div>`;
+            
+            $('#main-content').html(html);
+            updateActiveNav('education');
+            changelanges = false;
+        }
+
+        function renderAll() {
+            rendersidemenu();
             renderHero();
-            rendernavbar();
+            loadintro();
         }
 
-        function closeMenu() {
-            $('#nav-menu-container').removeClass('show');
-        }
-
-        function toggleMenu() {
-            $('#nav-menu-container').toggleClass('show');
-        }
-
+        // Initialize
         $(document).ready(function() {
             load();
         });
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
