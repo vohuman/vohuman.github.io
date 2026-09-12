@@ -12,6 +12,20 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        body {
+            background-color: #040814;
+            background-image: 
+                radial-gradient(ellipse at 95% 65%, rgba(220, 60, 60, 0.6) 0%, transparent 45%),
+                radial-gradient(ellipse at 25% 55%, rgba(45, 145, 195, 0.6) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 45%, rgba(30, 80, 150, 0.4) 0%, transparent 55%),
+                linear-gradient(180deg, #02040a 0%, #091330 50%, #02040a 100%);
+            overflow-x: hidden;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
   
 <body>
@@ -37,10 +51,10 @@
 
             const particles = [];
             const settings = {
-                density: 200,      /* Slightly more nodes */
+                density: 220,      /* Slightly more nodes */
                 threshold: 140,    /* Longer connection lines */
                 speed: 0.8,        /* Slower, elegant floating speed */
-                color: '#6b8cf6',  /* Vibrant purple nodes matching the screenshot #8b6cf6 */
+                color: '#f1fcfd',  /* Vibrant purple nodes matching the screenshot #8b6cf6 */
                 gravity: 'pull'
             };
 
