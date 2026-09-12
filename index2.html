@@ -157,7 +157,7 @@
             gap: 25px;
         }
 
-        .profile-img {
+         .profile-img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -170,6 +170,13 @@
             color: var(--glow-cyan);
             box-shadow: 0 0 15px rgba(45, 145, 195, 0.3);
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-details h1 {
@@ -451,9 +458,9 @@
     <!-- Persistent Profile Banner -->
     <header class="profile-banner">
         <div class="profile-info">
-            <div class="profile-img">
-                <img src="./assets/Bild.jpg" />
-            </div>
+             <div class="profile-img">
+                <img src="/assets/Bild.jpg" alt="Bahman Soltani">
+             </div>
             <div class="profile-details">
                 <h1>Bahman Soltani</h1>
                 <h3 id="title">Full Stack Developer</h3>
