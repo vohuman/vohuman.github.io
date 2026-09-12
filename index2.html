@@ -1,21 +1,15 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahman Soltani</title>
-    <link rel="stylesheet" href="defaultstyles0.css">
-
-    <link rel="stylesheet" href="css.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>Dynamic Neon Portfolio</title>
+    <!-- Include jQuery and FontAwesome -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
-        
         :root {
             --bg-base: #040814;
             --bg-darker: #02040a;
@@ -25,6 +19,7 @@
             --glow-blue: #1E5096;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -33,256 +28,177 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: #040814;
+            font-family: var(--font-family);
+            background-color: var(--bg-base);
             background-image: 
-                radial-gradient(ellipse at 95% 65%, rgba(220, 60, 60, 0.6) 0%, transparent 45%),
-                radial-gradient(ellipse at 25% 55%, rgba(45, 145, 195, 0.6) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 45%, rgba(30, 80, 150, 0.4) 0%, transparent 55%),
-                linear-gradient(180deg, #02040a 0%, #091330 50%, #02040a 100%);
+                radial-gradient(circle at 85% 30%, rgba(220, 60, 60, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 15% 60%, rgba(45, 145, 195, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(30, 80, 150, 0.2) 0%, transparent 70%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(4, 8, 20, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(30, 80, 150, 0.3);
-            padding: 20px 0;
         }
 
         .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 5%;
+            background: rgba(2, 4, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(30, 80, 150, 0.3);
         }
 
-        .logo {
+        .nav-brand {
             font-size: 1.5rem;
             font-weight: bold;
-            text-decoration: none;
             color: var(--text-main);
-            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo .cyan { color: var(--glow-cyan); }
-        .logo .red { color: var(--glow-red); }
+        .nav-menu-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
-            align-items: center;
+            gap: 5px;
         }
 
-        .nav-menu a {
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
             color: var(--text-muted);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--glow-cyan);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--bg-card);
-            border: 1px solid rgba(30, 80, 150, 0.3);
             border-radius: 8px;
-            padding: 10px 0;
-            min-width: 180px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            list-style: none;
-            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .dropdown-menu a {
-            padding: 10px 20px;
-            display: block;
-            font-size: 0.95rem;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: rgba(45, 145, 195, 0.1);
+        .nav-link:hover, .nav-link.active {
+            background: rgba(45, 145, 195, 0.1);
             color: var(--glow-cyan);
+            box-shadow: inset 0 -3px 0 var(--glow-cyan);
         }
 
-        .hamburger {
+        .mobile-toggle {
             display: none;
-            flex-direction: column;
+            background: transparent;
+            border: 1px solid var(--glow-cyan);
+            color: var(--glow-cyan);
+            padding: 5px 12px;
+            border-radius: 5px;
             cursor: pointer;
-            gap: 6px;
+            font-size: 1.2rem;
         }
 
-        .hamburger span {
-            width: 30px;
-            height: 3px;
-            background-color: var(--text-main);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+        .lang-switcher {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 100;
+            gap: 10px;
         }
 
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: rgba(9, 19, 48, 0.8);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(30, 80, 150, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--text-main);
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--glow-blue);
+            color: var(--text-muted);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: bold;
-            font-size: 0.9rem;
+            font-family: inherit;
         }
 
-        .social-icon:hover {
-            border-color: var(--glow-red);
-            background-color: rgba(220, 60, 60, 0.15);
-            color: var(--glow-red);
-            transform: scale(1.1) translateX(5px);
-            box-shadow: 0 0 15px rgba(220, 60, 60, 0.3);
-        }
-
-        .btn-hire {
-            border: 1px solid var(--glow-red);
-            color: var(--glow-red) !important;
-            padding: 8px 20px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-hire:hover {
-            background-color: var(--glow-red);
-            color: #fff !important;
-            box-shadow: 0 0 15px rgba(220, 60, 60, 0.5);
-        }
-
-        
-
-        .btn-primary {
-            background-color: var(--glow-cyan);
-            color: var(--bg-darker);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 15px rgba(45, 145, 195, 0.6);
-            opacity: 0.9;
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--text-muted);
-            color: var(--text-main);
-        }
-
-        .btn-secondary:hover {
+        .lang-btn:hover {
             border-color: var(--glow-cyan);
             color: var(--glow-cyan);
         }
 
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
+        .lang-btn.active {
+            background: var(--glow-blue);
+            color: #fff;
+            border-color: var(--glow-blue);
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, var(--glow-cyan), var(--glow-blue), var(--glow-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-        }
-
-        .hero-buttons {
+        .profile-banner {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            padding: 30px;
+            background: rgba(9, 19, 48, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(30, 80, 150, 0.3);
+            border-radius: 12px;
             display: flex;
-            justify-content: center;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            width: 90%;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 25px;
         }
 
-        .section-title::before {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 4px;
-            background-color: var(--glow-cyan);
-            border-radius: 2px;
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            border: 2px solid var(--glow-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--glow-cyan);
+            box-shadow: 0 0 15px rgba(45, 145, 195, 0.3);
+            flex-shrink: 0;
         }
 
-        .projects {
-            padding: 80px 20px;
+        .profile-details h1 {
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-size: 1.8rem;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .profile-details p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-stats {
+            flex: 1;
+            min-width: 300px;
+            border-left: 1px solid rgba(30, 80, 150, 0.3);
+            padding-left: 40px;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 90%;
         }
 
         .card {
@@ -291,515 +207,674 @@
             border: 1px solid rgba(30, 80, 150, 0.3);
             border-radius: 12px;
             padding: 24px;
+            margin-bottom: 20px;
             transition: all 0.3s ease;
+            height: 100%;
         }
 
         .card:hover {
-            border-color: rgba(45, 145, 195, 0.6);
-            box-shadow: 0 4px 20px rgba(45, 145, 195, 0.15);
-            transform: translateY(-5px);
+            border-color: rgba(45, 145, 195, 0.5);
+            box-shadow: 0 4px 20px rgba(45, 145, 195, 0.1);
         }
 
-        .card-img-placeholder {
-            height: 160px;
-            background-color: var(--bg-darker);
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(30, 80, 150, 0.3);
+        }
+
+        .icon-box {
+            background: rgba(45, 145, 195, 0.1);
+            color: var(--glow-cyan);
+            width: 40px;
+            height: 40px;
             border-radius: 8px;
-            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            border: 1px solid rgba(30, 80, 150, 0.2);
+            font-size: 1.2rem;
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .card-link {
-            color: var(--glow-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .card-link:hover {
-            color: var(--glow-red);
-        }
-
-        .skills {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .skill-pill {
-            padding: 10px 20px;
-            border-radius: 30px;
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            background: rgba(30, 80, 150, 0.2);
             border: 1px solid var(--glow-blue);
-            color: var(--text-muted);
-            transition: all 0.3s ease;
+            color: var(--text-main);
+            margin: 0 5px 5px 0;
+        }
+        
+        .badge.cyan { color: var(--glow-cyan); border-color: var(--glow-cyan); background: rgba(45, 145, 195, 0.1); }
+        .badge.red { color: var(--glow-red); border-color: var(--glow-red); background: rgba(220, 60, 60, 0.1); }
+        .badge.blue { color: #8cb4ff; border-color: var(--glow-blue); background: rgba(30, 80, 150, 0.2); }
+
+        .progress-container {
+            margin-bottom: 15px;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
         }
 
-        .skill-pill:hover {
-            background-color: var(--glow-blue);
-            color: #fff;
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-darker);
+            border-radius: 3px;
+            overflow: hidden;
         }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--glow-cyan);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--glow-blue);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -35px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--glow-cyan);
+            z-index: 2;
+        }
+
+        .timeline-dot.first {
+            background: var(--glow-cyan);
+            box-shadow: 0 0 10px var(--glow-cyan);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-title h5 { font-size: 1.2rem; color: var(--text-main); }
+        .timeline-meta { font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 10px; align-items: center; margin-top: 5px;}
+        .timeline-meta a { color: var(--glow-cyan); text-decoration: none; }
+        .timeline-meta a:hover { text-decoration: underline; }
+
+        .timeline-list { list-style: none; margin-bottom: 15px;}
+        .timeline-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        .timeline-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--glow-cyan);
+            font-size: 0.8rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .edu-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(30, 80, 150, 0.2); }
+        .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .edu-item h6 { font-size: 1.1rem; margin-bottom: 5px; color: var(--text-main); }
+        .edu-item a { color: var(--glow-cyan); text-decoration: none; }
+        .edu-item .meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }
 
         .footer {
-            background-color: var(--bg-darker);
-            border-top: 1px solid rgba(30, 80, 150, 0.2);
-            padding: 60px 20px;
+            background: rgba(2, 4, 10, 0.9);
+            border-top: 1px solid rgba(30, 80, 150, 0.3);
             text-align: center;
+            padding: 25px;
             margin-top: 40px;
-        }
-
-        .footer p {
             color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto 30px auto;
         }
 
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            
-            .nav-menu {
+        #loading {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-base);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--glow-cyan);
+            font-size: 2rem;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(45, 145, 195, 0.3);
+            border-top-color: var(--glow-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .fadein { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 992px) {
+            .mobile-toggle { display: block; }
+            .nav-menu-container {
+                display: none; 
+                flex-direction: column; 
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(9, 19, 48, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
+                top: 100%; left: 0; width: 100%; 
+                background: rgba(2, 4, 10, 0.95);
+                padding: 20px; 
                 border-bottom: 1px solid rgba(30, 80, 150, 0.3);
-                gap: 20px;
-                display: none; /* Hidden by default on mobile */
+                align-items: flex-start;
             }
-
-            .nav-menu.active {
-                display: flex; /* Shown when hamburger is clicked */
-                animation: fadeIn 0.3s ease;
-            }
-
-            .dropdown-menu {
-                position: static; /* Adjust dropdown for mobile */
-                box-shadow: none;
-                border: none;
-                background: transparent;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero-buttons {
-                flex-direction: column;
+            .nav-menu-container.show { display: flex; }
+            .nav-menu { flex-direction: column; width: 100%; gap: 15px; }
+            .nav-link { box-shadow: none !important; border-left: 3px solid transparent; border-radius: 0; padding: 10px; }
+            .nav-link:hover, .nav-link.active { border-left-color: var(--glow-cyan); }
+            
+            .profile-stats {
+                border-left: none;
+                padding-left: 0;
+                border-top: 1px solid rgba(30, 80, 150, 0.3);
+                padding-top: 25px;
             }
         }
-    
     </style>
 </head>
 <body>
-    <header class="glass-header">
-        <div class="container-fluid d-flex align-items-center justify-content-between" style="max-width: 1600px;">
 
-            <div style="font-size:1.5rem; padding: 10px; color: white;">
-                <b>
-                Bahman Soltani
-                </b>
-            </div>
+    <div id="loading">
+        <div class="spinner"></div>
+        <span style="font-size: 1rem; color: var(--text-muted);">Loading...</span>
+    </div>
 
-            <div class="d-none d-md-flex align-items-center">
-                <nav class="d-flex gap-4 text-uppercase nav-tabs" style="font-size: 1.05rem; letter-spacing: 0.1em;">
-                    <a href="#" onclick="loadintro()" class="navlinkcustom active about">
-                        <i class="fa-solid fa-user me-1"></i> <span id="about">About</span>
-                    </a>
-                    <a href="#" onclick="loadhistory()" class="navlinkcustom ex">
-                        <i class="fa-solid fa-briefcase me-1"></i> <span id="ex">Experience</span>
-                    </a>
-                    <a href="#" onclick="loadskills()" class="navlinkcustom skill">
-                        <i class="fa-solid fa-code me-1"></i> <span id="skill">Skills</span>
-                    </a>
-                    <a href="#" onclick="loadedu()" class="navlinkcustom education">
-                        <i class="fa-solid fa-book-open me-1"></i> <span id="edu">Education</span>
-                    </a>
-                    
-                    <div style="display:flex" class="bg-secondary bg-opacity-25 rounded">
-                        <button id="btn-en" class="btn-en btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
-                        <button id="btn-de" class="btn-de btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
-                    </div>
-                </nav>
-            </div>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span style="color: var(--glow-cyan);">&lt;</span>DEV<span style="color: var(--glow-red);">/&gt;</span>
+        </div>
+        
+        <button class="mobile-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        
+        <div class="nav-menu-container" id="nav-menu-container">
+            <ul id="nav-links" class="nav-menu">
+                <!-- JS dynamically injects nav links here -->
+            </ul>
 
-            <div class="d-md-none d-flex align-items-center">
-                <button id="menu-toggle" class="btn border-1" onclick="toggleMenu()">
-                    <span id="menu-icon">&#9776;</span>
-                </button>
+            <div class="lang-switcher">
+                <button id="btn-en" class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                <button id="btn-de" class="lang-btn" onclick="setLanguage('de')">DE</button>
             </div>
         </div>
+    </nav>
 
-        <div id="mobile-menu" class="d-none d-md-none border-bottom mobile-menu-wrap" style="background-color: rgba(248,249,250,0.75); padding: 5px;">
-            <div class="nav-tabs d-flex flex-column p-2 gap-4 text-center text-uppercase" style="font-size: 0.85rem; letter-spacing: 0.1em;">
-                <a href="#" onclick="loadintro(); toggleMenu()" class="text-decoration-none navlinkcustom active about">
-                    <i class="fa-solid fa-user me-2"></i> <span id="about1">About</span>
-                </a>
-                <a href="#" onclick="loadhistory(); toggleMenu()" class="text-decoration-none navlinkcustom ex">
-                    <i class="fa-solid fa-briefcase me-2"></i> <span id="ex1">Experience</span>
-                </a>
-                <a href="#" onclick="loadskills(); toggleMenu()" class="text-decoration-none navlinkcustom skill">
-                    <i class="fa-solid fa-code me-2"></i> <span id="skill1">Skills</span>
-                </a>
-                <a href="#" onclick="loadedu(); toggleMenu()" class="text-decoration-none navlinkcustom education">
-                    <i class="fa-solid fa-book-open me-1"></i> <span id="edu1">Education</span>
-                </a>
-
-                <div style="display:flex" class="bg-secondary bg-opacity-25 rounded">
-                    <button id="btn-en" class="btn-en btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
-                    <button id="btn-de" class="btn-de btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
-                </div>
+    <!-- Persistent Profile Banner -->
+    <header class="profile-banner">
+        <div class="profile-info">
+            <div class="profile-img">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <div class="profile-details">
+                <h1 id="title">Full Stack Developer</h1>
+                <p id="germany"><i class="fa-solid fa-location-dot" style="color: var(--glow-cyan)"></i> Germany</p>
+            </div>
+        </div>
+        <div class="profile-stats">
+            <h4 id="lang" style="color: var(--text-main); margin-bottom: 15px; font-size: 1.1rem;">Languages</h4>
+            <div id="langbar">
+                <!-- JS dynamically injects languages here -->
             </div>
         </div>
     </header>
 
-    <div class="main-wrapper">
+    <!-- Main Content Area -->
+    <main class="intro">
+        <!-- JS dynamically injects page content here -->
+    </main>
 
-        <div class="sidebar">
-
-            <div class="glass-panel firstcard border-0">
-                <div class="card-body p-0">
-                    <div style="display:flex; flex-direction:column" class="align-items-center align-items-md-start text-center text-md-start">
-
-                        <div class="flex-grow-1 position-relative" style="z-index: 2;">
-                            <div class="align-items-center text-center mb-2">                                
-                                <div class="avatar-container">
-                                   <img src="./assets/Bild.jpg" alt="Bahman Soltani" class="avatar-img" />
-                                </div>                                
-                            </div>
-                            
-                            <h1 class="mb-2">Bahman Soltani</h1>
-                            <h3 class="mt-0 mb-2">
-                                <span id="title">Senior Full Stack Developer</span>
-                            </h3>
-
-                            <p style="display:flex; flex-direction:column" class="gap-3 mb-4">
-                                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
-                                    <i class="fa-solid fa-location-dot text-primary"></i>
-                                    <span>27356 Rotenburg, <span id="germany">Germany</span></span>
-                                </div>
-                                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
-                                    <i class="fa-solid fa-envelope text-primary"></i>
-                                    <a href="mailto:bahman.soltani@gmail.com" class="custom-link-hover">bahman.soltani@gmail.com</a>
-                                </div>
-                                <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-3">
-                                    <i class="fa-solid fa-phone text-primary"></i>
-                                    <a href="tel:+4917655568384" class="custom-link-hover">+4917655568384</a>
-                                </div>
-                            </p>
-
-                            <div style="display:flex" class="flex-wrap gap-2 justify-content-center justify-content-md-start mt-4">
-                                <a class="btn btn-primary btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2" target="_blank" href="https://www.linkedin.com/in/vohuman/">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                    LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="glass-panel firstcard border-0">
-                <h3 class="align-items-center gap-2 mb-4"><i class="fa-solid fa-language me-2"></i><span id="lang">Languages</span></h3>
-                <div style="display:flex; flex-direction:column" class="gap-3" id="langbar">
-                    <div class="mb-3">
-                        <div class="mb-1">
-                            <b id="english">English</b>
-                            <span style="font-size: 0.8rem; color: #777" id="fluent">Fluent</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="mb-1">
-                            <b id="english">German</b>
-                            <span style="font-size: 0.8rem; color: #777" id="fluent">Intermediate</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="mb-1">
-                            <b id="english">Persian</b>
-                            <span style="font-size: 0.8rem; color: #777" id="fluent">Mother tongue</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="glass-panel main-content">
-
-            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
-                <main class="intro">
-                    <section id="section-intro" class="">
-                       <div class="card project-card border-0 custom-card-hover">
-                           <div class="card-body">
-                               <div class="d-flex align-items-center gap-3 mb-4">
-                                   <div class="bg-royalblue bg-opacity-10 text-royalblue p-2 rounded">
-                                      <i class="fa-solid fa-circle-info fs-5"></i>
-                                   </div>
-                                   <h4 class="fw-bold text-dark mb-0">Einführung</h4>
-                               </div>
-                               <div class="text-dark" style="line-height: 1.8; text-align: justify;">
-                                   <p class="fw-bold fs-5 mb-2"></p>
-                                   <p class="fw-bold mb-2">Willkommen in meinem Portfolio!</p>
-                                   <p class="mb-3">Ich bin Bahman Soltani, Softwareentwickler mit mehr als 13 Jahren Erfahrung in der Entwicklung von stabilen und skalierbaren Applikationen. Meine Erfahrung umfasst den gesamten Lebenszyklus der Softwareentwicklung, mit einer tiefen Spezialisierung auf das Microsoft Ökosystem besonders C#, .NET Core und moderne Web Technologien.</p><p class="mb-3">Mir ist es wichtig, technische Anforderungen mit den Zielen des Unternehmens zu verbinden. Ich habe viel Erfahrung in der Arbeit mit verschiedenen Teams und Stakeholdern gesammelt. Deshalb arbeite ich nicht nur methodisch und strukturiert an meinem Code, sondern kommuniziere auch klar und lösungsorientiert mit meinen Kollegen und Kunden.</p><p class="mb-3"><b>Meine technischen Kenntnisse:</b><br></p><ul><li><b>Backend:</b> C#, ASP.NET Core, WinForms, Entity Framework, MVC, Web API, OOP.</li><li><b>Frontend:</b> JavaScript, jQuery, Angular, TypeScript, Razor.</li><li><b>Data:</b> SQL Server, JSON, XML.</li><li><b>Management-Tools:</b> Git, TFS, und Jira.</li><li><b>Fokus:</b> Full-stack Entwicklung, Sicherheitsbewusste Programmierung und die Entwicklung von skalierbaren Systemen.</li></ul><p></p><p></p>
-                               </div>
-                           </div>
-                       </div>
-                   </section>
-                </main>
-            </div>
-        </div>
-
-    </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p class="mb-2">&copy; 2026 Bahman Soltani.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://www.linkedin.com/in/vohuman" class="text-decoration-none"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="mailto:bahman.soltani@gmail.com" class="text-decoration-none"><i class="fa-solid fa-envelope"></i> <span id="contact">Contact</span></a>
-            </div>
+    <!-- Footer Area -->
+    <footer class="footer">
+        <p>&copy; 2024 Developer Portfolio. All rights reserved.</p>
+        <div style="margin-top: 10px; display: flex; justify-content: center; gap: 15px;">
+            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-github"></i></a>
+            <a href="#" style="color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" style="color: var(--text-muted);"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </footer>
 
-    <div id="loading">
-        <div class="loader">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="loading-text">Loading...</div>
-    </div>
-
-    <canvas id="network-canvas"></canvas>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="default.js"></script>
     <script>
-        $(document).ready(function () {
-            
-            $(window).on('scroll', function() {
-                if ($(window).scrollTop() > 100) {
-                    $('.glass-header').addClass('scrolled');
-                } else {
-                    $('.glass-header').removeClass('scrolled');
+        let currentLang = 'en';
+        let changelanges = false;
+        let resumeData = null;
+        let isfirstload = true;
+
+        const i18n = {
+            en: {
+                headers: {
+                    intro: "Introduction",
+                    languages: "Languages",
+                    skills: "Technical Skills",
+                    experience: "Employment History",
+                    education: "Education",
+                    certificates: "Certificates",
+                    universities: "Universities"
+                },
+                labels: {
+                    techStack: "Tech Stack",
+                    contact: "Contact",
+                    present: "Present"
+                },
+                nav: {
+                    home: "Profile",
+                    intro: "About",
+                    history: "Experience",
+                    skills: "Skills",
+                    education: "Education"
+                },
+                categories: {
+                    backend: "Backend",
+                    frontend: "Frontend",
+                    database: "Database",
+                    sourceControl: "DevOps & Tools",
+                    projectManagement: "Management",
+                    general: "General"
                 }
-            });
-            
-            window.toggleMenu = function () {
-                const menu = $('#mobile-menu');
-                const icon = $('#menu-icon');
-
-                if (menu.hasClass('d-none')) {
-                    menu.removeClass('d-none');
-                    setTimeout(() => {
-                        menu.addClass('show');
-                    }, 10);
-                    
-                    icon.text('✕');
-                    $('#menu-toggle').addClass('active');
-                } else {
-                    menu.removeClass('show');
-                    setTimeout(() => {
-                        menu.addClass('d-none');
-                    }, 300);
-                    icon.text('☰');
-                    $('#menu-toggle').removeClass('active');
-                }
-            };
-
-            
-            const canvas = document.getElementById('network-canvas');
-            const ctx = canvas.getContext('2d');
-
-            // Automatic adaptive scaling setup
-            let width = (canvas.width = window.innerWidth);
-            let height = (canvas.height = window.innerHeight);
-
-            $(window).on('resize', function () {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            });
-
-            const particles = [];
-            const settings = {
-                density: 150,      /* Slightly more nodes */
-                threshold: 140,    /* Longer connection lines */
-                speed: 0.8,        /* Slower, elegant floating speed */
-                color: '#8b6cf6',  /* Vibrant purple nodes matching the screenshot */
-                gravity: 'pull'
-            };
-
-            const mouse = { x: null, y: null, radius: 150 };
-
-            // Track mouse globally across the window
-            // $(window).on('mousemove', function(e) {
-            //     mouse.x = e.clientX;
-            //     mouse.y = e.clientY;
-            // });
-
-            // $(document).on('mouseleave', function() {
-            //     mouse.x = null;
-            //     mouse.y = null;
-            // });
-
-            // Hex converter for connecting lines alpha drop-offs
-            function hexToRgb(hex) {
-                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-                let rrandom = Math.floor(Math.random() * 250) + 1;
-                let grandom = Math.floor(Math.random() * 250) + 1;
-                let brandom = Math.floor(Math.random() * 250) + 1;
-                
-                return result ? {
-                    //r: rrandom,
-                    //g: grandom,
-                    //b: brandom
-                    
-                    r: parseInt(result[1], 16),
-                    g: parseInt(result[2], 16),
-                    b: parseInt(result[3], 16)
-                } : null;
-            }
-
-            // Initialize/Spawn Particles
-            function initParticles() {
-                particles.length = 0;
-                for (let i = 0; i < settings.density; i++) {
-                    particles.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.6 * settings.speed,
-                        vy: (Math.random() - 0.5) * 0.6 * settings.speed,
-                        radius: Math.random() * 2.5 + 1
-                    });
+            },
+            de: {
+                headers: {
+                    intro: "Einführung",
+                    languages: "Sprachkenntnisse",
+                    skills: "Technische Fähigkeiten",
+                    experience: "Berufserfahrung",
+                    education: "Ausbildung",
+                    certificates: "Zertifikate",
+                    universities: "Universitäten"
+                },
+                labels: {
+                    techStack: "Technologien",
+                    contact: "Kontakt",
+                    present: "Aktuell"
+                },
+                nav: {
+                    home: "Profil",
+                    intro: "Über mich",
+                    history: "Erfahrung",
+                    skills: "Fähigkeiten",
+                    education: "Ausbildung"
+                },
+                categories: {
+                    backend: "Backend",
+                    frontend: "Frontend",
+                    database: "Datenbank",
+                    sourceControl: "DevOps & Tools",
+                    projectManagement: "Management",
+                    general: "Allgemein"
                 }
             }
+        };
 
-            // CHANGED: Listen to the document instead of the canvas so clicks over text/divs still trigger nodes
-            // $(document).on('click', function(e) {
-            //     for (let i = 0; i < 8; i++) {
-            //         particles.push({
-            //             x: e.clientX,
-            //             y: e.clientY,
-            //             vx: (Math.random() - 0.5) * 2 * settings.speed,
-            //             vy: (Math.random() - 0.5) * 2 * settings.speed,
-            //             radius: Math.random() * 3 + 1.5
-            //         });
-            //     }
-            // });
+        function load() {
+             $('#loading').show();
+            if (resumeData == null) {
+                $.ajax({
+                    url: 'https://vohuman.github.io/site/resume.json',
+                    method: 'GET',
+                    success: function (data) {
+                        resumeData = data;
+                        $('#btn-en').prop('disabled', false);
+                        $('#btn-de').prop('disabled', false);
 
-            // The Animation & Draw Tick Loop
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                const rgb = hexToRgb(settings.color);
-
-                particles.forEach(p => {
-                    p.x += p.vx;
-                    p.y += p.vy;
-
-                    // Bounce from boundary limits
-                    if (p.x < 0 || p.x > width) p.vx *= -1;
-                    if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                    // Handle Cursor Gravity Mechanics
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const dx = mouse.x - p.x;
-                        const dy = mouse.y - p.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            if (settings.gravity === 'pull') {
-                                p.x += dx * force * 0.02;
-                                p.y += dy * force * 0.02;
-                            } else if (settings.gravity === 'push') {
-                                p.x -= dx * force * 0.02;
-                                p.y -= dy * force * 0.02;
-                            }
+                        renderAll();
+                        if(isfirstload) {
+                            loadintro();
+                            isfirstload = false;
                         }
+                        $('#loading').fadeOut(800);
+                    },
+                    error: function (jqxhr, textStatus, error) {
+                        console.log(error);
+                        $('#loading').hide(); 
+                        $('main').html('<div class="card"><p style="color: var(--glow-red)">Error loading resume data. Please try again later.</p></div>');
                     }
+                });
+            } else {
+                $('#loading').fadeOut(800); 
+            }
+        }
 
-                    // Draw individual nodes
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = settings.color;
-                    ctx.globalAlpha = 0.45;
-                    ctx.fill();
+        function translate(key, subkey) {
+            return i18n[currentLang][key][subkey];
+        }
+
+        function setLanguage(lang) {
+            load();
+            currentLang = lang;
+            changelanges = true;
+            updateLangBtns();
+            renderAll();
+
+            if ($('main').hasClass('intro')) loadintro();        
+            if ($('main').hasClass('history')) loadhistory();
+            if ($('main').hasClass('skills')) loadskills();
+            if ($('main').hasClass('education')) loadedu();
+
+            closeMenu();
+        }
+
+        const renderHero = function () {    
+            if (!resumeData) return;
+            let langs = resumeData[currentLang].languages;
+            var langdiv = '';
+
+            $.each(langs, function (index, l) {
+                langdiv += `<div class="progress-container">
+                           <div class="progress-label">
+                                   <b style="color: var(--text-main)">${l.language}</b>
+                                   <span style="color: var(--text-muted)">${l.fluency}</span>
+                           </div>
+                           <div class="progress-bar">
+                                   <div class="progress-fill" style="width: ${l.percent}%"></div>
+                           </div>
+                    </div>`;
+            });
+
+            $('#langbar').empty().append($(langdiv));
+
+            if (currentLang === 'en') {
+                $('#germany').html('<i class="fa-solid fa-location-dot" style="color: var(--glow-cyan)"></i> Germany');
+                $('#title').html('Senior Full Stack Developer');
+            } else {
+                $('#germany').html('<i class="fa-solid fa-location-dot" style="color: var(--glow-cyan)"></i> Deutschland');
+                $('#title').html('Senior Full Stack Entwickler');
+            }
+
+            $('#lang').html(i18n[currentLang].headers.languages);
+        }
+
+        const rendernavbar = function () {
+            var d = `
+           <li>
+               <a href="#" onclick="loadintro()" class="nav-link navlinkcustom about">
+                   <i class="fa-solid fa-user"></i>
+                   <span id="about">${i18n[currentLang].nav.intro}</span>
+               </a>
+           </li>
+           <li>
+               <a href="#" onclick="loadhistory()" class="nav-link navlinkcustom ex">
+                   <i class="fa-solid fa-briefcase"></i>
+                   <span id="ex">${i18n[currentLang].nav.history}</span>
+               </a>
+           </li>
+           <li>
+               <a href="#" onclick="loadskills()" class="nav-link navlinkcustom skill">
+                   <i class="fa-solid fa-code"></i>
+                   <span id="skill">${i18n[currentLang].nav.skills}</span>
+               </a>
+           </li>
+           <li>
+               <a href="#" onclick="loadedu()" class="nav-link navlinkcustom education">
+                   <i class="fa fa-book"></i>
+                   <span id="edu">${i18n[currentLang].nav.education}</span>
+               </a>
+           </li>`;
+
+            $('#nav-links').empty().append($(d));
+            highlightActiveMenu();
+        }
+
+        function highlightActiveMenu() {
+            $('a.navlinkcustom').removeClass('active');
+            if ($('main').hasClass('intro')) $('.about').addClass('active');
+            if ($('main').hasClass('history')) $('.ex').addClass('active');
+            if ($('main').hasClass('skills')) $('.skill').addClass('active');
+            if ($('main').hasClass('education')) $('.education').addClass('active');
+        }
+
+        const loadintro = function () {
+            if (!resumeData) { load(); return; }
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-intro" class="${fade}">
+               <div class="card">
+                   <div class="section-header" style="border-bottom: none; padding-bottom: 0;">
+                       <div class="icon-box"><i class="fa-solid fa-circle-info"></i></div>
+                       <h2 style="font-size: 1.5rem">${i18n[currentLang].headers.intro}</h2>
+                   </div>
+                   <div style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem; padding-top: 15px;">
+                       <p>${resumeData[currentLang].introduction}</p>
+                   </div>
+               </div>
+           </section>`;
+
+            $('main').empty().append($(html)).removeClass('history skills education').addClass('intro');
+            highlightActiveMenu();
+            closeMenu();
+            changelanges = false;
+        }
+
+        const loadhistory = function () {
+            if (!resumeData) { load(); return; }
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-history" class="${fade}">
+               <div class="section-header">
+                   <div class="icon-box" style="color: var(--glow-red); background: rgba(220, 60, 60, 0.1);"><i class="fa-solid fa-briefcase"></i></div>
+                   <h2>${i18n[currentLang].headers.experience}</h2>
+               </div>
+               <div class="timeline">`;
+
+            var history = resumeData[currentLang].employmentHistory;
+
+            $.each(history, function (index, h) {
+                let dotClass = index == 0 ? "timeline-dot first" : "timeline-dot";
+                let badgeClass = index == 0 ? "badge red" : "badge";
+                
+                html += `<div class="timeline-item">
+                   <div class="${dotClass}"></div>
+                   <div class="card">
+                       <div class="timeline-header">
+                          <div class="timeline-title">
+                              <h5>${h.role}</h5>
+                              <div class="timeline-meta">
+                                  <a href="#" target="_blank"><i class="fa-regular fa-building"></i> ${h.company}</a>
+                                  <span>•</span>
+                                  <span><i class="fa-solid fa-location-dot"></i> ${h.location}</span>
+                              </div>
+                          </div>
+                          <div><span class="${badgeClass}">${h.startDate} — ${h.endDate}</span></div>
+                       </div>
+                       <ul class="timeline-list">`;
+
+                $.each(h.responsibilities, function (i, r) {
+                    html += `<li><i class="fa-solid fa-circle-check"></i> <span>${r}</span></li>`;
                 });
 
-                // Compute connecting wires
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const p1 = particles[i];
-                        const p2 = particles[j];
-                        const dx = p1.x - p2.x;
-                        const dy = p1.y - p2.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
+                html += `</ul>
+                      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(30, 80, 150, 0.2);">
+                      <small style="color: var(--glow-cyan); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px;">Tech Stack</small>
+                      <div>`;
 
-                        if (dist < settings.threshold) {
-                            ctx.beginPath();
-                            ctx.moveTo(p1.x, p1.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            const alpha = ((settings.threshold - dist) / settings.threshold) * 0.5;
-                            ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
-                            ctx.globalAlpha = 1.0;
-                            ctx.lineWidth = 0.75;
-                            ctx.stroke();
-                        }
-                    }
-                }
-                requestAnimationFrame(animate);
+                $.each(h.techStack, function (j, t) {
+                    html += `<span class="badge blue">${t}</span>`;
+                })
+
+                html += `</div></div></div></div>`;
+            });
+
+            html += '</div></section>';
+            $('main').empty().append($(html)).removeClass('intro skills education').addClass('history');
+            highlightActiveMenu();
+            closeMenu();
+            changelanges = false;
+        }
+
+        const loadskills = function () {
+            if (!resumeData) { load(); return; }
+            const skills = resumeData[currentLang].technicalSkills;
+            const config = {
+                backend: { color: "cyan", icon: "fa-solid fa-server" },
+                frontend: { color: "red", icon: "fa-solid fa-desktop" },
+                database: { color: "blue", icon: "fa-solid fa-database" },
+                sourceControl: { color: "cyan", icon: "fa-solid fa-code-branch" },
+                projectManagement: { color: "blue", icon: "fa-solid fa-list-check" },
+                general: { color: "red", icon: "fa-solid fa-gears" }
+            };
+
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-skills" class="${fade}">
+                <div class="section-header">
+                   <div class="icon-box" style="color: var(--glow-blue); background: rgba(30, 80, 150, 0.2);"><i class="fa-solid fa-code"></i></div>
+                   <h2>${translate('headers', 'skills')}</h2>
+               </div>
+               <div class="grid-2">`;
+
+            $.each(config, function (key, conf) {
+                const label = i18n[currentLang].categories[key] || key;
+                html += `<div class="card" style="margin-bottom: 0;">
+                       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                           <i class="${conf.icon}" style="color: var(--glow-${conf.color}); font-size: 1.2rem;"></i>
+                           <h4 style="color: var(--text-main); font-weight: normal;">${label}</h4>
+                       </div>
+                       <div>`;
+                $.each(skills[key], function (index, skill) {
+                    html += `<span class="badge ${conf.color}">${skill}</span>`;
+                });
+                html += `</div></div>`;
+            });
+
+            html += `</div></section>`;
+            $('main').empty().append($(html)).removeClass('intro history education').addClass('skills');
+            highlightActiveMenu();
+            closeMenu();
+            changelanges = false;
+        }
+
+        const loadedu = function () {
+            if (!resumeData) { load(); return; }
+            var edu = resumeData[currentLang].education;
+            var cer = resumeData[currentLang].certificates;
+
+            var fade = !changelanges ? 'fadein' : '';
+            var html = `<section id="section-edu" class="${fade}">
+                <div class="section-header">
+                   <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
+                   <h2>${translate('headers', 'education')}</h2>
+               </div>
+               <div class="grid-2">
+                   <!-- Universities -->
+                   <div class="card">
+                       <div class="section-header" style="border:none; margin-bottom:20px; padding-bottom:0;">
+                          <div class="icon-box" style="background: transparent; border: 1px solid var(--glow-cyan);"><i class="fa-solid fa-graduation-cap"></i></div>
+                          <h4>${i18n[currentLang].headers.universities}</h4>
+                       </div>
+                   <div>`;
+
+            $.each(edu, function (index, e) {
+                html += `<div class="edu-item">
+                      <h6>${e.degree}</h6>
+                      <a href="${e.link}" target="_blank"><i class="fa-solid fa-building-columns"></i> ${e.institution}</a>
+                      <div class="meta">
+                          <span>${e.location}</span>
+                          <span class="badge" style="margin:0;">${e.startDate} - ${e.endDate}</span>
+                      </div>
+                  </div>`;
+            });
+
+            html += `</div></div>
+                   <!-- Certificates -->
+                   <div class="card">
+                       <div class="section-header" style="border:none; margin-bottom:20px; padding-bottom:0;">
+                          <div class="icon-box" style="color: var(--glow-red); background: transparent; border: 1px solid var(--glow-red);"><i class="fa-solid fa-certificate"></i></div>
+                          <h4>${i18n[currentLang].headers.certificates}</h4>
+                       </div>
+                   <div>`;
+
+            $.each(cer, function (index, c) {
+                html += `<div class="edu-item" style="display: flex; gap: 15px;">
+                  <i class="fa-solid fa-trophy" style="color: var(--glow-red); font-size: 1.2rem; margin-top: 3px;"></i>
+                  <div>
+                      <h6><a href="${c.link}" target="_blank" style="color: var(--text-main);">${c.title}</a></h6>
+                      <div class="meta" style="justify-content: flex-start; gap: 10px;">
+                          <span>${c.issuer}</span>
+                          <span>•</span>
+                          <span>${c.date}</span>
+                      </div>
+                  </div>
+                </div>`;
+            });
+
+            html += `</div></div></div></section>`;
+            $('main').empty().append($(html)).removeClass('history skills intro').addClass('education');
+            highlightActiveMenu();
+            closeMenu();
+            changelanges = false;
+        }
+
+        function updateLangBtns() {
+            $('.lang-btn').removeClass('active');
+            if (currentLang === 'en') {
+                $('#btn-en').addClass('active');
+            } else {
+                $('#btn-de').addClass('active');
             }
+        }
 
-            initParticles();
-            //animate();
+        const renderAll = function () {
+            if (resumeData == null) { load(); return; }
+            renderHero();
+            rendernavbar();
+        }
 
-            //$('#loading').fadeOut(900);
+        function closeMenu() {
+            $('#nav-menu-container').removeClass('show');
+        }
 
-            setLanguage('de');
+        function toggleMenu() {
+            $('#nav-menu-container').toggleClass('show');
+        }
 
+        $(document).ready(function() {
+            load();
         });
-    </script>
 
-    
+    </script>
 </body>
 </html>
