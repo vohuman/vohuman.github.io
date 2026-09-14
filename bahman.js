@@ -150,7 +150,7 @@ function rendersidemenu() {
                <li><a href="#" onclick="loadintro(); return false;" class="navlinkcustom about active"><i class="fa-solid fa-user"></i> ${i18n[currentLang].nav.intro}</a></li>
                <li><a href="#" onclick="loadhistory(); return false;" class="navlinkcustom ex"><i class="fa-solid fa-briefcase"></i> ${i18n[currentLang].nav.history}</a></li>
                <li><a href="#" onclick="loadskills(); return false;" class="navlinkcustom skill"><i class="fa-solid fa-code"></i> ${i18n[currentLang].nav.skills}</a></li>
-               <li><a href="#" onclick="loadedu(); return false;" class="navlinkcustom edu"><i class="fa-solid fa-book"></i> ${i18n[currentLang].nav.education}</a></li>
+               <li><a href="#" onclick="loadedu(); return false;" class="navlinkcustom edu"><i class="fa-solid fa-book-open"></i> ${i18n[currentLang].nav.education}</a></li>
                
                <div class="lang-switch">
                    <button id="btn-en" class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="setLanguage('en')">EN</button>
