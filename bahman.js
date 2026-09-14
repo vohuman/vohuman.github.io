@@ -1,126 +1,126 @@
 let currentLang = 'en';
-        let changelanges = false;
-        let resumeData = null;
+let changelanges = false;
+let resumeData = null;
 
-        $('#mobile-menu-btn').click(function() {
-            $('#nav-links').toggleClass('active');
-        });
+$('#mobile-menu-btn').click(function () {
+    $('#nav-links').toggleClass('active');
+});
 
-        $(document).on('click', '.navlinkcustom', function() {
-            if($(window).width() <= 768) {
-                $('#nav-links').removeClass('active');
-            }
-        });
+$(document).on('click', '.navlinkcustom', function () {
+    if ($(window).width() <= 768) {
+        $('#nav-links').removeClass('active');
+    }
+});
 
-        const i18n = {
-            en: {
-                headers: {
-                    intro: "Introduction",
-                    languages: "Languages",
-                    skills: "Technical Skills",
-                    experience: "Employment History",
-                    education: "Education",
-                    certificates: "Certificates",
-                    universities: "Universities"
-                },
-                nav: {
-                    intro: "About",
-                    history: "Experience",
-                    skills: "Skills",
-                    education: "Education"
-                },
-                categories: {
-                    backend: "Backend",
-                    frontend: "Frontend",
-                    database: "Database",
-                    sourceControl: "DevOps & Tools",
-                    projectManagement: "Management",
-                    general: "General"
-                }
+const i18n = {
+    en: {
+        headers: {
+            intro: "Introduction",
+            languages: "Languages",
+            skills: "Technical Skills",
+            experience: "Employment History",
+            education: "Education",
+            certificates: "Certificates",
+            universities: "Universities"
+        },
+        nav: {
+            intro: "About",
+            history: "Experience",
+            skills: "Skills",
+            education: "Education"
+        },
+        categories: {
+            backend: "Backend",
+            frontend: "Frontend",
+            database: "Database",
+            sourceControl: "DevOps & Tools",
+            projectManagement: "Management",
+            general: "General"
+        }
+    },
+    de: {
+        headers: {
+            intro: "Einführung",
+            languages: "Sprachkenntnisse",
+            skills: "Technische Fähigkeiten",
+            experience: "Berufserfahrung",
+            education: "Ausbildung",
+            certificates: "Zertifikate",
+            universities: "Universitäten"
+        },
+        nav: {
+            intro: "Über mich",
+            history: "Erfahrung",
+            skills: "Fähigkeiten",
+            education: "Ausbildung"
+        },
+        categories: {
+            backend: "Backend",
+            frontend: "Frontend",
+            database: "Datenbank",
+            sourceControl: "DevOps & Tools",
+            projectManagement: "Management",
+            general: "Allgemein"
+        }
+    }
+};
+
+function load() {
+    $('#loading').show();
+    if (resumeData == null) {
+        $.ajax({
+            url: 'https://vohuman.github.io/site/resume.json',
+            method: 'GET',
+            success: function (data) {
+                resumeData = data;
+                renderAll();
+                $('#loading').fadeOut(800);
             },
-            de: {
-                headers: {
-                    intro: "Einführung",
-                    languages: "Sprachkenntnisse",
-                    skills: "Technische Fähigkeiten",
-                    experience: "Berufserfahrung",
-                    education: "Ausbildung",
-                    certificates: "Zertifikate",
-                    universities: "Universitäten"
-                },
-                nav: {
-                    intro: "Über mich",
-                    history: "Erfahrung",
-                    skills: "Fähigkeiten",
-                    education: "Ausbildung"
-                },
-                categories: {
-                    backend: "Backend",
-                    frontend: "Frontend",
-                    database: "Datenbank",
-                    sourceControl: "DevOps & Tools",
-                    projectManagement: "Management",
-                    general: "Allgemein"
-                }
+            error: function (jqxhr, textStatus, error) {
+                console.log("Error loading JSON:", error);
+                $('#loading').hide();
+                $('#main-content').html('<div class="glass-panel p-4 text-center" style="color: var(--glow-red-bright);">Error loading profile data. Please try again later.</div>');
             }
-        };
+        });
+    } else {
+        $('#loading').fadeOut(500);
+    }
+}
 
-        function load() {
-            $('#loading').show();
-            if (resumeData == null) {
-                $.ajax({
-                    url: 'https://vohuman.github.io/site/resume.json',
-                    method: 'GET',
-                    success: function (data) {
-                        resumeData = data;
-                        renderAll();
-                        $('#loading').fadeOut(800);
-                    },
-                    error: function (jqxhr, textStatus, error) {
-                        console.log("Error loading JSON:", error);
-                        $('#loading').hide(); 
-                        $('#main-content').html('<div class="glass-panel p-4 text-center" style="color: var(--glow-red-bright);">Error loading profile data. Please try again later.</div>');
-                    }
-                });
-            } else {
-                $('#loading').fadeOut(500); 
-            }
-        }
+function setLanguage(lang) {
+    currentLang = lang;
+    changelanges = true;
 
-        function setLanguage(lang) {
-            currentLang = lang;
-            changelanges = true;
-            
-            updateLangBtns();
-            renderHero();
-            rendersidemenu();
+    updateLangBtns();
+    renderHero();
+    rendersidemenu();
 
-            let mainClasses = $('#main-content').attr('class') || '';
-            if (mainClasses.includes('intro')) loadintro();
-            else if (mainClasses.includes('history')) loadhistory();
-            else if (mainClasses.includes('skills')) loadskills();
-            else if (mainClasses.includes('education')) loadedu();
-            else loadintro(); 
-        }
+    let mainClasses = $('#main-content').attr('class') || '';
+    if (mainClasses.includes('intro')) loadintro();
+    else if (mainClasses.includes('history')) loadhistory();
+    else if (mainClasses.includes('skills')) loadskills();
+    else if (mainClasses.includes('education')) loadedu();
+    else loadintro();
+}
 
-        function updateLangBtns() {
-            $('.lang-btn').removeClass('active');
-            if (currentLang === 'en') {
-                $('#btn-en').addClass('active');
-            } else {
-                $('#btn-de').addClass('active');
-            }
-        }
+function updateLangBtns() {
+    $('.lang-btn').removeClass('active');
+    if (currentLang === 'en') {
+        $('#btn-en').addClass('active');
+    } else {
+        $('#btn-de').addClass('active');
+    }
+}
 
-        function renderHero() {    
-            if (!resumeData) return;
+function renderHero() {
+    if (!resumeData) return;
 
-            $('#loading').show();
-            let langs = resumeData[currentLang].languages;
-            let langHTML = '';
+    $('#loading').show();
+    let langs = resumeData[currentLang].languages;
+    let langHTML = '';
 
-            $.each(langs, function (index, l) {
-                langHTML += `
+    $.each(langs, function (index, l) {
+        langHTML += `
                 <div class="lang-item">
                     <div class="lang-header">
                         <b class="text-dark">${l.language}</b>
@@ -130,25 +130,25 @@ let currentLang = 'en';
                         <div class="progress-fill" style="width: ${l.percent}%"></div>
                     </div>
                 </div>`;
-            });
-            $('#langbar').html(langHTML);
-            $('#loading').fadeOut(500); 
+    });
+    $('#langbar').html(langHTML);
+    $('#loading').fadeOut(500);
 
-            if (currentLang === 'en') {
-                $('#germany').text('Germany');
-                $('.footer-germany').text('Germany');
-                $('#title').text('Senior Full Stack Developer');
-                $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Languages');
-            } else {
-                $('#germany').text('Deutschland');
-                $('.footer-germany').text('Deutschland');
-                $('#title').text('Senior Full Stack Entwickler');
-                $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Sprachkenntnisse');
-            }
-        }
+    if (currentLang === 'en') {
+        $('#germany').text('Germany');
+        $('.footer-germany').text('Germany');
+        $('#title').text('Senior Full Stack Developer');
+        $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Languages');
+    } else {
+        $('#germany').text('Deutschland');
+        $('.footer-germany').text('Deutschland');
+        $('#title').text('Senior Full Stack Entwickler');
+        $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Sprachkenntnisse');
+    }
+}
 
-        function rendersidemenu() {
-            var navHTML = `
+function rendersidemenu() {
+    var navHTML = `
                <li><a href="#" onclick="loadintro(); return false;" class="navlinkcustom about active"><i class="fa-solid fa-user"></i> ${i18n[currentLang].nav.intro}</a></li>
                <li><a href="#" onclick="loadhistory(); return false;" class="navlinkcustom ex"><i class="fa-solid fa-briefcase"></i> ${i18n[currentLang].nav.history}</a></li>
                <li><a href="#" onclick="loadskills(); return false;" class="navlinkcustom skill"><i class="fa-solid fa-code"></i> ${i18n[currentLang].nav.skills}</a></li>
@@ -159,20 +159,20 @@ let currentLang = 'en';
                    <button id="btn-de" class="lang-btn ${currentLang === 'de' ? 'active' : ''}" onclick="setLanguage('de')">DE</button>
                </div>
             `;
-            $('#nav-links').html(navHTML);
-        }
+    $('#nav-links').html(navHTML);
+}
 
-        function updateActiveNav(className) {
-            $('.navlinkcustom').removeClass('active');
-            $(`.${className}`).addClass('active');
-            $('#main-content').removeClass('intro history skills education').addClass(className);
-        }
+function updateActiveNav(className) {
+    $('.navlinkcustom').removeClass('active');
+    $(`.${className}`).addClass('active');
+    $('#main-content').removeClass('intro history skills education').addClass(className);
+}
 
-        function loadintro() {
-            if (!resumeData) return load();
-            var fade = !changelanges ? 'fadein' : '';
-            $('#loading').show();
-            var html = `
+function loadintro() {
+    if (!resumeData) return load();
+    var fade = !changelanges ? 'fadein' : '';
+    $('#loading').show();
+    var html = `
             <div class="glass-panel p-4 ${fade}">
                <div class="d-flex align-items-center gap-3 mb-4">
                    <div class="icon-box"><i class="fa-solid fa-circle-info"></i></div>
@@ -182,31 +182,31 @@ let currentLang = 'en';
                    ${resumeData[currentLang].introduction}
                </p>
             </div>`;
-            
-            $('#main-content').html(html);
-            updateActiveNav('intro');
-            changelanges = false;
-            $('#loading').fadeOut(500); 
-        }
 
-        function loadhistory() {
-            if (!resumeData) return load();
-            var fade = !changelanges ? 'fadein' : '';
-            
-            var html = `
+    $('#main-content').html(html);
+    updateActiveNav('intro');
+    changelanges = false;
+    $('#loading').fadeOut(500);
+}
+
+function loadhistory() {
+    if (!resumeData) return load();
+    var fade = !changelanges ? 'fadein' : '';
+
+    var html = `
             <div class="${fade}">
                <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                    <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
                    <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.experience}</h2>
                </div>`;
 
-            var history = resumeData[currentLang].employmentHistory;
+    var history = resumeData[currentLang].employmentHistory;
 
-            $.each(history, function (index, h) {
-                let dotClass = index === 0 ? 'first' : '';
-                let badgeClass = index === 0 ? 'badge-red' : 'badge-custom';
-                
-                html += `
+    $.each(history, function (index, h) {
+        let dotClass = index === 0 ? 'first' : '';
+        let badgeClass = index === 0 ? 'badge-red' : 'badge-custom';
+
+        html += `
                 <div class="timeline-item">
                    <div class="timeline-dot ${dotClass}"></div>
                    <div class="glass-panel p-4">
@@ -227,51 +227,51 @@ let currentLang = 'en';
                        <div class="mb-3">
                           <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
 
-                $.each(h.responsibilities, function (i, r) {
-                    html += `
+        $.each(h.responsibilities, function (i, r) {
+            html += `
                         <li class="d-flex gap-2 text-secondary">
                            <i class="fa-solid fa-angle-right text-primary mt-1"></i>
                            <span>${r}</span>
                         </li>`;
-                });
+        });
 
-                html += `</ul>
+        html += `</ul>
                        </div>
                        
                        <div class="pt-3 border-top">
                           <small class="text-uppercase fw-bold text-muted d-block mb-2" style="letter-spacing:1px;">Tech Stack</small>
                           <div class="d-flex flex-wrap gap-1">`;
 
-                // Render all tech stack badges in uniform Cyan
-                $.each(h.techStack, function (j, t) {
-                    html += `<span class="badge-custom">${t}</span>`;
-                });
+        // Render all tech stack badges in uniform Cyan
+        $.each(h.techStack, function (j, t) {
+            html += `<span class="badge-custom">${t}</span>`;
+        });
 
-                html += `</div></div></div></div>`;
-            });
+        html += `</div></div></div></div>`;
+    });
 
-            html += '</div>';
-            $('#main-content').html(html);
-            updateActiveNav('history');
-            changelanges = false;
-        }
+    html += '</div>';
+    $('#main-content').html(html);
+    updateActiveNav('history');
+    changelanges = false;
+}
 
-        function loadskills() {
-            if (!resumeData) return load();
-            var fade = !changelanges ? 'fadein' : '';
-            const skills = resumeData[currentLang].technicalSkills;
-            
-            // Replaced purple with bright cyan/cyan variations to keep theme consistent
-            const config = {
-                backend: { color: "var(--glow-cyan-bright)", icon: "fa-solid fa-server" },
-                frontend: { color: "var(--glow-red-bright)", icon: "fa-solid fa-desktop" },
-                database: { color: "#4ade80", icon: "fa-solid fa-database" },
-                sourceControl: { color: "#fbd38d", icon: "fa-solid fa-code-branch" },
-                projectManagement: { color: "var(--glow-cyan)", icon: "fa-solid fa-list-check" },
-                general: { color: "var(--text-main)", icon: "fa-solid fa-gears" }
-            };
+function loadskills() {
+    if (!resumeData) return load();
+    var fade = !changelanges ? 'fadein' : '';
+    const skills = resumeData[currentLang].technicalSkills;
 
-            var html = `
+    // Replaced purple with bright cyan/cyan variations to keep theme consistent
+    const config = {
+        backend: { color: "var(--glow-cyan-bright)", icon: "fa-solid fa-server" },
+        frontend: { color: "var(--glow-red-bright)", icon: "fa-solid fa-desktop" },
+        database: { color: "#4ade80", icon: "fa-solid fa-database" },
+        sourceControl: { color: "#fbd38d", icon: "fa-solid fa-code-branch" },
+        projectManagement: { color: "var(--glow-cyan)", icon: "fa-solid fa-list-check" },
+        general: { color: "var(--text-main)", icon: "fa-solid fa-gears" }
+    };
+
+    var html = `
             <div class="${fade}">
                 <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                    <div class="icon-box"><i class="fa-solid fa-code"></i></div>
@@ -279,9 +279,9 @@ let currentLang = 'en';
                 </div>
                 <div class="row g-4">`;
 
-            $.each(config, function (key, conf) {
-                const label = i18n[currentLang].categories[key] || key;
-                html += `
+    $.each(config, function (key, conf) {
+        const label = i18n[currentLang].categories[key] || key;
+        html += `
                 <div class="col-lg-6">
                    <div class="glass-panel p-4 h-100">
                        <div class="d-flex align-items-center gap-3 mb-3 pb-2 border-bottom">
@@ -289,27 +289,27 @@ let currentLang = 'en';
                            <h5 class="fw-bold mb-0" style="color:${conf.color}">${label}</h5>
                        </div>
                        <div class="d-flex flex-wrap gap-2">`;
-                       
-                $.each(skills[key], function (index, skill) {
-                    html += `<span class="badge-custom" style="border-color:${conf.color}; color:${conf.color}; background:transparent;">${skill}</span>`;
-                });
 
-                html += `</div></div></div>`;
-            });
+        $.each(skills[key], function (index, skill) {
+            html += `<span class="badge-custom" style="border-color:${conf.color}; color:${conf.color}; background:transparent;">${skill}</span>`;
+        });
 
-            html += `</div></div>`;
-            $('#main-content').html(html);
-            updateActiveNav('skills');
-            changelanges = false;
-        }
+        html += `</div></div></div>`;
+    });
 
-        function loadedu() {
-            if (!resumeData) return load();
-            var fade = !changelanges ? 'fadein' : '';
-            var edu = resumeData[currentLang].education;
-            var cer = resumeData[currentLang].certificates;
+    html += `</div></div>`;
+    $('#main-content').html(html);
+    updateActiveNav('skills');
+    changelanges = false;
+}
 
-            var html = `
+function loadedu() {
+    if (!resumeData) return load();
+    var fade = !changelanges ? 'fadein' : '';
+    var edu = resumeData[currentLang].education;
+    var cer = resumeData[currentLang].certificates;
+
+    var html = `
             <div class="${fade}">
                 <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                    <div class="icon-box"><i class="fa-solid fa-book"></i></div>
@@ -324,8 +324,8 @@ let currentLang = 'en';
                            </div>
                            <div class="d-flex flex-column gap-4">`;
 
-            $.each(edu, function (index, e) {
-                html += `
+    $.each(edu, function (index, e) {
+        html += `
                 <div>
                     <h5 class="fw-bold text-primary mb-1">${e.degree}</h5>
                     <p class="mb-1 text-secondary">
@@ -336,9 +336,9 @@ let currentLang = 'en';
                         <span class="badge-custom m-0">${e.startDate} - ${e.endDate}</span>
                     </div>
                 </div>`;
-            });
+    });
 
-            html += `</div></div></div>
+    html += `</div></div></div>
             <div class="col-lg-6">
                <div class="glass-panel p-4 h-100">
                    <div class="d-flex align-items-center gap-3 mb-4">
@@ -347,8 +347,8 @@ let currentLang = 'en';
                    </div>
                    <div class="d-flex flex-column gap-3">`;
 
-            $.each(cer, function (index, c) {
-                html += `
+    $.each(cer, function (index, c) {
+        html += `
                 <div class="d-flex gap-3 align-items-start border-bottom pb-2">
                   <i class="fa-solid fa-trophy text-primary mt-1"></i>
                   <div>
@@ -362,22 +362,22 @@ let currentLang = 'en';
                       </div>
                   </div>
                 </div>`;
-            });
+    });
 
-            html += `</div></div></div></div></div>`;
-            
-            $('#main-content').html(html);
-            updateActiveNav('education');
-            changelanges = false;
-        }
+    html += `</div></div></div></div></div>`;
 
-        function renderAll() {
-            rendersidemenu();
-            renderHero();
-            loadintro();
-        }
+    $('#main-content').html(html);
+    updateActiveNav('education');
+    changelanges = false;
+}
+
+function renderAll() {
+    rendersidemenu();
+    renderHero();
+    loadintro();
+}
 
 
-        $(document).ready(function() {
-            load();
-        });
+$(document).ready(function () {
+    load();
+});
