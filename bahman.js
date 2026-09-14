@@ -244,7 +244,7 @@ function loadhistory() {
                           <div class="d-flex flex-wrap gap-1">`;
 
         $.each(h.techStack, function (j, t) {
-            html += `<span class="badge-custom">${t}</span>`;
+            html += `<span class="badge-custom" style="color:var(--light-royalblue)">${t}</span>`;
         });
 
         html += `</div></div></div></div>`;
