@@ -197,7 +197,7 @@ function loadhistory() {
             <div class="${fade}">
                <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                    <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
-                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.experience}</h2>
+                   <h2 class="fw-bold mb-0">${i18n[currentLang].headers.experience}</h2>
                </div>`;
 
     var history = resumeData[currentLang].employmentHistory;
@@ -213,8 +213,8 @@ function loadhistory() {
                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
                           <div>
                               <h4 class="fw-bold text-primary mb-1">${h.role}</h4>
-                              <div class="d-flex flex-wrap align-items-center gap-2 text-secondary">
-                                  <span class="fw-semibold text-dark"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
+                              <div class="d-flex flex-wrap align-items-center gap-2">
+                                  <span class="fw-semibold"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
                                   <span>•</span>
                                   <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
                               </div>
@@ -229,7 +229,7 @@ function loadhistory() {
 
         $.each(h.responsibilities, function (i, r) {
             html += `
-                        <li class="d-flex gap-2 text-secondary">
+                        <li class="d-flex gap-2">
                            <i class="fa-solid fa-angle-right text-primary mt-1"></i>
                            <span>${r}</span>
                         </li>`;
