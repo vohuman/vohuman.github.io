@@ -213,7 +213,9 @@ function loadhistory() {
                           <div>
                               <h4 class="fw-bold text-primary mb-1">${h.role}</h4>
                               <div class="d-flex flex-wrap align-items-center gap-2">
-                                  <span class="fw-semibold"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
+                                  <a href="${h.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none custom-link-hover">
+                                      <span class="fw-semibold"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
+                                  </a>
                                   <span>•</span>
                                   <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
                               </div>
@@ -241,7 +243,6 @@ function loadhistory() {
                           <small class="text-uppercase fw-bold text-muted d-block mb-2" style="letter-spacing:1px;">Tech Stack</small>
                           <div class="d-flex flex-wrap gap-1">`;
 
-        // Render all tech stack badges in uniform Cyan
         $.each(h.techStack, function (j, t) {
             html += `<span class="badge-custom">${t}</span>`;
         });
