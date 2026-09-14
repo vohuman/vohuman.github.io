@@ -229,7 +229,7 @@ function loadhistory() {
         $.each(h.responsibilities, function (i, r) {
             html += `
                         <li class="d-flex gap-2">
-                           <i class="fa-solid fa-angle-right text-primary mt-1"></i>
+                           <i class="fa-solid fa-circle-check text-primary mt-1"></i>
                            <span>${r}</span>
                         </li>`;
         });
