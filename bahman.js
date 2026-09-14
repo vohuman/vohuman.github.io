@@ -1,4 +1,4 @@
-let currentLang = 'en';
+let currentLang = 'de';
 let changelanges = false;
 let resumeData = null;
 
