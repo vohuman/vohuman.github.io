@@ -184,6 +184,14 @@ function loadintro() {
     $('#main-content').html(html);
     updateActiveNav('intro');
     changelanges = false;
+
+    var links = $('a.navlinkcustom');
+    $.each(links, function(index, link) {
+        console.log(link);
+        $(link).removeClass('active');
+    });
+    $('.about').addClass('active');
+    
     $('#loading').fadeOut(500);
 }
 
@@ -255,6 +263,13 @@ function loadhistory() {
     $('#main-content').html(html);
     updateActiveNav('history');
     changelanges = false;
+
+     var links = $('a.navlinkcustom');
+    $.each(links, function(index, link) {
+        console.log(link);
+        $(link).removeClass('active');
+    });
+    $('.ex').addClass('active');
     
     $('#loading').fadeOut(500);
 }
@@ -304,6 +319,13 @@ function loadskills() {
     $('#main-content').html(html);
     updateActiveNav('skills');
     changelanges = false;
+
+    var links = $('a.navlinkcustom');
+    $.each(links, function(index, link) {
+        console.log(link);
+        $(link).removeClass('active');
+    });
+    $('.skill').addClass('active');    
     
     $('#loading').fadeOut(500);
 }
@@ -375,6 +397,14 @@ function loadedu() {
     $('#main-content').html(html);
     updateActiveNav('education');
     changelanges = false;
+
+    var links = $('a.navlinkcustom');
+    $.each(links, function(index, link) {
+        console.log(link);
+        $(link).removeClass('active');
+    });
+    $('.edu').addClass('active'); 
+    
      $('#loading').fadeOut(500);
 }
 
