@@ -11,6 +11,9 @@
     --text-main: #f0f4f8;
     --text-muted: #a0aec0;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --royalblue: #2378FF;
+    --light-royalblue: #A3C8FF;
 }
 
 * {
