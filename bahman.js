@@ -6,7 +6,6 @@ let currentLang = 'en';
             $('#nav-links').toggleClass('active');
         });
 
-        // Close mobile menu on link click
         $(document).on('click', '.navlinkcustom', function() {
             if($(window).width() <= 768) {
                 $('#nav-links').removeClass('active');
@@ -115,6 +114,8 @@ let currentLang = 'en';
 
         function renderHero() {    
             if (!resumeData) return;
+
+            $('#loading').show();
             let langs = resumeData[currentLang].languages;
             let langHTML = '';
 
@@ -131,6 +132,7 @@ let currentLang = 'en';
                 </div>`;
             });
             $('#langbar').html(langHTML);
+            $('#loading').fadeOut(500); 
 
             if (currentLang === 'en') {
                 $('#germany').text('Germany');
@@ -169,7 +171,7 @@ let currentLang = 'en';
         function loadintro() {
             if (!resumeData) return load();
             var fade = !changelanges ? 'fadein' : '';
-            
+            $('#loading').show();
             var html = `
             <div class="glass-panel p-4 ${fade}">
                <div class="d-flex align-items-center gap-3 mb-4">
@@ -184,6 +186,7 @@ let currentLang = 'en';
             $('#main-content').html(html);
             updateActiveNav('intro');
             changelanges = false;
+            $('#loading').fadeOut(500); 
         }
 
         function loadhistory() {
