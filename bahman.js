@@ -136,12 +136,10 @@ function renderHero() {
 
     if (currentLang === 'en') {
         $('#germany').text('Germany');
-        $('.footer-germany').text('Germany');
         $('#title').text('Senior Full Stack Developer');
         $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Languages');
     } else {
         $('#germany').text('Deutschland');
-        $('.footer-germany').text('Deutschland');
         $('#title').text('Senior Full Stack Entwickler');
         $('#lang-title').html('<i class="fa-solid fa-language me-2"></i>Sprachkenntnisse');
     }
@@ -176,7 +174,7 @@ function loadintro() {
             <div class="glass-panel p-4 ${fade}">
                <div class="d-flex align-items-center gap-3 mb-4">
                    <div class="icon-box"><i class="fa-solid fa-circle-info"></i></div>
-                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.intro}</h2>
+                   <h2 class="fw-bold mb-0 text-dark">${i18n[currentLang].headers.intro}</h2>
                </div>
                <p class="fs-5 text-secondary" style="line-height: 1.8; text-align: justify;">
                    ${resumeData[currentLang].introduction}
@@ -193,6 +191,7 @@ function loadhistory() {
     if (!resumeData) return load();
     var fade = !changelanges ? 'fadein' : '';
 
+    $('#loading').show();
     var html = `
             <div class="${fade}">
                <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
@@ -250,10 +249,13 @@ function loadhistory() {
         html += `</div></div></div></div>`;
     });
 
+
     html += '</div>';
     $('#main-content').html(html);
     updateActiveNav('history');
     changelanges = false;
+    
+    $('#loading').fadeOut(500);
 }
 
 function loadskills() {
@@ -261,7 +263,7 @@ function loadskills() {
     var fade = !changelanges ? 'fadein' : '';
     const skills = resumeData[currentLang].technicalSkills;
 
-    // Replaced purple with bright cyan/cyan variations to keep theme consistent
+    $('#loading').show();
     const config = {
         backend: { color: "var(--glow-cyan-bright)", icon: "fa-solid fa-server" },
         frontend: { color: "var(--glow-red-bright)", icon: "fa-solid fa-desktop" },
@@ -275,7 +277,7 @@ function loadskills() {
             <div class="${fade}">
                 <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                    <div class="icon-box"><i class="fa-solid fa-code"></i></div>
-                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.skills}</h2>
+                   <h2 class="fw-bold mb-0">${i18n[currentLang].headers.skills}</h2>
                 </div>
                 <div class="row g-4">`;
 
@@ -301,6 +303,8 @@ function loadskills() {
     $('#main-content').html(html);
     updateActiveNav('skills');
     changelanges = false;
+    
+    $('#loading').fadeOut(500);
 }
 
 function loadedu() {
@@ -309,18 +313,19 @@ function loadedu() {
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
+    $('#loading').show();
     var html = `
             <div class="${fade}">
                 <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                    <div class="icon-box"><i class="fa-solid fa-book"></i></div>
-                   <h2 class="h3 fw-bold mb-0 text-dark">${i18n[currentLang].headers.education}</h2>
+                   <h2 class="fw-bold mb-0">${i18n[currentLang].headers.education}</h2>
                 </div>
                 <div class="row g-4">
                    <div class="col-lg-6">
                        <div class="glass-panel p-4 h-100">
                            <div class="d-flex align-items-center gap-3 mb-4">
                               <div class="icon-box" style="color:var(--glow-red-bright)"><i class="fa-solid fa-graduation-cap"></i></div>
-                              <h5 class="fw-bold mb-0 text-dark">${i18n[currentLang].headers.universities}</h5>
+                              <h4 class="fw-bold mb-0">${i18n[currentLang].headers.universities}</h4>
                            </div>
                            <div class="d-flex flex-column gap-4">`;
 
@@ -343,7 +348,7 @@ function loadedu() {
                <div class="glass-panel p-4 h-100">
                    <div class="d-flex align-items-center gap-3 mb-4">
                       <div class="icon-box" style="color:var(--glow-red-bright)"><i class="fa-solid fa-certificate"></i></div>
-                      <h5 class="fw-bold mb-0 text-dark">${i18n[currentLang].headers.certificates}</h5>
+                      <h4 class="fw-bold mb-0">${i18n[currentLang].headers.certificates}</h4>
                    </div>
                    <div class="d-flex flex-column gap-3">`;
 
@@ -369,6 +374,7 @@ function loadedu() {
     $('#main-content').html(html);
     updateActiveNav('education');
     changelanges = false;
+     $('#loading').fadeOut(500);
 }
 
 function renderAll() {
