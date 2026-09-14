@@ -1,4 +1,4 @@
- /* --- CSS VARIABLES (Color Palette & Theme) --- */
+
         :root {
             --bg-base: #040814;
             --bg-darker: #02040a;
@@ -16,7 +16,6 @@
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* --- GLOBAL STYLES --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -39,7 +38,6 @@
             line-height: 1.6;
         }
 
-        /* --- GLASSMORPHISM BASE CLASS (Cards) --- */
         .glass-panel {
             background: rgba(9, 19, 48, 0.4) !important;
             backdrop-filter: blur(15px);
@@ -53,13 +51,11 @@
             z-index: 1;
         }
 
-        /* Keep children above the ::before background */
         .glass-panel > * {
             position: relative;
             z-index: 2;
         }
 
-        /* Animated ScaleX Background */
         .glass-panel::before {
             content: '';
             position: absolute;
@@ -84,7 +80,6 @@
             transform: translateY(-3px);
         }
 
-        /* --- NAVBAR --- */
         .navbar-custom {
             position: sticky;
             top: 0;
@@ -170,7 +165,6 @@
             cursor: pointer;
         }
 
-        /* --- PROFILE BANNER --- */
         .container-custom {
             max-width: 1200px;
             margin: 0 auto;
@@ -333,7 +327,6 @@
             box-shadow: 0 0 10px var(--glow-red-bright);
         }
 
-        /* Badges */
         .badge-custom {
             display: inline-block;
             padding: 5px 12px;
@@ -346,12 +339,17 @@
         }
         
         .badge-red { 
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 4px 4px 4px 0;
+            border: 1px solid rgba(45, 145, 195, 0.5);
             background: rgba(220, 60, 60, 0.1); 
             color: var(--glow-red-bright); 
             border-color: var(--glow-red); 
         }
 
-        /* Icon Boxes */
         .icon-box {
             background: rgba(45, 145, 195, 0.15);
             color: var(--glow-cyan-bright);
@@ -365,14 +363,14 @@
             border: 1px solid rgba(45, 145, 195, 0.3);
         }
 
-        /* --- BOOTSTRAP OVERRIDES TO FIX CONTRAST --- */
         .text-primary { color: var(--glow-cyan-bright) !important; }
         .text-dark { color: var(--text-main) !important; } /* Stops Bootstrap from making text black */
         .text-secondary { color: var(--text-muted) !important; } /* Brightens gray text */
         .text-muted { color: #8e9db0 !important; } /* Brightens very dark text for readability */
         .border-bottom { border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
         .border-top { border-top: 1px solid rgba(255,255,255,0.1) !important; }
-        a { text-decoration: none; color: inherit; }
+        
+a { text-decoration: none; color: inherit; }
         
         .fadein { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -385,7 +383,6 @@
             color: var(--glow-cyan-bright); font-size: 2rem;
         }
 
-        /* --- RESPONSIVE FIXES --- */
         @media (max-width: 992px) {
             .profile-banner {
                 flex-direction: column;
@@ -399,7 +396,7 @@
                 padding-top: 20px;
                 width: 100%;
             }
-            /* Stack icons and text gracefully on mobile */
+         
             .profile-details .d-flex {
                 justify-content: center !important;
                 flex-wrap: wrap;
