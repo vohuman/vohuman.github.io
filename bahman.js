@@ -420,5 +420,11 @@ let currentLang = 'de';
         }
 
         $(document).ready(function () {
+                
+                $('#mobile-menu-btn').click(function () {
+        
+                        $('#nav-links').toggleClass('active');
+                });
+                
             load();
         });
