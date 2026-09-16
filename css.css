@@ -212,7 +212,7 @@
             height: 160px;
             margin: 0 auto;
             border-radius: 50%;
-            border: 3px solid var(--glow-cyan);
+            border: 5px solid var(--glow-cyan);
             box-shadow: 0 0 20px rgba(45, 145, 195, 0.8), 0 0 40px rgba(45, 145, 195, 0.4);
             animation: pulseGlow 3s infinite alternate;
             overflow: hidden;
@@ -458,7 +458,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Loader */
+        
         #loading {
             position: fixed;
             top: 0; left: 0;
