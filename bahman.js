@@ -219,7 +219,7 @@ let currentLang = 'de';
                            <div class="glass-panel p-4">
                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
                                   <div>
-                                      <h4 class="fw-bold mb-1" style="color:var(--job-title);">${h.role}</h4>
+                                      <h4 class="fw-bold mb-1">${h.role}</h4>
                                       <div class="d-flex flex-wrap align-items-center gap-2">
                                           <a href="${h.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none custom-link-hover text-primary">
                                               <span class="fw-semibold"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
@@ -353,7 +353,7 @@ let currentLang = 'de';
                            <div class="col-lg-6">
                                <div class="glass-panel p-4 h-100">
                                    <div class="d-flex align-items-center gap-3 mb-4">
-                                      <div class="icon-box-cyan" style="color:var(--glow-red-bright)"><i class="fa-solid fa-graduation-cap"></i></div>
+                                      <div class="icon-box-cyan"><i class="fa-solid fa-graduation-cap"></i></div>
                                       <h4 class="fw-bold mb-0">${i18n[currentLang].headers.universities}</h4>
                                    </div>
                                    <div class="d-flex flex-column gap-4">`;
@@ -376,7 +376,7 @@ let currentLang = 'de';
                     <div class="col-lg-6">
                        <div class="glass-panel p-4 h-100">
                            <div class="d-flex align-items-center gap-3 mb-4">
-                              <div class="icon-box-cyan" style="color:var(--glow-red-bright)"><i class="fa-solid fa-certificate"></i></div>
+                              <div class="icon-box-cyan"><i class="fa-solid fa-certificate"></i></div>
                               <h4 class="fw-bold mb-0">${i18n[currentLang].headers.certificates}</h4>
                            </div>
                            <div class="d-flex flex-column gap-3">`;
