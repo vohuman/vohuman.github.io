@@ -354,7 +354,7 @@ let currentLang = 'de';
                                <div class="glass-panel p-4 h-100">
                                    <div class="d-flex align-items-center gap-3 mb-4">
                                       <div class="icon-box-red" style="color:var(--glow-red-bright)"><i class="fa-solid fa-graduation-cap"></i></div>
-                                      <h4 class="fw-bold mb-0 text-red">${i18n[currentLang].headers.universities}</h4>
+                                      <h4 class="fw-bold mb-0">${i18n[currentLang].headers.universities}</h4>
                                    </div>
                                    <div class="d-flex flex-column gap-4">`;
 
@@ -377,7 +377,7 @@ let currentLang = 'de';
                        <div class="glass-panel p-4 h-100">
                            <div class="d-flex align-items-center gap-3 mb-4">
                               <div class="icon-box-red" style="color:var(--glow-red-bright)"><i class="fa-solid fa-certificate"></i></div>
-                              <h4 class="fw-bold mb-0 text-red">${i18n[currentLang].headers.certificates}</h4>
+                              <h4 class="fw-bold mb-0">${i18n[currentLang].headers.certificates}</h4>
                            </div>
                            <div class="d-flex flex-column gap-3">`;
 
