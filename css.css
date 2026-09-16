@@ -378,6 +378,17 @@
             color: var(--glow-cyan-bright);
         }
 
+.badge-cyan {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 4px 4px 4px 0;
+            border: 1px solid rgba(0, 229 , 255, 0.5);
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--job-title);
+}
+
         .badge-red {
             display: inline-block;
             padding: 5px 12px;
