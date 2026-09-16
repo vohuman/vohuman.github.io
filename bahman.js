@@ -221,7 +221,7 @@ let currentLang = 'de';
                                   <div>
                                       <h4 class="fw-bold mb-1">${h.role}</h4>
                                       <div class="d-flex flex-wrap align-items-center gap-2">
-                                          <a href="${h.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none custom-link-hover text-primary">
+                                          <a href="${h.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none custom-link-hover text-cyan">
                                               <span class="fw-semibold"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
                                           </a>
                                           <span>•</span>
@@ -363,7 +363,7 @@ let currentLang = 'de';
                         <div>
                             <h5 class="fw-bold mb-1">${e.degree}</h5>
                             <p class="mb-1">
-                                <a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-primary">${e.institution}</a>
+                                <a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-cyan">${e.institution}</a>
                             </p>
                             <div class="d-flex justify-content-between align-items-center text-muted small">
                                 <span><i class="fa-solid fa-building"></i> ${e.location}</span>
@@ -384,10 +384,10 @@ let currentLang = 'de';
             $.each(cer, function (index, c) {
                 html += `
                         <div class="d-flex gap-3 align-items-start border-bottom pb-2">
-                          <i class="fa-solid fa-trophy mt-1 text-dark"></i>
+                          <i class="fa-solid fa-trophy mt-1 text-primary"></i>
                           <div>
                               <h5 class="mb-1 fw-bold">
-                                   <a href="${c.link}" target="_blank" class="custom-link-hover text-primary">${c.title}</a>
+                                   <a href="${c.link}" target="_blank" class="custom-link-hover text-cyan">${c.title}</a>
                               </h5>
                               <div class="d-flex flex-wrap gap-2 text-muted small">
                                   <span>${c.issuer}</span>
