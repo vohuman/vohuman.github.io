@@ -441,7 +441,8 @@
         }
 
         .text-primary { color: var(--glow-cyan-bright) !important; }
-        .text-dark { color: var(--text-main) !important; }
+        .text-cyan { color: var(--job-title) !important; }
+.text-dark { color: var(--text-main) !important; }
         .text-red { color: var(--glow-red-bright) !important; }
         .text-secondary { color: var(--text-muted) !important; }
         .text-muted { color: #8e9db0 !important; }
