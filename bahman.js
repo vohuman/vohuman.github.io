@@ -363,10 +363,10 @@ let currentLang = 'de';
                         <div>
                             <h5 class="fw-bold mb-1">${e.degree}</h5>
                             <p class="mb-1">
-                                <a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-cyan">${e.institution}</a>
+                                <i class="fa-solid fa-university text-primary"></i><a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-cyan">${e.institution}</a>
                             </p>
                             <div class="d-flex justify-content-between align-items-center text-muted small">
-                                <span><i class="fa-solid fa-university"></i> ${e.location}</span>
+                                <span>${e.location}</span>
                                 <span class="badge-custom m-0">${e.startDate} - ${e.endDate}</span>
                             </div>
                         </div>`;
