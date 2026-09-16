@@ -211,7 +211,7 @@ let currentLang = 'de';
 
             $.each(history, function (index, h) {
                 let dotClass = index === 0 ? 'first' : '';
-                let badgeClass = index === 0 ? 'badge-custom' : 'badge-cyan';
+                let badgeClass = index === 0 ? 'badge-cyan' : 'badge-custom';
 
                 html += `
                         <div class="timeline-item">
