@@ -414,6 +414,19 @@
             border: 1px solid rgba(45, 145, 195, 0.3);
         }
 
+.icon-box-cyan {
+            background: rgba(0, 229, 255, 0.15);
+            color: var(--job-title);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
         .icon-box-red {
             background: rgba(220, 60, 60, 0.15);
             color: var(--glow-red-bright);
