@@ -211,7 +211,7 @@ let currentLang = 'de';
 
             $.each(history, function (index, h) {
                 let dotClass = index === 0 ? 'first' : '';
-                let badgeClass = index === 0 ? 'badge-red' : 'badge-custom';
+                let badgeClass = index === 0 ? 'badge-custom' : 'badge-cyan';
 
                 html += `
                         <div class="timeline-item">
@@ -353,7 +353,7 @@ let currentLang = 'de';
                            <div class="col-lg-6">
                                <div class="glass-panel p-4 h-100">
                                    <div class="d-flex align-items-center gap-3 mb-4">
-                                      <div class="icon-box-red" style="color:var(--glow-red-bright)"><i class="fa-solid fa-graduation-cap"></i></div>
+                                      <div class="icon-box-cyan" style="color:var(--glow-red-bright)"><i class="fa-solid fa-graduation-cap"></i></div>
                                       <h4 class="fw-bold mb-0">${i18n[currentLang].headers.universities}</h4>
                                    </div>
                                    <div class="d-flex flex-column gap-4">`;
@@ -366,7 +366,7 @@ let currentLang = 'de';
                                 <a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-primary">${e.institution}</a>
                             </p>
                             <div class="d-flex justify-content-between align-items-center text-muted small">
-                                <span><i class="fa-solid fa-location-dot"></i> ${e.location}</span>
+                                <span><i class="fa-solid fa-building"></i> ${e.location}</span>
                                 <span class="badge-custom m-0">${e.startDate} - ${e.endDate}</span>
                             </div>
                         </div>`;
@@ -376,7 +376,7 @@ let currentLang = 'de';
                     <div class="col-lg-6">
                        <div class="glass-panel p-4 h-100">
                            <div class="d-flex align-items-center gap-3 mb-4">
-                              <div class="icon-box-red" style="color:var(--glow-red-bright)"><i class="fa-solid fa-certificate"></i></div>
+                              <div class="icon-box-cyan" style="color:var(--glow-red-bright)"><i class="fa-solid fa-certificate"></i></div>
                               <h4 class="fw-bold mb-0">${i18n[currentLang].headers.certificates}</h4>
                            </div>
                            <div class="d-flex flex-column gap-3">`;
