@@ -363,7 +363,7 @@ let currentLang = 'de';
                         <div>
                             <h5 class="fw-bold mb-1">${e.degree}</h5>
                             <p class="mb-1">
-                                <i class="fa-solid fa-university text-primary mx-1"></i><a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-cyan">${e.institution}</a>
+                                <i class="fa-solid fa-university text-primary mr-2"></i><a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-cyan">${e.institution}</a>
                             </p>
                             <div class="d-flex justify-content-between align-items-center text-muted small">
                                 <span>${e.location}</span>
