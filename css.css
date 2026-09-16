@@ -39,7 +39,7 @@
         }
 
         h4 {
-            color: var(--job-title);
+            color: var(--glow-cyan-bright);
         }
 
         .glass-panel {
