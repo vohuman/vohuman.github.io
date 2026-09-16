@@ -219,7 +219,7 @@ let currentLang = 'de';
                            <div class="glass-panel p-4">
                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
                                   <div>
-                                      <h4 class="fw-bold mb-1">${h.role}</h4>
+                                      <h4 class="fw-bold mb-1" style="color:var(--job-title);">${h.role}</h4>
                                       <div class="d-flex flex-wrap align-items-center gap-2">
                                           <a href="${h.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none custom-link-hover text-primary">
                                               <span class="fw-semibold"><i class="fa-regular fa-building me-1"></i> ${h.company}</span>
