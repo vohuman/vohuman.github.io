@@ -10,7 +10,6 @@
     --glow-blue-light: #3E70B6;
     --text-main: #f0f4f8;
     --text-muted: #b0bed0;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --royalblue: #4169E1;
     --royalblue-bright: #4c6ef4;
     --light-royalblue: #B1D9FF;
@@ -24,7 +23,7 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-base);
     color: var(--text-main);
     min-height: 100vh;
