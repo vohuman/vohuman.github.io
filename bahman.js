@@ -383,12 +383,12 @@ let currentLang = 'de';
 
             $.each(cer, function (index, c) {
                 html += `
-                        <div class="d-flex gap-3 align-items-start border-bottom pb-2">
+                        <div class="d-flex gap-3 align-items-start border-bottom pb-2 mb-2">
                           <i class="fa-solid fa-trophy mt-1 text-primary"></i>
                           <div>
-                              <h5 class="mb-1 fw-bold">
+                              <h6 class="mb-1 fw-bold">
                                    <a href="${c.link}" target="_blank" class="custom-link-hover text-cyan">${c.title}</a>
-                              </h5>
+                              </h6>
                               <div class="d-flex flex-wrap gap-2 text-muted small">
                                   <span>${c.issuer}</span>
                                   <span>•</span>
