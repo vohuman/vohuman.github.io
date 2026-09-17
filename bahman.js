@@ -360,7 +360,7 @@ let currentLang = 'de';
 
             $.each(edu, function (index, e) {
                 html += `
-                        <div>
+                        <div class="border-bottom pb-2">
                             <h5 class="fw-bold mb-1">${e.degree}</h5>
                             <p class="mb-1">
                                 <i class="fa-solid fa-university text-primary mx-2"></i><a href="${e.link}" target="_blank" class="fw-semibold custom-link-hover text-cyan">${e.institution}</a>
