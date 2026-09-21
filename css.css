@@ -361,13 +361,13 @@ h4 {
 
 .timeline-dot {
     position: absolute;
-    left: -6px;
+    left: -10px;
     top: 20px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
     background: var(--bg-card);
-    border: 2px solid var(--glow-cyan);
+    border: 3px solid var(--glow-cyan);
     box-shadow: 0 0 10px var(--glow-cyan);
 }
 
@@ -378,7 +378,7 @@ h4 {
 
 .timeline-item:hover .timeline-dot {
     background: var(--glow-cyan);
-    border: 2px solid var(--text-main);
+    border: 3px solid var(--text-main);
     box-shadow: 0 0 10px var(--text-main);
 }
 
