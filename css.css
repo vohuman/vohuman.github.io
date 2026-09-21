@@ -373,7 +373,13 @@ h4 {
     }
 
 .timeline-item:hover .timeline-dot {
-    background: var(--text-main);
+    background: var(--glow-cyan);
+    border: 2px solid var(--text-main);
+    box-shadow: 0 0 10px var(--text-main);
+}
+
+.timeline-item:first-child:hover .timeline-dot {
+    background: var(--glow-red-bright);
 }
 
 .badge-custom {
