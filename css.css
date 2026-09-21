@@ -346,14 +346,18 @@ h4 {
 
 .timeline-item {
     position: relative;
-    padding-left: 30px;
-    margin-bottom: 30px;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
     border-left: 2px solid rgba(45, 145, 195, 0.3);
+}
+
+.timeline-item:last-child { 
+    padding-bottom: 0; 
 }
 
 .timeline-dot {
     position: absolute;
-    left: -8px;
+    left: -6px;
     top: 20px;
     width: 14px;
     height: 14px;
