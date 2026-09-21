@@ -361,25 +361,25 @@ h4 {
 
 .timeline-dot {
     position: absolute;
-    left: -9px;
+    left: -8px;
     top: 20px;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: var(--bg-card);
-    border: 3px solid var(--glow-cyan);
-    box-shadow: 0 0 15px var(--glow-cyan);
+    border: 2px solid var(--glow-cyan);
+    box-shadow: 0 0 12px var(--glow-cyan);
 }
 
     .timeline-dot.first {
         border-color: var(--glow-red-bright);
-        box-shadow: 0 0 15px var(--glow-red-bright);
+        box-shadow: 0 0 12px var(--glow-red-bright);
     }
 
 .timeline-item:hover .timeline-dot {
     background: var(--glow-cyan);
-    border: 3px solid var(--text-main);
-    box-shadow: 0 0 15px var(--text-main);
+    border: 2px solid var(--text-main);
+    box-shadow: 0 0 12px var(--text-main);
 }
 
 .timeline-item:hover .timeline-dot.first {
