@@ -441,6 +441,11 @@ h4 {
     border: 1px solid rgba(220, 60, 60, 0.3);
 }
 
+.fadein {
+    opacity: 1;
+    animation: fade 0.4s ease-in forwards;
+}
+
 .text-primary {
     color: var(--glow-cyan-bright) !important;
 }
