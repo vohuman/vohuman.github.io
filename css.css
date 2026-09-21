@@ -378,7 +378,7 @@ h4 {
     box-shadow: 0 0 10px var(--text-main);
 }
 
-.timeline-item:first-child:hover .timeline-dot {
+.timeline-item:hover .timeline-dot.first {
     background: var(--glow-red-bright);
 }
 
