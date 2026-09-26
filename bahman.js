@@ -1,7 +1,7 @@
 let currentLang = 'de';
         let changelanges = false;
         let resumeData = null;
-        let loadingDuration = 700;
+        let loadingDuration = 750;
 
         $('#mobile-menu-btn').click(function () {
             $('#nav-links').toggleClass('active');
